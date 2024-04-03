@@ -79,7 +79,7 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) => {
                   <p><small>
                     swn.ski 2007-2024
                     | <a href="https://europa.eu/youreurope/business/running-business/intellectual-property/copyright/index_en.htm" target="_blank">${data.labels[lang].misc.allRightsReserved}</a>
-                    | <a href="#">repo</a>
+                    | <a href="https://github.com/soofka/swn.ski">repo</a>
                   </small></p>
                 </div>
               </article>

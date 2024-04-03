@@ -1,3 +1,10 @@
+p.button-container {
+  text-align: right;
+  margin: var(--gap-rel) 0;
+}
+p.button-container .button {
+  display: inline-block;
+}
 main section h2 {
   margin: var(--gap-rel) 0 0 0;
 }
@@ -12,4 +19,12 @@ body.item section article h3 {
 }
 body.item section article figure {
   margin: var(--gap-rel) auto;
+}
+@media (max-width: 960px) {
+  p.button-container {
+    text-align: center;
+  }
+  p.button-container .button {
+    width: 100%;
+  }
 }

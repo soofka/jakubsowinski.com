@@ -14,6 +14,7 @@
   "homepage": "https://github.com/soofka/swn.ski#readme",
   "scripts": {
     "build": "node node_modules/swappi/dist/index.js -c config/index.js -b",
+    "start": "node node_modules/swappi/dist/index.js -c config/index.js -w -r",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

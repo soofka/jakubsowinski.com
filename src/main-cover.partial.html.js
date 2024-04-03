@@ -118,7 +118,7 @@ const mainCover = (data, dists, { lang }) => `
           <h2 class="leader-fg">${data.labels[lang].pages.home.leader.head}</h2>
           <div class="col-3-1">
             <div class="col">
-              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me3.jpg", alt: data.labels[lang].pages.home.leader.imgAlt }))}"></partial>
+              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me4.jpg", alt: data.labels[lang].pages.home.leader.imgAlt }))}"></partial>
               <p class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</p>
             </div>
             <div class="col col-3">

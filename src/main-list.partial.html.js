@@ -24,7 +24,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
   let meta = item.date;
   let alt;
   let altHighlight = false;
-  let c2a = "";
+  let footnote = "";
   let pageId;
 
   switch (pageName) {
@@ -67,7 +67,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
 
     case "courses":
       const clients =
-        typeof item.clients === "object" && Object.hasOwn(lang)
+        typeof item.clients === "object" && Object.hasOwn(item.clients, lang)
           ? item.clients[lang]
           : item.clients;
       if (clients && clients.length > 0) {
@@ -75,7 +75,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       }
       alt = `<h4>${labels.pages.courses.courseContent}</h4><ul>${item.content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>`;
       altHighlight = true;
-      c2a = `<p class="button-container">
+      footnote = `<p class="button-container">
         <a class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg" href="mailto:j@swn.ski?subject=${titleText}">
           ${labels.pages.courses.buy}
         </a>
@@ -138,22 +138,28 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       )}</small></p>`;
   }
 
-  content = `${content}${c2a}`;
-
   return alt
-    ? getDoubleColumnItem(title, meta, content, alt, altHighlight)
-    : getSingleColumnItem(title, meta, content);
+    ? getDoubleColumnItem(title, meta, content, footnote, alt, altHighlight)
+    : getSingleColumnItem(title, meta, content, footnote);
 };
 
-const getSingleColumnItem = (title, meta, content) => `
+const getSingleColumnItem = (title, meta, content, footnote) => `
   <article>
     ${title}
     ${meta}
     ${content}
+    ${footnote}
   </article>
 `;
 
-const getDoubleColumnItem = (title, meta, content, alt, altHighlight) => `
+const getDoubleColumnItem = (
+  title,
+  meta,
+  content,
+  footnote,
+  alt,
+  altHighlight,
+) => `
   <article>
     <div class="col-3-1">
       <div class="col col-3">
@@ -165,6 +171,7 @@ const getDoubleColumnItem = (title, meta, content, alt, altHighlight) => `
         ${alt}
       </div>
     </div>
+    ${footnote}
   </article>`;
 
 export default mainList;
