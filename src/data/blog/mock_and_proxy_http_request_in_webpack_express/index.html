@@ -47,7 +47,7 @@
   my example, I'm intercepting all calls to /api URL, and respond with mocked JS
   object instead.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 devServer: {
   // ...
@@ -70,7 +70,7 @@ devServer: {
   like hacking. It's very straightforward, almost like this framework was
   created specifically to perform tasks like this (?!).
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const app = express();
 
@@ -101,7 +101,7 @@ app.get('/api', (request, response) => {
   target, which is not what I wanted to achieve here (hence I've defined this
   parameter), but you may find it useful.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 devServer: {
   // ...
@@ -124,7 +124,7 @@ devServer: {
   added to the end of your request's URL. Again, it might be what you want in
   some cases.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const app = express();
 const apiProxy = httpProxy.createProxyServer();

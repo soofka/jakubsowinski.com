@@ -49,7 +49,7 @@
   which redefines some of MobX features as React component wrappers, so that one
   can implement it in their React application conveniently.
 </p>
-<partial name="code">
+<partial name="code" language="bash">
   <pre>
 npm install --save mobx mobx-react
 </pre
@@ -61,7 +61,7 @@ npm install --save mobx mobx-react
   library to make these two get along well and without issues, I immediately
   searched for some equivalent for MobX, and found MobX-React-Router.
 </p>
-<partial name="code">
+<partial name="code" language="bash">
   <pre>
 npm install --save mobx-react-router
 </pre
@@ -72,7 +72,7 @@ npm install --save mobx-react-router
   with default routing, as provided by the library. I only had to modify main
   file of my project, where root component is.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -117,7 +117,7 @@ render();
   documentation, and this basic example by JS Craft), I decided to go for simple
   class with one field. Of course I did it in TypeScript.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 export interface LanguageStoreInterface {
   language: string;
@@ -146,7 +146,7 @@ class LanguageStore implements LanguageStoreInterface {
   which observes it will be notified about its change - and setLanguage method
   became privileged to modify language in global context.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 import { action, decorate, observable } from 'mobx';
 
@@ -178,7 +178,7 @@ decorate(LanguageStore, {
   created with the help of MobX-React-Router. Again, I had to modify main file
   of the application, where root component is.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 import { languageStore } from 'store/language';
 
@@ -202,7 +202,7 @@ const store = {
   from MobX-React, I made it familiar with LanguageStore, and used setLanguage
   action to set proper value in global app state.
 </p>
-<partial name="code"><pre>
+<partial name="code" language="javascript"><pre>
 import * as React from 'react';
 import { inject } from 'mobx-react';
 
@@ -236,7 +236,7 @@ export default inject('languageStore')(LanguageSwitcher);
 <p>Having my LanguageSwitcher, clicking on one of it's buttons altered global state and set proper language value in it. However, there was no visible change in my application - for that I had to implement components, that react to this change.</p>
 <h4>Reacting to changes in store</h4>
 <p>The most basic way of doing so in MobX, from what I've learned, was to implement observer. Wrapping React component with such decorator makes it aware of any changes in the state. Therefore, I created Label component, which observed the store and automatically reacted to language change, and I reimplemented all static pieces of text in my UI to use this component. Additionally, I had to inject LanguageStore to it, so that I could always get proper, current language value for my Label to render. Then I created simple JS objects with translations to both languages.</p>
-<partial name="code"><pre>
+<partial name="code" language="javascript"><pre>
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 
@@ -261,7 +261,7 @@ export default inject('languageStore')(observer(Label));
 <p>On the other hand, my list of entries didn't react to this change at all. Obviously, I also wanted this component to change with setLanguage action - I only wanted entries translated to Polish to appear when in Polish version, and vice versa - and it turned out to be much trickier than I expected.</p>
 <p>After a few hours of frustrating attempts to make my Entries component with an observer, which I used for Label component, I learned important lesson about MobX - observer makes your component react to any observable you use in render(). I used language parameter, which was observable, in this component, but only in componentDidMount function, where I fetched all the entries, not in render function. I had to come up with different idea.</p>
 <p>Another few hours later, I've found what I needed in reaction function from MobX. During this research I discovered that MobX offers a lot of ways to interact with the store in variety of manners. Among different methods, reaction was precisely what I needed for this case. Using it, one can define his custom way of, well, reacting to change in one of his observables. Unlike observer, which is tightly coupled with render function, reaction allowed me to refetch posts whenever language changed without referring to LanguageStore during render phase.</p>
-<partial name="code"><pre>
+<partial name="code" language="javascript"><pre>
 export class Entries extends React.Component<EntriesPropsInterface, EntriesStateInterface> {
   constructor(props: EntriesPropsInterface) {
     super(props);

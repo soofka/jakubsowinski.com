@@ -23,7 +23,7 @@
   Actual configuration, however, is located in /scripts/bundler directory (this
   is because it's also used in other parts of the project).
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getBundlerConfig = (environment = 'dev', mode = 'normal') => {
   const devEnv = environment === 'dev';
@@ -54,7 +54,7 @@ const getBundlerConfig = (environment = 'dev', mode = 'normal') => {
   already on Webpack 4, believe me, it's been worse.
 </p>
 <h3>Entry</h3>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getEntry = () => {
   const main = [
@@ -96,7 +96,7 @@ const getEntry = () => {
   section is more less equal to dependencies section of package.json file.
 </p>
 <h3>Output</h3>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getOutput = () => {
   return {
@@ -119,7 +119,7 @@ const getOutput = () => {
   can help with cache busting for both development and production purposes.
 </p>
 <h3>Resolve</h3>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getResolve = () => ({
   modules: [
@@ -142,7 +142,7 @@ const getResolve = () => ({
   like.
 </p>
 <h3>Module</h3>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getModule = (devEnv) => {
   let typeScriptLoaders = [];
@@ -254,7 +254,7 @@ const getModule = (devEnv) => {
   in /dist/assets directory.
 </p>
 <h3>Plugins</h3>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getPlugins = (devEnv, mode) => {
   let plugins = [
@@ -347,7 +347,7 @@ const getPlugins = (devEnv, mode) => {
   package, enable Hot Module Replacement, and others.
 </p>
 <h3>Mode</h3>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const getMode = (devEnv) => devEnv ? 'development' : 'production';
 </pre

@@ -84,7 +84,7 @@
   majority of web servers. Here you can see basic example with pure HTML
   template and variable part that is going to be included by the server.
 </p>
-<partial name="code">
+<partial name="code" language="xml">
   <pre>
 <html lang="en" dir="ltr">
   <head>
@@ -102,7 +102,7 @@
   Here is Nginx server configuration ready to set that variable, populate the
   template, and serve it to the user.
 </p>
-<partial name="code">
+<partial name="code" language="nginx">
   <pre>
 server {
   listen 8080;
@@ -160,7 +160,7 @@ server {
   Here you can see example of route to template mapping. When our user goes to
   one of these URLs, Templating Engine will load corresponding template.
 </p>
-<partial name="code">
+<partial name="code" language="yaml">
   <pre>
 routeMap:
   "/": "/index.html"
@@ -177,7 +177,7 @@ routeMap:
   fragment can have some configuration provided here, but most importantly — a
   unique ID.
 </p>
-<partial name="code">
+<partial name="code" language="xml">
   <pre>
 <fragment
   id="ch-background-image"
@@ -209,7 +209,7 @@ routeMap:
   certain template is loaded, Templating Engine loads each microfrontend from
   its location, and replaces corresponding fragments with them.
 </p>
-<partial name="code">
+<partial name="code" language="yaml">
   <pre>
 fragments:
   ch-assets: http://localhost:8080/assetslinks
@@ -248,7 +248,7 @@ fragments:
   the page, it subscribes for specific message, and will behave in certain way
   whenever such message is published.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 import {
   PubSub,
@@ -271,7 +271,7 @@ class LoginModal extends React.Component {
   of code is invoked by one of our microfrontends, if login modal is present on
   the same page, it will be triggered and displayed.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 PubSub.publish('CANDIDATE_PROFILE_SHOW_LOGIN_MODAL');
 </pre
@@ -298,7 +298,7 @@ PubSub.publish('CANDIDATE_PROFILE_SHOW_LOGIN_MODAL');
   major browsers, one can recreate the same communication method without need
   for PubSubJS or any other library, like in this example.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 element.addEventListener(
   'myEvent',

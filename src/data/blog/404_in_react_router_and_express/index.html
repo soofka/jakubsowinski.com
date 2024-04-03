@@ -17,7 +17,7 @@
   and well documented use case. Quickly I came up with simple configuration,
   that always serves static index.html file.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 const fs = require('fs');
 const path = require('path');
@@ -61,7 +61,7 @@ app.listen(3000, () => {
   and always it will be the first one that matches the URL. I put my Not Found
   Route at the end of Switch, and I was good to leave the office. Job well done.
 </p>
-<partial name="code">
+<partial name="code" language="javascript">
   <pre>
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';

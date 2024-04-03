@@ -38,7 +38,7 @@
   placed them in separate directory, and created simple NPM scripts which runs
   them:
 </p>
-<partial name="code">
+<partial name="code" language="json">
   <pre>
 {
   "scripts": {
@@ -75,7 +75,7 @@
   that my test command is literally named test, I only had to inform Travis
   about programming in which my package is written.
 </p>
-<partial name="code">
+<partial name="code" language="yaml">
   <pre>
 language: node_js
 node_js:  
@@ -113,7 +113,7 @@ node_js:
   NPM and created additional, separate NPM script to calculate code coverage and
   push it to its destination:
 </p>
-<partial name="code">
+<partial name="code" language="json">
   <pre>
 {
   "scripts": {
@@ -129,7 +129,7 @@ node_js:
   named LCOV. Jest has no issues with that - all I had to do was to enable it in
   my jestconfig.json file:
 </p>
-<partial name="code">
+<partial name="code" language="json">
   <pre>
 {
   "coverageReporters": [
@@ -143,7 +143,7 @@ node_js:
   Then, I triggered my new script from Travis, utilizing capabilities of
   .travis.yml file:
 </p>
-<partial name="code">
+<partial name="code" language="yaml">
   <pre>
 language: node_js
 node_js:  
@@ -198,7 +198,7 @@ after_success: npm run test:coverage
   For my project I used standard-version. Configuration is trivial - I installed
   the package and created dedicated script in my NPM scripts:
 </p>
-<partial name="code">
+<partial name="code" language="json">
   <pre>
 {
   "scripts": {
@@ -226,7 +226,7 @@ after_success: npm run test:coverage
   advice in that regard is to create separate NPM script which will build and
   test your project before it goes to NPM. Just in case.
 </p>
-<partial name="code">
+<partial name="code" language="json">
   <pre>
 {
   "scripts": {
