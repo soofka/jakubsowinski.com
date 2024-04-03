@@ -1,21 +1,3 @@
-# swapp
-
-### todo
-
-- do i really always have to reprocess files that rely on other files?
-- tester
-- swappski elements as singletons?
-- swappski->swappi?
-- logfile handling to other operations
-- process events and pass changed files from watcher to server - controversial for change event (changing file might impact many other files, not obvious relation between file changed and what to recompile), to be implemented for all others i guess?
-- monorepo with swappi and swappi processors separately
-- add processors:
-  - ts
-  - jsx
-  - js bundler
-  - css bundler
-  - babel transpiler
-
 # swn.ski
 
 ### todo:
@@ -28,3 +10,27 @@
 
 - canonical links no language?
 - figure out image width vs pixel density
+
+- fix images in articles (highest res first)
+- fix images in articles meta
+
+- home content + translation + photo
+- projects descriptions + translation
+- courses description + translation
+- talks description + translation
+- articles description + translation
+- slides
+- cv
+
+- talks multiple youtubes
+
+- images don't resize up?
+
+- ADD LINKS AND CODE TO ARTICLES AND BLOG POSTS
+
+- images and resolutions (NaNw?)
+- meta per article
+- headers order
+
+- projects: + web-fotoszop, + boilerplate, + js console tetris?
+- delet blog from github

@@ -8,12 +8,10 @@ const { colors, themes } = getTheming();
 const { data, labels } = await getContent(langs);
 const { routes, pages } = getRouting(langs, labels, data);
 
-const appPath = path.resolve(path.join("examples", "full2"));
-
 export const config = {
-  src: path.join(appPath, "src"),
-  dist: path.join(appPath, "dist"),
-  reportFile: path.join(appPath, "report.json"),
+  src: path.resolve("src"),
+  dist: path.resolve("dist"),
+  reportFile: path.resolve("report.json"),
   routes,
 
   data: {
