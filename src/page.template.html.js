@@ -1,5 +1,4 @@
 const page = (data, dists, { id, url, name, lang, type, meta, content }) => {
-  const isIndex = name === "index";
   const getMailLink = (content) =>
     `<a href="mailto:j@swn.ski">${content || "j[at]swn.ski"}</a>`;
   const getMenuLink = (pageName) =>
@@ -15,7 +14,7 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) => {
   return `
     <!doctype html>
     <html lang="${lang}">
-      <partial name="head" data="${encodeURI(JSON.stringify({ url, lang, meta, isIndex }))}"></partial>
+      <partial name="head" data="${encodeURI(JSON.stringify({ url, name, lang, type, meta }))}"></partial>
       <body class="${type}">
         <header>
           <div class="wrapper">
@@ -56,7 +55,7 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) => {
             <div class="wrapper">
               <article>
                 ${
-                  isIndex
+                  type === "home"
                     ? `<h2>${data.labels[lang].pages.home.contact.head}</h2>
                       <div>
                         <ul>
@@ -90,10 +89,11 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) => {
           .filter(
             (dist) =>
               (dist.name === "script" ||
-                (isIndex && dist.name === "script-index")) &&
+                dist.name === `script-${type}` ||
+                dist.name === `script-${name}`) &&
               dist.ext === ".js",
           )
-          .map((script) => `<script src="${script.rel}"> </script>`)
+          .map((script) => `<script defer src="${script.rel}"> </script>`)
           .join("")}
       </body>
     </html>

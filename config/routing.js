@@ -31,7 +31,7 @@ export const getRouting = (langs, labels, data) => {
       url: indexPageUrl,
       name: indexPageName,
       lang,
-      type: "cover",
+      type: "home",
     });
 
     const articlesPageUrl = `/${lang}/${articlesPageName}`;

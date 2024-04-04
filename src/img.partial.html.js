@@ -1,4 +1,8 @@
-const img = (data, dists, { src, alt = "", withCaption = false }) => {
+const img = (
+  data,
+  dists,
+  { src, alt = "", lazy = true, withCaption = false },
+) => {
   const imgName = src.split(".")[0];
   const imgDists = dists.filter(
     (element) =>
@@ -51,7 +55,7 @@ const img = (data, dists, { src, alt = "", withCaption = false }) => {
             >`,
         )
         .join("")}
-      <img src="${imgDist.url}" alt="${alt}" width="${imgDist.width}" height="${imgDist.height}">
+      <img src="${imgDist.url}" alt="${alt}" width="${imgDist.width}" height="${imgDist.height}" ${lazy ? 'loading="lazy"' : ""}>
     </picture>`;
 
   return withCaption
