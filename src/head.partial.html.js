@@ -1,7 +1,7 @@
 const head = (data, dists, { lang, url, meta, isIndex }) => {
   let title = data.labels[lang].meta.title;
   let description = data.labels[lang].meta.description;
-  let imageName = "me-1280x1280";
+  let imageName = "me1-1280x1280";
   let imageExt = ".jpg";
 
   if (meta) {

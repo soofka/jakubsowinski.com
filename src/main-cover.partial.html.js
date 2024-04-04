@@ -27,7 +27,7 @@ const mainCover = (data, dists, { lang }) => `
               <p>${data.labels[lang].pages.home.intro.text}</p>
             </div>
             <div class="col">
-              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me.jpg", alt: data.labels[lang].pages.home.intro.imgAlt }))}"></partial>
+              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me1.jpg", alt: data.labels[lang].pages.home.intro.imgAlt }))}"></partial>
               <p class=\"text-blinker\" data-texts=\"solution architect,software developer,teacher and leader\" data-classes=\"architect-fg,developer-fg,leader-fg\">
                 <span class=\"text\"> </span>
                 <span class=\"blinker\">_</span>
