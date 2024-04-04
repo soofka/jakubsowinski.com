@@ -1,4 +1,4 @@
-const head = (data, dists, { url, name, lang, type, meta }) => {
+const head = (data, dists, { url, name, lang, template, type, meta }) => {
   let title = data.labels[lang].meta.title;
   let description = data.labels[lang].meta.description;
   let imageName = "me1-960x960";
@@ -86,6 +86,7 @@ const head = (data, dists, { url, name, lang, type, meta }) => {
         .filter(
           (dist) =>
             (dist.name === "style" ||
+              dist.name === `style-${template}` ||
               dist.name === `style-${type}` ||
               dist.name === `style-${name}`) &&
             dist.ext === ".css",

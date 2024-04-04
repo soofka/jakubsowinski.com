@@ -1,4 +1,8 @@
-const page = (data, dists, { id, url, name, lang, type, meta, content }) =>
+const page = (
+  data,
+  dists,
+  { id, url, name, lang, template, type, meta, content },
+) =>
   `<!doctype html>
   <html lang="${lang}">
     <partial name="head" data="${encodeURI(
@@ -6,6 +10,7 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) =>
         url,
         name,
         lang,
+        template,
         type,
         meta,
       }),
@@ -30,6 +35,7 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) =>
         JSON.stringify({
           name,
           lang,
+          template,
           type,
         }),
       )}"></partial>
@@ -38,10 +44,12 @@ const page = (data, dists, { id, url, name, lang, type, meta, content }) =>
 
 export default {
   generate: (data) =>
-    data.pages.map((pageData) => ({
-      name: pageData.id,
-      content: (data, dists) => page(data, dists, pageData),
-      resetContentHash: true,
-      contentHashSalt: `${pageData.id}${JSON.stringify(pageData.content)}`,
-    })),
+    data.pages
+      .filter((pageData) => pageData.template === "page")
+      .map((pageData) => ({
+        name: pageData.id,
+        content: (data, dists) => page(data, dists, pageData),
+        resetContentHash: true,
+        contentHashSalt: `${pageData.id}${JSON.stringify(pageData.content)}`,
+      })),
 };

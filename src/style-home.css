@@ -57,6 +57,30 @@ body.home footer #contact-mail {
   margin: 0;
   padding: calc(2 * var(--gap-rel)) 0;
 }
+section#architect {
+  border-color: var(--architect-bg);
+}
+section#architect img {
+  box-shadow:
+    0 0 0 1px var(--bg),
+    0 0 0 2px var(--architect-bg);
+}
+section#developer {
+  border-color: var(--developer-bg);
+}
+section#developer img {
+  box-shadow:
+    0 0 0 1px var(--bg),
+    0 0 0 2px var(--developer-bg);
+}
+section#leader {
+  border-color: var(--leader-bg);
+}
+section#leader img {
+  box-shadow:
+    0 0 0 1px var(--bg),
+    0 0 0 2px var(--leader-bg);
+}
 @keyframes appear {
   0% {
     width: 0;

@@ -46,7 +46,13 @@ const mainHome = (data, dists, { lang }) => `
             </div>
           </div>
           <div class="buttons">
-            <a class="button architect-bg" href="#">${data.labels[lang].pages.home.intro.buttons.cv}</a>
+            <partial name="link" data="${encodeURI(
+              JSON.stringify({
+                classes: "button architect-bg",
+                pageId: "cv",
+                content: data.labels[lang].pages.home.intro.buttons.cv,
+              }),
+            )}"></partial>
             <a class="button developer-bg" href="#architect">${data.labels[lang].pages.home.intro.buttons.info}</a>
             <a class="button leader-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>

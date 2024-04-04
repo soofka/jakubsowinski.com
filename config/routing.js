@@ -1,7 +1,7 @@
 export const getRouting = (langs, labels, data) => {
   const routes = {};
   const pages = [];
-  const template = "page.template.html";
+  const template = "page";
 
   const indexPageName = "index";
   const articlesPageName = "articles";
@@ -31,6 +31,7 @@ export const getRouting = (langs, labels, data) => {
       url: indexPageUrl,
       name: indexPageName,
       lang,
+      template,
       type: "home",
     });
 
@@ -45,6 +46,7 @@ export const getRouting = (langs, labels, data) => {
       url: articlesPageUrl,
       name: articlesPageName,
       lang,
+      template,
       type: "list",
       meta: {
         title: labels[lang].pages.articles.meta.title,
@@ -65,6 +67,7 @@ export const getRouting = (langs, labels, data) => {
         url: articlePageUrl,
         name: articlePageName,
         lang,
+        template,
         type: "item",
         meta: {
           title: article.title,
@@ -86,6 +89,7 @@ export const getRouting = (langs, labels, data) => {
       url: blogPageUrl,
       name: blogPageName,
       lang,
+      template,
       type: "list",
       meta: {
         title: labels[lang].pages.blog.meta.title,
@@ -106,6 +110,7 @@ export const getRouting = (langs, labels, data) => {
         url: blogPostPageUrl,
         name: blogPostPageName,
         lang,
+        template,
         type: "item",
         meta: {
           title: post.title,
@@ -126,6 +131,7 @@ export const getRouting = (langs, labels, data) => {
       url: coursesPageUrl,
       name: coursesPageName,
       lang,
+      template,
       type: "list",
       meta: {
         title: labels[lang].pages.courses.meta.title,
@@ -145,6 +151,7 @@ export const getRouting = (langs, labels, data) => {
       url: projectsPageUrl,
       name: projectsPageName,
       lang,
+      template,
       type: "list",
       meta: {
         title: labels[lang].pages.projects.meta.title,
@@ -164,6 +171,7 @@ export const getRouting = (langs, labels, data) => {
       url: talksPageUrl,
       name: talksPageName,
       lang,
+      template,
       type: "list",
       meta: {
         title: labels[lang].pages.talks.meta.title,
@@ -173,7 +181,20 @@ export const getRouting = (langs, labels, data) => {
     });
   }
 
+  const cvPageName = "cv";
+  const cvPageUrl = `/${cvPageName}`;
+  routes[cvPageUrl] = {
+    template: cvPageName,
+    pageId: cvPageName,
+  };
+  pages.push({
+    id: cvPageName,
+    url: cvPageUrl,
+    template: cvPageName,
+  });
+
   for (let route of Object.keys(routes)) {
+    routes[route].template = `${routes[route].template}.template.html`;
     if (!route.endsWith("/")) {
       routes[`${route}/`] = { ...routes[route] };
     }

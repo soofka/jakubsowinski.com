@@ -1,4 +1,4 @@
-const footer = (data, dists, { name, lang, type }) =>
+const footer = (data, dists, { name, lang, template, type }) =>
   `<footer>
     <section id="contact">
       <div class="wrapper">
@@ -38,6 +38,7 @@ const footer = (data, dists, { name, lang, type }) =>
     .filter(
       (dist) =>
         (dist.name === "script" ||
+          dist.name === `script-${template}` ||
           dist.name === `script-${type}` ||
           dist.name === `script-${name}`) &&
         dist.ext === ".js",

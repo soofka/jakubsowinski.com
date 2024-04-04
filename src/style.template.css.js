@@ -29,6 +29,14 @@ const style = (data, theme) => `
 `;
 
 export default {
-  "-dark": (data) => style(data, "dark"),
-  "-light": (data) => style(data, "light"),
+  generate: (data) => {
+    const dists = [];
+    for (let theme of data.themes) {
+      dists.push({
+        name: `style-${theme.name}`,
+        content: (data) => style(data, theme.name),
+      });
+    }
+    return dists;
+  },
 };
