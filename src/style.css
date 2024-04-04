@@ -247,7 +247,7 @@ section article h4 {
   color: var(--alt-fg);
 }
 section article img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 section#architect {

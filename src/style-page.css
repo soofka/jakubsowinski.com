@@ -18,6 +18,9 @@ body.item section article h3 {
   margin-top: var(--gap-rel);
 }
 body.item section article figure {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   margin: var(--gap-rel) auto;
 }
 @media (max-width: 960px) {

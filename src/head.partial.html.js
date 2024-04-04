@@ -1,7 +1,7 @@
 const head = (data, dists, { lang, url, meta, isIndex }) => {
   let title = data.labels[lang].meta.title;
   let description = data.labels[lang].meta.description;
-  let imageName = "me1-1280x1280";
+  let imageName = "me1-960x960";
   let imageExt = ".jpg";
 
   if (meta) {
@@ -29,7 +29,24 @@ const head = (data, dists, { lang, url, meta, isIndex }) => {
       <meta property="og:type" content="${data.type}">
       <meta property="og:url" content="${data.url}${url}">
       <meta property="og:description" content="${description}">
-      <meta property="og:image" content="${dists.find((dist) => dist.name === imageName && dist.ext === imageExt).rel}">
+      <meta property="og:image" content="${
+        dists
+          .filter(
+            (dist) =>
+              (dist.name === imageName ||
+                dist.name.substring(0, imageName.length + 1) ===
+                  `${imageName}-`) &&
+              dist.ext === imageExt &&
+              dist.name.indexOf("-") !== -1 &&
+              dist.name.indexOf("x") !== -1,
+          )
+          .reduce((a, b) =>
+            parseInt(a.name.split("-")[1].split("x")[0]) >
+            parseInt(b.name.split("-")[1].split("x")[0])
+              ? a
+              : b,
+          ).rel
+      }">
       <meta property="og:image:alt" content="${dists.find((dist) => dist.name === "icon-512x512").rel}">
 
       <meta name="robots" content="index,follow"/>

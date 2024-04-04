@@ -18,8 +18,11 @@ const youtube = (data, dists, { id, title, width, height }) => {
           const scriptTag = document.createElement('script');
           scriptTag.src = '${scriptSrc}';
           document.body.append(scriptTag);
+          window.onYouTubeIframeAPIReady = play;
+        } else {
+          play();
         }
-        window.onYouTubeIframeAPIReady = function() {
+        function play() {
           new YT.Player('${elementId}', { videoId: '${id}', width: '100%', height: 'auto' });
         }
       "

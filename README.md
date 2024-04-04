@@ -4,10 +4,7 @@
 
 ### 1.0
 
-- fix images in articles (highest res first)
-- fix images in articles meta
-
-- home content + translation + photo
+- home content + translation
 - projects descriptions + translation
 - courses description + translation
 - talks description + translation
@@ -15,10 +12,9 @@
 - slides
 - cv
 
-- talks multiple youtubes
+- mobile view columns
 
 - ADD LINKS AND CODE TO ARTICLES AND BLOG POSTS
-- meta per article
 - headers order
 
 - projects: + web-fotoszop, + boilerplate, + js console tetris?, + coronavirus tracker?

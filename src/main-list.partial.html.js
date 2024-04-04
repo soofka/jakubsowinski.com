@@ -45,7 +45,17 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       if (item.publications && item.publications.length > 0) {
         meta = `${meta} | ${labels.pages.articles.publishedBy} ${item.publications.map((publication) => `<a href="${publication.url}" target="_blank">${publication.name}</a>`).join(", ")}`;
       }
-      alt = `<partial name="img" data="${encodeURI(JSON.stringify({ src: item.image, alt: item.title }))}"></partial>`;
+      alt = `<partial name="link" data="${encodeURI(
+        JSON.stringify({
+          pageId,
+          content: `<partial name="img" data="${encodeURI(
+            JSON.stringify({
+              src: item.image,
+              alt: item.title,
+            }),
+          )}"></partial>`,
+        }),
+      )}"></partial>`;
       break;
 
     case "blog":
@@ -62,7 +72,17 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
           content: `<p>${labels.misc.continueReading}</p>`,
         }),
       )}"></partial>`;
-      alt = `<partial name="img" data="${encodeURI(JSON.stringify({ src: item.image, alt: item.title }))}"></partial>`;
+      alt = `<partial name="link" data="${encodeURI(
+        JSON.stringify({
+          pageId,
+          content: `<partial name="img" data="${encodeURI(
+            JSON.stringify({
+              src: item.image,
+              alt: item.title,
+            }),
+          )}"></partial>`,
+        }),
+      )}"></partial>`;
       break;
 
     case "courses":

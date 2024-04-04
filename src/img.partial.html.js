@@ -7,29 +7,51 @@ const img = (data, dists, { src, alt = "", withCaption = false }) => {
   );
 
   let imgDist;
-  const srcSetDists = [];
+  const sourceDists = {};
   for (let dist of imgDists) {
-    const nameArray = dist.name.split("-");
-    const distObj = { dist };
-    if (nameArray.length > 1) {
-      const dimensions = nameArray[1].split("x");
-      distObj.width = parseInt(dimensions[0]);
-      distObj.height = parseInt(dimensions[1]);
-
-      if (!imgDist || imgDist.width < distObj.width) {
-        if (imgDist) {
-          srcSetDists.push(imgDist);
-        }
-        imgDist = distObj;
+    const [imgDistName, imgDistSize] = dist.name.split("-");
+    if (imgDistSize) {
+      const imgDistType = dist.ext.substring(1);
+      if (!Object.hasOwn(sourceDists, imgDistType)) {
+        sourceDists[imgDistType] = [];
+      }
+      const [imgDistWidth, imgDistHeight] = imgDistSize.split("x");
+      const distObj = {
+        width: parseInt(imgDistWidth),
+        height: parseInt(imgDistHeight),
+        type: imgDistType,
+        url: dist.rel,
+      };
+      if (imgDist === undefined) {
+        imgDist = { ...distObj };
+      } else if (imgDist.width <= distObj.width) {
+        sourceDists[imgDist.type].push({ ...imgDist });
+        imgDist = { ...distObj };
       } else {
-        srcSetDists.push(distObj);
+        sourceDists[imgDistType].push({ ...distObj });
       }
     }
   }
 
   const picture = `<picture>
-      ${srcSetDists.map(({ dist, width }) => `<source srcset="${dist.rel} ${width}w" type="image/${dist.ext.substring(1)}">`).join("")}
-      ${imgDist && `<img src="${imgDist.dist.rel}" alt="${alt}" width="${imgDist.width}" height="${imgDist.height}">`}
+      ${Object.keys(sourceDists)
+        .map(
+          (type) =>
+            `<source
+              srcset="${sourceDists[type]
+                .map(({ width, url }) => `${url} ${width}w`)
+                .join(",")}"
+              sizes="${sourceDists[type]
+                .map(
+                  ({ width }, index) =>
+                    `${index === sourceDists[type].length - 1 ? "" : `(max-width: ${width}px) `}${width}px`,
+                )
+                .join(",")}"
+              type="image/${type}"
+            >`,
+        )
+        .join("")}
+      <img src="${imgDist.url}" alt="${alt}" width="${imgDist.width}" height="${imgDist.height}">
     </picture>`;
 
   return withCaption
