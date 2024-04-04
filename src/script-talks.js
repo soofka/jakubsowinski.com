@@ -1,6 +1,6 @@
 (() => {
   const youTubeScriptUrl = "https://www.youtube.com/iframe_api";
-  for (let element of document.querySelectorAll(".youtube")) {
+  for (let element of document.querySelectorAll("img.youtube")) {
     element.addEventListener("click", (e) => {
       if (
         !Array.from(document.getElementsByTagName("script")).find(

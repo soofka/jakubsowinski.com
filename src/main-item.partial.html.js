@@ -10,7 +10,7 @@ const mainItem = (data, dists, { id, name, lang, content }) => {
       <div class="wrapper">
         <section>
           <h2>${content.title}</h2>
-          <h4>${content.date}</h4>
+          <p class="right">${content.date}</p>
           <article>
             <partial name="img" data="${encodeURI(
               JSON.stringify({

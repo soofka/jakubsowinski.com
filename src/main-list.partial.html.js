@@ -52,6 +52,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
             JSON.stringify({
               src: item.image,
               alt: item.title,
+              lazy: index !== 0,
             }),
           )}"></partial>`,
         }),
@@ -79,6 +80,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
             JSON.stringify({
               src: item.image,
               alt: item.title,
+              lazy: index !== 0,
             }),
           )}"></partial>`,
         }),

@@ -7,7 +7,6 @@ const youtube = (data, dists, { id, title, width, height }) => `
     alt="${title}"
     width="${width}"
     height="${height}"
-    style="cursor:pointer"
   >`;
 
 export default youtube;

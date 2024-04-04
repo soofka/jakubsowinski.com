@@ -328,6 +328,9 @@ footer section article p {
   content: "»";
   margin-right: var(--gap);
 }
+.right {
+  text-align: right;
+}
 .wrapper {
   min-width: var(--page-min-size);
   max-width: var(--page-max-size);

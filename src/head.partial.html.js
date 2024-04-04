@@ -87,7 +87,7 @@ const head = (data, dists, { url, name, lang, type, meta }) => {
           (dist) =>
             (dist.name === "style" ||
               dist.name === `style-${type}` ||
-              dist.name === `style=${name}`) &&
+              dist.name === `style-${name}`) &&
             dist.ext === ".css",
         )
         .sort((a, b) => (a.name === "style" ? -1 : 0))
