@@ -1,9 +1,16 @@
 (() => {
   const container = document.querySelector(".text-blinker");
-  const texts = container.dataset.texts.split(",");
-  const classes = container.dataset.classes.split(",");
   const text = container.querySelector(".text");
   const blinker = container.querySelector(".blinker");
+
+  const texts = [];
+  const classes = [];
+  for (let element of text.querySelectorAll("span")) {
+    texts.push(element.innerText);
+    classes.push(element.classList[0]);
+  }
+  text.innerHTML = "";
+  blinker.innerHTML = "_";
 
   const forwardTimeoutRange = [50, 100];
   const backwardTimeoutRange = [10, 30];

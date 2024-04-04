@@ -49,6 +49,9 @@ body.home h1:hover .mail {
   width: 0;
   opacity: 0;
 }
+body.home p.text-blinker {
+  text-align: left;
+}
 body.home footer #contact-mail {
   text-align: center;
   margin: 0;

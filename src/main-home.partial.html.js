@@ -34,9 +34,14 @@ const mainHome = (data, dists, { lang }) => `
                   lazy: false,
                 }),
               )}"></partial>
-              <p class=\"text-blinker\" data-texts=\"solution architect,software developer,teacher and leader\" data-classes=\"architect-fg,developer-fg,leader-fg\">
-                <span class=\"text\"> </span>
-                <span class=\"blinker\">_</span>
+              <p class="text-blinker">
+                <span class="text">
+                  <span class="architect-fg">solution architect</span> / 
+                  <span class="developer-fg">software developer</span> / 
+                  <span class="teacher-fg">programming teacher</span> / 
+                  <span class="leader-fg">technical leader</span>
+                </span>
+                <span class="blinker"></span>
               </p>
             </div>
           </div>

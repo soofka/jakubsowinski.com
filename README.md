@@ -13,10 +13,7 @@
 - cv
 
 - mobile view columns
-
 - ADD LINKS AND CODE TO ARTICLES AND BLOG POSTS
-- headers order
-
 - projects: + web-fotoszop, + boilerplate, + js console tetris?, + coronavirus tracker?
 
 ### backlog

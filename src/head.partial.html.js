@@ -90,8 +90,8 @@ const head = (data, dists, { url, name, lang, type, meta }) => {
               dist.name === `style-${name}`) &&
             dist.ext === ".css",
         )
-        .sort((a, b) => (a.name === "style" ? -1 : 0))
-        .map((script) => `<link rel="stylesheet" href="${script.rel}">`)
+        .sort((style) => (style.name === "style" ? -1 : 0))
+        .map((style) => `<link rel="stylesheet" href="${style.rel}">`)
         .join("")}
   </head>
   `;

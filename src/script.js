@@ -1,4 +1,8 @@
 (() => {
+  for (let element of document.querySelectorAll(".no-js")) {
+    element.classList.remove("no-js");
+  }
+
   let theme =
     localStorage.getItem("theme") === "dark" ||
     (window.matchMedia &&
