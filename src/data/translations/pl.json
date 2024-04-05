@@ -96,6 +96,12 @@
         "description": "Wystąpienia"
       },
       "slides": "slajdy"
+    },
+    "cv": {
+      "meta": {
+        "title": "CV",
+        "description": "CV"
+      }
     }
   },
   "misc": {

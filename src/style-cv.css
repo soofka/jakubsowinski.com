@@ -13,7 +13,7 @@
   background: var(--off-bg);
   border: 1px solid var(--off-off-bg);
 }
-header {
+section:first-of-type {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -21,30 +21,30 @@ header {
   position: relative;
   /* border-bottom: 1px solid var(--off-bg); */
 }
-header h3,
-header h4 {
+section:first-of-type h3,
+section:first-of-type h4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
-header h3 {
+section:first-of-type h3 {
   gap: 1rem;
 }
-header h3 span,
-header h4 span {
+section:first-of-type h3 span,
+section:first-of-type h4 span {
   white-space: nowrap;
 }
-header h4 span {
+section:first-of-type h4 span {
   margin: 0 1rem 0 0;
   font-weight: normal;
 }
-header h3 span::before {
+section:first-of-type h3 span::before {
   content: "» ";
 }
-header h4 span::before {
+section:first-of-type h4 span::before {
   content: "|";
   margin: 0 1rem 0 0;
 }
-header h4 span:first-of-type::before {
+section:first-of-type h4 span:first-of-type::before {
   content: none;
 }

@@ -11,6 +11,7 @@ export const getRouting = (langs, labels, data) => {
   const coursesPageName = "courses";
   const projectsPageName = "projects";
   const talksPageName = "talks";
+  const cvPageName = "cv";
 
   for (let index in langs) {
     const lang = langs[index];
@@ -179,19 +180,27 @@ export const getRouting = (langs, labels, data) => {
       },
       content: data.talks,
     });
-  }
 
-  const cvPageName = "cv";
-  const cvPageUrl = `/${cvPageName}`;
-  routes[cvPageUrl] = {
-    template: cvPageName,
-    pageId: cvPageName,
-  };
-  pages.push({
-    id: cvPageName,
-    url: cvPageUrl,
-    template: cvPageName,
-  });
+    const cvPageUrl = `/${lang}/${cvPageName}`;
+    const cvPageId = `${cvPageName}-${lang}`;
+    routes[cvPageUrl] = {
+      template,
+      pageId: cvPageId,
+    };
+    pages.push({
+      id: cvPageId,
+      url: cvPageUrl,
+      name: cvPageName,
+      lang,
+      template,
+      type: "cv",
+      meta: {
+        title: labels[lang].pages.cv.meta.title,
+        description: labels[lang].pages.cv.meta.description,
+      },
+      content: data.cv,
+    });
+  }
 
   for (let route of Object.keys(routes)) {
     routes[route].template = `${routes[route].template}.template.html`;

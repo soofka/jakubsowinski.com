@@ -7,7 +7,8 @@
     },
     "date": "2024",
     "github": "swappi",
-    "npm": "swappi"
+    "npm": "swappi",
+    "inCV": "true"
   },
   {
     "title": "Netlify Plugin Chromium",
@@ -17,7 +18,8 @@
     },
     "date": "2020",
     "github": "netlify-plugin-chromium",
-    "npm": "netlify-plugin-chromium"
+    "npm": "netlify-plugin-chromium",
+    "inCV": "true"
   },
   {
     "title": "Webpack Bundle Content Validator",
@@ -27,6 +29,7 @@
     },
     "date": "2017",
     "github": "webpack-bundle-content-validator",
-    "npm": "webpack-bundle-content-validator"
+    "npm": "webpack-bundle-content-validator",
+    "inCV": "true"
   }
 ]

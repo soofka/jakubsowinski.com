@@ -52,7 +52,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
             JSON.stringify({
               src: item.image,
               alt: item.title,
-              lazy: index !== 0,
+              lazy: index > 1,
             }),
           )}"></partial>`,
         }),
@@ -80,7 +80,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
             JSON.stringify({
               src: item.image,
               alt: item.title,
-              lazy: index !== 0,
+              lazy: index > 1,
             }),
           )}"></partial>`,
         }),
@@ -183,8 +183,8 @@ const getDoubleColumnItem = (
   altHighlight,
 ) => `
   <article>
-    <div class="col-3-1">
-      <div class="col col-3">
+    <div class="cols cols-1-2">
+      <div class="col col-2">
         ${title}
         ${meta}
         ${content}

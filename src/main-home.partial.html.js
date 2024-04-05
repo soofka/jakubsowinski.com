@@ -20,8 +20,8 @@ const mainHome = (data, dists, { lang }) => `
             <span class="developer-fg">K</span>
             <span class="developer-fg">I</span>
           </h1>
-          <div class="col-3-1">
-            <div class="col col-3">
+          <div class="cols cols-1-2">
+            <div class="col col-2">
               <h2>${data.labels[lang].pages.home.intro.head}</h2>
               <h3>${data.labels[lang].pages.home.intro.lead}</h3>
               <p>${data.labels[lang].pages.home.intro.text}</p>
@@ -49,7 +49,7 @@ const mainHome = (data, dists, { lang }) => `
             <partial name="link" data="${encodeURI(
               JSON.stringify({
                 classes: "button architect-bg",
-                pageId: "cv",
+                pageId: `cv-${lang}`,
                 content: data.labels[lang].pages.home.intro.buttons.cv,
               }),
             )}"></partial>
@@ -63,12 +63,12 @@ const mainHome = (data, dists, { lang }) => `
       <div class="wrapper">
         <article>
           <h2 class="architect-fg">${data.labels[lang].pages.home.architect.head}</h2>
-          <div class="col-3-1">
+          <div class="cols cols-1-2">
             <div class="col">
               <partial name="img" data="${encodeURI(JSON.stringify({ src: "me2.jpg", alt: data.labels[lang].pages.home.architect.imgAlt }))}"></partial>
               <p class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</p>
             </div>
-            <div class="col col-3">
+            <div class="col col-2">
               <h3>${data.labels[lang].pages.home.architect.lead}</h3>
               <p>${data.labels[lang].pages.home.architect.text}</p>
             </div>
@@ -98,8 +98,8 @@ const mainHome = (data, dists, { lang }) => `
       <div class="wrapper">
         <article>
           <h2 class="developer-fg">${data.labels[lang].pages.home.developer.head}</h2>
-          <div class="col-3-1">
-            <div class="col col-3">
+          <div class="cols cols-1-2">
+            <div class="col col-2">
               <h3>${data.labels[lang].pages.home.developer.lead}</h3>
               <p>${data.labels[lang].pages.home.developer.text}</p>
             </div>
@@ -133,12 +133,12 @@ const mainHome = (data, dists, { lang }) => `
       <div class="wrapper">
         <article>
           <h2 class="leader-fg">${data.labels[lang].pages.home.leader.head}</h2>
-          <div class="col-3-1">
+          <div class="cols cols-1-2">
             <div class="col">
               <partial name="img" data="${encodeURI(JSON.stringify({ src: "me4.jpg", alt: data.labels[lang].pages.home.leader.imgAlt }))}"></partial>
               <p class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</p>
             </div>
-            <div class="col col-3">
+            <div class="col col-2">
               <h3>${data.labels[lang].pages.home.leader.lead}</h3>
               <p>${data.labels[lang].pages.home.leader.text}</p>
             </div>

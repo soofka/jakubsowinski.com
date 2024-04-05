@@ -23,7 +23,7 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
     <head>
       <meta charset="utf-8">
       <title>${title}</title>
-      <meta name="author" content="${data.author}">
+      <meta name="author" content="${data.author} <${data.email}> (${data.url})">
       <meta name="description" content="${description}">
       <meta property="og:title" content="${title}">
       <meta property="og:type" content="${data.type}">

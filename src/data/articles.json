@@ -11,7 +11,8 @@
         "name": "medium.com/stepstone-tech",
         "url": "https://medium.com/stepstone-tech/microfrontends-part-3-tools-and-processes-for-development-and-maintenance-50d47c41ddaf"
       }
-    ]
+    ],
+    "inCV": "true"
   },
   {
     "id": "microfrontends_2",
@@ -25,7 +26,8 @@
         "name": "medium.com/stepstone-tech",
         "url": "https://medium.com/stepstone-tech/microfrontends-part-2-integration-and-communication-3385bc242673"
       }
-    ]
+    ],
+    "inCV": "true"
   },
   {
     "id": "microfrontends_1",
@@ -39,6 +41,7 @@
         "name": "medium.com/stepstone-tech",
         "url": "https://medium.com/stepstone-tech/microfrontends-extending-service-oriented-architecture-to-frontend-development-part-1-120b71c87b68"
       }
-    ]
+    ],
+    "inCV": "true"
   }
 ]

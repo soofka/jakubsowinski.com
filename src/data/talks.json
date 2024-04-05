@@ -12,7 +12,8 @@
     "place": {
       "en": "Berlin, Germany",
       "pl": "Berlin, Niemcy"
-    }
+    },
+    "inCV": "true"
   },
   {
     "title": "Micro frontends: extending service-oriented architecture to front-end development",
@@ -27,7 +28,8 @@
     "place": {
       "en": "Cracow, Poland",
       "pl": "Kraków, Polska"
-    }
+    },
+    "inCV": "true"
   },
   {
     "title": "Micro frontends: extending service-oriented architecture to front-end development",
@@ -42,7 +44,8 @@
     "place": {
       "en": "Gdansk, Poland",
       "pl": "Gdańsk, Polska"
-    }
+    },
+    "inCV": "true"
   },
   {
     "title": "3 lata życia aplikacji w React i TypeScript - lekcje i wnioski",
@@ -88,7 +91,8 @@
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
-    }
+    },
+    "inCV": "true"
   },
   {
     "title": "Practical tips for JavaScript optimisation",
@@ -104,6 +108,7 @@
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
-    }
+    },
+    "inCV": "true"
   }
 ]

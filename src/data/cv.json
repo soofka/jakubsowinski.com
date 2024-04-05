@@ -1,0 +1,408 @@
+{
+  "workExperience": [
+    {
+      "title": "Solution Architect",
+      "company": "StepStone Services",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2022-04",
+      "to": "2024-01",
+      "tags": [
+        ["architect", "architect-bg"],
+        "soa",
+        "eda",
+        "microfrontends",
+        "design system",
+        "monorepo",
+        "javascript",
+        "nextjs",
+        "aws",
+        "kafka",
+        "wmf",
+        "bff",
+        "ci/cd",
+        "rfc",
+        "adr",
+        "tech radar",
+        "security",
+        "performance",
+        "a11y",
+        "i18n",
+        "l10n",
+        "architectural patterns",
+        "ddd",
+        "c4 model",
+        "archimate",
+        "jira",
+        "scrum",
+        "mentoring"
+      ],
+      "description": "<p>As a solution architect in Stepstone, I was solely responsible for designing, documenting, and governing implementation of global approach for Stepstone's core product to frontend development. The task was to create a solution that could support tens of different brands across multiple continents with the same codebase, highly integrated with configuration store, data platform, and other projects that embodied company's efforts towards globalization. The solution had to take into account all concerns in regards to security, performance, accessibility, internationalization, releasability, scalability, and developers experience, among other things. The task was completed with the help of microfrontend approach with centralized templating solution based on NextJS and centralized design systems build with React and a little bit of Weback Module Federation.</p><p>Additionally, as a solution architect, I was involved in recruitment, job interviews, peer-to-peer evaluations, mentoring for developers, etc. I reported to director of architecture, who reported directly to CTO, and I cooperated with C-level leadership on a daily basis.</p>",
+      "responsibilities": [
+        "Cooperation with all scrum teams in the project in regards to frontend development",
+        "Cooperation with internal client on C level",
+        "Cooperation with architecture department",
+        "Designing and documenting architecture",
+        "Negotiating requirements and solutions with business",
+        "Explaining architecture to developers and governing implementation",
+        "Facilitating job interviews and internal evaluations",
+        "Facilitating internal trainings"
+      ]
+    },
+    {
+      "title": "JavaScript Chapter Lead",
+      "company": "StepStone Services",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2022-07",
+      "to": "2024-01",
+      "tags": [
+        ["leader", "leader-bg"],
+        ["developer", "developer-bg"],
+        "javascript",
+        "typescript",
+        "nodejs",
+        "react",
+        "coaching",
+        "mentoring"
+      ],
+      "description": "<p>JavaScript chapter lead was an additional role that I assumed as an informal leader of Stepstone's community of JavaScript developers, when the company was formalizing such initiatives in the form of \"chapters\". The job was to build a community of developers working with particular programming language, in this case JavaScript, and help them become more efficient. It included facilitating meetings, gathering feedback, defining competency matrix, defining coding standards and good practices, defining and evaluating trainings needs, organizing trainings, creating employee development plans, and sharing knowledge, among other things.</p>",
+      "responsibilities": [
+        "Leading community of JavaScript developers",
+        "Defining and documenting competency matrix",
+        "Defining and documenting coding standards and good practices",
+        "Defining and evaluating trainings needs",
+        "Organizing trainings for developers",
+        "Creating and evaluating employee development plans",
+        "Writing tutorials for internal documentation",
+        "Writing articles for company's tech blog"
+      ]
+    },
+    {
+      "title": "Lecturer in Software Architecture",
+      "company": "Polish-Japanese Academy of Information Technology",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2021-10",
+      "to": "present",
+      "tags": [
+        ["teacher", "teacher-bg"],
+        ["architect", "architect-bg"],
+        "design patterns",
+        "architectural patterns",
+        "soa",
+        "eda",
+        "microfrontends",
+        "ddd",
+        "dbc",
+        "uml",
+        "c4 model",
+        "zachmann",
+        "togaf"
+      ],
+      "description": "<p>As a lecturer in software engineering at a university, I am responsible for creating entire course for my students, facilitating classes on a weekly basis (lectures and laboratories), and assessing progress of my students through homework and exams.</p>",
+      "responsibilities": [
+        "Creating software architecture course for Master's students",
+        "Facilitating classes (lectures and laboratories)",
+        "Evaluating students"
+      ]
+    },
+    {
+      "title": "Computer Programming Teacher",
+      "company": "Academic High School of Polish-Japanese Academy of Information Technology",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2021-09",
+      "to": "2023-06",
+      "tags": [
+        ["teacher", "teacher-bg"],
+        ["developer", "developer-bg"],
+        "java",
+        "python",
+        "javascript",
+        "oop",
+        "git"
+      ],
+      "description": "<p>As a computer programming teacher in high school, I was responsible for creating entire course for my students, facilitating lessons on a weekly basis, and assessing progress of my students through homework and exams, as well as helping them with other challenges of a daily life, such as tying their shoes.</p>",
+      "responsibilities": [
+        "Creating computer programming course for high school students",
+        "Facilitating lessons",
+        "Evaluating students"
+      ]
+    },
+    {
+      "title": "Software Architect",
+      "company": "StepStone Services",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2019-04",
+      "to": "2022-03",
+      "tags": [
+        ["architect", "architect-bg"],
+        "soa",
+        "eda",
+        "microfrontends",
+        "javascript",
+        "nextjs",
+        "aws",
+        "kafka",
+        "wmf",
+        "bff",
+        "ci/cd",
+        "rfc",
+        "adr",
+        "design patterns",
+        "architectural patterns",
+        "grafana",
+        "elk",
+        "datadog",
+        "dynatrace",
+        "ddd",
+        "c4 model",
+        "jira",
+        "scrum",
+        "mentoring"
+      ],
+      "description": "<p>As a software architect in Stepstone, I mainly cooperated with centralized architecture department, while supporting a number of multi-national scrum teams, which worked on various parts of Stepstone's core products. The job was multi-dimensional: I was working with architecture team on defining and documenting global architectural standards and guidelines; I was working with product development teams on designing architecture for their product, governing its implementation, making technical decisions, and mentoring developers; I was working with business on defining their goals and negotiating solutions, while offering technical subject matter expertise.</p><p>Additionally, as a software architect, I was involved in recruitment, job interviews, peer-to-peer evaluations, mentoring for developers, among other things. I also remained an informal leader of Stepstone's community of JavaScript developers, in which I was responsible for defining and guarding software development standards and guidelines.</p>",
+      "responsibilities": [
+        "Cooperation with development teams",
+        "Cooperation with internal clients",
+        "Cooperation with architecture department",
+        "Designing and documenting architecture",
+        "Negotiating requirements and solutions with business",
+        "Explaining architecture to developers and governing implementation",
+        "Leading community of JavaScript developers",
+        "Mentoring developers",
+        "Facilitating job interviews and internal evaluations",
+        "Facilitating internal trainings",
+        "Giving talks on international software development conferences",
+        "Writing articles for company's tech blog"
+      ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "StepStone Services",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2017-09",
+      "to": "2019-03",
+      "tags": [
+        ["developer", "developer-bg"],
+        "soa",
+        "eda",
+        "html",
+        "css-in-js",
+        "javascript",
+        "typescript",
+        "react",
+        "nodejs",
+        ".net",
+        "mssql",
+        "nosql",
+        "wmf",
+        "bff",
+        "ssr",
+        "git",
+        "ci/cd",
+        "docker",
+        "kubernetes",
+        "nginx",
+        "design patterns",
+        "tdd",
+        "ddd",
+        "dbc",
+        "swagger",
+        "jira",
+        "scrum",
+        "coaching",
+        "mentoring"
+      ],
+      "description": "<p>As a senior software engineer in Stepstone, I cooperated with a number of multi-national scrum teams, which worked on various parts of Stepstone's core products. At the time, the project's codebase was mostly refactored to service-oriented and event-driven architecture with React, TypeScript, NodeJS, .NET, and RabbitMQ. It's also around that time that Stepstone started transition of its frontend codebase to microfrontends, and I took more interest in frontend development.</p><p>Additionally, as a senior software engineer, I was involved in many tasks not directly related to software development, such as recruitment and job interviews, peer-to-peer coachings and evaluations, and close cooperation with architecture department on establishing coding standards and guidelines. I was also heavily involved in Stepstone's community of JavaScript developers, leading meetings, facilitating trainings, and giving talks, including those on external, international software development conferences.</p>",
+      "responsibilities": [
+        "Cooperation with development teams",
+        "Cooperation with internal clients",
+        "Cooperation with architecture department",
+        "Full-stack development",
+        "Monitoring and maintenance of the product",
+        "Quality assurance",
+        "Code reviews",
+        "Leading community of JavaScript developers",
+        "Coaching developers",
+        "Facilitating job interviews and internal evaluations",
+        "Facilitating internal trainings",
+        "Giving talks on international software development conferences"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "StepStone Services",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2015-07",
+      "to": "2017-08",
+      "tags": [
+        ["developer", "developer-bg"],
+        "monolith",
+        "html",
+        "sass",
+        "javascript",
+        "typescript",
+        "pwa",
+        "nodejs",
+        "php",
+        "adobe coldfusion",
+        "mssql",
+        "api",
+        "rabbitmq",
+        "git",
+        "ci/cd",
+        "docker",
+        "kubernetes",
+        "apache",
+        "tdd",
+        "ddd",
+        "dbc",
+        "swagger",
+        "jira",
+        "scrum"
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "StepStone Services",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2014-09",
+      "to": "2015-06",
+      "tags": [
+        ["developer", "developer-bg"],
+        "html",
+        "css",
+        "sass",
+        "javascript",
+        "jquery",
+        "plsql",
+        "oracle apex",
+        "bash",
+        "git",
+        "agile"
+      ]
+    },
+    {
+      "title": "Founder, Lead Web Developer",
+      "company": "RandomCREATION",
+      "location": {
+        "en": "Lodz, Poland",
+        "pl": "Łódź, Polska"
+      },
+      "from": "2012-09",
+      "to": "2013-06",
+      "tags": [
+        ["developer", "developer-bg"],
+        ["leader", "leader-bg"],
+        "html",
+        "css",
+        "javascript",
+        "php",
+        ".net",
+        "mysql"
+      ]
+    },
+    {
+      "title": "Freelance Web Developer",
+      "location": {
+        "en": "Lodz, Poland",
+        "pl": "Łódź, Polska"
+      },
+      "from": "2009-06",
+      "to": "2014-08",
+      "tags": [
+        ["developer", "developer-bg"],
+        "html",
+        "css",
+        "javascript",
+        "php",
+        "wordpress",
+        "mysql",
+        "apache"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "subject": "Information Technology",
+      "university": "Technical University of Łódź, Poland",
+      "from": "2009",
+      "to": "2013",
+      "description": "<ul><li>Information Technology at International Faculty of Engineering</li><li>Full time BSc studies in English</li></ul>"
+    },
+    {
+      "subject": "Information Technology",
+      "university": "Fontys Hogeschool Eindhoven, Netherlands",
+      "from": "2011",
+      "to": "2012",
+      "description": "<ul><li>Software Engineering at Information and Communication Technologies Faculty</li><li>Full time BSc studies in English</li></ul>"
+    }
+  ],
+  "trainings": {
+    "2022": ["\"Empower and Lead\" by Bespoke Business Training Ltd"],
+    "2021": [
+      "\"Building applications with NestJS\" by Sages",
+      "\"Personal excellence\" by THM"
+    ],
+    "2020": [
+      "\"Building business solutions\" by THM",
+      "\"Reactive programming using React, Redux, and ES6\" by Bottega IT Minds"
+    ],
+    "2019": [
+      "\"Event storming\" by Bottega IT Minds",
+      "\"TypeScript and React\" by Bottega IT Minds"
+    ],
+    "2018": [
+      "\"Aware IT expert\" by Bottega IT Minds",
+      "\"Me as a mentor\" by Bottega IT Minds",
+      "\"Scrum experience\" by Agile Rebels"
+    ],
+    "2017": [
+      "\"Commitment-based Management\" by Vision Consulting",
+      "\"Functional Testing\" by Bottega IT Minds",
+      "\"How to prepare and give public speeches - practical techniques\" by Bottega IT Minds",
+      "\"Scrum basics\" by Agile Rebels"
+    ],
+    "2016": [
+      "Adobe ColdFusion 9 ACE certification",
+      "\"Acceptance testing of web applications\" by Bottega IT Minds",
+      "\"Design and architectural patterns\" by Bottega IT Minds",
+      "\"Design and implementation of REST API and microservices using modern PHP stack\" by Bottega IT Minds",
+      "\"TypeScript\" by Bottega IT Minds",
+      "\"Test Driven Development and Code Review\" by Bottega IT Minds",
+      "\"Unit Testing and Test Driven Development\" by Bottega IT Minds"
+    ]
+  },
+  "languages": [
+    "Polish: native language",
+    "English: full professional proficiency",
+    "French: basic proficiency"
+  ],
+  "misc": [
+    "Driving license cat. B",
+    "Charity JavaScript teacher at <a href=\"https://girlsjs.pl/\" target=\"_blank\">girlsjs.pl</a>",
+    "I like music and space"
+  ]
+}

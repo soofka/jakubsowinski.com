@@ -34,8 +34,21 @@ export const getContent = async (langs) => {
         assert: { type: "json" },
       })
     ).default,
+    cv: (
+      await import("../src/data/cv.json", {
+        assert: { type: "json" },
+      })
+    ).default,
   };
 
+  data.cv.articles = [];
+  for (let article of data.articles) {
+    if (article.inCV) {
+      data.cv.articles.push(article);
+    }
+  }
+
+  data.cv.projects = [];
   for (let project of data.projects) {
     if (project.github) {
       const { forks_count = 0, stargazers_count = 0 } = await (
@@ -51,6 +64,16 @@ export const getContent = async (langs) => {
         )
       ).json();
       project.installs = downloads;
+    }
+    if (project.inCV) {
+      data.cv.projects.push(project);
+    }
+  }
+
+  data.cv.talks = [];
+  for (let talk of data.talks) {
+    if (talk.inCV) {
+      data.cv.talks.push(talk);
     }
   }
 
