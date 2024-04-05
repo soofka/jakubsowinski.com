@@ -1,11 +1,11 @@
 const mainList = (data, dists, { id, name, lang, content = [] }) => `
   <main>
-    <div class="wrapper">
-      <section>
+    <section>
+      <div class="wrapper">
         <h2>${data.labels[lang].pages[name].meta.title}</h2>
         ${content.map((item, index) => getItem(index, item, name, lang, data.labels[lang], dists)).join("")}
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 `;
 

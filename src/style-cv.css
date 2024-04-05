@@ -13,14 +13,6 @@
   background: var(--off-bg);
   border: 1px solid var(--off-off-bg);
 }
-/* section:first-of-type {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  border-bottom: 1px solid var(--off-bg);
-}
 section:first-of-type h3,
 section:first-of-type h4 {
   display: flex;
@@ -28,14 +20,14 @@ section:first-of-type h4 {
   justify-content: center;
 }
 section:first-of-type h3 {
-  gap: 1rem;
+  gap: var(--gap-rel);
 }
 section:first-of-type h3 span,
 section:first-of-type h4 span {
   white-space: nowrap;
 }
 section:first-of-type h4 span {
-  margin: 0 1rem 0 0;
+  margin: 0 var(--gap-rel) 0 0;
   font-weight: normal;
 }
 section:first-of-type h3 span::before {
@@ -47,4 +39,4 @@ section:first-of-type h4 span::before {
 }
 section:first-of-type h4 span:first-of-type::before {
   content: none;
-} */
+}

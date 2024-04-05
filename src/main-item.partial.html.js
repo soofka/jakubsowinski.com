@@ -7,8 +7,8 @@ const mainItem = (data, dists, { id, name, lang, content }) => {
   );
   return `
     <main>
-      <div class="wrapper">
-        <section>
+      <section>
+        <div class="wrapper">
           <h2>${content.title}</h2>
           <p class="right">${content.date}</p>
           <article>
@@ -22,8 +22,8 @@ const mainItem = (data, dists, { id, name, lang, content }) => {
             <h3 style="margin-top: var(--gap-rel)">${content.description}</h3>
             ${dist.content}
           </article>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   `;
 };

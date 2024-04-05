@@ -1,7 +1,7 @@
 const mainCv = (data, dists, { lang, content }) =>
   `<main>
-    <div class="wrapper">
-      <section>
+    <section>
+      <div class="wrapper">
         <article>
           <h1>Jakub Sowiński</h1>
           <h3>
@@ -16,10 +16,12 @@ const mainCv = (data, dists, { lang, content }) =>
             <span><a href="mailto:j@swn.ski" target="_blank">j[at]swn.ski</a></span>
           </h4>
         </article>
-      </section>
-      <section>
-        <h3>About me</h3>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
         <article>
+          <h3>About me</h3>
           <div class="col col-2">
             <p>
               I am a highly skilled and driven software enthusiast who excels
@@ -48,105 +50,129 @@ const mainCv = (data, dists, { lang, content }) =>
             )}"></partial>
           </div>
         </article>
-      </section>
-      <section>
-        <h3>Recent work experience</h3>
-        ${content.workExperience
-          .filter((item) => Object.hasOwn(item, "description"))
-          .map(
-            (item) =>
-              `<article>
-              <h2>${item.title}</h2>
-              <h4><small>${item.from} — ${item.to} | ${item.company}</small></h4>
-              <small class="tags">
-                ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
-              </small>
-              ${item.description}
-            </article>`,
-          )
-          .join("")}
-      </section>
-      <section>
-        <h3>Other work experience</h3>
-        ${content.workExperience
-          .filter((item) => !Object.hasOwn(item, "description"))
-          .map(
-            (item) =>
-              `<article>
-              <h4>${item.title} <small>${item.from} — ${item.to} | ${item.company}</small></h4>
-              <small class="tags">
-                ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
-              </small>
-            </article>`,
-          )
-          .join("")}
-      </section>
-      <section>
-        <h3>Education</h3>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
         <article>
-          <div class="col">
-            ${content.education
-              .slice(0, content.education.length / 2)
-              .map(
-                (item) =>
-                  `<small>${item.from} — ${item.to} | ${item.university}</small>
-                <h4>${item.subject}</h4>
-                ${item.description}`,
-              )
-              .join("")}
-          </div>
-          <div class="col">
-            ${content.education
-              .slice(content.education.length / 2)
-              .map(
-                (item) =>
-                  `<small>${item.from} — ${item.to} | ${item.university}</small>
-                <h4>${item.subject}</h4>
-                ${item.description}`,
-              )
-              .join("")}
-          </div>
-      </section>
-      <section>
-        <h3>Notable trainings</h3>
-        <article>
-        <div class="col">
-            ${Object.keys(content.trainings)
-              .slice(0, Object.keys(content.trainings).length / 2)
-              .map(
-                (year) =>
-                  `<h4>${year}</h4>
-                <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
-              )
-              .join("")}
-          </div>
-          <div class="col">
-            ${Object.keys(content.trainings)
-              .slice(Object.keys(content.trainings).length / 2)
-              .map(
-                (year) =>
-                  `<h4>${year}</h4>
-                <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
-              )
-              .join("")}
-          </div>
+          <h3>Recent work experience</h3>
+          ${content.workExperience
+            .filter((item) => Object.hasOwn(item, "description"))
+            .map(
+              (item) =>
+                `<article>
+                <h2>${item.title}</h2>
+                <h4><small>${item.from} — ${item.to} | ${item.company}</small></h4>
+                <small class="tags">
+                  ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
+                </small>
+                ${item.description}
+              </article>`,
+            )
+            .join("")}
         </article>
-      </section>
-      <section>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
         <article>
-          <div class="col">
-            <h3>Notable talks</h3>
-            <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
-          </div>
-          <div class="col">
-            <h3>Notable articles</h3>
-            <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
-            <h3>Notable projects</h3>
-            <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
-          </div>
+          <h3>Other work experience</h3>
+          ${content.workExperience
+            .filter((item) => !Object.hasOwn(item, "description"))
+            .map(
+              (item) =>
+                `<article>
+                <h4>${item.title} <small>${item.from} — ${item.to} | ${item.company}</small></h4>
+                <small class="tags">
+                  ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
+                </small>
+              </article>`,
+            )
+            .join("")}
         </article>
-      </section>
-      <section>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
+        <article>
+          <h3>Education</h3>
+          <article>
+            <div class="col">
+              ${content.education
+                .slice(0, content.education.length / 2)
+                .map(
+                  (item) =>
+                    `<small>${item.from} — ${item.to} | ${item.university}</small>
+                  <h4>${item.subject}</h4>
+                  ${item.description}`,
+                )
+                .join("")}
+            </div>
+            <div class="col">
+              ${content.education
+                .slice(content.education.length / 2)
+                .map(
+                  (item) =>
+                    `<small>${item.from} — ${item.to} | ${item.university}</small>
+                  <h4>${item.subject}</h4>
+                  ${item.description}`,
+                )
+                .join("")}
+            </div>
+          </article>
+        </article>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
+        <article>
+          <h3>Notable trainings</h3>
+          <article>
+            <div class="col">
+              ${Object.keys(content.trainings)
+                .slice(0, 2)
+                .map(
+                  (year) =>
+                    `<h4>${year}</h4>
+                  <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
+                )
+                .join("")}
+            </div>
+            <div class="col">
+              ${Object.keys(content.trainings)
+                .slice(2)
+                .map(
+                  (year) =>
+                    `<h4>${year}</h4>
+                  <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
+                )
+                .join("")}
+            </div>
+          </article>
+        </article>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
+        <article>
+          <h3>Notable contributions</h3>
+          <article>
+            <div class="col">
+              <h4>Talks</h4>
+              <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+            </div>
+            <div class="col">
+              <h4>Articles</h4>
+              <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+              <h4>Projects</h4>
+              <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+            </div>
+          </article>
+        </article>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
         <article>
           <div class="col">
             <h3>Languages</h3>
@@ -157,8 +183,10 @@ const mainCv = (data, dists, { lang, content }) =>
             <ul>${content.misc.map((item) => `<li>${item}</li>`).join("")}</ul>
           </div>
         </article>
-      </section>
-      <section>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
         <article>
           <p>
             <small><em>I agree to the processing of personal data provided in this
@@ -172,8 +200,8 @@ const mainCv = (data, dists, { lang, content }) =>
             </em></small>
           </p>
         </article>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>`;
 
 export default mainCv;
