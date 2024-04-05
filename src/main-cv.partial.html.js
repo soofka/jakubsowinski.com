@@ -63,7 +63,8 @@ const mainCv = (data, dists, { lang, content }) =>
               </small>
               ${item.description}
             </article>`,
-          )}
+          )
+          .join("")}
       </section>
       <section>
         <h3>Other work experience</h3>
@@ -77,49 +78,71 @@ const mainCv = (data, dists, { lang, content }) =>
                 ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
               </small>
             </article>`,
-          )}
+          )
+          .join("")}
       </section>
       <section>
         <h3>Education</h3>
         <article>
           <div class="col">
-            ${content.education.slice(0, content.education.length / 2).map(
-              (item) =>
-                `<small>${item.from} — ${item.to} | ${item.university}</small>
+            ${content.education
+              .slice(0, content.education.length / 2)
+              .map(
+                (item) =>
+                  `<small>${item.from} — ${item.to} | ${item.university}</small>
                 <h4>${item.subject}</h4>
                 ${item.description}`,
-            )}
+              )
+              .join("")}
           </div>
           <div class="col">
-            ${content.education.slice(content.education.length / 2).map(
-              (item) =>
-                `<small>${item.from} — ${item.to} | ${item.university}</small>
+            ${content.education
+              .slice(content.education.length / 2)
+              .map(
+                (item) =>
+                  `<small>${item.from} — ${item.to} | ${item.university}</small>
                 <h4>${item.subject}</h4>
                 ${item.description}`,
-            )}
+              )
+              .join("")}
           </div>
       </section>
       <section>
         <h3>Notable trainings</h3>
         <article>
-          ${Object.keys(content.trainings).map(
-            (year) =>
-              `<h4>${year}</h4>
-              <ul>${content.trainings[year].map((item) => `<li>${item}</li>`)}</ul>`,
-          )}
+        <div class="col">
+            ${Object.keys(content.trainings)
+              .slice(0, Object.keys(content.trainings).length / 2)
+              .map(
+                (year) =>
+                  `<h4>${year}</h4>
+                <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
+              )
+              .join("")}
+          </div>
+          <div class="col">
+            ${Object.keys(content.trainings)
+              .slice(Object.keys(content.trainings).length / 2)
+              .map(
+                (year) =>
+                  `<h4>${year}</h4>
+                <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
+              )
+              .join("")}
+          </div>
         </article>
       </section>
       <section>
         <article>
           <div class="col">
             <h3>Notable talks</h3>
-            <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`)}</ul>
+            <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
           </div>
           <div class="col">
             <h3>Notable articles</h3>
-            <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`)}</ul>
+            <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
             <h3>Notable projects</h3>
-            <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`)}</ul>
+            <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
           </div>
         </article>
       </section>
@@ -127,11 +150,11 @@ const mainCv = (data, dists, { lang, content }) =>
         <article>
           <div class="col">
             <h3>Languages</h3>
-            <ul>${content.languages.map((item) => `<li>${item}</li>`)}</ul>
+            <ul>${content.languages.map((item) => `<li>${item}</li>`).join("")}</ul>
           </div>
           <div class="col">
             <h3>Miscellaneous</h3>
-            <ul>${content.misc.map((item) => `<li>${item}</li>`)}</ul>
+            <ul>${content.misc.map((item) => `<li>${item}</li>`).join("")}</ul>
           </div>
         </article>
       </section>

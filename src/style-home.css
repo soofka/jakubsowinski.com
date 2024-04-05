@@ -14,14 +14,14 @@ body.home section#developer {
 body.home section#leader {
   border-color: var(--leader-bg);
 }
-body.home h1 {
+body.home section#intro h1 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   overflow: hidden;
   font-size: 3.33rem;
 }
-body.home h1 span {
+body.home section#intro h1 span {
   display: block;
   width: 2ch;
   max-width: max-content;
@@ -30,19 +30,23 @@ body.home h1 span {
     width var(--transition-duration) var(--transition-easing),
     opacity var(--transition-duration) var(--transition-easing);
 }
-body.home h1 .name {
+body.home section#intro h1 .name {
   width: 0;
   opacity: 0;
+  animation: 3s ease-in-out disappear;
 }
-body.home h1:hover .name {
+body.home section#intro h1 .mail {
+  animation: 3s ease-in-out appear;
+}
+body.home section#intro h1:hover .name {
   width: 2ch;
   opacity: 1;
 }
-body.home h1:hover .mail {
+body.home section#intro h1:hover .mail {
   width: 0;
   opacity: 0;
 }
-body.home p.text-blinker {
+body.home section#intro p.text-blinker {
   text-align: left;
 }
 body.home footer section,
@@ -54,50 +58,48 @@ body.home footer section .wrapper article {
   grid-template-rows: auto 1fr auto;
   height: 100%;
 }
+body.home section#intro h1 .name {
+  animation: 3s ease-in-out disappear;
+}
+body.home section#intro h1 .mail {
+  animation: 3s ease-in-out appear;
+}
 body.home footer #contact-mail {
   text-align: center;
   margin: 0;
   padding: calc(2 * var(--gap-rel)) 0;
 }
-@media (min-width: 800px) {
-  body.home h1 .name {
-    animation: 3s ease-in-out disappear;
+@keyframes appear {
+  0% {
+    width: 0;
+    opacity: 0;
   }
-  body.home h1 .mail {
-    animation: 3s ease-in-out appear;
+  66% {
+    width: 0;
+    opacity: 0;
   }
-  @keyframes appear {
-    0% {
-      width: 0;
-      opacity: 0;
-    }
-    66% {
-      width: 0;
-      opacity: 0;
-    }
-    80% {
-      opacity: 0;
-    }
-    100% {
-      width: 2ch;
-      opacity: 1;
-    }
+  80% {
+    opacity: 0;
   }
-  @keyframes disappear {
-    0% {
-      width: 2ch;
-      opacity: 1;
-    }
-    66% {
-      width: 2ch;
-      opacity: 1;
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      width: 0;
-      opacity: 0;
-    }
+  100% {
+    width: 2ch;
+    opacity: 1;
+  }
+}
+@keyframes disappear {
+  0% {
+    width: 2ch;
+    opacity: 1;
+  }
+  66% {
+    width: 2ch;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
   }
 }

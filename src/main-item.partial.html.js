@@ -19,7 +19,7 @@ const mainItem = (data, dists, { id, name, lang, content }) => {
                 lazy: false,
               }),
             )}"></partial>
-            <h3>${content.description}</h3>
+            <h3 style="margin-top: var(--gap-rel)">${content.description}</h3>
             ${dist.content}
           </article>
         </section>
