@@ -19,6 +19,7 @@ const style = (data, theme) => `
     --teacher-bg: ${theme === "dark" ? data.colors.accents.teacher.light : data.colors.accents.teacher.dark};
 
     --img-filter: ${theme === "dark" ? "grayscale(0.2)" : "none"};
+    --img-box-shadow: ${theme === "dark" ? "0 0 0 1px var(--off-bg), 0 0 0 2px var(--alt-bg)" : "0 0 0 1px var(--bg), 0 0 0 2px var(--fg)"}
   }
 
   ${

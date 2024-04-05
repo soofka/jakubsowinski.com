@@ -1,18 +1,15 @@
-main section h2 {
-  margin: var(--gap-rel) 0 0 0;
-}
-footer section article {
-  padding: var(--gap) 0;
-}
-footer section article p {
-  margin: 0;
-}
-body.item section article h3 {
+body.item main section article h3 {
   margin-top: var(--gap-rel);
 }
-body.item section article figure {
+body.item main section article figure {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   margin: var(--gap-rel) auto;
+}
+body.item footer section article {
+  padding: var(--gap) 0;
+}
+body.item footer section article p {
+  margin: 0;
 }

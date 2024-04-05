@@ -1,6 +1,3 @@
-body.home h3 {
-  text-align: justify;
-}
 body.home section {
   min-height: 100vh;
   border-top: 1px solid var(--alt-bg);
@@ -8,14 +5,14 @@ body.home section {
 body.home section:first-of-type {
   border-top: none;
 }
-body.home footer .wrapper,
-body.home footer section {
-  height: 100%;
+body.home section#architect {
+  border-color: var(--architect-bg);
 }
-body.home section article {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  height: 100%;
+body.home section#developer {
+  border-color: var(--developer-bg);
+}
+body.home section#leader {
+  border-color: var(--leader-bg);
 }
 body.home h1 {
   display: flex;
@@ -36,14 +33,10 @@ body.home h1 span {
 body.home h1 .name {
   width: 0;
   opacity: 0;
-  animation: 3s ease-in-out disappear;
 }
 body.home h1:hover .name {
   width: 2ch;
   opacity: 1;
-}
-body.home h1 .mail {
-  animation: 3s ease-in-out appear;
 }
 body.home h1:hover .mail {
   width: 0;
@@ -52,72 +45,59 @@ body.home h1:hover .mail {
 body.home p.text-blinker {
   text-align: left;
 }
+body.home footer section,
+body.home footer section .wrapper {
+  height: 100%;
+}
+body.home footer section .wrapper article {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
 body.home footer #contact-mail {
   text-align: center;
   margin: 0;
   padding: calc(2 * var(--gap-rel)) 0;
 }
-section#architect {
-  border-color: var(--architect-bg);
-}
-section#architect img {
-  box-shadow:
-    0 0 0 1px var(--bg),
-    0 0 0 2px var(--architect-bg);
-}
-section#developer {
-  border-color: var(--developer-bg);
-}
-section#developer img {
-  box-shadow:
-    0 0 0 1px var(--bg),
-    0 0 0 2px var(--developer-bg);
-}
-section#leader {
-  border-color: var(--leader-bg);
-}
-section#leader img {
-  box-shadow:
-    0 0 0 1px var(--bg),
-    0 0 0 2px var(--leader-bg);
-}
-@keyframes appear {
-  0% {
-    width: 0;
-    opacity: 0;
+@media (min-width: 800px) {
+  body.home h1 .name {
+    animation: 3s ease-in-out disappear;
   }
-  66% {
-    width: 0;
-    opacity: 0;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    width: 2ch;
-    opacity: 1;
-  }
-}
-@keyframes disappear {
-  0% {
-    width: 2ch;
-    opacity: 1;
-  }
-  66% {
-    width: 2ch;
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    width: 0;
-    opacity: 0;
-  }
-}
-@media (max-width: 960px) {
-  body.home h1 .name,
   body.home h1 .mail {
-    animation: none;
+    animation: 3s ease-in-out appear;
+  }
+  @keyframes appear {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    66% {
+      width: 0;
+      opacity: 0;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      width: 2ch;
+      opacity: 1;
+    }
+  }
+  @keyframes disappear {
+    0% {
+      width: 2ch;
+      opacity: 1;
+    }
+    66% {
+      width: 2ch;
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      width: 0;
+      opacity: 0;
+    }
   }
 }

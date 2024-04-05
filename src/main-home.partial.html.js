@@ -20,30 +20,28 @@ const mainHome = (data, dists, { lang }) => `
             <span class="developer-fg">K</span>
             <span class="developer-fg">I</span>
           </h1>
-          <div class="cols cols-1-2">
-            <div class="col col-2">
-              <h2>${data.labels[lang].pages.home.intro.head}</h2>
-              <h3>${data.labels[lang].pages.home.intro.lead}</h3>
-              <p>${data.labels[lang].pages.home.intro.text}</p>
-            </div>
-            <div class="col">
-              <partial name="img" data="${encodeURI(
-                JSON.stringify({
-                  src: "me1.jpg",
-                  alt: data.labels[lang].pages.home.intro.imgAlt,
-                  lazy: false,
-                }),
-              )}"></partial>
-              <p class="text-blinker">
-                <span class="text">
-                  <span class="architect-fg">solution architect</span> / 
-                  <span class="developer-fg">software developer</span> / 
-                  <span class="teacher-fg">programming teacher</span> / 
-                  <span class="leader-fg">technical leader</span>
-                </span>
-                <span class="blinker"></span>
-              </p>
-            </div>
+          <div class="col col-2">
+            <h2>${data.labels[lang].pages.home.intro.head}</h2>
+            <h3>${data.labels[lang].pages.home.intro.lead}</h3>
+            <p>${data.labels[lang].pages.home.intro.text}</p>
+          </div>
+          <div class="col">
+            <partial name="img" data="${encodeURI(
+              JSON.stringify({
+                src: "me1.jpg",
+                alt: data.labels[lang].pages.home.intro.imgAlt,
+                lazy: false,
+              }),
+            )}"></partial>
+            <p class="text-blinker">
+              <span class="text">
+                <span class="architect-fg">solution architect</span> / 
+                <span class="developer-fg">software developer</span> / 
+                <span class="teacher-fg">programming teacher</span> / 
+                <span class="leader-fg">technical leader</span>
+              </span>
+              <span class="blinker"></span>
+            </p>
           </div>
           <div class="buttons">
             <partial name="link" data="${encodeURI(
@@ -63,15 +61,13 @@ const mainHome = (data, dists, { lang }) => `
       <div class="wrapper">
         <article>
           <h2 class="architect-fg">${data.labels[lang].pages.home.architect.head}</h2>
-          <div class="cols cols-1-2">
-            <div class="col">
-              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me2.jpg", alt: data.labels[lang].pages.home.architect.imgAlt }))}"></partial>
-              <p class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</p>
-            </div>
-            <div class="col col-2">
-              <h3>${data.labels[lang].pages.home.architect.lead}</h3>
-              <p>${data.labels[lang].pages.home.architect.text}</p>
-            </div>
+          <div class="col">
+            <partial name="img" data="${encodeURI(JSON.stringify({ src: "me2.jpg", alt: data.labels[lang].pages.home.architect.imgAlt }))}"></partial>
+            <p class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</p>
+          </div>
+          <div class="col col-2">
+            <h3>${data.labels[lang].pages.home.architect.lead}</h3>
+            <p>${data.labels[lang].pages.home.architect.text}</p>
           </div>
           <div class="buttons">
             <partial name="link" data="${encodeURI(
@@ -98,15 +94,13 @@ const mainHome = (data, dists, { lang }) => `
       <div class="wrapper">
         <article>
           <h2 class="developer-fg">${data.labels[lang].pages.home.developer.head}</h2>
-          <div class="cols cols-1-2">
-            <div class="col col-2">
-              <h3>${data.labels[lang].pages.home.developer.lead}</h3>
-              <p>${data.labels[lang].pages.home.developer.text}</p>
-            </div>
-            <div class="col">
-              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me3.jpg", alt: data.labels[lang].pages.home.developer.imgAlt }))}"></partial>
-              <p class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</p>
-            </div>
+          <div class="col col-2">
+            <h3>${data.labels[lang].pages.home.developer.lead}</h3>
+            <p>${data.labels[lang].pages.home.developer.text}</p>
+          </div>
+          <div class="col">
+            <partial name="img" data="${encodeURI(JSON.stringify({ src: "me3.jpg", alt: data.labels[lang].pages.home.developer.imgAlt }))}"></partial>
+            <p class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</p>
           </div>
           <div class="buttons">
             <partial name="link" data="${encodeURI(
@@ -133,15 +127,13 @@ const mainHome = (data, dists, { lang }) => `
       <div class="wrapper">
         <article>
           <h2 class="leader-fg">${data.labels[lang].pages.home.leader.head}</h2>
-          <div class="cols cols-1-2">
-            <div class="col">
-              <partial name="img" data="${encodeURI(JSON.stringify({ src: "me4.jpg", alt: data.labels[lang].pages.home.leader.imgAlt }))}"></partial>
-              <p class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</p>
-            </div>
-            <div class="col col-2">
-              <h3>${data.labels[lang].pages.home.leader.lead}</h3>
-              <p>${data.labels[lang].pages.home.leader.text}</p>
-            </div>
+          <div class="col">
+            <partial name="img" data="${encodeURI(JSON.stringify({ src: "me4.jpg", alt: data.labels[lang].pages.home.leader.imgAlt }))}"></partial>
+            <p class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</p>
+          </div>
+          <div class="col col-2">
+            <h3>${data.labels[lang].pages.home.leader.lead}</h3>
+            <p>${data.labels[lang].pages.home.leader.text}</p>
           </div>
           <div class="buttons">
             <partial name="link" data="${encodeURI(

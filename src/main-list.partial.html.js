@@ -183,15 +183,13 @@ const getDoubleColumnItem = (
   altHighlight,
 ) => `
   <article>
-    <div class="cols cols-1-2">
-      <div class="col col-2">
-        ${title}
-        ${meta}
-        ${content}
-      </div>
-      <div class="col ${altHighlight ? "highlight" : ""}">
-        ${alt}
-      </div>
+    <div class="col col-2">
+      ${title}
+      ${meta}
+      ${content}
+    </div>
+    <div class="col ${altHighlight ? "highlight" : ""}">
+      ${alt}
     </div>
     ${footnote}
   </article>`;

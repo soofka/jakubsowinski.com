@@ -1,24 +1,19 @@
-main section h2 {
-  margin: var(--gap-rel) 0 0 0;
-}
-footer section article {
-  padding: var(--gap) 0;
-}
-footer section article p {
-  margin: 0;
-}
-p.button-container {
-  text-align: right;
+body.list p.button-container {
+  text-align: center;
   margin: var(--gap-rel) 0;
 }
-p.button-container .button {
+body.list p.button-container .button {
   display: inline-block;
+  width: 100%;
 }
-@media (max-width: 960px) {
-  p.button-container {
-    text-align: center;
+@media (min-width: 800px) {
+  body.list p.button-container .button {
+    width: auto;
   }
-  p.button-container .button {
-    width: 100%;
-  }
+}
+body.list footer section article {
+  padding: var(--gap) 0;
+}
+body.list footer section article p {
+  margin: 0;
 }

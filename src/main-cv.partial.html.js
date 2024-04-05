@@ -19,7 +19,7 @@ const mainCv = (data, dists, { lang, content }) =>
       </section>
       <section>
         <h3>About me</h3>
-        <div class="cols cols-1-2">
+        <article>
           <div class="col col-2">
             <p>
               I am a highly skilled and driven software enthusiast who excels
@@ -47,7 +47,7 @@ const mainCv = (data, dists, { lang, content }) =>
               }),
             )}"></partial>
           </div>
-        </div>
+        </article>
       </section>
       <section>
         <h3>Recent work experience</h3>
@@ -59,7 +59,7 @@ const mainCv = (data, dists, { lang, content }) =>
               <h2>${item.title}</h2>
               <h4><small>${item.from} — ${item.to} | ${item.company}</small></h4>
               <small class="tags">
-                ${item.tags.map((tag) => `<span>${tag}</span>`)}
+                ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
               </small>
               ${item.description}
             </article>`,
@@ -74,60 +74,81 @@ const mainCv = (data, dists, { lang, content }) =>
               `<article>
               <h4>${item.title} <small>${item.from} — ${item.to} | ${item.company}</small></h4>
               <small class="tags">
-                ${item.tags.map((tag) => `<span>${tag}</span>`)}
+                ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
               </small>
             </article>`,
           )}
       </section>
       <section>
         <h3>Education</h3>
-        ${content.education.map(
-          (item) =>
-            `<small>${item.from} — ${item.to} | ${item.university}</small>
-            <h4>${item.subject}</h4>
-            ${item.description}`,
-        )}
+        <article>
+          <div class="col">
+            ${content.education.slice(0, content.education.length / 2).map(
+              (item) =>
+                `<small>${item.from} — ${item.to} | ${item.university}</small>
+                <h4>${item.subject}</h4>
+                ${item.description}`,
+            )}
+          </div>
+          <div class="col">
+            ${content.education.slice(content.education.length / 2).map(
+              (item) =>
+                `<small>${item.from} — ${item.to} | ${item.university}</small>
+                <h4>${item.subject}</h4>
+                ${item.description}`,
+            )}
+          </div>
       </section>
       <section>
         <h3>Notable trainings</h3>
-        ${Object.keys(content.trainings).map(
-          (year) =>
-            `<h4>${year}</h4>
-            <ul>${content.trainings[year].map((item) => `<li>${item}</li>`)}</ul>`,
-        )}
+        <article>
+          ${Object.keys(content.trainings).map(
+            (year) =>
+              `<h4>${year}</h4>
+              <ul>${content.trainings[year].map((item) => `<li>${item}</li>`)}</ul>`,
+          )}
+        </article>
       </section>
       <section>
-        <h3>Notable talks</h3>
-        <ul>${content.talks.map((item) => `<li><a href="${item.url} target="_blank">${item.title}</a></li>`)}</ul>
+        <article>
+          <div class="col">
+            <h3>Notable talks</h3>
+            <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`)}</ul>
+          </div>
+          <div class="col">
+            <h3>Notable articles</h3>
+            <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`)}</ul>
+            <h3>Notable projects</h3>
+            <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`)}</ul>
+          </div>
+        </article>
       </section>
       <section>
-        <h3>Notable articles</h3>
-        <ul>${content.articles.map((item) => `<li><a href="${item.url} target="_blank">${item.title}</a></li>`)}</ul>
+        <article>
+          <div class="col">
+            <h3>Languages</h3>
+            <ul>${content.languages.map((item) => `<li>${item}</li>`)}</ul>
+          </div>
+          <div class="col">
+            <h3>Miscellaneous</h3>
+            <ul>${content.misc.map((item) => `<li>${item}</li>`)}</ul>
+          </div>
+        </article>
       </section>
       <section>
-        <h3>Notable projects</h3>
-        <ul>${content.projects.map((item) => `<li><a href="${item.url} target="_blank">${item.title}</a></li>`)}</ul>
-      </section>
-      <section>
-        <h3>Languages</h3>
-        <ul>${content.languages.map((item) => `<li>${item}</li>`)}</ul>
-      </section>
-      <section>
-        <h3>Miscellaneous</h3>
-        <ul>${content.misc.map((item) => `<li>${item}</li>`)}</ul>
-      </section>
-      <section>
-        <p>
-          <small><em>I agree to the processing of personal data provided in this
-            document for realising the recruitment process pursuant to the
-            Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018,
-            item 1000) and in agreement with Regulation (EU) 2016/679 of the
-            European Parliament and of the Council of 27 April 2016 on the
-            protection of natural persons with regard to the processing of
-            personal data and on the free movement of such data, and repealing
-            Directive 95/46/EC (General Data Protection Regulation).
-          </em></small>
-        </p>
+        <article>
+          <p>
+            <small><em>I agree to the processing of personal data provided in this
+              document for realising the recruitment process pursuant to the
+              Personal Data Protection Act of 10 May 2018 (Journal of Laws 2018,
+              item 1000) and in agreement with Regulation (EU) 2016/679 of the
+              European Parliament and of the Council of 27 April 2016 on the
+              protection of natural persons with regard to the processing of
+              personal data and on the free movement of such data, and repealing
+              Directive 95/46/EC (General Data Protection Regulation).
+            </em></small>
+          </p>
+        </article>
       </section>
     </div>
   </main>`;
