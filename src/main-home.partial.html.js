@@ -46,11 +46,10 @@ const mainHome = (data, dists, { lang }) => `
           <div class="buttons">
             <partial name="link" data="${encodeURI(
               JSON.stringify({
-                classes: "button architect-bg",
+                class: "button architect-bg",
                 pageId: `cv-${lang}`,
-                content: data.labels[lang].pages.home.intro.buttons.cv,
               }),
-            )}"></partial>
+            )}">${data.labels[lang].pages.home.intro.buttons.cv}</partial>
             <a class="button developer-bg" href="#architect">${data.labels[lang].pages.home.intro.buttons.info}</a>
             <a class="button leader-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
@@ -72,19 +71,16 @@ const mainHome = (data, dists, { lang }) => `
           <div class="buttons">
             <partial name="link" data="${encodeURI(
               JSON.stringify({
-                classes: "button architect-bg",
+                class: "button architect-bg",
                 pageId: `talks-${lang}`,
-                content: data.labels[lang].pages.home.architect.buttons.talks,
               }),
-            )}"></partial>
+            )}">${data.labels[lang].pages.home.architect.buttons.talks}</partial>
             <partial name="link" data="${encodeURI(
               JSON.stringify({
-                classes: "button architect-bg",
+                class: "button architect-bg",
                 pageId: `articles-${lang}`,
-                content:
-                  data.labels[lang].pages.home.architect.buttons.articles,
               }),
-            )}"></partial>
+            )}">${data.labels[lang].pages.home.architect.buttons.articles}</partial>
             <a class="button" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>
@@ -105,19 +101,16 @@ const mainHome = (data, dists, { lang }) => `
           <div class="buttons">
             <partial name="link" data="${encodeURI(
               JSON.stringify({
-                classes: "button developer-bg",
+                class: "button developer-bg",
                 pageId: `projects-${lang}`,
-                content:
-                  data.labels[lang].pages.home.developer.buttons.projects,
               }),
-            )}"></partial>
+            )}">${data.labels[lang].pages.home.developer.buttons.projects}</partial>
             <partial name="link" data="${encodeURI(
               JSON.stringify({
-                classes: "button developer-bg",
+                class: "button developer-bg",
                 pageId: `blog-${lang}`,
-                content: data.labels[lang].pages.home.developer.buttons.blog,
               }),
-            )}"></partial>
+            )}">${data.labels[lang].pages.home.developer.buttons.blog}</partial>
             <a class="button" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>
@@ -138,11 +131,10 @@ const mainHome = (data, dists, { lang }) => `
           <div class="buttons">
             <partial name="link" data="${encodeURI(
               JSON.stringify({
-                classes: "button leader-bg",
+                class: "button leader-bg",
                 pageId: `courses-${lang}`,
-                content: data.labels[lang].pages.home.leader.buttons.courses,
               }),
-            )}"></partial>
+            )}">${data.labels[lang].pages.home.leader.buttons.courses}</partial>
             <a class="button" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>

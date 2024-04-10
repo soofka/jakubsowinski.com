@@ -31,60 +31,46 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
     case "articles":
       pageId = `article-${lang}-${item.id}`;
       title = `<partial name="link" data="${encodeURI(
-        JSON.stringify({
-          pageId,
-          content: title,
-        }),
-      )}"></partial>`;
+        JSON.stringify({ pageId }),
+      )}">${title}</partial>`;
       content = `${content}<partial name="link" data="${encodeURI(
-        JSON.stringify({
-          pageId,
-          content: `<p>${labels.misc.continueReading}</p>`,
-        }),
-      )}"></partial>`;
+        JSON.stringify({ pageId }),
+      )}"><p>${labels.misc.continueReading}</p></partial>`;
       if (item.publications && item.publications.length > 0) {
         meta = `${meta} | ${labels.pages.articles.publishedBy} ${item.publications.map((publication) => `<a href="${publication.url}" target="_blank">${publication.name}</a>`).join(", ")}`;
       }
       alt = `<partial name="link" data="${encodeURI(
-        JSON.stringify({
-          pageId,
-          content: `<partial name="img" data="${encodeURI(
-            JSON.stringify({
-              src: item.image,
-              alt: item.title,
-              lazy: index > 1,
-            }),
-          )}"></partial>`,
-        }),
-      )}"></partial>`;
+        JSON.stringify({ pageId }),
+      )}">
+        <partial name="img" data="${encodeURI(
+          JSON.stringify({
+            src: item.image,
+            alt: item.title,
+            lazy: index > 1,
+          }),
+        )}"></partial>
+      </partial>`;
       break;
 
     case "blog":
       pageId = `post-${lang}-${item.id}`;
       title = `<partial name="link" data="${encodeURI(
-        JSON.stringify({
-          pageId,
-          content: title,
-        }),
-      )}"></partial>`;
+        JSON.stringify({ pageId }),
+      )}">${title}</partial>`;
       content = `${content}<partial name="link" data="${encodeURI(
-        JSON.stringify({
-          pageId,
-          content: `<p>${labels.misc.continueReading}</p>`,
-        }),
-      )}"></partial>`;
+        JSON.stringify({ pageId }),
+      )}"><p>${labels.misc.continueReading}</p></partial>`;
       alt = `<partial name="link" data="${encodeURI(
-        JSON.stringify({
-          pageId,
-          content: `<partial name="img" data="${encodeURI(
-            JSON.stringify({
-              src: item.image,
-              alt: item.title,
-              lazy: index > 1,
-            }),
-          )}"></partial>`,
-        }),
-      )}"></partial>`;
+        JSON.stringify({ pageId }),
+      )}">
+        <partial name="img" data="${encodeURI(
+          JSON.stringify({
+            src: item.image,
+            alt: item.title,
+            lazy: index > 1,
+          }),
+        )}"></partial>
+      </partial>`;
       break;
 
     case "courses":

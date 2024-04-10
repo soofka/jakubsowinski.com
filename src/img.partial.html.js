@@ -1,7 +1,7 @@
 const img = (
   data,
   dists,
-  { src, alt = "", lazy = true, withCaption = false },
+  { src, alt = "", lazy = true, withCaption = false, ...attributes },
 ) => {
   const imgName = src.split(".")[0];
   const imgDists = dists.filter(
@@ -55,7 +55,15 @@ const img = (
             >`,
         )
         .join("")}
-      <img src="${imgDist.url}" alt="${alt}" width="${imgDist.width}" height="${imgDist.height}" ${lazy ? 'loading="lazy"' : ""}>
+      <img ${Object.keys(attributes)
+        .map((attribute) => `${attribute}="${attributes[attribute]}"`)
+        .join(" ")}
+        src="${imgDist.url}"
+        alt="${alt}"
+        width="${imgDist.width}"
+        height="${imgDist.height}"
+        ${lazy ? 'loading="lazy"' : ""}
+      >
     </picture>`;
 
   return withCaption

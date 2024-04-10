@@ -7,10 +7,10 @@ const header = (data, dists, { url, name, lang }) =>
             JSON.stringify({
               id: "logo",
               pageId: `index-${lang}`,
-              content:
-                '<h4><span class="architect-fg">s</span><span class="developer-fg">w</span><span class="leader-fg">n</span><span class="teacher-fg">.</span>ski</h4>',
             }),
-          )}"></partial>
+          )}">
+            <h4><span class="architect-fg">s</span><span class="developer-fg">w</span><span class="leader-fg">n</span><span class="teacher-fg">.</span>ski</h4>
+          </partial>
           <button id="menu-toggle" aria-label="Menu"></button>
         </div>
         <div id="menu">
@@ -36,11 +36,8 @@ const header = (data, dists, { url, name, lang }) =>
 const getMenuLink = (pageName, currentPageName, lang, labels) =>
   `<li class="${currentPageName === pageName ? "active" : ""}">
     <partial name="link" data="${encodeURI(
-      JSON.stringify({
-        pageId: `${pageName}-${lang}`,
-        content: labels[lang].nav[pageName],
-      }),
-    )}"></partial>
+      JSON.stringify({ pageId: `${pageName}-${lang}` }),
+    )}">${labels[lang].nav[pageName]}</partial>
   </li>`;
 
 export default header;

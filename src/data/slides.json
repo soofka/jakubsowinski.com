@@ -12,10 +12,9 @@
     "pdf": true
   },
   {
-    "id": "dupa",
-    "title": "dupa",
+    "id": "microfrontends",
+    "title": "microfrontends",
     "description": "description",
-    "image": "dupa.jpg",
     "html": true
   }
 ]

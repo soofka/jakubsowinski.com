@@ -1,5 +1,8 @@
-const link = (data, dists, { id = "", classes = "", pageId, content = "" }) =>
-  `<a id="${id}" class="${classes}" href="${data.pages.find((page) => page.id === pageId).url}">
+const link = (data, dists, { pageId, ...attributes }, content) =>
+  `<a ${Object.keys(attributes)
+    .map((attribute) => `${attribute}="${attributes[attribute]}"`)
+    .join(" ")}
+    href="${data.pages.find((page) => page.id === pageId).url}">
     ${content}
   </a>`;
 

@@ -4,12 +4,15 @@
   }
 
   let theme =
-    new URLSearchParams(window.location.search).get("t") === "d" ||
-    window.localStorage.getItem("theme") === "dark" ||
+    window.localStorage.getItem("theme") ||
     (window.matchMedia &&
-      window.matchMedia("(prefers-colors-scheme: dark)").matches)
+    window.matchMedia("(prefers-colors-scheme: dark)").matches
       ? "dark"
-      : "light";
+      : "light");
+  const themeInQs = new URLSearchParams(window.location.search).get("t");
+  if (themeInQs) {
+    theme = themeInQs === "l" ? "light" : themeInQs === "d" ? "dark" : theme;
+  }
 
   const toggle = document.querySelector("#theme-toggle");
   if (toggle) {
@@ -40,13 +43,10 @@
       }
 
       const qs = new URLSearchParams(window.location.search);
-      const url = `${window.location.origin}${window.location.pathname}${window.location.search ? `?${qs.toString()}` : ""}`;
+      const currentUrl = `${window.location.origin}${window.location.pathname}${window.location.search ? `?${qs.toString()}` : ""}`;
       qs.set("t", theme === "dark" ? "d" : "l");
-      window.history.replaceState(
-        url,
-        "",
-        `${window.location.origin}${window.location.pathname}?${qs.toString()}`,
-      );
+      const newUrl = `${window.location.origin}${window.location.pathname}?${qs.toString()}`;
+      window.history.replaceState(currentUrl, "", newUrl);
       window.localStorage.setItem("theme", theme);
       if (toggle) {
         toggle.textContent = theme === "dark" ? "light" : "dark";

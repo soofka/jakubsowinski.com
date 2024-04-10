@@ -65,19 +65,27 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
               )
               .join("")
       }
-      
-      ${dists
-        .filter((dist) => dist.name.startsWith("icon-"))
-        .map((dist) =>
-          dist.name === "icon-16x16" || dist.name === "icon-32x32"
-            ? `<link rel="icon" type="image/png" sizes="${dist.name.split("-")[1]}" href="${dist.rel}">`
-            : `<link rel="apple-touch-icon" sizes="${dist.name.split("-")[1]}" href="${dist.rel}">`,
-        )
-        .join("")}
 
-        <link rel="stylesheet" href="${
-          dists.find((dist) => dist.name === "reset" && dist.ext === ".css").rel
-        }">
+      ${dists
+        .filter(
+          (dist) =>
+            (dist.name === "reset" ||
+              dist.name === `style-${template}` ||
+              dist.name === `style-${type}` ||
+              dist.name === `style-${name}`) &&
+            dist.ext === ".css",
+        )
+        .sort((style) =>
+          style.name === "reset"
+            ? 1
+            : style.name.endsWith(template)
+              ? 1
+              : style.name.endsWith(type)
+                ? 1
+                : -1,
+        )
+        .map((style) => `<link rel="stylesheet" href="${style.rel}">`)
+        .join("")}
 
       ${data.themes
         .map(
@@ -90,17 +98,14 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
           `,
         )
         .join("")}
-
+      
       ${dists
-        .filter(
-          (dist) =>
-            (dist.name === `style-${template}` ||
-              dist.name === `style-${type}` ||
-              dist.name === `style-${name}`) &&
-            dist.ext === ".css",
+        .filter((dist) => dist.name.startsWith("icon-"))
+        .map((dist) =>
+          dist.name === "icon-16x16" || dist.name === "icon-32x32"
+            ? `<link rel="icon" type="image/png" sizes="${dist.name.split("-")[1]}" href="${dist.rel}">`
+            : `<link rel="apple-touch-icon" sizes="${dist.name.split("-")[1]}" href="${dist.rel}">`,
         )
-        .sort((style) => (style.name === "reset" ? 1 : 0))
-        .map((style) => `<link rel="stylesheet" href="${style.rel}">`)
         .join("")}
   </head>
   `;
