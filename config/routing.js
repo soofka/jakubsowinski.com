@@ -1,7 +1,9 @@
 export const getRouting = (langs, labels, data) => {
   const routes = {};
   const pages = [];
-  const template = "page";
+
+  const pageTemplate = "page";
+  const slidesTemplate = "slides";
 
   const indexPageName = "index";
   const articlesPageName = "articles";
@@ -11,6 +13,7 @@ export const getRouting = (langs, labels, data) => {
   const coursesPageName = "courses";
   const projectsPageName = "projects";
   const talksPageName = "talks";
+  const slidesPageName = "slides";
   const cvPageName = "cv";
 
   for (let index in langs) {
@@ -19,7 +22,7 @@ export const getRouting = (langs, labels, data) => {
     const indexPageUrl = `/${lang}/${indexPageName}`;
     const indexPageId = `${indexPageName}-${lang}`;
     const indexPageObject = {
-      template,
+      template: pageTemplate,
       pageId: indexPageId,
       alts: [`/${lang}`],
     };
@@ -32,14 +35,14 @@ export const getRouting = (langs, labels, data) => {
       url: indexPageUrl,
       name: indexPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "home",
     });
 
     const articlesPageUrl = `/${lang}/${articlesPageName}`;
     const articlesPageId = `${articlesPageName}-${lang}`;
     routes[articlesPageUrl] = {
-      template,
+      template: pageTemplate,
       pageId: articlesPageId,
     };
     pages.push({
@@ -47,7 +50,7 @@ export const getRouting = (langs, labels, data) => {
       url: articlesPageUrl,
       name: articlesPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "list",
       meta: {
         title: labels[lang].pages.articles.meta.title,
@@ -60,7 +63,7 @@ export const getRouting = (langs, labels, data) => {
       const articlePageUrl = `/${lang}/${articlePageName}/${parseTitleToUrl(article.title)}`;
       const articlePageId = `${articlePageName}-${lang}-${article.id}`;
       routes[articlePageUrl] = {
-        template,
+        template: pageTemplate,
         pageId: articlePageId,
       };
       pages.push({
@@ -68,7 +71,7 @@ export const getRouting = (langs, labels, data) => {
         url: articlePageUrl,
         name: articlePageName,
         lang,
-        template,
+        template: pageTemplate,
         type: "item",
         meta: {
           title: article.title,
@@ -82,7 +85,7 @@ export const getRouting = (langs, labels, data) => {
     const blogPageUrl = `/${lang}/${blogPageName}`;
     const blogPageId = `${blogPageName}-${lang}`;
     routes[blogPageUrl] = {
-      template,
+      template: pageTemplate,
       pageId: blogPageId,
     };
     pages.push({
@@ -90,7 +93,7 @@ export const getRouting = (langs, labels, data) => {
       url: blogPageUrl,
       name: blogPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "list",
       meta: {
         title: labels[lang].pages.blog.meta.title,
@@ -103,7 +106,7 @@ export const getRouting = (langs, labels, data) => {
       const blogPostPageUrl = `/${lang}/${blogPostPageName}/${parseTitleToUrl(post.title)}`;
       const blogPostPageId = `${blogPostPageName}-${lang}-${post.id}`;
       routes[blogPostPageUrl] = {
-        template,
+        template: pageTemplate,
         pageId: blogPostPageId,
       };
       pages.push({
@@ -111,7 +114,7 @@ export const getRouting = (langs, labels, data) => {
         url: blogPostPageUrl,
         name: blogPostPageName,
         lang,
-        template,
+        template: pageTemplate,
         type: "item",
         meta: {
           title: post.title,
@@ -124,7 +127,7 @@ export const getRouting = (langs, labels, data) => {
     const coursesPageUrl = `/${lang}/${coursesPageName}`;
     const coursesPageId = `${coursesPageName}-${lang}`;
     routes[coursesPageUrl] = {
-      template,
+      template: pageTemplate,
       pageId: coursesPageId,
     };
     pages.push({
@@ -132,7 +135,7 @@ export const getRouting = (langs, labels, data) => {
       url: coursesPageUrl,
       name: coursesPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "list",
       meta: {
         title: labels[lang].pages.courses.meta.title,
@@ -144,7 +147,7 @@ export const getRouting = (langs, labels, data) => {
     const projectsPageUrl = `/${lang}/${projectsPageName}`;
     const projectsPageId = `${projectsPageName}-${lang}`;
     routes[projectsPageUrl] = {
-      template,
+      template: pageTemplate,
       pageId: projectsPageId,
     };
     pages.push({
@@ -152,7 +155,7 @@ export const getRouting = (langs, labels, data) => {
       url: projectsPageUrl,
       name: projectsPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "list",
       meta: {
         title: labels[lang].pages.projects.meta.title,
@@ -164,7 +167,7 @@ export const getRouting = (langs, labels, data) => {
     const talksPageUrl = `/${lang}/${talksPageName}`;
     const talksPageId = `${talksPageName}-${lang}`;
     routes[talksPageUrl] = {
-      template,
+      template: pageTemplate,
       pageId: talksPageId,
     };
     pages.push({
@@ -172,7 +175,7 @@ export const getRouting = (langs, labels, data) => {
       url: talksPageUrl,
       name: talksPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "list",
       meta: {
         title: labels[lang].pages.talks.meta.title,
@@ -184,7 +187,7 @@ export const getRouting = (langs, labels, data) => {
     const cvPageUrl = `/${lang}/${cvPageName}`;
     const cvPageId = `${cvPageName}-${lang}`;
     routes[cvPageUrl] = {
-      template,
+      template: pageTemplate,
       pageId: cvPageId,
     };
     pages.push({
@@ -192,7 +195,7 @@ export const getRouting = (langs, labels, data) => {
       url: cvPageUrl,
       name: cvPageName,
       lang,
-      template,
+      template: pageTemplate,
       type: "cv",
       meta: {
         title: labels[lang].pages.cv.meta.title,
@@ -200,6 +203,37 @@ export const getRouting = (langs, labels, data) => {
       },
       content: data.cv,
     });
+  }
+
+  for (let slides of data.slides) {
+    const slidesPageUrl = `/${slidesPageName}/${parseTitleToUrl(slides.title)}`;
+    if (slides.html) {
+      const slidesPageId = `${slidesPageName}-${slides.id}`;
+      routes[slidesPageUrl] = {
+        template: slidesTemplate,
+        pageId: slidesPageId,
+      };
+      pages.push({
+        id: slidesPageId,
+        url: slidesPageUrl,
+        name: slidesPageName,
+        template: slidesTemplate,
+        type: "slides",
+        meta: {
+          title: slides.title,
+          description: slides.description,
+          image: slides.image,
+        },
+        content: slides,
+      });
+    }
+    if (slides.pdf) {
+      routes[`${slidesPageUrl}/pdf`] = {
+        isStatic: true,
+        dir: slides.id,
+        name: "index.pdf",
+      };
+    }
   }
 
   for (let route of Object.keys(routes)) {

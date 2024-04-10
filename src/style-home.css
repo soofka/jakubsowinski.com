@@ -1,16 +1,11 @@
 body.home section {
   min-height: 100vh;
 }
-body.home section#intro article {
-  padding-top: 0;
-  border-top: none;
-}
 body.home section#intro article h1 {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   overflow: hidden;
-  font-size: 3.33rem;
 }
 body.home section#intro article h1 span {
   display: block;

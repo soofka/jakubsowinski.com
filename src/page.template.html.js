@@ -39,6 +39,13 @@ const page = (
           type,
         }),
       )}"></partial>
+      <partial name="scripts" data="${encodeURI(
+        JSON.stringify({
+          name,
+          template,
+          type,
+        }),
+      )}"></partial>
     </body>
   </html>`;
 

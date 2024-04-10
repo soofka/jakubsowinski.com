@@ -1,0 +1,21 @@
+[
+  {
+    "id": "practical_tips_for_optimizing_javascript",
+    "title": "Practical tips for optimizing JavaScript",
+    "description": "description",
+    "pdf": true
+  },
+  {
+    "id": "progressive_web_app_case_study",
+    "title": "Progressive Web App - case study",
+    "description": "description",
+    "pdf": true
+  },
+  {
+    "id": "dupa",
+    "title": "dupa",
+    "description": "description",
+    "image": "dupa.jpg",
+    "html": true
+  }
+]

@@ -32,17 +32,6 @@ const footer = (data, dists, { name, lang, template, type }) =>
       </div>
     </section>
   </footer>
-  ${dists
-    .filter(
-      (dist) =>
-        (dist.name === "script" ||
-          dist.name === `script-${template}` ||
-          dist.name === `script-${type}` ||
-          dist.name === `script-${name}`) &&
-        dist.ext === ".js",
-    )
-    .sort((script) => (script.name === "script" ? -1 : 0))
-    .map((script) => `<script defer src="${script.rel}"> </script>`)
-    .join("")}`;
+`;
 
 export default footer;

@@ -1,17 +1,16 @@
 .tags {
   width: 100%;
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--gap) 0;
   display: flex;
   flex-flow: row wrap;
-  gap: 4px;
+  gap: var(--gap);
 }
 .tags span {
   font-family: monospace;
-  font-size: 0.75rem;
-  padding: 2px 4px;
+  padding: calc(var(--gap) / 2) var(--gap);
   white-space: nowrap;
-  background: var(--off-bg);
-  border: 1px solid var(--off-off-bg);
+  background: var(--off-bg-2);
+  border: 1px solid var(--alt-bg);
 }
 section:first-of-type h3,
 section:first-of-type h4 {
@@ -35,7 +34,7 @@ section:first-of-type h3 span::before {
 }
 section:first-of-type h4 span::before {
   content: "|";
-  margin: 0 1rem 0 0;
+  margin: 0 var(--gap-rel) 0 0;
 }
 section:first-of-type h4 span:first-of-type::before {
   content: none;

@@ -7,7 +7,7 @@
   --page-min-size: 256px;
 
   --serif: "Times New Roman", serif;
-  --sans-serif: Arial, sans-serif;
+  --sans-serif: "Arial", sans-serif;
   --monospace: "Courier New", monospace;
 
   --transition-duration: 0.5s;
@@ -306,6 +306,9 @@ section article {
 }
 section article:first-child {
   border-top: none;
+}
+section:first-of-type article:first-child {
+  padding-top: 0;
 }
 footer {
   background: var(--alt-bg);

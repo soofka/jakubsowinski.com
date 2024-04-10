@@ -4,20 +4,23 @@
   }
 
   let theme =
-    localStorage.getItem("theme") === "dark" ||
+    new URLSearchParams(window.location.search).get("t") === "d" ||
+    window.localStorage.getItem("theme") === "dark" ||
     (window.matchMedia &&
       window.matchMedia("(prefers-colors-scheme: dark)").matches)
       ? "dark"
       : "light";
 
-  applyTheme(theme, true);
+  const toggle = document.querySelector("#theme-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      applyTheme(theme === "light" ? "dark" : "light", e.target);
+    });
+  }
+  applyTheme(theme, toggle, true);
 
-  document.querySelector("#theme-toggle").addEventListener("click", (e) => {
-    e.preventDefault();
-    applyTheme(theme === "light" ? "dark" : "light");
-  });
-
-  function applyTheme(newTheme, force = false) {
+  function applyTheme(newTheme, toggle, force = false) {
     if (
       (newTheme === "light" || newTheme === "dark") &&
       (newTheme !== theme || force)
@@ -36,9 +39,18 @@
         element.removeAttribute("disabled");
       }
 
-      localStorage.setItem("theme", theme);
-      document.querySelector("#theme-toggle").textContent =
-        theme === "dark" ? "light" : "dark";
+      const qs = new URLSearchParams(window.location.search);
+      const url = `${window.location.origin}${window.location.pathname}${window.location.search ? `?${qs.toString()}` : ""}`;
+      qs.set("t", theme === "dark" ? "d" : "l");
+      window.history.replaceState(
+        url,
+        "",
+        `${window.location.origin}${window.location.pathname}?${qs.toString()}`,
+      );
+      window.localStorage.setItem("theme", theme);
+      if (toggle) {
+        toggle.textContent = theme === "dark" ? "light" : "dark";
+      }
     }
   }
 })();

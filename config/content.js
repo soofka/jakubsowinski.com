@@ -34,6 +34,11 @@ export const getContent = async (langs) => {
         assert: { type: "json" },
       })
     ).default,
+    slides: (
+      await import("../src/data/slides.json", {
+        assert: { type: "json" },
+      })
+    ).default,
     cv: (
       await import("../src/data/cv.json", {
         assert: { type: "json" },

@@ -49,29 +49,22 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       }">
       <meta property="og:image:alt" content="${dists.find((dist) => dist.name === "icon-512x512").rel}">
 
-      <meta name="robots" content="index,follow"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="index, follow"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0 ${template === "slides" ? ", maximum-scale=1.0, user-scalable=no" : ""}">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="color-scheme" content="${data.themes.map((theme) => theme.name).join(" ")}">
 
       <link rel="canonical" href="${data.url}${url}" />
-      ${data.langs
-        .map(
-          (lang) =>
-            `<link rel="alternate" href="${`${data.url}${url.replace(new RegExp(data.langs.join("|")), lang)}`}" hreflang="${lang}" />`,
-        )
-        .join("")}
-
-      ${data.themes
-        .map(
-          (theme, index) => `
-            <meta class="theme-item ${theme.name}-theme-item" name="theme-color" content="${theme.color}" media="(prefers-color-scheme: ${theme.name})"></meta>
-            <link class="theme-item ${theme.name}-theme-item" rel="manifest" href="${dists.find((dist) => dist.name === `manifest-${lang}-${theme.name}` && dist.ext === ".webmanifest").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
-            <link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
-            <meta name="apple-mobile-web-app-status-bar-style" content="${theme.color}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
-          `,
-        )
-        .join("")}
+      ${
+        type === "slides"
+          ? ""
+          : data.langs
+              .map(
+                (lang) =>
+                  `<link rel="alternate" href="${`${data.url}${url.replace(new RegExp(data.langs.join("|")), lang)}`}" hreflang="${lang}" />`,
+              )
+              .join("")
+      }
       
       ${dists
         .filter((dist) => dist.name.startsWith("icon-"))
@@ -82,16 +75,31 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
         )
         .join("")}
 
+        <link rel="stylesheet" href="${
+          dists.find((dist) => dist.name === "reset" && dist.ext === ".css").rel
+        }">
+
+      ${data.themes
+        .map(
+          (theme, index) => `
+            <meta name="apple-mobile-web-app-status-bar-style" content="${theme.color}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
+            <meta class="theme-item ${theme.name}-theme-item" name="theme-color" content="${theme.color}" media="(prefers-color-scheme: ${theme.name})"></meta>
+            <link class="theme-item ${theme.name}-theme-item" rel="manifest" href="${dists.find((dist) => dist.name === `manifest-${lang}-${theme.name}` && dist.ext === ".webmanifest").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
+            <link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-${template}-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
+            <link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-code-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
+          `,
+        )
+        .join("")}
+
       ${dists
         .filter(
           (dist) =>
-            (dist.name === "style" ||
-              dist.name === `style-${template}` ||
+            (dist.name === `style-${template}` ||
               dist.name === `style-${type}` ||
               dist.name === `style-${name}`) &&
             dist.ext === ".css",
         )
-        .sort((style) => (style.name === "style" ? -1 : 0))
+        .sort((style) => (style.name === "reset" ? 1 : 0))
         .map((style) => `<link rel="stylesheet" href="${style.rel}">`)
         .join("")}
   </head>
