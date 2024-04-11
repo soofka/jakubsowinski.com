@@ -56,7 +56,7 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
 
       <link rel="canonical" href="${data.url}${url}" />
       ${
-        type === "slides"
+        template === "slides"
           ? ""
           : data.langs
               .map(
@@ -70,20 +70,24 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
         .filter(
           (dist) =>
             (dist.name === "reset" ||
+              dist.name === "style" ||
               dist.name === `style-${template}` ||
               dist.name === `style-${type}` ||
               dist.name === `style-${name}`) &&
             dist.ext === ".css",
         )
-        .sort((style) =>
-          style.name === "reset"
-            ? 1
-            : style.name.endsWith(template)
-              ? 1
-              : style.name.endsWith(type)
-                ? 1
-                : -1,
-        )
+        .sort((a, b) => {
+          if (a.name === "reset") {
+            return -1;
+          } else if (b.name === "reset") {
+            return 1;
+          } else if (a.name === "style") {
+            return -1;
+          } else if (b.name === "style") {
+            return 1;
+          }
+          return 0;
+        })
         .map((style) => `<link rel="stylesheet" href="${style.rel}">`)
         .join("")}
 
@@ -93,8 +97,13 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
             <meta name="apple-mobile-web-app-status-bar-style" content="${theme.color}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
             <meta class="theme-item ${theme.name}-theme-item" name="theme-color" content="${theme.color}" media="(prefers-color-scheme: ${theme.name})"></meta>
             <link class="theme-item ${theme.name}-theme-item" rel="manifest" href="${dists.find((dist) => dist.name === `manifest-${lang}-${theme.name}` && dist.ext === ".webmanifest").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
-            <link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-${template}-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
+            <link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
             <link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-code-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">
+            ${
+              template === "slides"
+                ? `<link class="theme-item ${theme.name}-theme-item" rel="stylesheet" href="${dists.find((dist) => dist.name === `style-slides-${theme.name}` && dist.ext === ".css").rel}" media="${index == 0 ? "" : `(prefers-color-scheme: ${theme.name})`}">`
+                : ""
+            }
           `,
         )
         .join("")}

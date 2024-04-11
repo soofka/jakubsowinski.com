@@ -28,7 +28,7 @@ export default {
     const dists = [];
     for (let theme of data.themes) {
       dists.push({
-        name: `style-page-${theme.name}`,
+        name: `style-${theme.name}`,
         content: (data) => style(data, theme.name),
       });
     }

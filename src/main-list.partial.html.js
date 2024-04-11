@@ -169,7 +169,7 @@ const getDoubleColumnItem = (
   altHighlight,
 ) => `
   <article>
-    <div class="col ${altHighlight ? "highlight" : ""}">
+    <div class="col ${altHighlight ? "highlight-bg" : ""}">
       ${alt}
     </div>
     <div class="col col-2">

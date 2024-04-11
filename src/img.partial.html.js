@@ -37,6 +37,10 @@ const img = (
     }
   }
 
+  if (!imgDist) {
+    console.log("NO IMGDIST", src);
+  }
+
   const picture = `<picture>
       ${Object.keys(sourceDists)
         .map(
