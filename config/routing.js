@@ -227,17 +227,12 @@ export const getRouting = (langs, labels, data) => {
         content: slides,
       });
     }
-    if (slides.pdf) {
-      routes[`${slidesPageUrl}/pdf`] = {
-        isStatic: true,
-        dir: slides.id,
-        name: "index.pdf",
-      };
-    }
   }
 
-  for (let route of Object.keys(routes)) {
-    routes[route].template = `${routes[route].template}.template.html`;
+  for (let route in routes) {
+    if (Object.hasOwn(routes[route], "template")) {
+      routes[route].template = `${routes[route].template}.template.html`;
+    }
     if (!route.endsWith("/")) {
       routes[`${route}/`] = { ...routes[route] };
     }

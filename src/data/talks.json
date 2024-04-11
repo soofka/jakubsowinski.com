@@ -13,6 +13,7 @@
       "en": "Berlin, Germany",
       "pl": "Berlin, Niemcy"
     },
+    "slides": "microfrontends",
     "inCV": "true"
   },
   {
@@ -29,6 +30,7 @@
       "en": "Cracow, Poland",
       "pl": "Kraków, Polska"
     },
+    "slides": "microfrontends",
     "inCV": "true"
   },
   {
@@ -45,6 +47,7 @@
       "en": "Gdansk, Poland",
       "pl": "Gdańsk, Polska"
     },
+    "slides": "microfrontends",
     "inCV": "true"
   },
   {
@@ -75,7 +78,8 @@
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
-    }
+    },
+    "slides": "microfrontends"
   },
   {
     "title": "Modern web development: React PWA with Push Notifications (case study)",
@@ -84,7 +88,6 @@
       "pl": "opis"
     },
     "youtube": "n1Be_RzXzjQ",
-    "slides": "progressive_web_app_case_study.pdf",
     "date": "2017-11",
     "langs": ["en"],
     "conference": "Code Europe Autumn 2017",
@@ -92,6 +95,7 @@
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
     },
+    "slides": "pwa_case_study",
     "inCV": "true"
   },
   {
@@ -101,7 +105,6 @@
       "pl": "opis"
     },
     "youtube": "Gl8vucNqtZQ",
-    "slides": "practical_tips_for_optimizing_javascript.pdf",
     "date": "2017-07",
     "langs": ["en"],
     "conference": "Code Europe Spring 2017",
@@ -109,6 +112,7 @@
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
     },
+    "slides": "optimizing_js",
     "inCV": "true"
   }
 ]

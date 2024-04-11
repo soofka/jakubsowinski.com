@@ -1,12 +1,12 @@
 [
   {
-    "id": "practical_tips_for_optimizing_javascript",
+    "id": "optimizing_js",
     "title": "Practical tips for optimizing JavaScript",
     "description": "description",
     "pdf": true
   },
   {
-    "id": "progressive_web_app_case_study",
+    "id": "pwa_case_study",
     "title": "Progressive Web App - case study",
     "description": "description",
     "pdf": true

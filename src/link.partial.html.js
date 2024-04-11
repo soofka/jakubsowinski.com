@@ -1,9 +1,14 @@
-const link = (data, dists, { pageId, ...attributes }, content) =>
-  `<a ${Object.keys(attributes)
+const link = (data, dists, { pageId, ...attributes }, content) => {
+  const page = data.pages.find((page) => page.id === pageId);
+  if (!page) {
+    console.error("ERROR", pageId);
+  }
+  return `<a ${Object.keys(attributes)
     .map((attribute) => `${attribute}="${attributes[attribute]}"`)
     .join(" ")}
     href="${data.pages.find((page) => page.id === pageId).url}">
     ${content}
   </a>`;
+};
 
 export default link;

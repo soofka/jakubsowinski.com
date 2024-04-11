@@ -77,6 +77,9 @@ export const getContent = async (langs) => {
 
   data.cv.talks = [];
   for (let talk of data.talks) {
+    if (talk.slides) {
+      talk.slides = data.slides.find((item) => item.id === talk.slides);
+    }
     if (talk.inCV) {
       data.cv.talks.push(talk);
     }

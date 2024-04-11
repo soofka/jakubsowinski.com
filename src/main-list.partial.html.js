@@ -110,14 +110,22 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
 
     case "talks":
       meta = `${meta} | ${item.conference}, ${item.place[lang]} | <a href="https://youtube.com/watch?v=${item.youtube}" target="_blank">youtube</a>`;
-      // if (item.slides) {
-      //   const slidesDot = item.slides.lastIndexOf(".");
-      //   if (slidesDot > 0) {
-      //     meta = `${meta} | <a href="${dists.find((dist) => dist.name === item.slides.substring(0, slidesDot) && dist.ext === item.slides.substring(slidesDot)).rel}" target="_blank">
-      //       ${labels.pages.talks.slides}
-      //     </a>`;
-      //   }
-      // }
+      if (item.slides) {
+        const slides = [];
+        if (item.slides.html) {
+          slides.push(
+            `<partial name="link" pageId="slides-${item.slides.id}" target="_blank">html</partial>`,
+          );
+        }
+        if (item.slides.pdf) {
+          slides.push(
+            `<a href="${dists.find((dist) => dist.relDir.endsWith(item.slides.id) && dist.name === "index" && dist.ext === ".pdf").rel}" target="_blank">pdf</a>`,
+          );
+        }
+        if (slides.length > 0) {
+          meta = `${meta} | slides: ${slides.join(", ")}`;
+        }
+      }
       alt = `<partial name="youtube" data="${encodeURI(
         JSON.stringify({
           id: item.youtube,
