@@ -5,7 +5,6 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "Yac9wgicbUM",
     "date": "2023-06",
     "langs": ["en"],
     "conference": "Axel Springer Media & Tech 2023",
@@ -13,6 +12,9 @@
       "en": "Berlin, Germany",
       "pl": "Berlin, Niemcy"
     },
+    "recordings": {
+      "youtube": "Yac9wgicbUM"
+    },
     "slides": "microfrontends",
     "inCV": "true"
   },
@@ -22,7 +24,6 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "Il9O2vchlRg",
     "date": "2019-08",
     "langs": ["en"],
     "conference": "Devoxx Poland 2019",
@@ -30,6 +31,9 @@
       "en": "Cracow, Poland",
       "pl": "Kraków, Polska"
     },
+    "recordings": {
+      "youtube": "Il9O2vchlRg"
+    },
     "slides": "microfrontends",
     "inCV": "true"
   },
@@ -39,7 +43,6 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "lkl_C3CObp0",
     "date": "2019-07",
     "langs": ["en"],
     "conference": "Infoshare 2019",
@@ -47,8 +50,26 @@
       "en": "Gdansk, Poland",
       "pl": "Gdańsk, Polska"
     },
+    "recordings": {
+      "youtube": "lkl_C3CObp0"
+    },
     "slides": "microfrontends",
     "inCV": "true"
+  },
+  {
+    "title": "How to improve code quality with property-based testing",
+    "description": {
+      "en": "description",
+      "pl": "opis"
+    },
+    "date": "2019-10",
+    "langs": ["pl"],
+    "conference": "StepStone Tech Meetup #1 2019",
+    "place": {
+      "en": "Warsaw, Poland",
+      "pl": "Warszawa, Polska"
+    },
+    "slides": "property_based_tests"
   },
   {
     "title": "3 lata życia aplikacji w React i TypeScript - lekcje i wnioski",
@@ -56,14 +77,17 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "aQw3jpVsf6w",
     "date": "2019-06",
     "langs": ["pl"],
     "conference": "4Developers 2019",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
-    }
+    },
+    "recordings": {
+      "youtube": "aQw3jpVsf6w"
+    },
+    "slides": "profile_editor_case_study"
   },
   {
     "title": "Mikro front-endy: continous delivery w dużych projektach",
@@ -71,7 +95,6 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "j-1i05AMBB8",
     "date": "2019-06",
     "langs": ["pl"],
     "conference": "4Developers 2019",
@@ -79,7 +102,25 @@
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
     },
+    "recordings": {
+      "youtube": "j-1i05AMBB8"
+    },
     "slides": "microfrontends"
+  },
+  {
+    "title": "Autostopem przez PWA",
+    "description": {
+      "en": "description",
+      "pl": "opis"
+    },
+    "date": "2019-06",
+    "langs": ["pl"],
+    "conference": "AppQa Meetup #1 2019",
+    "place": {
+      "en": "Warsaw, Poland",
+      "pl": "Warszawa, Polska"
+    },
+    "slides": "pwa_testing"
   },
   {
     "title": "Modern web development: React PWA with Push Notifications (case study)",
@@ -87,13 +128,15 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "n1Be_RzXzjQ",
     "date": "2017-11",
     "langs": ["en"],
     "conference": "Code Europe Autumn 2017",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
+    },
+    "recordings": {
+      "youtube": "n1Be_RzXzjQ"
     },
     "slides": "pwa_case_study",
     "inCV": "true"
@@ -104,13 +147,15 @@
       "en": "description",
       "pl": "opis"
     },
-    "youtube": "Gl8vucNqtZQ",
     "date": "2017-07",
     "langs": ["en"],
     "conference": "Code Europe Spring 2017",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
+    },
+    "recordings": {
+      "youtube": "Gl8vucNqtZQ"
     },
     "slides": "optimizing_js",
     "inCV": "true"

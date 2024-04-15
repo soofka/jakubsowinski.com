@@ -95,7 +95,9 @@
         "title": "Talks",
         "description": "Talks"
       },
-      "slides": "slides"
+      "slides": "slides",
+      "recordings": "recordings",
+      "noRecording": "No recording"
     },
     "cv": {
       "meta": {

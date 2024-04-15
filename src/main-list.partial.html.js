@@ -22,9 +22,10 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       : item.description
   }</p>`;
   let meta = item.date;
+  let footnote = "";
   let alt;
   let altHighlight = false;
-  let footnote = "";
+  let isAltOnLeft;
   let pageId;
 
   switch (pageName) {
@@ -50,6 +51,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
           }),
         )}"></partial>
       </partial>`;
+      isAltOnLeft = true;
       break;
 
     case "blog":
@@ -71,6 +73,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
           }),
         )}"></partial>
       </partial>`;
+      isAltOnLeft = false;
       break;
 
     case "courses":
@@ -81,13 +84,14 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       if (clients && clients.length > 0) {
         meta = `${meta} | ${labels.pages.courses.taughtFor} ${clients.join(", ")}`;
       }
-      alt = `<h4>${labels.pages.courses.courseContent}</h4><ul>${item.content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>`;
-      altHighlight = true;
       footnote = `<p class="button-container">
         <a class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg" href="mailto:j@swn.ski?subject=${titleText}">
           ${labels.pages.courses.buy}
         </a>
       </p>`;
+      alt = `<h4>${labels.pages.courses.courseContent}</h4><ul>${item.content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>`;
+      altHighlight = true;
+      isAltOnLeft = false;
       break;
 
     case "projects":
@@ -109,7 +113,31 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       break;
 
     case "talks":
-      meta = `${meta} | ${item.conference}, ${item.place[lang]} | <a href="https://youtube.com/watch?v=${item.youtube}" target="_blank">youtube</a>`;
+      meta = `${meta} | ${item.conference}, ${item.place[lang]}`;
+
+      const metaSecondRowItems = [];
+      if (item.recordings) {
+        const recordings = [];
+        if (item.recordings.youtube) {
+          alt = `
+            <partial name="youtube" data="${encodeURI(
+              JSON.stringify({
+                id: item.recordings.youtube,
+                title: titleText,
+                width: 320,
+                height: 190,
+              }),
+            )}"></partial>`;
+          recordings.push(
+            `<a href="https://youtube.com/watch?v=${item.recordings.youtube}" target="_blank">youtube</a>`,
+          );
+        }
+        if (recordings.length > 0) {
+          metaSecondRowItems.push(
+            `${labels.pages.talks.recordings}: ${recordings.join(", ")}`,
+          );
+        }
+      }
       if (item.slides) {
         const slides = [];
         if (item.slides.html) {
@@ -123,17 +151,24 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
           );
         }
         if (slides.length > 0) {
-          meta = `${meta} | slides: ${slides.join(", ")}`;
+          metaSecondRowItems.push(
+            `${labels.pages.talks.slides}: ${slides.join(", ")}`,
+          );
         }
       }
-      alt = `<partial name="youtube" data="${encodeURI(
-        JSON.stringify({
-          id: item.youtube,
-          title: titleText,
-          width: 320,
-          height: 190,
-        }),
-      )}"></partial>`;
+      if (metaSecondRowItems.length > 0) {
+        meta = `${meta}<br/>${metaSecondRowItems.join(" | ")}`;
+      }
+
+      if (!alt) {
+        alt = `<partial name="img" data="${encodeURI(
+          JSON.stringify({
+            src: "no_recording.jpg",
+            alt: labels.pages.talks.noRecording,
+          }),
+        )}"></partial>`;
+      }
+      isAltOnLeft = true;
       break;
 
     default:
@@ -155,7 +190,15 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
   }
 
   return alt
-    ? getDoubleColumnItem(title, meta, content, footnote, alt, altHighlight)
+    ? getDoubleColumnItem(
+        title,
+        meta,
+        content,
+        footnote,
+        alt,
+        altHighlight,
+        isAltOnLeft,
+      )
     : getSingleColumnItem(title, meta, content, footnote);
 };
 
@@ -175,16 +218,30 @@ const getDoubleColumnItem = (
   footnote,
   alt,
   altHighlight,
+  isAltOnLeft = true,
 ) => `
   <article>
-    <div class="col ${altHighlight ? "highlight-bg" : ""}">
-      ${alt}
-    </div>
+    ${
+      isAltOnLeft
+        ? `
+        <div class="col ${altHighlight ? "highlight-bg" : ""}">
+          ${alt}
+        </div>`
+        : ""
+    }
     <div class="col col-2">
       ${title}
       ${meta}
       ${content}
     </div>
+    ${
+      isAltOnLeft
+        ? ""
+        : `
+        <div class="col ${altHighlight ? "highlight-bg" : ""}">
+          ${alt}
+        </div>`
+    }
     ${footnote}
   </article>`;
 

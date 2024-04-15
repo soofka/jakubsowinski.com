@@ -95,7 +95,9 @@
         "title": "Wystąpienia",
         "description": "Wystąpienia"
       },
-      "slides": "slajdy"
+      "slides": "slajdy",
+      "recordings": "nagrania",
+      "noRecording": "Brak nagrania"
     },
     "cv": {
       "meta": {
