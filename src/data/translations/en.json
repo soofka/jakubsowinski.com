@@ -104,9 +104,22 @@
         "title": "Resume",
         "description": "Resume"
       }
+    },
+    "error": {
+      "404": {
+        "name": "404",
+        "description": "Page not found",
+        "nextStep": "Go back to home page"
+      },
+      "500": {
+        "name": "500",
+        "description": "Internal server error",
+        "nextStep": "Try again"
+      }
     }
   },
   "misc": {
+    "noJs": "Your browser does not support JavaScript",
     "continueReading": "Continue reading",
     "oneAvailableLang": "This content is only available in",
     "multipleAvailableLangs": "This content is available in",

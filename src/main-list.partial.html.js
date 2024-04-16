@@ -1,4 +1,4 @@
-const mainList = (data, dists, { id, name, lang, content = [] }) => `
+const mainList = (data, dists, { name, lang, content = [] }) => `
   <main>
     <section>
       <div class="wrapper">

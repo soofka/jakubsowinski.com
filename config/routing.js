@@ -1,5 +1,8 @@
 export const getRouting = (langs, labels, data) => {
-  const routes = {};
+  const routes = {
+    static: {},
+    errors: {},
+  };
   const pages = [];
 
   const pageTemplate = "page";
@@ -16,7 +19,7 @@ export const getRouting = (langs, labels, data) => {
   const slidesPageName = "slides";
   const cvPageName = "cv";
 
-  for (let index in langs) {
+  for (let index = langs.length - 1; index >= 0; index--) {
     const lang = langs[index];
 
     const indexPageUrl = `/${lang}/${indexPageName}`;
@@ -29,7 +32,7 @@ export const getRouting = (langs, labels, data) => {
     if (index == 0) {
       indexPageObject.alts.push("/");
     }
-    routes[indexPageUrl] = indexPageObject;
+    routes.static[indexPageUrl] = indexPageObject;
     pages.push({
       id: indexPageId,
       url: indexPageUrl,
@@ -41,7 +44,7 @@ export const getRouting = (langs, labels, data) => {
 
     const articlesPageUrl = `/${lang}/${articlesPageName}`;
     const articlesPageId = `${articlesPageName}-${lang}`;
-    routes[articlesPageUrl] = {
+    routes.static[articlesPageUrl] = {
       template: pageTemplate,
       pageId: articlesPageId,
     };
@@ -62,7 +65,7 @@ export const getRouting = (langs, labels, data) => {
     for (let article of data.articles) {
       const articlePageUrl = `/${lang}/${articlePageName}/${parseTitleToUrl(article.title)}`;
       const articlePageId = `${articlePageName}-${lang}-${article.id}`;
-      routes[articlePageUrl] = {
+      routes.static[articlePageUrl] = {
         template: pageTemplate,
         pageId: articlePageId,
       };
@@ -84,7 +87,7 @@ export const getRouting = (langs, labels, data) => {
 
     const blogPageUrl = `/${lang}/${blogPageName}`;
     const blogPageId = `${blogPageName}-${lang}`;
-    routes[blogPageUrl] = {
+    routes.static[blogPageUrl] = {
       template: pageTemplate,
       pageId: blogPageId,
     };
@@ -105,7 +108,7 @@ export const getRouting = (langs, labels, data) => {
     for (let post of data.blog) {
       const blogPostPageUrl = `/${lang}/${blogPostPageName}/${parseTitleToUrl(post.title)}`;
       const blogPostPageId = `${blogPostPageName}-${lang}-${post.id}`;
-      routes[blogPostPageUrl] = {
+      routes.static[blogPostPageUrl] = {
         template: pageTemplate,
         pageId: blogPostPageId,
       };
@@ -126,7 +129,7 @@ export const getRouting = (langs, labels, data) => {
 
     const coursesPageUrl = `/${lang}/${coursesPageName}`;
     const coursesPageId = `${coursesPageName}-${lang}`;
-    routes[coursesPageUrl] = {
+    routes.static[coursesPageUrl] = {
       template: pageTemplate,
       pageId: coursesPageId,
     };
@@ -146,7 +149,7 @@ export const getRouting = (langs, labels, data) => {
 
     const projectsPageUrl = `/${lang}/${projectsPageName}`;
     const projectsPageId = `${projectsPageName}-${lang}`;
-    routes[projectsPageUrl] = {
+    routes.static[projectsPageUrl] = {
       template: pageTemplate,
       pageId: projectsPageId,
     };
@@ -166,7 +169,7 @@ export const getRouting = (langs, labels, data) => {
 
     const talksPageUrl = `/${lang}/${talksPageName}`;
     const talksPageId = `${talksPageName}-${lang}`;
-    routes[talksPageUrl] = {
+    routes.static[talksPageUrl] = {
       template: pageTemplate,
       pageId: talksPageId,
     };
@@ -186,7 +189,7 @@ export const getRouting = (langs, labels, data) => {
 
     const cvPageUrl = `/${lang}/${cvPageName}`;
     const cvPageId = `${cvPageName}-${lang}`;
-    routes[cvPageUrl] = {
+    routes.static[cvPageUrl] = {
       template: pageTemplate,
       pageId: cvPageId,
     };
@@ -203,13 +206,33 @@ export const getRouting = (langs, labels, data) => {
       },
       content: data.cv,
     });
+
+    for (let error of ["404", "500"]) {
+      const errorPageId = `${error}-${lang}`;
+      routes.errors[errorPageId] = {
+        template: pageTemplate,
+        statusCode: error,
+        scope: index == 0 ? "/" : `/${lang}/`,
+      };
+      pages.push({
+        id: errorPageId,
+        name: error,
+        lang,
+        template: pageTemplate,
+        type: "error",
+        meta: {
+          title: labels[lang].pages.error[error].name,
+          description: labels[lang].pages.error[error].description,
+        },
+      });
+    }
   }
 
   for (let slides of data.slides) {
     const slidesPageUrl = `/${slidesPageName}/${parseTitleToUrl(slides.title)}`;
     if (slides.html) {
       const slidesPageId = `${slidesPageName}-${slides.id}`;
-      routes[slidesPageUrl] = {
+      routes.static[slidesPageUrl] = {
         template: slidesTemplate,
         pageId: slidesPageId,
       };
@@ -229,12 +252,19 @@ export const getRouting = (langs, labels, data) => {
     }
   }
 
-  for (let route in routes) {
-    if (Object.hasOwn(routes[route], "template")) {
-      routes[route].template = `${routes[route].template}.template.html`;
+  for (let route in routes.static) {
+    if (Object.hasOwn(routes.static[route], "template")) {
+      routes.static[route].template =
+        `${routes.static[route].template}.template.html`;
     }
     if (!route.endsWith("/")) {
-      routes[`${route}/`] = { ...routes[route] };
+      routes.static[`${route}/`] = { ...routes.static[route] };
+    }
+  }
+  for (let errorId in routes.errors) {
+    if (Object.hasOwn(routes.errors[errorId], "template")) {
+      routes.errors[errorId].template =
+        `${routes.errors[errorId].template}.template.html`;
     }
   }
 

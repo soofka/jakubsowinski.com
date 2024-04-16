@@ -27,7 +27,7 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       <meta name="description" content="${description}">
       <meta property="og:title" content="${title}">
       <meta property="og:type" content="${data.type}">
-      <meta property="og:url" content="${data.url}${url}">
+      <meta property="og:url" content="${data.url}${url || ""}">
       <meta property="og:description" content="${description}">
       <meta property="og:image" content="${
         dists
@@ -54,16 +54,20 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="color-scheme" content="${data.themes.map((theme) => theme.name).join(" ")}">
 
-      <link rel="canonical" href="${data.url}${url}" />
       ${
-        template === "slides"
-          ? ""
-          : data.langs
-              .map(
-                (lang) =>
-                  `<link rel="alternate" href="${`${data.url}${url.replace(new RegExp(data.langs.join("|")), lang)}`}" hreflang="${lang}" />`,
-              )
-              .join("")
+        url
+          ? `<link rel="canonical" href="${data.url}${url}" />
+            ${
+              template === "slides"
+                ? ""
+                : data.langs
+                    .map(
+                      (lang) =>
+                        `<link rel="alternate" href="${`${data.url}${url.replace(new RegExp(data.langs.join("|")), lang)}`}" hreflang="${lang}" />`,
+                    )
+                    .join("")
+            }`
+          : ""
       }
 
       ${dists

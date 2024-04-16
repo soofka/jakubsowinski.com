@@ -1,7 +1,7 @@
 const scripts = (
   data,
   dists,
-  { name, template, type, inline = [], defer = true },
+  { name, template, type, inline = [], defer = true, noScript = false },
 ) =>
   dists
     .filter(
@@ -21,6 +21,11 @@ const scripts = (
       inline.map(
         (script) => `<script ${defer ? "defer" : ""}>${script}</script>`,
       ),
+      noScript
+        ? [
+            `<noscript><p>${data.labels[data.langs[0]].misc.noJs}</p></noscript>`,
+          ]
+        : [],
     )
     .join("");
 

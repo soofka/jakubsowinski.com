@@ -24,7 +24,11 @@ const header = (data, dists, { url, name, lang }) =>
               .filter((tempLang) => tempLang !== lang)
               .map(
                 (otherLang) =>
-                  `<li><a href="${url.replace(`/${lang}/`, `/${otherLang}/`)}">${otherLang}</a></li>`,
+                  `<li>${
+                    url
+                      ? `<a href="${url.replace(`/${lang}/`, `/${otherLang}/`)}">`
+                      : `<a href="#" class="no-js" onclick="window.location.pathname = window.location.pathname.replace('/${lang}/', '/${otherLang}/')">`
+                  }${otherLang}</a></li>`,
               )}
             <li><a href="#" id="theme-toggle" class="no-js">#</a></li>
           </ul>

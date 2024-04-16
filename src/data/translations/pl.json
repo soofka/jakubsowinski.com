@@ -104,15 +104,28 @@
         "title": "CV",
         "description": "CV"
       }
+    },
+    "error": {
+      "404": {
+        "name": "404",
+        "description": "Nie znaleziono strony",
+        "nextStep": "Wróć do strony głównej"
+      },
+      "500": {
+        "name": "500",
+        "description": "Błąd serwera",
+        "nextStep": "Spróbuj ponownie"
+      }
     }
   },
   "misc": {
+    "noJs": "Twoja przeglądarka nie wspiera JavaScript",
     "continueReading": "Czytaj dalej",
     "oneAvailableLang": "Ta treść jest dostępna tylko w języku",
     "multipleAvailableLangs": "Ta treść jest dostępna w językach",
     "availableLangs_en": "angielskim",
     "availableLangs_pl": "polskim",
     "and": "i",
-    "allRightsReserved": "wszystkie prawa zastrzeżone"
+    "allRightsReserved": "wszelkie prawa zastrzeżone"
   }
 }

@@ -7,7 +7,7 @@ const slides = (data, dists, { url, name, template, type, meta, content }) => {
   );
   return `
     <!doctype html>
-    <html lang="en">
+    <html lang="${data.langs[0]}">
       <partial name="head" data="${encodeURI(
         JSON.stringify({
           url,
@@ -31,6 +31,7 @@ const slides = (data, dists, { url, name, template, type, meta, content }) => {
             type,
             inline: ["Reveal.initialize({ hash: true })"],
             defer: false,
+            noScript: true,
           }),
         )}"></partial>
       </body>
