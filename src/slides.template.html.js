@@ -21,7 +21,25 @@ const slides = (data, dists, { url, name, template, type, meta, content }) => {
       <body class="${type}">
         <main class="reveal" style="height: 100%">
           <div class="slides">
+            <partial name="slide"></partial>
+            <partial name="slide">
+              <partial name="img" src="me1.jpg"></partial>
+              <h2>Jakub Sowiński</h2>
+              <p class="center">
+                <a href="https://swn.ski" target="_blank">swn.ski</a> | <a href="mailto:j@swn.ski" target="_blank">j[at]swn.ski</a>
+              </p>
+            </partial>
+            <partial name="slide">
+              <h2>${content.title}</h2>
+            </partial>
             ${dist.content}
+            <partial name="slide">
+              <h2>Thank you</h2>
+              <p class="center">
+                <a href="https://swn.ski" target="_blank">swn.ski</a> | <a href="mailto:j@swn.ski" target="_blank">j[at]swn.ski</a>
+              </p>
+            </partial>
+            <partial name="slide"></partial>
           </div>
         </main>
         <partial name="scripts" data="${encodeURI(
