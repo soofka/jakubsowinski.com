@@ -19,12 +19,12 @@ export function parseDists(dists, path) {
   const nameRegExp = getRegExp(name);
   const extRegExp = getRegExp(ext);
 
-  return dists.filter((dist) => {
-    const res1 = relDirRegExp.test(escapeString(dist.relDir));
-    const res2 = nameRegExp.test(dist.name);
-    const res3 = ext ? extRegExp.test(dist.ext) : true;
-    return res1 && res2 && res3;
-  });
+  return dists.filter(
+    (dist) =>
+      relDirRegExp.test(escapeString(dist.relDir)) &&
+      nameRegExp.test(dist.name) &&
+      (ext ? extRegExp.test(dist.ext) : true),
+  );
 }
 
 function escapeString(string, separator = "__") {

@@ -1,0 +1,1116 @@
+<partial name="slide">
+  <h3>📚 Topics</h3>
+  <ol>
+    <li class="fragment">
+      <p>What's missing in the way we test our software?</p>
+    </li>
+    <li class="fragment"><p>How can Property Based Testing fix it?</p></li>
+    <li class="fragment"><p>How to write Property Based Tests?</p></li>
+    <li class="fragment"><p>What else can they be used for?</p></li>
+  </ol>
+</partial>
+<partial
+  name="slide"
+  data-background="data/slides/property_based_tests/images/frontend_connect_2019"
+></partial>
+<partial
+  name="slide"
+  data-background="data/slides/property_based_tests/images/frontend_connect_2019_logo"
+></partial>
+<partial
+  name="slide"
+  data-background="data/slides/property_based_tests/images/frontend_connect_2019_presentation"
+></partial>
+<partial name="slide">
+  <h3>What's missing in the way we test our software?</h3>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/tests_pyramid"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/test_coverage_report_console"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>Why do we write unit tests?</h3>
+  <ul>
+    <li class="fragment"><p>To check if code works as intended</p></li>
+    <li class="fragment">
+      <p>To help future us modify it and be sure it still works</p>
+    </li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/clean_code_book"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/robert_c_martin"
+  ></partial>
+  <blockquote>
+    <p>
+      If the tests all pass, it’s unlikely that the change broke something
+      unexpected. The tests make small changes virtually risk free
+    </p>
+    <small>Robert C. Martin</small>
+  </blockquote>
+  <p>
+    <small
+      >source:
+      <a
+        href="http://it4kt.cnl.sk/c/zsi/resources/Martin2007.pdf"
+        target="_blank"
+        >http://it4kt.cnl.sk/c/zsi/resources/Martin2007.pdf</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>How do we write unit tests?</h3>
+</partial>
+<partial name="slide">
+  <code>/numbers/index.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+function sum(a, b) {
+  return a + b;
+}
+
+describe('sum function', () => {
+  test('checks if 1 + 2 equals 3', () => {
+    expect(sum(1, 2)).toBe(3);
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_1"
+  ></partial>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/exampleBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('sum function', () => {
+
+  test('checks if 1 + 2 equals 3', () => {
+    expect(sum(1, 2)).toBe(3);
+  });
+
+  test('checks if -1 + 1 equals 0', () => {
+    expect(sum(-1, 1)).toBe(0);
+  });
+
+  test('checks if 0 + 0 equals 0', () => {
+    expect(sum(0, 0)).toBe(0);
+  });
+
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_2"
+  />
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/all_values_diagram_0"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/all_values_diagram_1"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/all_values_diagram_2"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>Why this sucks? 👎</h3>
+  <ul>
+    <li class="fragment"><p>It's a waste of time</p></li>
+    <li class="fragment">
+      <p>You won't find bugs you don't expect to find</p>
+    </li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/confucius"
+  ></partial>
+  <blockquote>
+    <p>True wisdom is knowing what you don't know.</p>
+    <small>Confucius</small>
+  </blockquote>
+  <p>
+    <small
+      >source:
+      <a
+        href="https://www.umbel.com/blog/services/know-what-you-dont-know/"
+        target="_blank"
+        >https://www.umbel.com/blog/services/know-what-you-dont-know/</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Fuzzy Testing</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/tv_static_noise"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>Fuzzy Testing</h3>
+  <p>
+    Passing randomly-generated data (often a purely random bytestream) to a
+    program in the hopes of finding an input that causes a crash.
+  </p>
+  <p>
+    <small
+      >source:
+      <a
+        href="https://blog.nelhage.com/post/property-testing-is-fuzzing/"
+        target="_blank"
+        >https://blog.nelhage.com/post/property-testing-is-fuzzing/</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Property Based Testing</h3>
+  <ol>
+    <li class="fragment">
+      <p>Write statements that should be true of your code</p>
+    </li>
+    <li class="fragment">
+      <p>Automatically generate random inputs of an appropriate type</p>
+    </li>
+    <li class="fragment">
+      <p>Observe whether the properties hold for that input</p>
+    </li>
+  </ol>
+  <p>
+    <small class="fragment"
+      >source:
+      <a
+        href="https://blog.nelhage.com/post/property-testing-is-fuzzing/"
+        target="_blank"
+        >https://blog.nelhage.com/post/property-testing-is-fuzzing/</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+test('checks if adding two random positive numbers results in their sum', () => {
+  const numberLimit = 1000;
+
+  const number1 = Math.random() * numberLimit;
+  const number2 = Math.random() * numberLimit;
+  const expectedResult = number1 + number2;
+
+  console.log(`asserting if ${number1} + ${number2} equals ${expectedResult}`);
+  expect(sum(number1, number2)).toBe(expectedResult);
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_3"
+  ></partial>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+test('checks if adding two random numbers results in their sum x 100 times', () => {
+  const numberLimit = 1000;
+
+  for (let i = 0; i &lt; 100; i++) {
+    let number1 = Math.random() * numberLimit;
+    number1 = Math.random() >= 0.5 ? number1 : -number1;
+
+    let number2 = Math.random() * numberLimit;
+    number2 = Math.random() >= 0.5 ? number2 : -number2;
+
+    const expectedResult = number1 + number2;
+
+    expect(sum(number1, number2)).toBe(expectedResult);
+  }
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_4"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/all_values_diagram_3"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/all_values_diagram_4"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/all_values_diagram_5"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>Why this is cool? 👍</h3>
+  <ul>
+    <li class="fragment">
+      <p>Your test runs on random set of data every time</p>
+    </li>
+    <li class="fragment">
+      <p>You can find issues you would have not thought of</p>
+    </li>
+  </ul>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+test('checks if adding two random numbers results in their sum x 100 times', () => {
+  const numberLimit = 1000;
+
+  for (let i = 0; i &lt; 100; i++) {
+    let number1 = Math.random() * numberLimit;
+    number1 = Math.random() >= 0.5 ? number1 : -number1;
+
+    let number2 = Math.random() * numberLimit;
+    number2 = Math.random() >= 0.5 ? number2 : -number2;
+
+    const expectedResult = number1 + number2;
+
+    expect(sum(number1, number2)).toBe(expectedResult);
+  }
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <h3>Why does it still suck, though? 👎</h3>
+  <ul>
+    <li class="fragment">
+      <p>
+        Defining properties and preconditions for each test manually takes time
+        and effort
+      </p>
+    </li>
+    <li class="fragment">
+      <p>Debugging such test in case of failure is inconvenient</p>
+    </li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h2>Tools</h2>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/monkey_typewriter"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/einstein"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>Libraries for Property Based Testing</h3>
+  <ul>
+    <li class="fragment">
+      <p>
+        Java -
+        <a href="https://github.com/pholser/junit-quickcheck" target="_blank"
+          >JUnit-QuickCheck</a
+        >
+        or
+        <a href="https://github.com/quicktheories/QuickTheories" target="_blank"
+          >QuickTheories</a
+        >
+      </p>
+    </li>
+    <li class="fragment">
+      <p>
+        PHP -
+        <a href="https://github.com/steos/php-quickcheck" target="_blank"
+          >PHP-QuickCheck</a
+        >
+        or
+        <a href="https://github.com/giorgiosironi/eris" target="_blank">Eris</a>
+      </p>
+    </li>
+    <li class="fragment">
+      <p>
+        JavaScript -
+        <a href="http://jsverify.github.io/" target="_blank">JSVerify</a> or
+        <a href="https://github.com/dubzzz/fast-check" target="_blank"
+          >Fast-Check</a
+        >
+      </p>
+    </li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/fastcheck"
+  ></partial>
+  <p>
+    <small
+      >source:
+      <a href="https://github.com/dubzzz/fast-check" target="_blank"
+        >https://github.com/dubzzz/fast-check</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+import { sum } from '../';
+import fc from 'fast-check';
+
+describe('sum function', () => {
+  test('checks if adding two random numbers results in their sum x 100 times', () => {
+    fc.assert(
+      fc.property(fc.float(), fc.float(), (a, b) => {
+        expect(sum(a, b)).toBe(a + b);
+      }),
+      { verbose: true },
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_5"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>Configuration of assertions runner</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/fc_assert_config"
+  ></partial>
+  <p>
+    <small
+      >source:
+      <a href="https://github.com/dubzzz/fast-check" target="_blank"
+        >https://github.com/dubzzz/fast-check</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('sum function', () => {
+  test('checks if adding two random numbers results in their sum x 100 times', () => {
+    fc.assert(
+      fc.property(fc.float(), fc.float(), (a, b) => {
+        expect(sum(a, b)).toBe(a + b);
+      }),
+      {
+        verbose: true,
+        examples: [[1, 2], [-1, 1], [0, 0]],
+      },
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('sum function', () => {
+  test('checks if adding two random numbers results in their sum x 100 times', () => {
+    fc.assert(
+      fc.property(fc.float(), fc.float(), (a, b) => {
+        expect(sum(a, b)).toBe(a + b);
+      }),
+      { verbose: true },
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <h3>Property</h3>
+  <p><code>fc.property(fc.float(), fc.float(), (a, b) => { ... })</code></p>
+  <ul>
+    <li class="fragment">
+      <p>
+        <i
+          >for all (x, y, ...) such as precondition(x, y, ...) holds property(x,
+          y, ...) is true</i
+        >
+      </p>
+    </li>
+    <li class="fragment">
+      <p>
+        <i
+          >for all values that meet given condition(s) given statement is
+          true</i
+        >
+      </p>
+    </li>
+    <li class="fragment"><p>consists of arbitraries and predicate</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a href="https://github.com/dubzzz/fast-check" target="_blank"
+        >https://github.com/dubzzz/fast-check</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Arbitrary</h3>
+  <p><code>fc.float(), fc.float()</code></p>
+  <p class="fragment">
+    Responsible for the random - but deterministic - generation of data
+  </p>
+  <p class="fragment">
+    <small>
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Arbitraries.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Arbitraries.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Arbitraries</h3>
+  <ul>
+    <li class="fragment"><p>numbers (up to MAX_SAFE_INTEGER)</p></li>
+    <li class="fragment"><p>strings (ascii, json, lorem)</p></li>
+    <li class="fragment"><p>collections (arrays, sets, objects)</p></li>
+    <li class="fragment"><p>combinors (option, oneof)</p></li>
+    <li class="fragment"><p>custom</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Arbitraries.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Arbitraries.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Predicate</h3>
+  <p><code>(a, b) => { ... }</code></p>
+  <ul>
+    <li class="fragment"><p>Accepts values provided by arbitraries</p></li>
+    <li class="fragment"><p>Performs an assertion</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Runners.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Runners.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('sum function', () => {
+  test('checks if adding two random numbers results in their sum x 100 times', () => {
+    fc.assert(
+      fc.property(fc.float(), fc.float(), (a, b) => {
+        expect(sum(a, b)).toBe(a + b);
+      }),
+      { verbose: true },
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <code>/strings/index.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+function contains(text, pattern) {
+  return text.indexOf(pattern) >= 0;
+}
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <code>/strings/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('contains function', () => {
+  test('checks if randomly generated string contains itself x 100 times', () => {
+    fc.assert(
+      fc.property(fc.string(), (text) => {
+        expect(contains(text, text)).toBe(true);
+      })
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <code>/strings/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('contains function', () => {
+  test('checks if randomly generated string contains it\'s parts x 100 times', () => {
+    fc.assert(
+      fc.property(fc.string(), fc.string(), fc.string(), (a, b, c) => {
+        expect(contains(a + b + c, a)).toBe(true);
+        expect(contains(a + b + c, b)).toBe(true);
+        expect(contains(a + b + c, c)).toBe(true);
+      })
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_6"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>How to come up with scenarios?</h3>
+</partial>
+<partial name="slide">
+  <h3>Round-tripping</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/pattern_round_tripping"
+  ></partial>
+  <br />
+  <ul>
+    <li class="fragment"><p>parsing</p></li>
+    <li class="fragment"><p>serialization</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://blog.ssanj.net/posts/2016-06-26-property-based-testing-patterns.html"
+        target="_blank"
+        >https://blog.ssanj.net/posts/2016-06-26-property-based-testing-patterns.html</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Commutativity</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/pattern_commutativity"
+  ></partial>
+  <br />
+  <ul>
+    <li class="fragment"><p>filter and sort &lt;-&gt; sort and filter</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://blog.ssanj.net/posts/2016-06-26-property-based-testing-patterns.html"
+        target="_blank"
+        >https://blog.ssanj.net/posts/2016-06-26-property-based-testing-patterns.html</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Invariants</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/pattern_invariant"
+  ></partial>
+  <br />
+  <ul>
+    <li class="fragment"><p>content of list after sorting</p></li>
+    <li class="fragment"><p>size of list after mapping</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://blog.ssanj.net/posts/2016-06-26-property-based-testing-patterns.html"
+        target="_blank"
+        >https://blog.ssanj.net/posts/2016-06-26-property-based-testing-patterns.html</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>🐛 Debugging</h3>
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('sum function', () => {
+  test('checks if adding two random numbers results in their sum x 100 times', () => {
+    fc.assert(
+      fc.property(fc.float(), fc.float(), (a, b) => {
+        expect(sum(a, b)).toBe(1);
+      }),
+      { verbose: true },
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_7"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/console_after_test_8"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h3>🐛 Debugging utilities</h3>
+  <code>/numbers/__tests__/propertyBased.test.js</code>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+describe('sum function', () => {
+  test('checks if adding two random numbers results in their sum x 100 times', () => {
+    console.log(
+      fc.check(
+        fc.property(fc.float(), fc.float(), (a, b) => {
+          expect(sum(a, b)).toBe(1);
+        }),
+        { verbose: true },
+      )
+    );
+  });
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <h3>fc.check result interface</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/fc_check_return"
+  ></partial>
+  <p>
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Runners.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Runners.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>🐛 Debugging utilities</h3>
+  <ul>
+    <li class="fragment"><p>Statistics of assertion runner</p></li>
+    <li class="fragment"><p>Samples from arbitraries</p></li>
+    <li class="fragment"><p>Shrinking</p></li>
+    <li class="fragment"><p>Targeted search</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h3>QuickTheories</h3>
+  <partial name="code" language="java" data-trim data-noescape>
+    <pre>
+public class SomeTests {
+
+  @Test
+  public void addingTwoPositiveIntegersAlwaysGivesAPositiveInteger(){
+    qt()
+      .forAll(
+        integers().allPositive(),
+        integers().allPositive()
+      )
+      .check((i,j) -> i + j > 0);
+  }
+
+}
+    </pre>
+  </partial>
+  <p>
+    <small
+      >source:
+      <a href="https://github.com/quicktheories/QuickTheories" target="_blank"
+        >https://github.com/quicktheories/QuickTheories</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>PHP-QuickCheck</h3>
+  <partial name="code" language="php" data-trim data-noescape>
+    <pre>
+$stringsAreNeverNumeric = Gen::forAll(
+  [Gen::asciiStrings()],
+  function($str) {
+    return !is_numeric($str);
+  }
+);
+
+Quick::check(1000, $stringsAreNeverNumeric);
+    </pre>
+  </partial>
+  <p>
+    <small
+      >source:
+      <a href="https://github.com/steos/php-quickcheck" target="_blank"
+        >https://github.com/steos/php-quickcheck</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Beyond Property Based Testing</h3>
+</partial>
+<partial name="slide">
+  <h3>Model Based Testing</h3>
+  <ul>
+    <li class="fragment"><p>Define simplified version of the system</p></li>
+    <li class="fragment">
+      <p>Define commands that can be applied to the system</p>
+    </li>
+    <li class="fragment">
+      <p>Framework picks commands randomly and executes them sequentially</p>
+    </li>
+    <li class="fragment">
+      <p>
+        Tests fail when framework cannot execute command despite the fact it
+        should be able to
+      </p>
+    </li>
+    <li class="fragment">
+      <p>Framework returns full scenario description in case of failure</p>
+    </li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Command - methods</h3>
+  <ul>
+    <li class="fragment">
+      <p>
+        <code>check</code> - true if the command can be executed given the
+        current state
+      </p>
+    </li>
+    <li class="fragment">
+      <p><code>run</code> - actually impacts the system</p>
+    </li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>System and model</h3>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+class List {
+  data: number[] = [];
+  push = (v: number) => this.data.push(v);
+  pop = () => this.data.pop()!;
+  size = () => this.data.length;
+}
+
+type Model = { num: number };
+    </pre>
+  </partial>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Push command</h3>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+class PushCommand implements fc.Command&#x3C;Model, List&#x3E; {
+  constructor(readonly value: number) {}
+  check = (m: Readonly&#x3C;Model&#x3E;) => true;
+  run(m: Model, r: List): void {
+    r.push(this.value);
+    ++m.num;
+  }
+  toString = () => `push(${this.value})`;
+}
+    </pre>
+  </partial>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Pop command</h3>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+class PopCommand implements fc.Command&#x3C;Model, List&#x3E; {
+  check(m: Readonly&#x3C;Model&#x3E;): boolean {
+    return m.num > 0;
+  }
+  run(m: Model, r: List): void {
+    assert.equal(typeof r.pop(), 'number');
+    --m.num;
+  }
+  toString = () => 'pop';
+}
+    </pre>
+  </partial>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Size command</h3>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+class SizeCommand implements fc.Command&#x3C;Model, List&#x3E; {
+  check = (m: Readonly&#x3C;Model&#x3E;) => true;
+  run(m: Model, r: List): void {
+    assert.equal(r.size(), m.num);
+  }
+  toString = () => 'size';
+}
+    </pre>
+  </partial>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Model Based Test setup</h3>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+const allCommands = [
+  fc.integer().map(v => new PushCommand(v)),
+  fc.constant(new PopCommand()),
+  fc.constant(new SizeCommand())
+];
+
+fc.assert(
+  fc.property(fc.commands(allCommands, 100), cmds => {
+    const s = () => ({ model: { num: 0 }, real: new List() });
+    fc.modelRun(s, cmds);
+  })
+);
+    </pre>
+  </partial>
+  <p class="fragment">
+    <small
+      >source:
+      <a
+        href="https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md"
+        target="_blank"
+        >https://github.com/dubzzz/fast-check/blob/master/documentation/Tips.md</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Model Based Testing - Applications</h3>
+  <ul>
+    <li class="fragment"><p>state machines</p></li>
+    <li class="fragment"><p>APIs</p></li>
+    <li class="fragment"><p>UIs</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h3>Does it even work?</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/google"
+  ></partial>
+  <p>
+    <span class="fragment">17 steps</span
+    ><span class="fragment">, 33 steps</span>
+  </p>
+  <p class="fragment">
+    <small
+      >source:
+      <a href="https://www.youtube.com/watch?v=wSB_JWfBcUU" target="_blank"
+        >https://www.youtube.com/watch?v=wSB_JWfBcUU</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Does it even work?</h3>
+  <partial
+    name="img"
+    src="data/slides/property_based_tests/images/spotify"
+  ></partial>
+  <p class="fragment">order of tracks, shuffling, repeating playlists</p>
+  <p class="fragment">
+    <small
+      >source:
+      <a href="https://www.youtube.com/watch?v=wSB_JWfBcUU" target="_blank"
+        >https://www.youtube.com/watch?v=wSB_JWfBcUU</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>Does it even work?</h3>
+  <ul>
+    <li class="fragment"><p>react-final-form</p></li>
+    <li class="fragment"><p>yaml</p></li>
+    <li class="fragment"><p>js-yaml</p></li>
+    <li class="fragment"><p>query-string</p></li>
+    <li class="fragment"><p>and more</p></li>
+  </ul>
+  <p class="fragment">
+    <small
+      >source:
+      <a href="https://github.com/dubzzz/fast-check" target="_blank"
+        >https://github.com/dubzzz/fast-check</a
+      ></small
+    >
+  </p>
+</partial>
+<partial name="slide">
+  <h3>👍 Why Property Based Testing is cool? 👍</h3>
+  <ul>
+    <li class="fragment"><p>check code more thoroughly</p></li>
+    <li class="fragment"><p>help you spot bugs you don't expect</p></li>
+    <li class="fragment"><p>lets you modify your software more safely</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h3>👎 Why Property Based Testing is NOT cool? 👎</h3>
+  <ul>
+    <li class="fragment"><p>don't make up for good documentation</p></li>
+    <li class="fragment"><p>take more time to execute</p></li>
+    <li class="fragment"><p>are not meant for everything</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h1>⚠️</h1>
+  <h3>Property Based Tests are not meant<br />for every function!</h3>
+</partial>
+<partial name="slide">
+  <h3>More resources</h3>
+  <ul>
+    <li>
+      <a href="http://hackage.haskell.org/package/QuickCheck" target="_blank"
+        >http://hackage.haskell.org/package/QuickCheck</a
+      >
+    </li>
+    <li>
+      <a href="https://jqwik.net/property-based-testing.html" target="_blank"
+        >https://jqwik.net/property-based-testing.html</a
+      >
+    </li>
+  </ul>
+</partial>

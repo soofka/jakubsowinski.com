@@ -8,8 +8,8 @@ const img = (
   const dotIndex = src.lastIndexOf(".");
   const srcParsed =
     dotIndex === -1
-      ? `${src}*`
-      : `${src.substring(0, dotIndex)}*${src.substring(dotIndex)}`;
+      ? `${src}-*`
+      : `${src.substring(0, dotIndex)}-*${src.substring(dotIndex)}`;
 
   let imgDist;
   const sourceDists = {};

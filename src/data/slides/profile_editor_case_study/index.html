@@ -1,0 +1,503 @@
+<partial
+  name="slide"
+  data-background-image="data/slides/profile_editor_case_study/images/cvinsertlight_main"
+>
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/chrome_crash"
+    class="fragment"
+  ></partial>
+</partial>
+<partial
+  name="slide"
+  data-background-image="data/slides/profile_editor_case_study/images/cvinsertlight_mountain"
+  data-transition="none"
+></partial>
+<partial
+  name="slide"
+  data-background-image="data/slides/profile_editor_case_study/images/cvinsertlight_mountain_lines_of_code"
+  data-transition="none"
+></partial>
+<partial
+  name="slide"
+  data-background-image="data/slides/profile_editor_case_study/images/cvinsertlight_mountain_lines_of_code_and_file_size"
+  data-transition="none"
+></partial>
+<partial name="slide">
+  <h2 class="fragment grow">
+    3 lata życia<br />aplikacji napisanej<br />w React i TypeScript:<br />lekcje
+    i wnioski
+  </h2>
+</partial>
+<partial name="slide" data-transition="fade-in slide-out">
+  <h1>🗺️</h1>
+  <ul>
+    <li class="fragment" data-fragment-index="1">
+      <p>
+        👉 Założenia <span class="fragment" data-fragment-index="4">📌</span>
+      </p>
+    </li>
+    <li class="fragment" data-fragment-index="2"><p>👉 Implementacja</p></li>
+    <li class="fragment" data-fragment-index="3">
+      <p>👉 Życie na produkcji</p>
+    </li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h1>🙋?</h1>
+</partial>
+<partial name="slide">
+  <h2>Problemy<br />oryginalnej aplikacji:</h2>
+  <ul>
+    <li><p>🔥 nie działa</p></li>
+    <li class="fragment"><p>⚠️ niejasny data flow</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/profile_completeness"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Problemy<br />oryginalnej aplikacji:</h2>
+  <ul>
+    <li><p>🔥 nie działa</p></li>
+    <li><p>⚠️ niejasny data flow</p></li>
+    <li><p>⚠️ słaby performance</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/cvinsertlight_performance"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Problemy<br />oryginalnej aplikacji:</h2>
+  <ul>
+    <li><p>🔥 nie działa</p></li>
+    <li><p>⚠️ niejasny data flow</p></li>
+    <li><p>⚠️ słaby performance</p></li>
+    <li><p>⚠️ brak możliwości rozbudowy</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/cvinsertlight_diagram"
+    class="transparent"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Założenia rozwiązania</h2>
+  <ul>
+    <li><p>👌 separacja kodu na moduły</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_diagram"
+    class="transparent"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Założenia rozwiązania</h2>
+  <ul>
+    <li><p>👌 separacja kodu na moduły</p></li>
+    <li><p>👌 deterministyczny data flow</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/the_idea_architecture"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Założenia rozwiązania</h2>
+  <ul>
+    <li><p>👌 separacja kodu na moduły</p></li>
+    <li><p>👌 deterministyczny data flow</p></li>
+    <li><p>👌 otwartość na modyfikacje</p></li>
+    <li class="fragment"><p>👌 lepszy performance</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h1>🗺️</h1>
+  <ul>
+    <li><p style="opacity: 0.6">👉 Założenia</p></li>
+    <li><p>👉 Implementacja 📌</p></li>
+    <li><p>👉 Życie na produkcji</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/react_logo"
+    class="transparent"
+  ></partial>
+  <h2>React</h2>
+</partial>
+<partial name="slide" data-transition="slide-in fade-out">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_app_on_screen_1"
+  ></partial>
+</partial>
+<partial name="slide" data-transition="fade-in slide-out">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_app_on_screen_2"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial name="code" data-trim data-noescape>
+    <pre>
+/src
+  /components
+    /PersonalDetailsEdit
+    /PersonalDetailsPreview
+    ...
+  /containers
+    /App
+    /PersonalDetails
+    ...
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <p><code>src/containers/App/index.tsx</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+export class App extends React.Component {
+  render() {
+    return(
+      &lt;PageLayout loading={this.props.loading}&gt;
+        &lt;PersonalDetails /&gt;
+        &lt;MediaQuery maxWidth={this.props.screenMdMax}&gt;
+          &lt;ProfileCompleteness /&gt;
+          &lt;MatchMyCv /&gt;
+        &lt;/MediaQuery&gt;
+        &lt;Skills /&gt;
+        &lt;Languages /&gt;
+        &lt;WorkExperience /&gt;
+        &lt;Education /&gt;
+        &lt;WorkPreferences /&gt;
+        {this.props.profileVisibilityEnabled
+          &amp;&amp; &lt;ProfileVisibility /&gt;}
+        &lt;Toast /&gt;
+        &lt;ErrorHandler /&gt;
+      &lt;/PageLayout&gt;
+    );
+  }
+}
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <p><code>src/containers/PersonalDetails/index.tsx</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+export class PersonalDetails extends React.Component {
+  render() {
+    return(
+      &lt;SectionWrapper sectionName={this.props.sectionName} &gt;
+        &lt;SectionBody&gt;
+        {this.props.editMode
+          ? &lt;PersonalDetailsEdit
+            data={this.props.data}
+          /&gt;
+          : &lt;PersonalDetailsPreview
+            data={this.props.data}
+          /&gt;
+        }
+        &lt;/SectionBody&gt;
+      &lt;/SectionWrapper&gt;
+    );
+  }
+}
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/redux_logo"
+    class="transparent"
+  ></partial>
+  <h2>Redux</h2>
+</partial>
+<partial name="slide">
+  <partial name="code" data-trim data-noescape>
+    <pre>
+/src
+  /components
+    /PersonalDetailsEdit
+    /PersonalDetailsPreview
+    ...
+  /containers
+    /App
+    /PersonalDetails
+    ...
+  /store
+    /personalDetails
+    ...
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <p><code>src/store/personalDetails/reducer.tsx</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+import { PERSONAL_DETAILS_SAVE } from 'store/actionTypes';
+
+export const initialState = { loading: false };
+
+export const appReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case PERSONAL_DETAILS_SAVE:
+      return {
+        loading: true,
+        ...state,
+      }
+
+    default:
+      return { ...state };
+  }
+};
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <p><code>src/containers/PersonalDetails/index.tsx</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+import { connect } from 'react-redux';
+import { onPersonalDetailsSave } from './actions'
+
+export class PersonalDetails extends React.Component { /* ... */ }
+
+const mapStateToProps = (state) =&gt; ({
+  data: state.personalDetails.data,
+  editMode: state.personalDetails.editMode,
+});
+
+const mapDispatchToProps = (dispatch) =&gt; ({
+  onSave: () =&gt; dispatch(onPersonalDetailsSave),
+})
+
+export const PersonalDetailsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PersonalDetails);
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <h2>Globalny stan</h2>
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_state"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Redux Dev Tools</h2>
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/redux_dev_tools"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/redux_saga_logo"
+    class="transparent"
+  ></partial>
+  <h2>Redux-Saga</h2>
+</partial>
+<partial name="slide">
+  <p><code>src/containers/PersonalDetails/saga.ts</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+import { put, call } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga';
+import { PERSONAL_DETAILS_SAVE } from 'store/actionTypes';
+import {
+  updatePersonalDetailsRequestSuccess,
+  updatePersonalDetailsRequestFailure,
+} from './actions';
+
+function* updatePersonalDetails(action) {
+  const response = yield call(
+    fetch,
+    '/public-api/v1/profile/personal-details',
+    { body: JSON.stringify(action.data) },
+  );
+
+  yield put(response.err
+    ? updatePersonalDetailsRequestFailure(response)
+    : updatePersonalDetailsRequestSuccess(response));
+}
+
+export function* watchPersonalDetails() {
+  yield takeLatest(PERSONAL_DETAILS_SAVE, updatePersonalDetails);
+}
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/redux_form_logo"
+    class="transparent"
+  ></partial>
+  <h2>Redux Form</h2>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/redux_form_github"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/formik_logo"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/typescript_logo"
+  ></partial>
+  <h2>TypeScript</h2>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_profile_interface"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_profile_interface_in_action"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>💀 Szkielet aplikacji</h2>
+</partial>
+<partial name="slide">
+  <h1>🗺️</h1>
+  <ul>
+    <li><p style="opacity: 0.6">👉 Założenia</p></li>
+    <li><p style="opacity: 0.6">👉 Implementacja</p></li>
+    <li><p>👉 Życie na produkcji 📌</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <h1>😱</h1>
+</partial>
+<partial name="slide">
+  <h2>🐛 Wykrywanie błędów</h2>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sentry_logo"
+    class="transparent"
+  ></partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sentry_error"
+  ></partial>
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sentry_error_log"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Property based tests</h2>
+  <partial name="code" class="javascript">
+    <pre>
+import { sum } from '../';
+import fc from 'fast-check';
+
+describe('sum function', () => {
+
+  test('checks adding two random numbers', () => {
+    fc.assert(
+      fc.property(fc.float(), fc.float(), (a, b) => {
+        expect(sum(a, b)).toBe(a + b);
+      }),
+    );
+  });
+
+});
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <h1>🚒 Rozszerzanie aplikacji</h1>
+</partial>
+<partial name="slide">
+  <p><code>src/containers/App/index.tsx</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+export class App extends React.Component {
+  render() {
+    return(
+      &lt;PageLayout loading={this.props.loading}&gt;
+        &lt;NewSection /&gt;
+        /* ...  */
+      &lt;/PageLayout&gt;
+    );
+  }
+}
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <p><code>webpack.config.js</code></p>
+  <partial name="code" language="javascript" data-trim data-noescape>
+    <pre>
+entry: {
+  app: 'src/containers/App/index.tsx',
+  altApp: 'src/containers/AltApp/index.tsx',
+},
+    </pre>
+  </partial>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_onboarding"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h2>Założenia rozwiązania</h2>
+  <ul>
+    <li><p>✔️ separacja kodu na moduły</p></li>
+    <li><p>✔️ deterministyczny data flow</p></li>
+    <li><p>✔️ otwartość na modyfikacje</p></li>
+    <li><p>❌ lepszy performance</p></li>
+  </ul>
+</partial>
+<partial name="slide">
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/cvinsertlight_performance"
+  ></partial>
+  <partial
+    name="img"
+    src="data/slides/profile_editor_case_study/images/sepp_performance"
+    class="fragment"
+  ></partial>
+</partial>
+<partial name="slide">
+  <h1>💡</h1>
+</partial>

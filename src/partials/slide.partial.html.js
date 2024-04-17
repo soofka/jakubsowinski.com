@@ -7,7 +7,7 @@ const slide = (data, dists, attributes, content) =>
         `${attribute}="${
           attribute === "data-background" ||
           attribute === "data-background-image"
-            ? `..${getLargestImage(getDistsByPath(dists, `${attributes[attribute]}*`)).rel.replaceAll("\\", "/")}`
+            ? `..${getLargestImage(getDistsByPath(dists, `${attributes[attribute]}-*`)).rel.replaceAll("\\", "/")}`
             : attributes[attribute]
         }"`,
     )

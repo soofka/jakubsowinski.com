@@ -19,7 +19,11 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       description = `${meta.description}${metaSeparator}${description}`;
     }
     if (Object.hasOwn(meta, "image")) {
-      imagePath = meta.image;
+      const dotIndex = meta.image.lastIndexOf(".");
+      imagePath =
+        dotIndex === -1
+          ? `${meta.image}-*`
+          : `${meta.image.substring(0, dotIndex)}-*${meta.image.substring(dotIndex)}`;
     }
   }
 
@@ -33,7 +37,7 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       <meta property="og:type" content="${data.type}">
       <meta property="og:url" content="${data.url}${url || ""}">
       <meta property="og:description" content="${description}">
-      <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, `${imagePath}*`)).rel}">
+      <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, imagePath)).rel}">
       <meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">
 
       <meta name="robots" content="index, follow"/>

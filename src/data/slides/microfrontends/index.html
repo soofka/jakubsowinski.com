@@ -79,11 +79,7 @@
   <br /><br /><br /><br />
   <h2 class="highlight-fg">Service-Oriented<br />Architecture</h2>
 </partial>
-<partial
-  name="slide"
-  data-background="data/slides/microfrontends/images/background"
-  data-transition="convex"
->
+<partial name="slide">
   <h2 class="highlight-fg fragment grow">
     Micro Frontends:<br />extending service-oriented architecture to frontend
     development
@@ -328,24 +324,24 @@
   <partial name="code" language="nginx">
     <pre>
 server {
-    listen 8080;
-    server_name localhost;
+  listen 8080;
+  server_name localhost;
 
-    root /usr/share/nginx/html;
-    index index.html;
-    ssi on;
+  root /usr/share/nginx/html;
+  index index.html;
+  ssi on;
 
-    rewrite ^/$ http://localhost:8080/browse redirect;
+  rewrite ^/$ http://localhost:8080/browse redirect;
 
-    location /browse {
-      set $PAGE 'browse';
-    }
-    location /order {
-      set $PAGE 'order';
-    }
-    location /profile {
-      set $PAGE 'profile'
-    }
+  location /browse {
+    set $PAGE 'browse';
+  }
+  location /order {
+    set $PAGE 'order';
+  }
+  location /profile {
+    set $PAGE 'profile'
+  }
 }
     </pre>
   </partial>

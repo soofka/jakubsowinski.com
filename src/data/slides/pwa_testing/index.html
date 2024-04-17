@@ -114,20 +114,20 @@
     <code>/static/manifest.json</code>
     <partial name="code" language="json"><pre>
 {
-    "name": "PWA ISS Tracker",
-    "short_name": "PWA ISS Tracker",
-    "icons": [
-        {
-            "src": "/images/iss-icon-128x128",
-            "sizes": "128x128",
-            "type": "image/png"
-        },
-        //...
-    ],
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#111",
-    "theme_color": "#111"
+  "name": "PWA ISS Tracker",
+  "short_name": "PWA ISS Tracker",
+  "icons": [
+    {
+      "src": "/images/iss-icon-128x128",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    //...
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#111",
+  "theme_color": "#111"
 }
     </pre></partial>
 </partial>
@@ -149,18 +149,18 @@
 let deferredInstallPrompt = null;
 
 window.addEventListener('beforeinstallprompt', (evt) => {
-    deferredInstallPrompt = evt;
-    installButton.classList.remove('hidden');
+  deferredInstallPrompt = evt;
+  installButton.classList.remove('hidden');
 });
 
 installButton.addEventListener('click', () => {
-    deferredInstallPrompt.prompt();
-    installButton.classList.add('hidden');
+  deferredInstallPrompt.prompt();
+  installButton.classList.add('hidden');
 
-    deferredInstallPrompt.userChoice.then((choice) => {
-        console.log(`User ${choice.outcome} the A2HS prompt`, choice);
-        deferredInstallPrompt = null;
-    });
+  deferredInstallPrompt.userChoice.then((choice) => {
+    console.log(`User ${choice.outcome} the A2HS prompt`, choice);
+    deferredInstallPrompt = null;
+  });
 });
     </pre></partial>
 </partial>
@@ -178,9 +178,9 @@ installButton.addEventListener('click', () => {
 const mainfest = require('../../../static/manifest.json');
 
 describe('manifest', () => {
-    it('did not change', () => {
-        expect(mainfest).toMatchSnapshot();
-    });
+  it('did not change', () => {
+    expect(mainfest).toMatchSnapshot();
+  });
 });
     </pre></partial>
     <partial name="img" src="data/slides/pwa_testing/images/jest_logo"></partial>
@@ -191,11 +191,11 @@ describe('manifest', () => {
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`manifest did not change 1`] = `
-    Object {
-        "background_color": "#111",
-        "display": "standalone",
-        // ...
-    }
+  Object {
+    "background_color": "#111",
+    "display": "standalone",
+    // ...
+  }
 `;
 </pre></partial>
 </partial>
@@ -220,7 +220,7 @@ npm install --save-dev @lhci/cli
     <code>/package.json</code>
     <partial name="code" language="json"><pre>
 "scripts": {
-"test:lhci": "npm run build && lhci autorun",
+  "test:lhci": "npm run build && lhci autorun",
 }
     </pre></partial>
 </partial>
@@ -228,15 +228,15 @@ npm install --save-dev @lhci/cli
     <code>/lighthouserc.js</code>
     <partial name="code" language="javascript"><pre>
 module.exports = {
-    ci: {
-        assert: {
-            preset: 'lighthouse:recommended',
-            assertions: {
-                'redirects-http': 'off',
-                'uses-http2': 'off',
-            },
-        },
+  ci: {
+    assert: {
+      preset: 'lighthouse:recommended',
+      assertions: {
+        'redirects-http': 'off',
+        'uses-http2': 'off',
+      },
     },
+  },
 };
     </pre></partial>
 </partial>
@@ -284,11 +284,11 @@ module.exports = {
     <code>/src/app.js</code>
     <partial name="code" language="javascript"><pre>
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('/service-worker.js')
-            .then((reg) => console.log('Service worker registered.', reg));
-    });
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js')
+      .then((reg) => console.log('Service worker registered.', reg));
+  });
 }
     </pre></partial>
 </partial>
@@ -298,15 +298,15 @@ if ('serviceWorker' in navigator) {
 const CACHE_NAME = 'cache-v1';
 
 self.addEventListener('install', (evt) => {
-    console.log('[ServiceWorker] Installing');
+  console.log('[ServiceWorker] Installing');
 });
 
 self.addEventListener('activate', (evt) => {
-    console.log('[ServiceWorker] Activating');
+  console.log('[ServiceWorker] Activating');
 });
 
 self.addEventListener('fetch', (evt) => {
-    console.log('[ServiceWorker] Fetching', evt.request.url);
+  console.log('[ServiceWorker] Fetching', evt.request.url);
 });
     </pre></partial>
 </partial>
@@ -336,16 +336,16 @@ const STATIC_CACHE_NAME = 'static-cache-v1';
 const STATIC_FILES_TO_CACHE = ['index.html'];
 
 self.addEventListener('install', (evt) => {
-    console.log('[ServiceWorker] Installing');
-    evt.waitUntil(caches.open(STATIC_CACHE_NAME)
-        .then((cache) => {
-            console.log('[ServiceWorker] Pre-caching offline page');
-            return cache.addAll(STATIC_FILES_TO_CACHE);
-        })
-        .then(() => {
-            console.log('[ServiceWorker] Pre-caching completed');
-            return self.skipWaiting();
-        }));
+  console.log('[ServiceWorker] Installing');
+  evt.waitUntil(caches.open(STATIC_CACHE_NAME)
+    .then((cache) => {
+      console.log('[ServiceWorker] Pre-caching offline page');
+      return cache.addAll(STATIC_FILES_TO_CACHE);
+    })
+    .then(() => {
+      console.log('[ServiceWorker] Pre-caching completed');
+      return self.skipWaiting();
+    }));
 });
     </pre></partial>
 </partial>
@@ -356,21 +356,21 @@ const STATIC_CACHE_NAME = 'static-cache-v1';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
 self.addEventListener('fetch', (evt) => {
-    console.log('[ServiceWorker] Fetching', evt.request.url);
+  console.log('[ServiceWorker] Fetching', evt.request.url);
 
-    if (resourceInStaticCache) {
-        evt.respondWith(caches.open(STATIC_CACHE_NAME).then((cache) =>
-            cache.match(evt.request).then((response) => response || fetch(evt.request))));
-    } else {
-        evt.respondWith(caches.open(DATA_CACHE_NAME).then((cache) =>
-            fetch(evt.request).then((response) => {
-                if (response.status === 200) {
-                    cache.put(evt.request.url, response.clone());
-                }
-                return response;
-            }).catch((err) => cache.match(evt.request))
-        ));
-    }
+  if (resourceInStaticCache) {
+    evt.respondWith(caches.open(STATIC_CACHE_NAME).then((cache) =>
+    cache.match(evt.request).then((response) => response || fetch(evt.request))));
+  } else {
+    evt.respondWith(caches.open(DATA_CACHE_NAME).then((cache) =>
+      fetch(evt.request).then((response) => {
+        if (response.status === 200) {
+          cache.put(evt.request.url, response.clone());
+        }
+        return response;
+      }).catch((err) => cache.match(evt.request))
+    ));
+  }
 });
     </pre></partial>
 </partial>
@@ -381,14 +381,14 @@ const STATIC_CACHE_NAME = 'static-cache-v1';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
 self.addEventListener('activate', (evt) => {
-    console.log('[ServiceWorker] Activating');
-    evt.waitUntil(caches.keys().then((keyList) =>
-        Promise.all(keyList.map((key) => {
-            if (key !== STATIC_CACHE_NAME && key !== DATA_CACHE_NAME) {
-                console.log('[ServiceWorker] Removing old cache', key);
-                return caches.delete(key);
-            }
-    }))));
+  console.log('[ServiceWorker] Activating');
+  evt.waitUntil(caches.keys().then((keyList) =>
+    Promise.all(keyList.map((key) => {
+      if (key !== STATIC_CACHE_NAME && key !== DATA_CACHE_NAME) {
+        console.log('[ServiceWorker] Removing old cache', key);
+        return caches.delete(key);
+      }
+  }))));
 });
     </pre></partial>
 </partial>
@@ -424,16 +424,16 @@ await runTests(driver, tests);
     <code>/src/test/e2e/setup.js</code>
     <partial name="code" language="javascript"><pre>
 const switchDriverToOffline = async (driver) => {
-    const command = new Command('setNetworkConditions');
-    command.setParameter('network_conditions', {
-        offline: true,
-        latency: 0,
-        download_throughput: 0,
-        upload_throughput: 0,
-    });
+  const command = new Command('setNetworkConditions');
+  command.setParameter('network_conditions', {
+    offline: true,
+    latency: 0,
+    download_throughput: 0,
+    upload_throughput: 0,
+  });
 
-    await driver.execute(command);
-    return driver;
+  await driver.execute(command);
+  return driver;
 }
     </pre></partial>
 </partial>
@@ -441,8 +441,8 @@ const switchDriverToOffline = async (driver) => {
     <code>/src/tests/e2e/scenarios/seeAllElements.js</code>
     <partial name="code" language="javascript"><pre>
 const testSeeAllElements = async (driver) => {
-    const iss = await driver.wait(until.elementLocated(By.className('iss')), 5000);
-    assert.equal(!!iss, true);
+  const iss = await driver.wait(until.elementLocated(By.className('iss')), 5000);
+  assert.equal(!!iss, true);
 }
     </pre></partial>
 </partial>
@@ -450,11 +450,10 @@ const testSeeAllElements = async (driver) => {
     <code>/package.json</code>
     <partial name="code" language="json"><pre>
 "scripts": {
-    "test:e2e": "npm run build
-        && concurrently
-        \"node server.js\"
-        \"node src/tests/e2e/run.js\"
-        --kill-others",
+  "test:e2e": "npm run build && concurrently
+      \"node server.js\"
+      \"node src/tests/e2e/run.js\"
+      --kill-others",
 }
     </pre></partial>
 </partial>
@@ -490,9 +489,9 @@ const testSeeAllElements = async (driver) => {
     <code>/src/app.js</code>
     <partial name="code" language="javascript"><pre>
 notifyButton.addEventListener('click', () =>
-    askForNotificationPermission()
-        .then(() => showNotification())
-        .catch((error) => console.warn('Error when attempting to show notification:', error)),
+  askForNotificationPermission()
+    .then(() => showNotification())
+    .catch((error) => console.warn('Error when attempting to show notification:', error)),
 );
     </pre></partial>
 </partial>
@@ -500,13 +499,13 @@ notifyButton.addEventListener('click', () =>
     <code>/src/app.js</code>
     <partial name="code" language="javascript"><pre>
 const askForNotificationPermission = () => {
-    if (Notification.permission === 'granted') {
-        return Promise.resolve();
-    }
-    return Notification.requestPermission()
-        .then((permission) => permission === 'granted'
-            ? Promise.resolve()
-            : Promise.reject(),
+  if (Notification.permission === 'granted') {
+    return Promise.resolve();
+  }
+  return Notification.requestPermission()
+    .then((permission) => permission === 'granted'
+      ? Promise.resolve()
+      : Promise.reject(),
     );
 },
     </pre></partial>
@@ -515,15 +514,15 @@ const askForNotificationPermission = () => {
     <code>/src/app.js</code>
     <partial name="code" language="javascript"><pre>
 const showNotification = () => {
-    navigator.serviceWorker.ready.then((serviceWorker) => {
-        const text = 'The ISS is flying...';
-        const options = {
-            body: text,
-            icon: '/images/satellite-emoji-32x32.png',
-        };
+  navigator.serviceWorker.ready.then((serviceWorker) => {
+    const text = 'The ISS is flying...';
+    const options = {
+      body: text,
+      icon: '/images/satellite-emoji-32x32.png',
+    };
 
-        serviceWorker.showNotification('ISS location notification', options);
-    });
+    serviceWorker.showNotification('ISS location notification', options);
+  });
 },
     </pre></partial>
 </partial>
@@ -533,16 +532,16 @@ const showNotification = () => {
     <code>/src/service-worker.js</code>
     <partial name="code" language="javascript"><pre>
 self.addEventListener('push', function(event) {
-    console.log('[Service Worker] Push Received.');
-    console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-    const options = {/*...*/};
-    event.waitUntil(
-        self.registration.showNotification(
-            'ISS location notification',
-            options
-        ),
-    );
+  const options = {/*...*/};
+  event.waitUntil(
+    self.registration.showNotification(
+      'ISS location notification',
+      options
+    ),
+  );
 });
     </pre></partial>
 </partial>
@@ -555,41 +554,41 @@ self.addEventListener('push', function(event) {
     <code>/src/test/e2e/setup.js</code>
     <partial name="code" language="javascript"><pre>
 const setupDriver = async () =>
-    await new Builder()
-        .forBrowser('chrome')
-        .setChromeOptions(
-            new chrome.Options().headless(),
-            new chrome.Options().addArguments(
-                '--enable-notifications',
-                '--enable-native-notifications',
-            ),
-            new chrome.Options().setUserPreferences({
-                'profile.default_content_setting_values.notifications': 1,
-            })
-        )
-        .build();
+  await new Builder()
+    .forBrowser('chrome')
+    .setChromeOptions(
+      new chrome.Options().headless(),
+      new chrome.Options().addArguments(
+        '--enable-notifications',
+        '--enable-native-notifications',
+      ),
+      new chrome.Options().setUserPreferences({
+        'profile.default_content_setting_values.notifications': 1,
+      })
+    )
+    .build();
     </pre></partial>
 </partial>
 <partial name="slide">
     <code>/src/tests/e2e/scenarios/seePushNotification.js</code>
     <partial name="code" language="javascript"><pre>
 const testSeePushNotification = async (driver) => {
-    const notifyButton = await driver.wait(until.elementLocated(By.className('controls--notify')), 5000);
-    await notifyButton.click();
+  const notifyButton = await driver.wait(until.elementLocated(By.className('controls--notify')), 5000);
+  await notifyButton.click();
 
-    const notifications = await driver.executeScript(`
-        (async () => {
-            const sw = await navigator.serviceWorker.ready;
-            const notifications = await sw.getNotifications();
-            return notifications;
-        })();
-    `);
+  const notifications = await driver.executeScript(`
+    (async () => {
+      const sw = await navigator.serviceWorker.ready;
+      const notifications = await sw.getNotifications();
+      return notifications;
+    })();
+  `);
 
-    if (!!notifications && Array.isArray(notifications)) {
-        assert.equal(notifications.length, 1);
-    } else {
-        assert.fail('Notification not registered');
-    }
+  if (!!notifications && Array.isArray(notifications)) {
+    assert.equal(notifications.length, 1);
+  } else {
+    assert.fail('Notification not registered');
+  }
 };
     </pre></partial>
 </partial>
