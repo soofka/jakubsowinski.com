@@ -7,7 +7,7 @@
     },
     "date": "2023-06",
     "langs": ["en"],
-    "conference": "Axel Springer Media & Tech 2023",
+    "event": "Axel Springer Media & Tech 2023",
     "place": {
       "en": "Berlin, Germany",
       "pl": "Berlin, Niemcy"
@@ -26,7 +26,7 @@
     },
     "date": "2019-08",
     "langs": ["en"],
-    "conference": "Devoxx Poland 2019",
+    "event": "Devoxx Poland 2019",
     "place": {
       "en": "Cracow, Poland",
       "pl": "Kraków, Polska"
@@ -45,7 +45,7 @@
     },
     "date": "2019-07",
     "langs": ["en"],
-    "conference": "Infoshare 2019",
+    "event": "Infoshare 2019",
     "place": {
       "en": "Gdansk, Poland",
       "pl": "Gdańsk, Polska"
@@ -64,7 +64,7 @@
     },
     "date": "2019-10",
     "langs": ["pl"],
-    "conference": "StepStone Tech Meetup #1 2019",
+    "event": "StepStone Tech Meetup #1 2019",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
@@ -79,7 +79,7 @@
     },
     "date": "2019-06",
     "langs": ["pl"],
-    "conference": "4Developers 2019",
+    "event": "4Developers 2019",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
@@ -97,7 +97,7 @@
     },
     "date": "2019-06",
     "langs": ["pl"],
-    "conference": "4Developers 2019",
+    "event": "4Developers 2019",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
@@ -115,7 +115,7 @@
     },
     "date": "2019-06",
     "langs": ["pl"],
-    "conference": "AppQa Meetup #1 2019",
+    "event": "AppQa Meetup #1 2019",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
@@ -130,7 +130,7 @@
     },
     "date": "2017-11",
     "langs": ["en"],
-    "conference": "Code Europe Autumn 2017",
+    "event": "Code Europe Autumn 2017",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"
@@ -149,7 +149,7 @@
     },
     "date": "2017-07",
     "langs": ["en"],
-    "conference": "Code Europe Spring 2017",
+    "event": "Code Europe Spring 2017",
     "place": {
       "en": "Warsaw, Poland",
       "pl": "Warszawa, Polska"

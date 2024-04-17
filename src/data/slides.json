@@ -7,19 +7,19 @@
   },
   {
     "id": "pwa_case_study",
-    "title": "Progressive Web App - case study",
+    "title": "React PWA with Push Notifications (case study)",
     "description": "description",
     "pdf": true
   },
   {
-    "id": "autostopem_przez_pwa",
+    "id": "pwa_testing",
     "title": "Autostopem przez PWA",
     "description": "description",
     "html": true
   },
   {
     "id": "microfrontends",
-    "title": "microfrontends",
+    "title": "Microfrontends: extending service-oriented architecture to front-end development",
     "description": "description",
     "html": true
   }

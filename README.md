@@ -23,6 +23,7 @@
   - something wrong with headings/margins/lists
   - footer margin
   - ul margin/padding (courses)
+  - img partial has issues again :-(
 
 ### backlog
 

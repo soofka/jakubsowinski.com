@@ -43,7 +43,7 @@ const mainCv = (data, dists, { lang, content }) =>
           <div class="col">
             <partial name="img" data="${encodeURI(
               JSON.stringify({
-                src: "me1.jpg",
+                src: "images/me1.jpg",
                 alt: data.labels[lang].pages.home.intro.imgAlt,
                 lazy: false,
               }),

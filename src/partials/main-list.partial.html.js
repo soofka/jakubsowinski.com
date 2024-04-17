@@ -1,4 +1,4 @@
-import { getDistByPath } from "./helpers/index.js";
+import { getDistByPath } from "../helpers/index.js";
 
 const mainList = (data, dists, { name, lang, content = [] }) => `
   <main>
@@ -115,7 +115,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       break;
 
     case "talks":
-      meta = `${meta} | ${item.conference}, ${item.place[lang]}`;
+      meta = `${meta} | ${item.event}, ${item.place[lang]}`;
 
       const metaSecondRowItems = [];
       if (item.recordings) {
@@ -165,7 +165,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       if (!alt) {
         alt = `<partial name="img" data="${encodeURI(
           JSON.stringify({
-            src: "no_recording.jpg",
+            src: "images/no_recording.jpg",
             alt: labels.pages.talks.noRecording,
           }),
         )}"></partial>`;

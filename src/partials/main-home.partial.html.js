@@ -28,7 +28,7 @@ const mainHome = (data, dists, { lang }) => `
           <div class="col">
             <partial name="img" data="${encodeURI(
               JSON.stringify({
-                src: "me1.jpg",
+                src: "images/me1.jpg",
                 alt: data.labels[lang].pages.home.intro.imgAlt,
                 lazy: false,
               }),
@@ -63,7 +63,7 @@ const mainHome = (data, dists, { lang }) => `
           <div class="col">
             <partial name="img" data="${encodeURI(
               JSON.stringify({
-                src: "me2.jpg",
+                src: "images/me2.jpg",
                 alt: data.labels[lang].pages.home.architect.imgAlt,
               }),
             )}"></partial>
@@ -102,7 +102,7 @@ const mainHome = (data, dists, { lang }) => `
           <div class="col">
             <partial name="img" data="${encodeURI(
               JSON.stringify({
-                src: "me3.jpg",
+                src: "images/me3.jpg",
                 alt: data.labels[lang].pages.home.developer.imgAlt,
               }),
             )}"></partial>
@@ -133,7 +133,7 @@ const mainHome = (data, dists, { lang }) => `
           <div class="col">
             <partial name="img" data="${encodeURI(
               JSON.stringify({
-                src: "me4.jpg",
+                src: "images/me4.jpg",
                 alt: data.labels[lang].pages.home.leader.imgAlt,
               }),
             )}"></partial>

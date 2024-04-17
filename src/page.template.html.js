@@ -25,7 +25,6 @@ const page = (
       )}"></partial>
       <partial name="main-${type}" data="${encodeURI(
         JSON.stringify({
-          id,
           name,
           lang,
           content,
@@ -33,9 +32,7 @@ const page = (
       )}"></partial>
       <partial name="footer" data="${encodeURI(
         JSON.stringify({
-          name,
           lang,
-          template,
           type,
         }),
       )}"></partial>

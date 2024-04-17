@@ -13,7 +13,6 @@ export const config = {
   dist: path.resolve("dist"),
   reportFile: path.resolve("report.json"),
   routes,
-
   verbosity: 1,
 
   data: {

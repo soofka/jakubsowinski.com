@@ -1,13 +1,19 @@
-import { getDistsByPath } from "./helpers/index.js";
+import { getDistsByPath } from "../helpers/index.js";
 
 const img = (
   data,
   dists,
   { src, alt = "", lazy = true, withCaption = false, ...attributes },
 ) => {
+  const dotIndex = src.lastIndexOf(".");
+  const srcParsed =
+    dotIndex === -1
+      ? `${src}*`
+      : `${src.substring(0, dotIndex)}*${src.substring(dotIndex)}`;
+
   let imgDist;
   const sourceDists = {};
-  for (let dist of getDistsByPath(dists, src)) {
+  for (let dist of getDistsByPath(dists, srcParsed)) {
     const [imgDistName, imgDistSize] = dist.name.split("-");
     if (imgDistSize) {
       const imgDistType = dist.ext.substring(1);

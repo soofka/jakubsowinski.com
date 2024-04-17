@@ -1,4 +1,4 @@
-const footer = (data, dists, { name, lang, template, type }) =>
+const footer = (data, dists, { lang, type }) =>
   `<footer>
     <section id="contact">
       <div class="wrapper">

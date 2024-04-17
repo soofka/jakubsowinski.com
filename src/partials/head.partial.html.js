@@ -1,13 +1,14 @@
 import {
   getDistByPath,
   getDistsByPath,
+  getDistsByPaths,
   getLargestImage,
-} from "./helpers/index.js";
+} from "../helpers/index.js";
 
 const head = (data, dists, { url, name, lang, template, type, meta }) => {
   let title = data.labels[lang].meta.title;
   let description = data.labels[lang].meta.description;
-  let imagePath = "me1-960x960.jpg";
+  let imagePath = "images/me1-960x960.jpg";
 
   if (meta) {
     const metaSeparator = " | ";
@@ -32,8 +33,8 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       <meta property="og:type" content="${data.type}">
       <meta property="og:url" content="${data.url}${url || ""}">
       <meta property="og:description" content="${description}">
-      <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, imagePath)).rel}">
-      <meta property="og:image:alt" content="${getDistByPath(dists, "icon-512x512.png").rel}">
+      <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, `${imagePath}*`)).rel}">
+      <meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">
 
       <meta name="robots" content="index, follow"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0 ${template === "slides" ? ", maximum-scale=1.0, user-scalable=no" : ""}">
@@ -56,16 +57,14 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
           : ""
       }
 
-      ${dists
-        .filter(
-          (dist) =>
-            (dist.name === "reset" ||
-              dist.name === "style" ||
-              dist.name === `style-${template}` ||
-              dist.name === `style-${type}` ||
-              dist.name === `style-${name}`) &&
-            dist.ext === ".css",
-        )
+      ${getDistsByPaths(
+        dists,
+        "styles/reset.css",
+        "styles/style.css",
+        `styles/style-${template}.css`,
+        `styles/style-${type}.css`,
+        `styles/style-${name}.css`,
+      )
         .sort((a, b) => {
           if (a.name === "reset") {
             return -1;
@@ -98,7 +97,7 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
         )
         .join("")}
       
-      ${getDistsByPath(dists, "icon-")
+      ${getDistsByPath(dists, "icon-*")
         .map((dist) =>
           dist.name === "icon-16x16" || dist.name === "icon-32x32"
             ? `<link rel="icon" type="image/png" sizes="${dist.name.split("-")[1]}" href="${dist.rel}">`

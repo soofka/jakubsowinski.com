@@ -1,3 +1,5 @@
+import { getDistsByPath } from "./helpers/index.js";
+
 const manifest = (data, dists, lang, theme) =>
   JSON.stringify({
     background_color:
@@ -6,10 +8,9 @@ const manifest = (data, dists, lang, theme) =>
         : data.colors.accents.developer.light,
     description: data.labels[lang].meta.description,
     display: "standalone",
-    icons: dists
-      .filter(
-        (dist) => dist.name === "icon-192x192" || dist.name === "icon-512x512",
-      )
+    icons: []
+      .concat(getDistsByPath(dists, "images/icon-192x192.png"))
+      .concat(getDistsByPath(dists, "images/icon-512x512.png"))
       .map((dist) => ({
         src: dist.rel,
         type: "image/png",

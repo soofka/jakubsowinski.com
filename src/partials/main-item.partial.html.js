@@ -1,6 +1,6 @@
-import { getDistByPath } from "./helpers/index.js";
+import { getDistByPath } from "../helpers/index.js";
 
-const mainItem = (data, dists, { id, name, lang, content }) => `
+const mainItem = (data, dists, { content }) => `
   <main>
     <section>
       <div class="wrapper">

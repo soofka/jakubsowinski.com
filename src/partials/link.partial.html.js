@@ -1,8 +1,5 @@
 const link = (data, dists, { pageId, ...attributes }, content) => {
   const page = data.pages.find((page) => page.id === pageId);
-  if (!page) {
-    console.error("ERROR", pageId);
-  }
   return `<a ${Object.keys(attributes)
     .map((attribute) => `${attribute}="${attributes[attribute]}"`)
     .join(" ")}
