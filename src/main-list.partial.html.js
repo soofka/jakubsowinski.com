@@ -1,3 +1,5 @@
+import { getDistByPath } from "./helpers/index.js";
+
 const mainList = (data, dists, { name, lang, content = [] }) => `
   <main>
     <section>
@@ -147,7 +149,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
         }
         if (item.slides.pdf) {
           slides.push(
-            `<a href="${dists.find((dist) => dist.relDir.endsWith(item.slides.id) && dist.name === "index" && dist.ext === ".pdf").rel}" target="_blank">pdf</a>`,
+            `<a href="${getDistByPath(dists, `${item.slides.id}/index.pdf`).rel}" target="_blank">pdf</a>`,
           );
         }
         if (slides.length > 0) {

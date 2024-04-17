@@ -14,6 +14,8 @@ export const config = {
   reportFile: path.resolve("report.json"),
   routes,
 
+  verbosity: 1,
+
   data: {
     name: "swn.ski",
     type: "website",

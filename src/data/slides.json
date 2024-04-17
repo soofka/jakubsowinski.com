@@ -12,6 +12,12 @@
     "pdf": true
   },
   {
+    "id": "autostopem_przez_pwa",
+    "title": "Autostopem przez PWA",
+    "description": "description",
+    "html": true
+  },
+  {
     "id": "microfrontends",
     "title": "microfrontends",
     "description": "description",

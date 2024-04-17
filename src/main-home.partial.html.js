@@ -61,7 +61,12 @@ const mainHome = (data, dists, { lang }) => `
         <article>
           <h2 class="architect-fg">${data.labels[lang].pages.home.architect.head}</h2>
           <div class="col">
-            <partial name="img" data="${encodeURI(JSON.stringify({ src: "me2.jpg", alt: data.labels[lang].pages.home.architect.imgAlt }))}"></partial>
+            <partial name="img" data="${encodeURI(
+              JSON.stringify({
+                src: "me2.jpg",
+                alt: data.labels[lang].pages.home.architect.imgAlt,
+              }),
+            )}"></partial>
             <p class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</p>
           </div>
           <div class="col col-2">
@@ -95,7 +100,12 @@ const mainHome = (data, dists, { lang }) => `
             <p>${data.labels[lang].pages.home.developer.text}</p>
           </div>
           <div class="col">
-            <partial name="img" data="${encodeURI(JSON.stringify({ src: "me3.jpg", alt: data.labels[lang].pages.home.developer.imgAlt }))}"></partial>
+            <partial name="img" data="${encodeURI(
+              JSON.stringify({
+                src: "me3.jpg",
+                alt: data.labels[lang].pages.home.developer.imgAlt,
+              }),
+            )}"></partial>
             <p class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</p>
           </div>
           <div class="buttons">
@@ -121,7 +131,12 @@ const mainHome = (data, dists, { lang }) => `
         <article>
           <h2 class="leader-fg">${data.labels[lang].pages.home.leader.head}</h2>
           <div class="col">
-            <partial name="img" data="${encodeURI(JSON.stringify({ src: "me4.jpg", alt: data.labels[lang].pages.home.leader.imgAlt }))}"></partial>
+            <partial name="img" data="${encodeURI(
+              JSON.stringify({
+                src: "me4.jpg",
+                alt: data.labels[lang].pages.home.leader.imgAlt,
+              }),
+            )}"></partial>
             <p class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</p>
           </div>
           <div class="col col-2">

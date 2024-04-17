@@ -1,18 +1,13 @@
+import { getDistsByPath } from "./helpers/index.js";
+
 const img = (
   data,
   dists,
   { src, alt = "", lazy = true, withCaption = false, ...attributes },
 ) => {
-  const imgName = src.split(".")[0];
-  const imgDists = dists.filter(
-    (element) =>
-      element.name === imgName ||
-      element.name.substring(0, imgName.length + 1) === `${imgName}-`,
-  );
-
   let imgDist;
   const sourceDists = {};
-  for (let dist of imgDists) {
+  for (let dist of getDistsByPath(dists, src)) {
     const [imgDistName, imgDistSize] = dist.name.split("-");
     if (imgDistSize) {
       const imgDistType = dist.ext.substring(1);
@@ -37,7 +32,8 @@ const img = (
     }
   }
 
-  const picture = `<picture>
+  const picture = `
+    <picture>
       ${Object.keys(sourceDists)
         .map(
           (type) =>

@@ -2,7 +2,20 @@
   "workExperience": [
     {
       "title": "Solution Architect",
-      "company": "StepStone Services",
+      "company": "Procter & Gamble (Connectis)",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2024-04",
+      "to": "present",
+      "tags": [["architect", "architect-bg"], "idk"],
+      "description": "Idk yet",
+      "responsibilities": ["Idk yet"]
+    },
+    {
+      "title": "Solution Architect",
+      "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
@@ -53,7 +66,7 @@
     },
     {
       "title": "JavaScript Chapter Lead",
-      "company": "StepStone Services",
+      "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
@@ -140,7 +153,7 @@
     },
     {
       "title": "Software Architect",
-      "company": "StepStone Services",
+      "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
@@ -191,7 +204,7 @@
     },
     {
       "title": "Senior Software Engineer",
-      "company": "StepStone Services",
+      "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
@@ -247,7 +260,7 @@
     },
     {
       "title": "Software Engineer",
-      "company": "StepStone Services",
+      "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
@@ -283,7 +296,7 @@
     },
     {
       "title": "Software Engineer",
-      "company": "StepStone Services",
+      "company": "Pretius",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"

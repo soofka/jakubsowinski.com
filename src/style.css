@@ -147,6 +147,7 @@ code pre {
   font-family: var(--monospace);
   margin: 0;
   padding: var(--gap);
+  overflow-x: scroll;
 }
 hr {
   width: 100%;
