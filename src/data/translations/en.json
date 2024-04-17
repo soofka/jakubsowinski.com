@@ -60,50 +60,32 @@
       }
     },
     "articles": {
-      "meta": {
-        "title": "Articles",
-        "description": "Articles"
-      },
+      "title": "Articles",
       "publishedBy": "published by"
     },
     "blog": {
-      "meta": {
-        "title": "Blog",
-        "description": "Blog"
-      }
+      "title": "Blog"
     },
     "courses": {
-      "meta": {
-        "title": "Courses",
-        "description": "Courses"
-      },
+      "title": "Courses",
       "courseContent": "Content:",
       "taughtFor": "taught for:",
       "buy": "Order this course"
     },
     "projects": {
-      "meta": {
-        "title": "Projects",
-        "description": "Projects"
-      },
+      "title": "Projects",
       "stars": "stars",
       "forks": "forks",
       "installs": "installs"
     },
     "talks": {
-      "meta": {
-        "title": "Talks",
-        "description": "Talks"
-      },
+      "title": "Talks",
       "slides": "slides",
-      "recordings": "recordings",
+      "recording": "recording",
       "noRecording": "No recording"
     },
     "cv": {
-      "meta": {
-        "title": "Resume",
-        "description": "Resume"
-      }
+      "title": "Resume"
     },
     "error": {
       "404": {

@@ -2,7 +2,7 @@
   {
     "id": "open_source_project_tooling",
     "title": "How to set up tooling around your open source project",
-    "description": "description",
+    "description": "Lately in my project we had very particular need for specific validation of content of JavaScript bundle produced by Webpack. In the process of extensive research we have not found any existing tool to serve this purpose. Therefore, I've created Webpack Bundle Content Validator, which is a Webpack plugin and a CLI tool for Webpack bundle content validation. More importantly, I made it open source. Surprisingly, simply publishing it to NPM wasn't enough - I decided to set up continuous integration, automated unit tests code coverage calculation, automated check for vulnerabilities and a few other things, in order to make it legitimate and reliable package. In this post I'm describing those steps in details.",
     "image": "data/blog/open_source_project_tooling/open_source_project_tooling",
     "date": "2019-11",
     "langs": ["en"]
@@ -10,7 +10,7 @@
   {
     "id": "react_helmet_prerender_cloud",
     "title": "How to improve SEO and social media preview of your website with React Helmet and Prerender service",
-    "description": "description",
+    "description": "Hard to imagine, but it's over 1 year since I created this blog, and up until recently, it always had static head tags. Title always being the same, for example, wasn't that much of an issue to me, but social meta tags never related to the content of the post I'm sharing on Twitter, that was not cool (it's also not cool when it comes to SEO, but it's not that much of my concern right now). I finally had to tackle it. Here's a simple way to do it that I've found.",
     "image": "data/blog/react_helmet_prerender_cloud/react_helmet_prerender_cloud",
     "date": "2018-10",
     "langs": ["en"]
@@ -18,7 +18,7 @@
   {
     "id": "react_syntax_highlight",
     "title": "Syntax highlighting in React with highlight.js and Web Worker",
-    "description": "description",
+    "description": "One of the most common issues I heard people have with my blog was lack of syntax highlighting in posts, especially those, which contain a lot of code. Okay, it's almost 2019, I'm a software engineer, working mostly with front-end these times - I finally agreed, that it should be added. So I added it. And in the meantime, I also learned a little bit about Web Workers. Hence, this post, in which I describe this little adventure.",
     "image": "data/blog/react_syntax_highlight/react_syntax_highlight",
     "date": "2018-09",
     "langs": ["en"]
@@ -26,7 +26,7 @@
   {
     "id": "sass_to_styled_components",
     "title": "Moving from Sass to Styled Components (with snapshot tests)",
-    "description": "description",
+    "description": "Who doesn't like to constantly rework perfectly fine stuff into something new and fancy just because it's trendy now? Well, probably pretty much every single JS developer, most certainly everyone who works with this language long enough to experience at least a glimpse of famous \"JS fatigue\" feeling (so approximately a few weeks). However, I created this blog as a playground to try out new libraries and frameworks, and since I'm learning Styled Components for my professional work at the moment, even though Sass-based styling worked perfectly for my needs, I reimplemented all of it into this controversial CSS-in-JS. And I'm still sane!",
     "image": "data/blog/sass_to_styled_components/sass_to_styled_components",
     "date": "2018-08",
     "langs": ["en"]
@@ -34,7 +34,7 @@
   {
     "id": "my_first_mobx_store",
     "title": "My first MobX store",
-    "description": "description",
+    "description": "My dad wants to read my blog. The only issue is that he doesn't speak English very well. It's communicative, but it's not quite enough to understand intricate, sophisticated Shakespearean language, I am decorating my posts with. Worry not, father, as I've found the solution: language versions. I am currently working on adaptations of my posts in Polish language. In the meantime, I'm also adapting my codebase to be able to recognize and properly handle language parameter. And for that purpose, for the first time, I decided to use MobX.",
     "image": "data/blog/my_first_mobx_store/my_first_mobx_store",
     "date": "2018-07",
     "langs": ["en"]
@@ -42,7 +42,7 @@
   {
     "id": "mock_and_proxy_http_request_in_webpack_express",
     "title": "Mocking and proxying HTTP requests from localhost with Webpack Dev Server or Express",
-    "description": "description",
+    "description": "Back in the day, my JS projects were small and self-contained. Nowadays, in my professional work, majority, if not all of front-end applications I am working on are connected to multiple back-end services for variety of reasons. It gives me a freedom of not caring of the back-end, as long as we have defined a contract, and proceeding happily with what actually matters, i.e. colors and animations. But it also gave ma some headache, when I wanted to have pleasant, convenient coding environment on my localhost, and not have all of these weird back-end stuff running on my local machine as well. Here's how I worked it out with both Webpack Dev Server and Express.",
     "image": "data/blog/mock_and_proxy_http_request_in_webpack_express/mock_and_proxy_http_request_in_webpack_express",
     "date": "2018-06",
     "langs": ["en"]
@@ -50,7 +50,7 @@
   {
     "id": "webpack_4_explained",
     "title": "Webpack 4 config explained (with example)",
-    "description": "description",
+    "description": "Using a skeleton for your application prepared by someone else comes with great benefit of a lot of time saved, but also with huge cost of a lot of knowledge not obtained. Sometimes you'll manage to complete your assignment just fine with some predefined boilerplate, without too much need for deep investigation of it's nooks and crannies. Other times, you'll end up in a position, where you reverse engineer it in order to introduce some major change, or just give up and start from scratch with your own thing. I wouldn't like you to give up on my application skeleton. Thus, I'll describe some of it's shenanigans in it's documentation. Today, I'm explaining build process.",
     "image": "data/blog/webpack_4_explained/webpack_4_explained",
     "date": "2018-04",
     "langs": ["en"]
@@ -58,7 +58,7 @@
   {
     "id": "404_in_react_router_and_express",
     "title": "How to setup routing for Not Found on both sides with React-Router and Express",
-    "description": "description",
+    "description": "When building web applications in React, I usually choose Express to be my server, and more often than not I use React-Router to manage redirections and changes in history. Not without a reason - both are among the most popular choices in their respective fields nowadays; both are simple and elegant in every day work. However, I had some tough moments with both of them when it came up to setting all unrecognized routing to \"Not Found\" page, and this piece came as a result of them.",
     "image": "data/blog/404_in_react_router_and_express/404_in_react_router_and_express",
     "date": "2018-03",
     "langs": ["en"]
@@ -66,7 +66,7 @@
   {
     "id": "disqus_in_react",
     "title": "How to integrate Disqus comments in React app",
-    "description": "description",
+    "description": "One of the challenges that I faced while programming this, so far, very simple blog app (the one that you are using to read this post, most likely), was how to give my readers a possibility to comment on my posts. Obviously, it is one of the crucial features of this kind of app – I would like my readers to be able to tell me where am I wrong, and I would like me to be able to respond to such heretic claims. However, the whole feature seems quite a lot of work to implement from scratch. Luckily, there are plenty of ready out of the box solutions out there, one of them being Disqus.",
     "image": "data/blog/disqus_in_react/disqus_in_react",
     "date": "2017-09",
     "langs": ["en"]

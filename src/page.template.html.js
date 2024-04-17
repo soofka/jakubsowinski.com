@@ -1,7 +1,7 @@
 const page = (
   data,
   dists,
-  { id, url, name, lang, template, type, meta, content },
+  { id, url, name, lang, template, type, title, image, content },
 ) =>
   `<!doctype html>
   <html lang="${lang}">
@@ -12,7 +12,8 @@ const page = (
         lang,
         template,
         type,
-        meta,
+        title,
+        image,
       }),
     )}"></partial>
     <body class="${type}">

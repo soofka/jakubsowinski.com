@@ -9,10 +9,8 @@
   - home content + translation
   - projects descriptions + translation
   - courses description + translation
-  - talks description
-  - articles description
+  - talks description (2 LEFT!)
   - cv content update
-  - slides: pwa, profile editor, property based tests
   - projects: web-fotoszop, boilerplate, js console tetris?, coronavirus tracker?
   - ADD LINKS AND CODE TO ARTICLES AND BLOG POSTS
 
@@ -23,7 +21,6 @@
   - something wrong with headings/margins/lists
   - footer margin
   - ul margin/padding (courses)
-  - img partial has issues again :-(
 
 ### backlog
 

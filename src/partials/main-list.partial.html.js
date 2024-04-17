@@ -4,7 +4,7 @@ const mainList = (data, dists, { name, lang, content = [] }) => `
   <main>
     <section>
       <div class="wrapper">
-        <h2>${data.labels[lang].pages[name].meta.title}</h2>
+        <h2>${data.labels[lang].pages[name].title}</h2>
         ${content.map((item, index) => getItem(index, item, name, lang, data.labels[lang], dists)).join("")}
       </div>
     </section>
@@ -118,25 +118,25 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       meta = `${meta} | ${item.event}, ${item.place[lang]}`;
 
       const metaSecondRowItems = [];
-      if (item.recordings) {
+      if (item.recording) {
         const recordings = [];
-        if (item.recordings.youtube) {
+        if (item.recording.youtube) {
           alt = `
             <partial name="youtube" data="${encodeURI(
               JSON.stringify({
-                id: item.recordings.youtube,
+                id: item.recording.youtube,
                 title: titleText,
                 width: 320,
                 height: 190,
               }),
             )}"></partial>`;
           recordings.push(
-            `<a href="https://youtube.com/watch?v=${item.recordings.youtube}" target="_blank">youtube</a>`,
+            `<a href="https://youtube.com/watch?v=${item.recording.youtube}" target="_blank">youtube</a>`,
           );
         }
         if (recordings.length > 0) {
           metaSecondRowItems.push(
-            `${labels.pages.talks.recordings}: ${recordings.join(", ")}`,
+            `${labels.pages.talks.recording}: ${recordings.join(", ")}`,
           );
         }
       }

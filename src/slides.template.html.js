@@ -1,6 +1,6 @@
 import { getDistByPath } from "./helpers/index.js";
 
-const slides = (data, dists, { url, name, template, type, meta, content }) => `
+const slides = (data, dists, { url, name, template, type, title, content }) => `
   <!doctype html>
   <html lang="${data.langs[0]}">
     <partial name="head" data="${encodeURI(
@@ -10,7 +10,7 @@ const slides = (data, dists, { url, name, template, type, meta, content }) => `
         lang: "en",
         template,
         type,
-        meta,
+        title,
       }),
     )}"></partial>
     <body class="${type}">

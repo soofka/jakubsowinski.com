@@ -14,7 +14,7 @@ const mainItem = (data, dists, { content }) => `
               lazy: false,
             }),
           )}"></partial>
-          <h3 style="margin-top: var(--gap-rel)">${content.description}</h3>
+          <h4>${content.description}</h4>
           ${getDistByPath(dists, `${content.id}/index.html`).content}
         </article>
       </div>

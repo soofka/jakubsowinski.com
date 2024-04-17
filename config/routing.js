@@ -52,13 +52,10 @@ export const getRouting = (langs, labels, data) => {
       id: articlesPageId,
       url: articlesPageUrl,
       name: articlesPageName,
+      title: labels[lang].pages.articles.title,
       lang,
       template: pageTemplate,
       type: "list",
-      meta: {
-        title: labels[lang].pages.articles.meta.title,
-        description: labels[lang].pages.articles.meta.description,
-      },
       content: data.articles,
     });
 
@@ -73,14 +70,11 @@ export const getRouting = (langs, labels, data) => {
         id: articlePageId,
         url: articlePageUrl,
         name: articlePageName,
+        title: article.title,
+        image: article.image,
         lang,
         template: pageTemplate,
         type: "item",
-        meta: {
-          title: article.title,
-          description: article.description,
-          image: article.image,
-        },
         content: article,
       });
     }
@@ -95,13 +89,10 @@ export const getRouting = (langs, labels, data) => {
       id: blogPageId,
       url: blogPageUrl,
       name: blogPageName,
+      title: labels[lang].pages.blog.title,
       lang,
       template: pageTemplate,
       type: "list",
-      meta: {
-        title: labels[lang].pages.blog.meta.title,
-        description: labels[lang].pages.blog.meta.description,
-      },
       content: data.blog,
     });
 
@@ -116,13 +107,11 @@ export const getRouting = (langs, labels, data) => {
         id: blogPostPageId,
         url: blogPostPageUrl,
         name: blogPostPageName,
+        title: post.title,
+        image: post.image,
         lang,
         template: pageTemplate,
         type: "item",
-        meta: {
-          title: post.title,
-          description: post.description,
-        },
         content: post,
       });
     }
@@ -137,13 +126,10 @@ export const getRouting = (langs, labels, data) => {
       id: coursesPageId,
       url: coursesPageUrl,
       name: coursesPageName,
+      title: labels[lang].pages.courses.title,
       lang,
       template: pageTemplate,
       type: "list",
-      meta: {
-        title: labels[lang].pages.courses.meta.title,
-        description: labels[lang].pages.courses.meta.description,
-      },
       content: data.courses,
     });
 
@@ -157,13 +143,10 @@ export const getRouting = (langs, labels, data) => {
       id: projectsPageId,
       url: projectsPageUrl,
       name: projectsPageName,
+      title: labels[lang].pages.projects.title,
       lang,
       template: pageTemplate,
       type: "list",
-      meta: {
-        title: labels[lang].pages.projects.meta.title,
-        description: labels[lang].pages.projects.meta.description,
-      },
       content: data.projects,
     });
 
@@ -177,13 +160,10 @@ export const getRouting = (langs, labels, data) => {
       id: talksPageId,
       url: talksPageUrl,
       name: talksPageName,
+      title: labels[lang].pages.talks.title,
       lang,
       template: pageTemplate,
       type: "list",
-      meta: {
-        title: labels[lang].pages.talks.meta.title,
-        description: labels[lang].pages.talks.meta.description,
-      },
       content: data.talks,
     });
 
@@ -197,13 +177,10 @@ export const getRouting = (langs, labels, data) => {
       id: cvPageId,
       url: cvPageUrl,
       name: cvPageName,
+      title: labels[lang].pages.cv.title,
       lang,
       template: pageTemplate,
       type: "cv",
-      meta: {
-        title: labels[lang].pages.cv.meta.title,
-        description: labels[lang].pages.cv.meta.description,
-      },
       content: data.cv,
     });
 
@@ -217,13 +194,10 @@ export const getRouting = (langs, labels, data) => {
       pages.push({
         id: errorPageId,
         name: error,
+        title: labels[lang].pages.error[error].name,
         lang,
         template: pageTemplate,
         type: "error",
-        meta: {
-          title: labels[lang].pages.error[error].name,
-          description: labels[lang].pages.error[error].description,
-        },
       });
     }
   }
@@ -240,13 +214,10 @@ export const getRouting = (langs, labels, data) => {
         id: slidesPageId,
         url: slidesPageUrl,
         name: slidesPageName,
+        title: slides.title,
+        image: slides.image,
         template: slidesTemplate,
         type: "slides",
-        meta: {
-          title: slides.title,
-          description: slides.description,
-          image: slides.image,
-        },
         content: slides,
       });
     }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "swn.ski",
-    "description": "swn.ski description"
+    "description": "Jakub Sowiński - architekt oprogramowania, programista, nauczyciel programowania, techniczny lider"
   },
   "nav": {
     "home": "home",
@@ -18,92 +18,74 @@
         "lead": "My name is Jakub, I'm a software enthusiast, and I work as a solution architect, software developer, programming teacher, and tech lead. Welcome to my corner of the Internet!",
         "text": "If you want to hire me, waste no time, <a href=\"mailto:j@swn.ski\" target=\"_blank\">drop me a message</a>. If you yet don't know that you want to hire me, please refer to my resume or read more about my work. Otherwise, enjoy fruits of my labor, such as my projects, talks, articles, courses, or blog posts, or just chill out here with me. Peace!",
         "buttons": {
-          "cv": "My resume",
-          "info": "More about my work",
-          "contact": "Contact me"
+          "cv": "Moje CV",
+          "info": "Więcej na temat mojej pracy",
+          "contact": "Skontaktuj się ze mną"
         },
-        "imgAlt": "Jakub Sowiński - solution architect, software developer, teacher and leader"
+        "imgAlt": "Jakub Sowiński - architekt oprogramowania, programista, nauczyciel programowania, techniczny lider"
       },
       "architect": {
-        "head": "Solution architect",
+        "head": "Architekt oprogramowania",
         "lead": "I have 5+ years of experience in solultion and software architecture positions, as well as 3+ years of experience as an university lecturer in software architecture.",
         "text": "I can help you design, document, and govern architecture for your software project, be it small or large scale.",
         "buttons": {
-          "talks": "My talks",
-          "articles": "My articles"
+          "talks": "Moje wystąpienia",
+          "articles": "Moje artykuły"
         },
-        "imgAlt": "Jakub Sowiński architecting"
+        "imgAlt": "Jakub Sowiński architektujący"
       },
       "developer": {
-        "head": "Software developer",
+        "head": "Programista",
         "lead": "lorem duporem",
         "text": "lorem duporem",
         "buttons": {
           "projects": "My projects",
           "blog": "My blog"
         },
-        "imgAlt": "Jakub Sowiński programming"
+        "imgAlt": "Jakub Sowiński programujący"
       },
       "leader": {
-        "head": "Teacher and leader",
+        "head": "Nauczyciel i lider",
         "lead": "lorem duporem",
         "text": "lorem duporem",
         "buttons": {
-          "courses": "Check out my courses"
+          "courses": "Moje szkolenia"
         },
-        "imgAlt": "Jakub Sowiński teaching and leading"
+        "imgAlt": "Jakub Sowiński uczący i przewodzący"
       },
       "contact": {
-        "head": "Contact me",
+        "head": "Skontaktuj się ze mną",
         "lead": "If you wish to contact me, please drop me a message at <a href=\"mailto:j@swn.ski\" target=\"_blank\">j[at]swn.ski</a>.",
         "text": "You can also find me on:"
       }
     },
     "articles": {
-      "meta": {
-        "title": "Artykuły",
-        "description": "Artykuły"
-      },
+      "title": "Artykuły",
       "publishedBy": "opublikowano na łamach"
     },
     "blog": {
-      "meta": {
-        "title": "Blog",
-        "description": "Blog"
-      }
+      "title": "Blog"
     },
     "courses": {
-      "meta": {
-        "title": "Szkolenia",
-        "description": "Szkolenia"
-      },
+      "title": "Szkolenia",
       "courseContent": "Zawartość:",
       "taughtFor": "prowadzone dla:",
       "buy": "Zamów to szkolenie"
     },
     "projects": {
-      "meta": {
-        "title": "Projekty",
-        "description": "Projekty"
-      },
+      "title": "Projekty",
       "stars": "gwiazdek",
       "forks": "forków",
       "installs": "instalacji"
     },
     "talks": {
-      "meta": {
-        "title": "Wystąpienia",
-        "description": "Wystąpienia"
-      },
+      "title": "Wystąpienia",
       "slides": "slajdy",
-      "recordings": "nagrania",
+      "recording": "nagranie",
       "noRecording": "Brak nagrania"
     },
     "cv": {
-      "meta": {
-        "title": "CV",
-        "description": "CV"
-      }
+      "title": "CV"
     },
     "error": {
       "404": {

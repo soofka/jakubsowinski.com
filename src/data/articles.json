@@ -2,7 +2,7 @@
   {
     "id": "microfrontends_3",
     "title": "Microfrontends — part 3: tools and processes for development and maintenance",
-    "description": "Microfrontends part 3",
+    "description": "In first part of this article I’ve answered two major questions related to microfrontend architecture — what is it and what is it for. In second part I’ve described how does it work from end user’s perspective. This part, third and last one, covers principles, tools and processes that help us create and maintain our microfrontends.",
     "image": "data/articles/microfrontends_3/images/microfrontends_3",
     "date": "2019-06",
     "langs": ["en"],
@@ -17,7 +17,7 @@
   {
     "id": "microfrontends_2",
     "title": "Microfrontends — part 2: integration and communication",
-    "description": "Microfrontends part 2",
+    "description": "In first part of this article I’ve answered two major questions related to microfrontend architecture — what is it and what is it for. From now on this article focuses on how is it done. This part in particular covers general overview of technical solutions that support microfrontends and explains how does it work from end user’s perspective.",
     "image": "data/articles/microfrontends_2/images/microfrontends_2",
     "date": "2019-06",
     "langs": ["en"],
@@ -32,7 +32,7 @@
   {
     "id": "microfrontends_1",
     "title": "Microfrontends — part 1: extending service-oriented architecture to frontend development",
-    "description": "Microfrontends part 1",
+    "description": "In StepStone Services we’re working on maintenance and development of big, complex job board platform, among other things. This project was initially conforming to monolithic architecture and stayed this way for many years. However, in order to fight certain issues caused by such approach, service-oriented architecture on backend side and microfrontend architecture on frontend side were employed. In this article I describe our way of doing microfrontends, things we’ve learned from it so far, and tools and techniques that help us create and maintain this sophisticated software architecture.",
     "image": "data/articles/microfrontends_1/images/microfrontends_1",
     "date": "2019-06",
     "langs": ["en"],

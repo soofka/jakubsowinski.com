@@ -5,26 +5,25 @@ import {
   getLargestImage,
 } from "../helpers/index.js";
 
-const head = (data, dists, { url, name, lang, template, type, meta }) => {
-  let title = data.labels[lang].meta.title;
-  let description = data.labels[lang].meta.description;
+const head = (
+  data,
+  dists,
+  { url, name, lang, template, type, title, image },
+) => {
+  const metaSeparator = " | ";
+  let titleText = data.labels[lang].meta.title;
+  let descriptionText = `${data.labels[lang].meta.description}${metaSeparator}${data.labels[lang].meta.title}`;
   let imagePath = "images/me1-960x960.jpg";
 
-  if (meta) {
-    const metaSeparator = " | ";
-    if (Object.hasOwn(meta, "title")) {
-      title = `${meta.title}${metaSeparator}${title}`;
-    }
-    if (Object.hasOwn(meta, "description")) {
-      description = `${meta.description}${metaSeparator}${description}`;
-    }
-    if (Object.hasOwn(meta, "image")) {
-      const dotIndex = meta.image.lastIndexOf(".");
-      imagePath =
-        dotIndex === -1
-          ? `${meta.image}-*`
-          : `${meta.image.substring(0, dotIndex)}-*${meta.image.substring(dotIndex)}`;
-    }
+  if (title) {
+    titleText = `${title}${metaSeparator}${titleText}`;
+  }
+  if (image) {
+    const dotIndex = image.lastIndexOf(".");
+    imagePath =
+      dotIndex === -1
+        ? `${image}-*`
+        : `${image.substring(0, dotIndex)}-*${image.substring(dotIndex)}`;
   }
 
   return `
@@ -32,13 +31,13 @@ const head = (data, dists, { url, name, lang, template, type, meta }) => {
       <meta charset="utf-8">
       <title>${title}</title>
       <meta name="author" content="${data.author} <${data.email}> (${data.url})">
-      <meta name="description" content="${description}">
+      <meta name="description" content="${descriptionText}">
       <meta property="og:title" content="${title}">
       <meta property="og:type" content="${data.type}">
       <meta property="og:url" content="${data.url}${url || ""}">
-      <meta property="og:description" content="${description}">
+      <meta property="og:description" content="${descriptionText}">
       <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, imagePath)).rel}">
-      <meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">
+      ${image ? `<meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">` : ""}
 
       <meta name="robots" content="index, follow"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0 ${template === "slides" ? ", maximum-scale=1.0, user-scalable=no" : ""}">
