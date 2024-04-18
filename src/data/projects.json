@@ -11,25 +11,44 @@
     "inCV": "true"
   },
   {
+    "title": "Web Fotoszop",
+    "description": "desc",
+    "date": "2023",
+    "github": "web-fotoszop",
+    "inCV": "true"
+  },
+  {
+    "title": "JS Console Tetris",
+    "description": "desc",
+    "date": "2021",
+    "github": "js-console-tetris"
+  },
+  {
     "title": "Netlify Plugin Chromium",
-    "description": {
-      "en": "npc en",
-      "pl": "npc pl"
-    },
+    "description": "<p>This is Netlify Build Plugin. It is meant to be used in projects connected to Netlify CI/CD pipeline. Netlify Build Plugins are currently opt-in BETA feature. Learn how to enable them for your project here.</p><p>This plugin hooks into installation stage of the build process and extends it with additional step which checks if Chromium is installed and installs Chromium binaries if needed. The latest suitable build of Chromium for your platform will be installed with the help of chromium npm package. Installation typically takes around 20-30 seconds.</p>",
     "date": "2020",
     "github": "netlify-plugin-chromium",
     "npm": "netlify-plugin-chromium",
     "inCV": "true"
   },
   {
+    "title": "Coronavirus Tracker",
+    "description": "desc",
+    "date": "2020",
+    "github": "coronavirus-tracker"
+  },
+  {
     "title": "Webpack Bundle Content Validator",
-    "description": {
-      "en": "wbcv en",
-      "pl": "wbcv pl"
-    },
+    "description": "<p>Webpack plugin and CLI tool for Webpack bundle content validation.</p><ul><li>check if your Webpack bundle contains mandatory dependencies and doesn't contain disallowed ones</li><li>print warning in console or fail whole build process when validation is not successful</li><li>use as Webpack plugin or CLI tool</li><p>This plugin/tool is compatible with Webpack 4. Compatibility with older versions of Webpack was not tested yet, but there might be some issues with that due to the fact that structure of Webpack Stats object was changed in Webpack 4.</p>",
     "date": "2017",
     "github": "webpack-bundle-content-validator",
     "npm": "webpack-bundle-content-validator",
     "inCV": "true"
+  },
+  {
+    "title": "React Redux TypeScript Boilerplate",
+    "description": "desc",
+    "date": "2016",
+    "github": "react-redux-typescript-boilerplate"
   }
 ]

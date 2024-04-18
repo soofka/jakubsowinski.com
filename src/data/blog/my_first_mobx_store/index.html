@@ -1,6 +1,6 @@
 <p>
   So far, for a few years already, whenever I wanted my application to have some
-  global state, I've used Redux. It's reliable, it works, and it's quite easy to
+  global state, I've used <a href="https://redux.js.org/" target="_blank">Redux</a>. It's reliable, it works, and it's quite easy to
   implement, although, admittedly, it's not that easy to learn. In order to get
   a grasp of it, one has to understand non-trivial implementation of flow of
   data through store, actions, and reducers. It easily can get really confusing
@@ -15,7 +15,7 @@
   somewhere around the end of technical debt list.
 </p>
 <p>
-  Lately, huge rise in popularity of another state management library, MobX, can
+  Lately, huge rise in popularity of another state management library, <a href="https://mobx.js.org/" target="_blank">MobX</a>, can
   be observed. I see it being adapted in more and more projects and getting more
   and more community support. Therefore, I wanted to try it out myself. My first
   impression of it was that it must be simpler, more straight forward version of
@@ -27,15 +27,15 @@
 <h3>Preparation</h3>
 <p>
   First thing I've done in order take my first steps with MobX was taking a few
-  looks at it's very well written documentation. It covers not only technical
+  looks at it's very well written <a href="https://mobx.js.org/" target="_blank">documentation</a>. It covers not only technical
   details of every piece of library, which I mostly left for later. More
   importantly for me at the beginning, there is description of theoretical
   foundation of the package, which I recommend to check out to everyone who
   starts their adventure with it.
 </p>
 <p>
-  Once I got familiar with concepts and principles, I was ready to add the
-  library to my project. Along MobX itself, I installed also MobX-React package,
+  Once I got familiar with <a href="https://mobx.js.org/intro/concepts.html" target="_blank">concepts and principles</a>, I was ready to add the
+  library to my project. Along MobX itself, I installed also <a href="https://github.com/mobxjs/mobx-react" target="_blank">MobX-React</a> package,
   which redefines some of MobX features as React component wrappers, so that one
   can implement it in their React application conveniently.
 </p>
@@ -49,7 +49,7 @@ npm install --save mobx mobx-react
   Knowing that I'm using React Router library to handle routing in my
   application, and having experience from Redux, where I had to use additional
   library to make these two get along well and without issues, I immediately
-  searched for some equivalent for MobX, and found MobX-React-Router.
+  searched for some equivalent for MobX, and found <a href="https://github.com/alisd23/mobx-react-router" target="_blank">MobX-React-Router</a>.
 </p>
 <partial name="code" language="bash">
   <pre>
@@ -103,8 +103,8 @@ render();
   What I wanted to implement was very simple, conceptually. I wanted to have
   global app state with only one variable: language. Following MobX
   documentation and a few basic tutorials I've found over the Internet (most
-  notably, short introduction to MobX and React, being part of MobX
-  documentation, and this basic example by JS Craft), I decided to go for simple
+  notably, <a href="https://mobx.js.org/getting-started.html" target="_blank">short introduction to MobX and React</a>, being part of MobX
+  documentation, and this <a href="https://hackernoon.com/how-to-build-your-first-app-with-mobx-and-react-aea54fbb3265" target="_blank">basic example by JS Craft</a>), I decided to go for simple
   class with one field. Of course I did it in TypeScript.
 </p>
 <partial name="code" language="javascript">
@@ -131,10 +131,10 @@ class LanguageStore implements LanguageStoreInterface {
   Now I had one source of truth about currently selected language in my
   application. How to make it accessible to all parts of my application and
   ensure they all use the same instance? In order to achieve that, I wrapped it
-  in MobX decorator, defined language as an observable, and setLanguage as an
-  action. Therefore, language property became observed by MobX - any instance
-  which observes it will be notified about its change - and setLanguage method
-  became privileged to modify language in global context.
+  in MobX decorator, defined <code>language</code> as an <code><a href="https://mobx.js.org/refguide/observable.html" target="_blank">observable</a></code>, and <code>setLanguage</code> as an
+  <code><a href="https://mobx.js.org/refguide/action.html" target="_blank">action</a></code>. Therefore, language property became observed by MobX - any instance
+  which observes it will be notified about its change - and <code>setLanguage</code> method
+  became privileged to modify <code>language</code> in global context.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -188,8 +188,8 @@ const store = {
 <h4>Modifying the store</h4>
 <p>
   In the next step, I created simple component with two buttons, which purpose
-  was to switch between languages - LanguageSwitcher. Then, using inject method
-  from MobX-React, I made it familiar with LanguageStore, and used setLanguage
+  was to switch between languages - <code>LanguageSwitcher</code>. Then, using <code>inject</code> method
+  from MobX-React, I made it familiar with <code>LanguageStore</code>, and used <code>setLanguage</code>
   action to set proper value in global app state.
 </p>
 <partial name="code" language="javascript"><pre>
@@ -222,10 +222,10 @@ export const LanguageSwitcher = (props: LanguageSwitcherPropsInterface): JSX.Ele
 
 export default inject('languageStore')(LanguageSwitcher);
 </pre></partial>
-<p>Note, that languageStore prop in my props interface had to be optional. Otherwise, TypeScript would complain about it not being provided by parent component. I'm yet to discover how to implement it in a way, that this prop is required, as it should be. If you know the trick, don't hesitate to let me know in comments.</p>
-<p>Having my LanguageSwitcher, clicking on one of it's buttons altered global state and set proper language value in it. However, there was no visible change in my application - for that I had to implement components, that react to this change.</p>
+<p>Note, that <code>languageStore</code> prop in my props interface had to be optional. Otherwise, TypeScript would complain about it not being provided by parent component. I'm yet to discover how to implement it in a way, that this prop is required, as it should be. If you know the trick, don't hesitate to let me know in comments.</p>
+<p>Having my <code>LanguageSwitcher</code>, clicking on one of it's buttons altered global state and set proper language value in it. However, there was no visible change in my application - for that I had to implement components, that react to this change.</p>
 <h4>Reacting to changes in store</h4>
-<p>The most basic way of doing so in MobX, from what I've learned, was to implement observer. Wrapping React component with such decorator makes it aware of any changes in the state. Therefore, I created Label component, which observed the store and automatically reacted to language change, and I reimplemented all static pieces of text in my UI to use this component. Additionally, I had to inject LanguageStore to it, so that I could always get proper, current language value for my Label to render. Then I created simple JS objects with translations to both languages.</p>
+<p>The most basic way of doing so in MobX, from what I've learned, was to implement <code><a href="https://mobx.js.org/refguide/observer-component.html" target="_blank">observer</a></code>. Wrapping React component with such decorator makes it aware of any changes in the state. Therefore, I created <code>Label</code> component, which observed the store and automatically reacted to <code>language</code> change, and I reimplemented all static pieces of text in my UI to use this component. Additionally, I had to inject <code>LanguageStore</code> to it, so that I could always get proper, current language value for my <code>Label</code> to render. Then I created simple JS objects with translations to both languages.</p>
 <partial name="code" language="javascript"><pre>
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
@@ -246,11 +246,11 @@ export const Label = (props: LabelPropsInterface) => {
 
 export default inject('languageStore')(observer(Label));
 </pre></partial>
-<p>One thing I learned in the process is that observer should always be the innermost (first applied) decorator; otherwise it might do nothing at all.</p>
-<p>After this change, clicking on my LanguageSwitcher button, which was not corresponding to currently set language, resulted in immediate change in UI of my application - static pieces of text were taken from the other JS object with translations and rerendered properly. Cool thing that came out of the box was that clicking on the button that corresponds to already selected language didn't result in any component being rerendered, which is good for performance of my app.</p>
-<p>On the other hand, my list of entries didn't react to this change at all. Obviously, I also wanted this component to change with setLanguage action - I only wanted entries translated to Polish to appear when in Polish version, and vice versa - and it turned out to be much trickier than I expected.</p>
-<p>After a few hours of frustrating attempts to make my Entries component with an observer, which I used for Label component, I learned important lesson about MobX - observer makes your component react to any observable you use in render(). I used language parameter, which was observable, in this component, but only in componentDidMount function, where I fetched all the entries, not in render function. I had to come up with different idea.</p>
-<p>Another few hours later, I've found what I needed in reaction function from MobX. During this research I discovered that MobX offers a lot of ways to interact with the store in variety of manners. Among different methods, reaction was precisely what I needed for this case. Using it, one can define his custom way of, well, reacting to change in one of his observables. Unlike observer, which is tightly coupled with render function, reaction allowed me to refetch posts whenever language changed without referring to LanguageStore during render phase.</p>
+<p>One thing I learned in the process is that <code>observer</code> should always be the innermost (first applied) decorator; otherwise it might do nothing at all.</p>
+<p>After this change, clicking on my <code>LanguageSwitcher</code> button, which was not corresponding to currently set language, resulted in immediate change in UI of my application - static pieces of text were taken from the other JS object with translations and rerendered properly. Cool thing that came out of the box was that clicking on the button that corresponds to already selected language didn't result in any component being rerendered, which is good for performance of my app.</p>
+<p>On the other hand, my list of entries didn't react to this change at all. Obviously, I also wanted this component to change with <code>setLanguage</code> action - I only wanted entries translated to Polish to appear when in Polish version, and vice versa - and it turned out to be much trickier than I expected.</p>
+<p>After a few hours of frustrating attempts to make my Entries component with an <code>observer</code>, which I used for <code>Label</code> component, I learned important lesson about MobX - <strong><code>observer</code> makes your component react to any observable you use in <code>render()</code></strong>. I used <code>language</code> parameter, which was observable, in this component, but only in <code>componentDidMount</code> function, where I fetched all the entries, not in render function. I had to come up with different idea.</p>
+<p>Another few hours later, I've found what I needed in <code><a href="https://mobx.js.org/refguide/reaction.html" target="_blank">reaction</a></code> function from MobX. During this research I discovered that MobX offers a lot of ways to interact with the store in variety of manners. Among different methods, <code>reaction</code> was precisely what I needed for this case. Using it, one can define his custom way of, well, reacting to change in one of his observables. Unlike <code>observer</code>, which is tightly coupled with render function, reaction allowed me to refetch posts whenever <code>language</code> changed without referring to <code>LanguageStore</code> during render phase.</p>
 <partial name="code" language="javascript"><pre>
 export class Entries extends React.Component<EntriesPropsInterface, EntriesStateInterface> {
   constructor(props: EntriesPropsInterface) {
@@ -275,7 +275,7 @@ export class Entries extends React.Component<EntriesPropsInterface, EntriesState
 
 export default inject('languageStore')(Entries);
 </pre></partial>
-<p>After all, I enriched my application with simple store, made it compliant with other libraries in my stack, made some components that modify the store, and made some components that react to these modifications - in both trivial and non-that-trivial way. As always, all code that I wrote can be found on my GitHub, in my blog repository. Live example of it is this blog you're currently reading, although at the time of publishing this post, LanguageSwitcher component itself might not be visible to you yet. I implemented the feature, but I also have to actually translate some posts to Polish for it to make sense. As always, I started with the most fun part...</p>
+<p>After all, I enriched my application with simple store, made it compliant with other libraries in my stack, made some components that modify the store, and made some components that react to these modifications - in both trivial and non-that-trivial way. As always, all code that I wrote can be found on my GitHub, in <a href="https://github.com/soofka/blog" target="_blank">my blog repository</a>. Live example of it is this blog you're currently reading, although at the time of publishing this post, LanguageSwitcher component itself might not be visible to you yet. I implemented the feature, but I also have to actually translate some posts to Polish for it to make sense. As always, I started with the most fun part...</p>
 <h3>Conclusions</h3>
 <p>
   So, what I learned in the process? One thing I learned, at least a little bit,

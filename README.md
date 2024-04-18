@@ -7,11 +7,10 @@
 - content:
 
   - home content + translation
-  - projects descriptions + translation
   - courses description + translation
   - talks description (2 LEFT!)
   - cv content update
-  - projects: web-fotoszop, boilerplate, js console tetris?, coronavirus tracker?
+  - projects descriptions
   - ADD LINKS AND CODE TO ARTICLES AND BLOG POSTS
 
 - styling:

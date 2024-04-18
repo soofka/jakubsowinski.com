@@ -1,13 +1,18 @@
 <p>
-  Styled Components is one of many implementations of an idea of CSS-in-JS:
-  concept, where you don't artificially map styling of components to components
-  themselves, instead you treat both as one, and put it all in your JS/TS file.
-  It's currently a hot topic in JavaScript world, at least for a year already.
-  There are many advocates for this approach, many opponents, and probably twice
-  as many libraries that bring it to life. Styled Components, with almost 20k
-  stars on GitHub at the time of writing this post, must be one of the most
-  widely used. It's popularity has been one of major reasons behind selecting it
-  in our front-end development in StepStone.
+  <a
+    href="https://github.com/styled-components/styled-components"
+    target="_blank"
+    >Styled Components</a
+  >
+  is one of many implementations of an idea of CSS-in-JS: concept, where you
+  don't artificially map styling of components to components themselves, instead
+  you treat both as one, and put it all in your JS/TS file. It's currently a hot
+  topic in JavaScript world, at least for a year already. There are many
+  advocates for this approach, many opponents, and probably twice as many
+  libraries that bring it to life. Styled Components, with almost 20k stars on
+  GitHub at the time of writing this post, must be one of the most widely used.
+  It's popularity has been one of major reasons behind selecting it in our
+  front-end development in StepStone.
 </p>
 <p>
   After a few days of learning and coding, I must admit, I see some profits
@@ -23,14 +28,17 @@
 <p>
   As usual, I implemented it within React and TypeScript project - this blog,
   the one you're reading. I'll display examples taken out of it's flesh, and you
-  can always refer to more detailed implementation on my GitHub, where this
-  application resides on average day.
+  can always refer to more detailed implementation on
+  <a href="https://github.com/soofka/blog" target="_blank">my GitHub</a>, where
+  this application resides on average day.
 </p>
 <p>Without further ado, let's dive straight into code samples.</p>
 <h3>Rewriting variables into theme</h3>
 <p>
-  I started with reading the documentation. Once I got a grasp of it, I
-  proceeded to installation of the package.
+  I started with reading
+  <a href="https://www.styled-components.com/docs" target="_blank"
+    >the documentation</a
+  >. Once I got a grasp of it, I proceeded to installation of the package.
 </p>
 <partial name="code" language="bash">
   <pre>
@@ -40,12 +48,17 @@ npm install --save-dev styled-components
 </partial>
 <p>
   Foundation of my Sass-based styling of this blog was file named
-  variables.scss, where I stored standardized sizes of all elements, colors,
-  spacings, fonts, etc. Naturally, I started with implementation of something
-  analogical in Styled Components. In there, it's called theme, and it has it's
-  own section in documentation.
+  <code>variables.scss</code>, where I stored standardized sizes of all
+  elements, colors, spacings, fonts, etc. Naturally, I started with
+  implementation of something analogical in Styled Components. In there, it's
+  called theme, and it has
+  <a
+    href="https://www.styled-components.com/docs/advanced#theming"
+    target="_blank"
+    >it's own section in documentation</a
+  >.
 </p>
-<p>Originally, my variables.scss file was:</p>
+<p>Originally, my <code>variables.scss</code> file was:</p>
 <partial name="code" language="scss">
   <pre>
 $mobileBreakPointWidth: 968px;
@@ -88,19 +101,27 @@ $fontSizeS: 1.5 * $baseDistance;
   on percents and pixels, as I could in Sass. Instead of having base distance
   defined as 8 pixels and multiplying it by any number without care, I had to
   define value of base distance as 8 outside of my theme, perform any
-  calculation on pure number, and add px to the result. Template literals came
-  to the rescue.
+  calculation on pure number, and add px to the result.
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
+    target="_blank"
+    >Template literals</a
+  >
+  came to the rescue.
 </p>
 <p>
   Another issue I discovered was using some of Sass native functions, such as
-  lighten or darken. They're not supported in Styled Components by default.
-  There are some additional packages, mainly Polished, prepared by authors of
-  Styled Components themselves, which provide such functionality. However, at
-  this point I had my first reflection on styling of my blog. Why do I even
-  bother with this kind of operation for just a couple of variables? I decided
-  that instead of that, I'd rather have all my colors defined explicitly.
+  <code>lighten</code> or <code>darken</code>. They're not supported in Styled
+  Components by default. There are some additional packages, mainly
+  <a href="https://github.com/styled-components/polished" target="_blank"
+    >Polished</a
+  >, prepared by authors of Styled Components themselves, which provide such
+  functionality. However, at this point I had my first reflection on styling of
+  my blog. Why do I even bother with this kind of operation for just a couple of
+  variables? I decided that instead of that, I'd rather have all my colors
+  defined explicitly.
 </p>
-<p>Finally, my theme.ts ended up looking like this:</p>
+<p>Finally, my <code>theme.ts</code> ended up looking like this:</p>
 <partial name="code" language="javascript">
   <pre>
 const infoSectionWidthPercentageValue = 32;
@@ -161,8 +182,8 @@ export const theme = {
   getting rid of all SCSS files, replacing them with TS files. Hence, I asked
   myself a question: how do I provide my new variables to my new styles? Again
   documentation about theming came handy - theme is provided through component's
-  props. I only had to wrap my root component in ThemeProvider, coming from
-  Styled Components.
+  props. I only had to wrap my root component in <code>ThemeProvider</code>,
+  coming from Styled Components.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -186,8 +207,9 @@ const Blog = () => {
   customization.
 </p>
 <p>
-  Before modifications, style for one of my components - Quote, piece of text
-  visible on left hand side of the screen in desktop view - looked like this:
+  Before modifications, style for one of my components - <code>Quote</code>,
+  piece of text visible on left hand side of the screen in desktop view - looked
+  like this:
 </p>
 <partial name="code" language="scss">
   <pre>
@@ -290,29 +312,43 @@ export const Quote = (): JSX.Element => {
 <h3>Code quality</h3>
 <p>
   Nevertheless of this change, I didn't want to make it at the cost of
-  consistency of my code. Previously, I used StyleLint to ensure that all my
-  SCSS files conform to the same standard. I was thinking if I can get the same
-  cool feature for Styled Components, and I was happy to discover, that it comes
-  almost out of the box. There is a package that integrates StyleLint with
-  Styled Components, so that linting styles worked for me exactly the same as
-  before: stylelint-processor-styled-components. It's not a part of main Styled
-  Components package, but it's created by the same contributors, and hosted from
-  the same account on GitHub.
+  consistency of my code. Previously, I used
+  <a href="https://stylelint.io/" target="_blank">StyleLint</a> to ensure that
+  all my SCSS files conform to the same standard. I was thinking if I can get
+  the same cool feature for Styled Components, and I was happy to discover, that
+  it comes almost out of the box. There is a package that integrates StyleLint
+  with Styled Components, so that linting styles worked for me exactly the same
+  as before:
+  <a
+    href="https://github.com/styled-components/stylelint-processor-styled-components"
+    target="_blank"
+    >stylelint-processor-styled-components</a
+  >. It's not a part of main Styled Components package, but it's created by the
+  same contributors, and hosted from the same account on GitHub.
 </p>
 <p>
   At this point I was able to ensure quality of my styling code at the same
   level as before the change to Styled Components, but I was very happy to
   discover, that I can go even further than that. All thanks to
-  jest-styled-components package, which is also created by the same group of
-  people responsible for Styled Components.
+  <a
+    href="https://github.com/styled-components/jest-styled-components"
+    target="_blank"
+    >jest-styled-components</a
+  >
+  package, which is also created by the same group of people responsible for
+  Styled Components.
 </p>
 <p>
-  I already had Jest snapshot tests written for all my components, in order to
-  ensure consistency and control over tree of DOM elements rendered by them. Why
-  wouldn't I have similar snapshot dedicated for styling generated for such
-  component? I never thought about it before, but now that I unearthed it, I
-  immediately wanted to have it. It's simple to generate, check, and modify
-  during development, and also very beneficial. So I went for it.
+  I already had
+  <a href="https://jestjs.io/docs/en/snapshot-testing" target="_blank"
+    >Jest snapshot tests</a
+  >
+  written for all my components, in order to ensure consistency and control over
+  tree of DOM elements rendered by them. Why wouldn't I have similar snapshot
+  dedicated for styling generated for such component? I never thought about it
+  before, but now that I unearthed it, I immediately wanted to have it. It's
+  simple to generate, check, and modify during development, and also very
+  beneficial. So I went for it.
 </p>
 <p>
   Unfortunately, I didn't manage to successfully run setup presented in the

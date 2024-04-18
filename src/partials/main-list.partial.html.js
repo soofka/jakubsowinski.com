@@ -17,12 +17,11 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       ? item.title[lang]
       : item.title;
   let title = `<h3>${titleText}</h3>`;
-  let content = `<p>${
+  let content =
     typeof item.description === "object" &&
     Object.hasOwn(item.description, lang)
       ? item.description[lang]
-      : item.description
-  }</p>`;
+      : item.description;
   let meta = item.date;
   let footnote = "";
   let alt;
@@ -36,7 +35,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       title = `<partial name="link" data="${encodeURI(
         JSON.stringify({ pageId }),
       )}">${title}</partial>`;
-      content = `${content}<partial name="link" data="${encodeURI(
+      content = `<p>${content}</p><partial name="link" data="${encodeURI(
         JSON.stringify({ pageId }),
       )}"><p>${labels.misc.continueReading}</p></partial>`;
       if (item.publications && item.publications.length > 0) {
@@ -61,7 +60,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       title = `<partial name="link" data="${encodeURI(
         JSON.stringify({ pageId }),
       )}">${title}</partial>`;
-      content = `${content}<partial name="link" data="${encodeURI(
+      content = `<p>${content}</p><partial name="link" data="${encodeURI(
         JSON.stringify({ pageId }),
       )}"><p>${labels.misc.continueReading}</p></partial>`;
       alt = `<partial name="link" data="${encodeURI(
@@ -79,6 +78,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       break;
 
     case "courses":
+      content = `<p>${content}</p>`;
       const clients =
         typeof item.clients === "object" && Object.hasOwn(item.clients, lang)
           ? item.clients[lang]
@@ -115,6 +115,7 @@ const getItem = (index, item, pageName, lang, labels, dists) => {
       break;
 
     case "talks":
+      content = `<p>${content}</p>`;
       meta = `${meta} | ${item.event}, ${item.place[lang]}`;
 
       const metaSecondRowItems = [];

@@ -1,7 +1,7 @@
 <p>So, how do you do syntax highlighting? I have no clue! It's open source world, we don't bother with these questions, unless rare case, when there is no library for given purpose. Luckily, for syntax highlighting there is handful of them. Plenty of different implementations that exist out there allowed me to pick one that is tailored specifically to my needs.</p>
-<p>My initial idea was that I don't want to block rendering of my post with syntax highlighting mechanism. It's cool feature, but it's not more important than the content of the article itself. More often than not, by the time user scrolls down to some piece of code in my post, at least a few seconds should pass - it's not at the top of the view in any case, there are always a few paragraphs of text, and I assume, that my readers actually read a few words from me. Therefore, I decided to use Web Worker for the job.</p>
-<p>That's why I needed a standalone library that provides syntax highlighting mechanism. I didn't want it to be part of my project, one of my dependencies - I wanted to have it separated, and to be able to use it from my Web Worker conveniently. I decided to go for highlight.js, also because it allowed me to compile it to minified version, containing scripts only related to languages, that I use in my posts.</p>
-<p>Once I established what I want to do and how I want to achieve it, I was ready to proceed to actual implementation. I started with modifications to my EntryContent component. Up until now, it was dummy component, which displayed HTML content of the entry, passed to it through props:</p>
+<p>My initial idea was that I don't want to block rendering of my post with syntax highlighting mechanism. It's cool feature, but it's not more important than the content of the article itself. More often than not, by the time user scrolls down to some piece of code in my post, at least a few seconds should pass - it's not at the top of the view in any case, there are always a few paragraphs of text, and I assume, that my readers actually read a few words from me. Therefore, I decided to use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" target="_blank">Web Worker</a> for the job.</p>
+<p>That's why I needed a standalone library that provides syntax highlighting mechanism. I didn't want it to be part of my project, one of my dependencies - I wanted to have it separated, and to be able to use it from my Web Worker conveniently. I decided to go for <a href="https://highlightjs.org/" target="_blank">highlight.js</a>, also because it allowed me to compile it to minified version, containing scripts only related to languages, that I use in my posts.</p>
+<p>Once I established what I want to do and how I want to achieve it, I was ready to proceed to actual implementation. I started with modifications to my <code>EntryContent</code> component. Up until now, it was dummy component, which displayed HTML content of the entry, passed to it through props:</p>
 <partial name="code" language="javascript"><pre>
 import * as React from 'react';
 
@@ -15,7 +15,7 @@ export const EntryContent = (props: EntryContentPropsInterface): JSX.Element => 
 
 export default EntryContent;
 </pre></partial>
-<p>With introduction of syntax highlighting, I wanted EntryContent to trigger this mechanism whenever it's mounted. My plan for triggering was to select all elements matching pre code selector from entry's content; then, pass content of each of those elements along with it's index to Web Worker, which I expected to return the same content, but highlighted; finally, substitute it in the view. So that's pretty much what I did:</p>
+<p>With introduction of syntax highlighting, I wanted <code>EntryContent</code> to trigger this mechanism whenever it's mounted. My plan for triggering was to select all elements matching <code>pre code</code> selector from entry's content; then, pass content of each of those elements along with it's index to Web Worker, which I expected to return the same content, but highlighted; finally, substitute it in the view. So that's pretty much what I did:</p>
 <partial name="code" language="javascript"><pre>
 import * as React from 'react';
 
@@ -58,7 +58,7 @@ export class EntryContent extends React.Component<EntryContentPropsInterface> {
 
 export default EntryContent;
 </pre></partial>
-<p>Two things in this code that remain unresolved are highlightWorker and WebWorker scripts, both imported at the top of the file. That's the implementation of my Web Worker, where all the magic happens. Let's start with highlightWorker:</p>
+<p>Two things in this code that remain unresolved are <code>highlightWorker</code> and <code>WebWorker</code> scripts, both imported at the top of the file. That's the implementation of my Web Worker, where all the magic happens. Let's start with <code>highlightWorker</code>:</p>
 <partial name="code" language="javascript"><pre>
 export default () => {
   self.addEventListener('message', (event) => {
@@ -72,8 +72,8 @@ export default () => {
   });
 };
 </pre></partial>
-<p>It uses highlightAuto method from hljs, global object provided by highlight.js library. This and other methods provided by the library are explained in details in the documentation. TL;DR: it takes text as a parameter, and returns the same text, but highlighted, with automatic language detection. As you can see in the code of EntryContent, content of my code block was passed as first element of array of arguments in worker.postMessage function. The other parameter was index of given code block, so that I know where exactly should I place highlighted result in my view (keep in mind that it happens asynchronously).</p>
-<p>The other piece of the puzzle is WebWorker. It's actually a piece of code I've found on the internet, most likely on StackOverflow, if memory serves. It's very clever way to help Webpack deal with Web Worker by creating it from imported script on the fly. Without it, I'd have to keep my Web Worker separated from source code of my blog, similarly to how I did with highlight.js library. Or I'd have to use some other workaround, such as worker-loader for Webpack. But instead, I did this:</p>
+<p>It uses <code>highlightAuto</code> method from highlight.js library. This and other methods provided by the library are explained in details in <a href="https://highlightjs.readthedocs.io/en/latest/api.html" target="_blank">documentation</a>. TL;DR: it takes text as a parameter, and returns the same text, but highlighted, with automatic language detection. As you can see in the code of <code>EntryContent</code>, content of my code block was passed as first element of array of arguments in <code>worker.postMessage</code> function. The other parameter was index of given code block, so that I know where exactly should I place highlighted result in my view (keep in mind that it happens asynchronously).</p>
+<p>The other piece of the puzzle is <code>WebWorker</code>. It's actually a piece of code I've found on the internet, most likely on StackOverflow, if memory serves. It's very clever way to help Webpack deal with Web Worker by creating it from imported script on the fly. Without it, I'd have to keep my Web Worker separated from source code of my blog, similarly to how I did with highlight.js library. Or I'd have to use some other workaround, such as <a href="https://github.com/webpack-contrib/worker-loader" target="_blank">worker-loader</a> for Webpack. But instead, I did this:</p>
 <partial name="code" language="javascript"><pre>
 export class WebWorker {
   constructor(worker) {
@@ -86,7 +86,7 @@ export class WebWorker {
 export default WebWorker;
 </pre></partial>
 <p>And that could be it! But I decided to do one more thing.</p>
-<p>Even though Web Worker is very widely supported by browsers nowadays, I still wanted to practice a case, in which it's not available. Thus, I added one last method to EntryContent, which is meant to be triggered in case of lack of support for Web Worker, and which highlights code in synchronous manner. This time I used highlightBlock method from highlight.js, which handles DOM nodes conveniently. It allowed me to avoid setting innerHTML explicitly, which is never preferred option.</p>
+<p>Even though <a href="https://caniuse.com/#search=webworker" target="_blank">Web Worker</a> is very widely supported by browsers nowadays, I still wanted to practice a case, in which it's not available. Thus, I added one last method to <code>EntryContent</code>, which is meant to be triggered in case of lack of support for Web Worker, and which highlights code in synchronous manner. This time I used <code>highlightBlock</code> method from highlight.js, which handles DOM nodes conveniently. It allowed me to avoid setting <code>innerHTML</code> explicitly, which is never preferred option.</p>
 <partial name="code" language="javascript"><pre>
 // ...
 
@@ -109,4 +109,4 @@ highlightCodeBlocks(): void {
 // ...
 </pre></partial>
 <p>I must admit, this way was much easier than the one with Web Worker, but much less fun too. Either way, I got what I wanted - syntax highlighting in my posts, and a little but of new knowledge and experience.</p>
-<p>As usual, you can find all the changes I described in this post on my blog repository on GitHub.</p>
+<p>As usual, you can find all the changes I described in this post on <a href="https://github.com/soofka/blog" target="_blank">my blog repository on GitHub</a>.</p>
