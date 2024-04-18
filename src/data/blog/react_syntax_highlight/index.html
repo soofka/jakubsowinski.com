@@ -86,7 +86,7 @@ export class WebWorker {
 export default WebWorker;
 </pre></partial>
 <p>And that could be it! But I decided to do one more thing.</p>
-<p>Even though <a href="https://caniuse.com/#search=webworker" target="_blank">Web Worker</a> is very widely supported by browsers nowadays, I still wanted to practice a case, in which it's not available. Thus, I added one last method to <code>EntryContent</code>, which is meant to be triggered in case of lack of support for Web Worker, and which highlights code in synchronous manner. This time I used <code>highlightBlock</code> method from highlight.js, which handles DOM nodes conveniently. It allowed me to avoid setting <code>innerHTML</code> explicitly, which is never preferred option.</p>
+<p>Even though <a href="https://caniuse.com/#search=webworker" target="_blank">Web Worker is very widely supported by browsers nowadays</a>, I still wanted to practice a case, in which it's not available. Thus, I added one last method to <code>EntryContent</code>, which is meant to be triggered in case of lack of support for Web Worker, and which highlights code in synchronous manner. This time I used <code>highlightBlock</code> method from highlight.js, which handles DOM nodes conveniently. It allowed me to avoid setting <code>innerHTML</code> explicitly, which is never preferred option.</p>
 <partial name="code" language="javascript"><pre>
 // ...
 

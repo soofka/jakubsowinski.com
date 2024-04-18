@@ -89,12 +89,17 @@
 ></partial>
 <p>
   Dan Abramov concluded his Twitter thread with realization that microfrontends
-  architecture is directly related to Web Components API. With this API, one can
-  define basic structure of UI component in vanilla JS, and have it implemented
-  under the hood in pretty much any way he likes. This, in turn, enables teams
-  to be autonomous in choosing not only some minor libraries and solutions, but
-  even the most basic technology that renders their components — be it React,
-  Angular, Vue, or whatever else is hyped and trending at given moment.
+  architecture is directly related to
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+    target="_blank"
+    >Web Components API</a
+  >. With this API, one can define basic structure of UI component in vanilla
+  JS, and have it implemented under the hood in pretty much any way he likes.
+  This, in turn, enables teams to be autonomous in choosing not only some minor
+  libraries and solutions, but even the most basic technology that renders their
+  components — be it React, Angular, Vue, or whatever else is hyped and trending
+  at given moment.
 </p>
 <p>
   This conclusion seems to be natural especially when we take into account
@@ -174,8 +179,9 @@ const Example = styled.section`
   >
 </partial>
 <p>
-  They are based on theme property that comes from ThemeProvider – higher order
-  component we wrap our applications in.
+  They are based on <code>theme</code> property that comes from
+  <code>ThemeProvider</code> – higher order component we wrap our applications
+  in.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -240,13 +246,15 @@ ReactDOM.render(
   We started with setting up tools and processes. We decided to put all of our
   components in one repository, utilizing so called “monorepo” approach. This
   enabled us to establish and automate one release process for the whole library
-  as well as conveniently use tools like Storybook, which provides separate GUI
-  to browse and play with our components. Thanks to this, everyone, also
-  non-technical people in our organization, can easily check what building
-  blocks are available out of the box for their product and what they can do.
-  Versioning problems caused by monorepo were solved using tool named Lerna,
-  which enabled us to have separate version per each component while having them
-  all in one repository at the same time.
+  as well as conveniently use tools like
+  <a href="https://storybook.js.org/" target="_blank">Storybook</a>, which
+  provides separate GUI to browse and play with our components. Thanks to this,
+  everyone, also non-technical people in our organization, can easily check what
+  building blocks are available out of the box for their product and what they
+  can do. Versioning problems caused by monorepo were solved using tool named
+  <a href="https://github.com/lerna/lerna" target="_blank">Lerna</a>, which
+  enabled us to have separate version per each component while having them all
+  in one repository at the same time.
 </p>
 <p>
   In order to migrate existing components to library as well as to add new ones
@@ -268,11 +276,14 @@ ReactDOM.render(
 <p>
   Additionally, in order to have those components conveniently cataloged and
   categorized, we decided to split them into atoms, molecules and organisms,
-  utilizing concept of atomic design. Example of atom would be simple button or
-  icon, while button with icon would be molecule — component built from two
-  basic components. Example of organism would be customizable sticky bar —
-  element that sticks to top of your page as you scroll down — consisting of
-  several buttons, icons, buttons with icons, and other atoms and molecules.
+  utilizing concept of
+  <a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank"
+    >atomic design</a
+  >. Example of atom would be simple button or icon, while button with icon
+  would be molecule — component built from two basic components. Example of
+  organism would be customizable sticky bar — element that sticks to top of your
+  page as you scroll down — consisting of several buttons, icons, buttons with
+  icons, and other atoms and molecules.
 </p>
 <partial
   name="img"
@@ -370,9 +381,11 @@ ReactDOM.render(
   they appointed specific, dedicated owner to their Tests Framework.
 </p>
 <p>
-  We call such owner a “custodian”, after Martin Fowler’s blog post on similar
-  matter. Initially custodian of Tests Framework was one person, and as the tool
-  was growing in time, more people were added.
+  We call such owner a “custodian”, after
+  <a href="https://martinfowler.com/bliki/ServiceCustodian.html" target="_blank"
+    >Martin Fowler’s blog post on similar matter</a
+  >. Initially custodian of Tests Framework was one person, and as the tool was
+  growing in time, more people were added.
 </p>
 <p>
   Nowadays we have separate Automation Team, which is responsible for

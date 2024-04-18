@@ -4,9 +4,13 @@
   control, and which may stand out noticeably from my sleek user interface. It
   required me to shift most of the decision making process when it comes to
   routing from my back-end to my front-end. Therefore, I came to realization,
-  that I will now use Express to serve static content only, and this is common
-  and well documented use case. Quickly I came up with simple configuration,
-  that always serves static index.html file.
+  that I will now use
+  <a href="https://expressjs.com/" target="_blank">Express</a> to serve static
+  content only, and this is
+  <a href="https://expressjs.com/en/starter/static-files.html" target="_blank"
+    >common and well documented use case</a
+  >. Quickly I came up with simple configuration, that always serves static
+  <code>index.html</code> file.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -35,22 +39,25 @@ app.listen(3000, () => {
   >
 </partial>
 <p>
-  Then, I moved to React-Router. Basic component of this library is Route, with
-  property path, which describes chunk of URL, corresponding to the view to be
-  displayed. React-Router documentation states, that "Routes without a path
-  always match", and that was exactly what I needed. Having Route without path,
-  pointing to Not Found view, I only needed to redirect some other routes to
-  meaningful views that I had consciously created, and everything else is
-  covered.
+  Then, I moved to
+  <a href="https://reactrouter.com/" target="_blank">React-Router</a>. Basic
+  component of this library is <code>Route</code>, with property
+  <code>path</code>, which describes chunk of URL, corresponding to the view to
+  be displayed. React-Router documentation states, that "routes without a path
+  always match", and that was exactly what I needed. Having
+  <code>Route</code> without path, pointing to Not Found view, I only needed to
+  redirect some other routes to meaningful views that I had consciously created,
+  and everything else is covered.
 </p>
 <p>
-  However, in React-Router, Routes on their own render when they match URL
-  inclusively. Not Found view stated as a Route without path would render
-  unconditionally and irrespectively of the URL. Switch, also coming from
-  React-Router, solved me this issue. In Switch, routes render when they match
-  the URL exclusively, which means that always up to one Route will be rendered,
-  and always it will be the first one that matches the URL. I put my Not Found
-  Route at the end of Switch, and I was good to leave the office. Job well done.
+  However, in React-Router, routes on their own render when they match URL
+  inclusively. Not Found view stated as a <code>Route</code> without path would
+  render unconditionally and irrespectively of the URL. <code>Switch</code>,
+  also coming from React-Router, solved me this issue. In <code>Switch</code>,
+  routes render when they match the URL exclusively, which means that always up
+  to one <code>Route</code> will be rendered, and always it will be the first
+  one that matches the URL. I put my Not Found <code>Route</code> at the end of
+  <code>Switch</code>, and I was good to leave the office. Job well done.
 </p>
 <partial name="code" language="javascript">
   <pre>

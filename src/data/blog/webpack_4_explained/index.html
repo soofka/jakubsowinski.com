@@ -1,16 +1,26 @@
 <p>
-  Here's what happens when you type npm run build:base and hit enter on cloned
-  react-redux-typescript-boilerplate repository. It invokes Webpack (with
-  --color parameter, because I like colors), a module bundler, which will build
-  our application and output results in dist directory in project root. By
-  "build" I mean transpilation of TypeScript code to ECMAScript 6 (officially
-  known as ECMAScript 2015), then transpilation from ES6 to browser-compatible
-  JavaScript code with Babel (they actually use word "compiler" in their
-  documentation now), then copying static assets, and a few other steps here and
-  there. Webpack finds it's configuration in it's standard, expected location,
-  which is root directory of our project, in a file named webpack.config.js.
-  Actual configuration, however, is located in /scripts/bundler directory (this
-  is because it's also used in other parts of the project).
+  Here's what happens when you type <code>npm run build:base</code> and hit
+  enter on cloned
+  <a
+    href="https://github.com/soofka/react-redux-typescript-boilerplate"
+    target="_blank"
+    >react-redux-typescript-boilerplate</a
+  >
+  repository. It invokes
+  <a href="https://webpack.js.org/" target="_blank">Webpack</a> (with
+  <code>--color</code> parameter, because I like colors), a module bundler,
+  which will build our application and output results in dist directory in
+  project root. By "build" I mean transpilation of TypeScript code to ECMAScript
+  6 (officially known as ECMAScript 2015), then transpilation from ES6 to
+  browser-compatible JavaScript code with Babel (they actually use word
+  "compiler" in their
+  <a href="https://babeljs.io/" target="_blank">documentation</a> now), then
+  copying static assets, and a few other steps here and there. Webpack finds
+  it's configuration in it's standard, expected location, which is root
+  directory of our project, in a file named <code>webpack.config.js</code>.
+  Actual configuration, however, is located in
+  <code>/scripts/bundler</code> directory (this is because it's also used in
+  other parts of the project).
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -74,15 +84,16 @@ const getEntry = () => {
   >
 </partial>
 <p>
-  First item in the configuration, entry, defines entry point for your JS files
-  - where Webpack should start building it's dependency graphs. It is divided
-  into two fields. main represents entry point to package with application
-  source code - starting point of your application. From there, Webpack will
-  basically analyze all imports and include them into this file. As a result,
-  this file will often be a subject for change. vendor, on the other hand,
-  represents all external dependencies, which will be naturally modified much
-  more rarely and thus can be cached for increased performance. Content of this
-  section is more less equal to dependencies section of package.json file.
+  First item in the configuration, <code>entry</code>, defines entry point for
+  your JS files - where Webpack should start building it's dependency graphs. It
+  is divided into two fields. main represents entry point to package with
+  application source code - starting point of your application. From there,
+  Webpack will basically analyze all imports and include them into this file. As
+  a result, this file will often be a subject for change. <code>vendor</code>,
+  on the other hand, represents all external dependencies, which will be
+  naturally modified much more rarely and thus can be cached for increased
+  performance. Content of this section is more less equal to
+  <code>dependencies</code> section of <code>package.json</code> file.
 </p>
 <h3>Output</h3>
 <partial name="code" language="javascript">
@@ -98,14 +109,16 @@ const getOutput = () => {
   >
 </partial>
 <p>
-  Second item, output, tells Webpack where to emit the bundles it created, and
-  how to name them. Therefore, field path pointing to /dist directory. Field
-  publicPath defines a path where all assets that are not imported directly in
-  your code, but linked, will be pointed to. Then, there are names and locations
-  of files that will be produced as a result of this build. Using [name] means,
-  that there will be main and vendor files produces, as defined in entry.
-  Additionally, using [hash], will add a unique string to the file name, which
-  can help with cache busting for both development and production purposes.
+  Second item, <code>output</code>, tells Webpack where to emit the bundles it
+  created, and how to name them. Therefore, field path pointing to
+  <code>/dist</code> directory. Field <code>publicPath</code> defines a path
+  where all assets that are not imported directly in your code, but linked, will
+  be pointed to. Then, there are names and locations of files that will be
+  produced as a result of this build. Using <code>[name]</code> means, that
+  there will be main and vendor files produces, as defined in
+  <code>entry</code>. Additionally, using <code>[hash]</code>, will add a unique
+  string to the file name, which can help with cache busting for both
+  development and production purposes.
 </p>
 <h3>Resolve</h3>
 <partial name="code" language="javascript">
@@ -216,31 +229,56 @@ const getModule = (devEnv) => {
   >
 </partial>
 <p>
-  module section is where some fun starts, with creative ways to utilize
-  Webpack. This section defines how different types of modules will be treated
-  by Webpack. Different kinds of assets can be imported in your code, and will
-  automatically added to the resulting bundle, if handled properly in this
-  section. Each kind of asset may be treated differently - copied, bundled,
+  <code>module</code> section is where some fun starts, with creative ways to
+  utilize Webpack. This section defines how different types of modules will be
+  treated by Webpack. Different kinds of assets can be imported in your code,
+  and will automatically added to the resulting bundle, if handled properly in
+  this section. Each kind of asset may be treated differently - copied, bundled,
   modified - with different loader, based on regular expression matching the
   file name.
 </p>
 <p>
   Loaders for each type of asset are invoked in a sequence, starting from the
   last one in the array. That's why for files with TypeScript code there will be
-  TSLint Loader invoked first, which will present it's output in the console (as
-  defined in tslintconfig.json). Then, Awesome Typescript Loader will transpile
-  TypeScript code to ES6 (as defined in tsconfig.json), and then Babel (in case
-  of code meant for production environment) will transpile it further to
-  JavaScript understood by common browsers (as defined in .babelrc).
+  <a href="https://github.com/wbuchwalter/tslint-loader" target="_blank"
+    >TSLint Loader</a
+  >
+  invoked first, which will present it's output in the console (as defined in
+  <code>tslintconfig.json</code>). Then,
+  <a
+    href="https://github.com/s-panferov/awesome-typescript-loader"
+    target="_blank"
+    >Awesome Typescript Loader</a
+  >
+  will transpile TypeScript code to ES6 (as defined in
+  <code>tsconfig.json</code>), and then Babel (in case of code meant for
+  production environment) will transpile it further to JavaScript understood by
+  common browsers (as defined in <code>.babelrc</code>).
 </p>
 <p>
-  For styles, they will be first transpiled from SCSS to CSS with SASS Loader,
-  and then bundled with CSS Loader. Moreover, Extract Text Webpack Plugin will
-  move all CSS modules to separate file, as defined in plugins section of this
-  configuration. For other kinds of modules that can be imported in your TS
-  code, they will be treated with File Loader (or Image Webpack Loader, in case
-  of need for production-level image optimization). All of them will then be put
-  in /dist/assets directory.
+  For styles, they will be first transpiled from SCSS to CSS with
+  <a href="https://github.com/webpack-contrib/sass-loader" target="_blank"
+    >SASS Loader</a
+  >, and then bundled with
+  <a href="https://github.com/webpack-contrib/css-loader" target="_blank"
+    >CSS Loader</a
+  >. Moreover,
+  <a
+    href="https://github.com/webpack-contrib/extract-text-webpack-plugin"
+    target="_blank"
+    >Extract Text Webpack Plugin</a
+  >
+  will move all CSS modules to separate file, as defined in plugins section of
+  this configuration. For other kinds of modules that can be imported in your TS
+  code, they will be treated with
+  <a href="https://github.com/webpack-contrib/file-loader" target="_blank"
+    >File Loader</a
+  >
+  (or
+  <a href="https://github.com/tcoopman/image-webpack-loader" target="_blank"
+    >Image Webpack Loader</a
+  >, in case of need for production-level image optimization). All of them will
+  then be put in <code>/dist/assets</code> directory.
 </p>
 <h3>Plugins</h3>
 <partial name="code" language="javascript">
@@ -326,14 +364,43 @@ const getPlugins = (devEnv, mode) => {
   >
 </partial>
 <p>
-  In plugins section one can do some really nasty magic with Webpack. There is
-  quite big library of Webpack built-in plugins available, and there are much
-  more provided by there community out there. One can always write his own too,
-  using Webpack Plugins API. In this example, I'm using Webpack plugins to copy
-  static assets to dist directory, generate index.html file according to my
-  configuration and automatically include all styles and scripts in it, compress
-  some of my static assets to gzip, generate report about content of my bundled
-  package, enable Hot Module Replacement, and others.
+  In <code>plugins</code> section one can do some really nasty magic with
+  Webpack. There is quite big
+  <a href="https://webpack.js.org/plugins/" target="_blank"
+    >library of Webpack built-in plugins</a
+  >
+  available, and there are much more provided by there community out there. One
+  can always
+  <a href="https://webpack.js.org/contribute/writing-a-plugin/" target="_blank"
+    >write his own too</a
+  >, using
+  <a href="https://webpack.js.org/api/plugins/" target="_blank"
+    >Webpack Plugins API</a
+  >. In this example, I'm using Webpack plugins to
+  <a
+    href="https://github.com/webpack-contrib/copy-webpack-plugin"
+    target="_blank"
+    >copy static assets to dist directory</a
+  >,
+  <a href="https://github.com/jantimon/html-webpack-plugin" target="_blank"
+    >generate index.html file according to my configuration and automatically
+    include all styles and scripts in it</a
+  >,
+  <a
+    href="https://github.com/webpack-contrib/compression-webpack-plugin"
+    target="_blank"
+    >compress some of my static assets to gzip</a
+  >,
+  <a
+    href="https://github.com/webpack-contrib/webpack-bundle-analyzer"
+    target="_blank"
+    >generate report about content of my bundled package</a
+  >,
+  <a
+    href="https://webpack.js.org/guides/hot-module-replacement/"
+    target="_blank"
+    >enable Hot Module Replacement</a
+  >, and others.
 </p>
 <h3>Mode</h3>
 <partial name="code" language="javascript">

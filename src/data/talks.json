@@ -48,7 +48,7 @@
   },
   {
     "title": "How to improve code quality with property-based testing",
-    "description": "description",
+    "description": "I was first introduced to the idea of property-based testing when I was attending Front-end Connect in December of 2018. I've found this concept extremely interesting, I was even asking myself, why are we not doing this? Why is it not an industry standard? Finally, after almost a year of tinkering with property-based tests in multiple programming languages, I have an opportunity to talk about my discoveries during first edition of StepStone Tech Meetup in 2019. Let me tell you why I've found this concept revolutionary, and why I now understand, why we're not doing this.",
     "date": "2019-10",
     "langs": ["pl"],
     "event": "StepStone Tech Meetup #1 2019",
@@ -90,10 +90,7 @@
   },
   {
     "title": "Autostopem przez PWA",
-    "description": {
-      "en": "description",
-      "pl": "opis"
-    },
+    "description": "Kiedy zostałem zaproszony przez mojego przyjaciela Dawida aby wystąpić na pierwszej edycji organizowanego przez niego meetupu, oczywiście od razu się zgodziłem. Zapytałem go później: \"Dawid, ale ty pracujesz jako tester aplikacji mobilnych i organizujesz meetup o testowaniu aplikacjach mobilnych, a ja robię web development. O czym ja mam tam opowiedzieć\". Dawid odparł natychmiast: \"PWA\". To prawda, znam się na PWA... Ale czy znam się na zautomatyzowanym testowaniu PWA? Otóż okazuje się, że tak.",
     "date": "2019-06",
     "langs": ["pl"],
     "event": "AppQa Meetup #1 2019",

@@ -1,10 +1,7 @@
 [
   {
     "title": "Simple Web App Processing Interface",
-    "description": {
-      "en": "swappi en",
-      "pl": "swappi pl"
-    },
+    "description": "<p>Simple Web App Processing Interface is, in it's core, an interface for monitoring and parsing your web application's static files: it can build your application on your demand, watch files in your root directory and rebuild them whenever they're changed, and run local HTTP server to serve them. However, with the addition of it's powerful plugins, Swappi can encapsulate your entire application's codebase and it's build process, so that you can focus on really matters: coding awesome web.</p><ul><li>Processes your application's files as per your configuration</li><li>Runs watcher and rebuilds application on every file change</li><li>Runs local HTTP server and serves your application in browser</li><li>Supports templates and reusable partials</li><li>Optimizes images</li><li>Minifies HTML, CSS, and JS</li><li>Handles application routing</li></ul>",
     "date": "2024",
     "github": "swappi",
     "npm": "swappi",
@@ -12,14 +9,14 @@
   },
   {
     "title": "Web Fotoszop",
-    "description": "desc",
+    "description": "Web application created by 3rd grade students of Academic High School of Polish-Japanese Academy of Information Technology in cooperation with me, their computer programming teacher. This app allows user to display their camera feed in web browser, apply multiple image processing filters, such as grayscale or sepia, to the image, and observe their results in real time.",
     "date": "2023",
     "github": "web-fotoszop",
     "inCV": "true"
   },
   {
     "title": "JS Console Tetris",
-    "description": "desc",
+    "description": "Tetris game written in JS that runs in your browser's JS console.",
     "date": "2021",
     "github": "js-console-tetris"
   },
@@ -33,7 +30,7 @@
   },
   {
     "title": "Coronavirus Tracker",
-    "description": "desc",
+    "description": "Simple website displaying latest information about coronavirus encounters around the world, that I built at the beginning of the pandemic, when such trackers were not yet available. Built with Preact and as an installable PWA.",
     "date": "2020",
     "github": "coronavirus-tracker"
   },
@@ -47,7 +44,7 @@
   },
   {
     "title": "React Redux TypeScript Boilerplate",
-    "description": "desc",
+    "description": "<p>This is skeleton of React application, coded in TypeScript, using Redux to handle application state. It runs on React in version 16 and TypeScript in version 2.7. It consists of two parts and thus may serve two purposes:</p><ol><li><p>Application skeleton: Includes transpilation from TypeScript to ES6 and to ES5, module bundling, live server, hot module replacement enabled, unit tests runners, code linters, bundle analyzer etc. It can be used to quickly setup and start coding new project, simply by cloning and removing <code>/src</code> directory and some redundant packages from <code>package.json</code>.</p></li><li><p>React + Redux + TypeScript code samples: This is generally content of <code>/src</code> directory. There are examples of certain features that I stumbled upon commonly in my experience of web development in TypeScript with React and Redux. They can be used as examples to learn from, or standard pieces of code to duplicate, quickly solving some common problem.</p></li></ol>",
     "date": "2016",
     "github": "react-redux-typescript-boilerplate"
   }

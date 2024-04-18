@@ -8,10 +8,6 @@
 
   - home content + translation
   - courses description + translation
-  - talks description (2 LEFT!)
-  - cv content update
-  - projects descriptions
-  - ADD LINKS AND CODE TO ARTICLES AND BLOG POSTS
 
 - styling:
   - center blog/article image
@@ -20,6 +16,9 @@
   - something wrong with headings/margins/lists
   - footer margin
   - ul margin/padding (courses)
+  - ol
+  - title undefinde?
+  - projects in 2 cols
 
 ### backlog
 

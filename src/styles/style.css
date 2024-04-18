@@ -136,17 +136,16 @@ ul {
   margin: 0;
 }
 code {
-  width: 100%;
-  margin: var(--gap-rel) 0;
-  padding: 0;
-  overflow-x: scroll;
-}
-code pre {
-  background: var(--off-bg);
-  border: 1px solid var(--off-bg-2);
   font-family: var(--monospace);
   margin: 0;
+  padding: 0;
+}
+code:has(pre) {
+  width: 100%;
+  margin: var(--gap-rel) 0;
   padding: var(--gap);
+}
+code pre {
   overflow-x: scroll;
 }
 hr {

@@ -9,11 +9,16 @@
 <p>
   There is some code in this post, displaying how you can mock or proxy this
   problem out of your way. There is also some more code on this subject on my
-  github, in code examples section of my blog repository. You'll find a small
-  setup there, which showcases all ideas I'm bragging about in this post. There
-  is an application with a button, that sends HTTP request with fetch; local
-  server, that you can proxy your requests to; and four examples, each
-  demonstrating different solution to this problem. Check it out!
+  github, in
+  <a
+    href="https://github.com/soofka/blog/tree/master/code_examples/mocking-and-proxying-http-requests-from-localhost"
+    target="_blank"
+    >code examples section of my blog repository</a
+  >. You'll find a small setup there, which showcases all ideas I'm bragging
+  about in this post. There is an application with a button, that sends HTTP
+  request with fetch; local server, that you can proxy your requests to; and
+  four examples, each demonstrating different solution to this problem. Check it
+  out!
 </p>
 <h3>Mocking</h3>
 <p>
@@ -30,11 +35,13 @@
 </p>
 <h4>Webpack Dev Server</h4>
 <p>
-  proxy is an option in configuration of Webpack Dev Server, which allows you to
-  define proxy for any HTTP request that comes out of your localhost. You can
-  also define specific bypass in it, with conditions as detailed as you want. In
-  my example, I'm intercepting all calls to /api URL, and respond with mocked JS
-  object instead.
+  <code>proxy</code> is an option in
+  <a href="https://webpack.js.org/configuration/dev-server/" target="_blank"
+    >configuration of Webpack Dev Server</a
+  >, which allows you to define proxy for any HTTP request that comes out of
+  your localhost. You can also define specific bypass in it, with conditions as
+  detailed as you want. In my example, I'm intercepting all calls to
+  <code>/api</code> URL, and respond with mocked JS object instead.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -53,11 +60,20 @@ devServer: {
 </pre
   >
 </partial>
+<p>
+  (content of the whole script available
+  <a
+    href="https://github.com/soofka/blog/blob/master/code_examples/mocking-and-proxying-http-requests-from-localhost/webpack.devserver.mock.config.js"
+    target="_blank"
+    >here</a
+  >)
+</p>
 <h4>Express</h4>
 <p>
-  Contrary to Webpeck Dev Server, mocking a response in Express doesn't feel
-  like hacking. It's very straightforward, almost like this framework was
-  created specifically to perform tasks like this (?!).
+  Contrary to Webpeck Dev Server, mocking a response in
+  <a href="https://expressjs.com/" target="_blank">Express</a> doesn't feel like
+  hacking. It's very straightforward, almost like this framework was created
+  specifically to perform tasks like this (?!).
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -71,6 +87,14 @@ app.get('/api', (request, response) => {
 </pre
   >
 </partial>
+<p>
+  (content of the whole script available
+  <a
+    href="https://github.com/soofka/blog/blob/master/code_examples/mocking-and-proxying-http-requests-from-localhost/express.mock.js"
+    target="_blank"
+    >here</a
+  >)
+</p>
 <h3>Proxying</h3>
 <p>
   With proxied HTTP request, you call actual back-end service. Request is only
@@ -83,12 +107,13 @@ app.get('/api', (request, response) => {
 </p>
 <h4>Webpack Dev Server</h4>
 <p>
-  Proxy with Webpack Dev Server can be achieved using proxy configuration
-  option, this time more like it was originally intended. target parameter
-  describes destination to which certain call should be redirected. If
-  pathRewrite parameter is not provided, /api will be concatenated with the
-  target, which is not what I wanted to achieve here (hence I've defined this
-  parameter), but you may find it useful.
+  Proxy with Webpack Dev Server can be achieved using
+  <code>proxy</code> configuration option, this time more like it was originally
+  intended. <code>target</code> parameter describes destination to which certain
+  call should be redirected. If <code>pathRewrite</code> parameter is not
+  provided, <code>/api</code> will be concatenated with the target, which is not
+  what I wanted to achieve here (hence I've defined this parameter), but you may
+  find it useful.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -104,14 +129,23 @@ devServer: {
 </pre
   >
 </partial>
+<p>
+  (content of the whole script available
+  <a
+    href="https://github.com/soofka/blog/blob/master/code_examples/mocking-and-proxying-http-requests-from-localhost/webpack.devserver.proxy.config.js"
+    target="_blank"
+    >here</a
+  >)
+</p>
 <h4>Express</h4>
 <p>
   In Express, it's a little bit more effort, since it's required to incorporate
-  http-proxy package for this operation. Similarly to Webpack Dev Server, target
+  http-proxy package for this operation. Similarly to Webpack Dev Server,
+  <code>target</code>
   parameter defines destination of your redirection. The other parameter,
-  ignorePath, is set to false by default. If you don't override it, /api will be
-  added to the end of your request's URL. Again, it might be what you want in
-  some cases.
+  <code>ignorePath</code>, is set to <code>false</code> by default. If you don't
+  override it, <code>/api</code> will be added to the end of your request's URL.
+  Again, it might be what you want in some cases.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -129,3 +163,11 @@ app.get('/api', (request, response) => {
 </pre
   >
 </partial>
+<p>
+  (content of the whole script available
+  <a
+    href="https://github.com/soofka/blog/blob/master/code_examples/mocking-and-proxying-http-requests-from-localhost/express.proxy.js"
+    target="_blank"
+    >here</a
+  >)
+</p>

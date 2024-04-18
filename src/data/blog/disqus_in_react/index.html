@@ -6,15 +6,18 @@
   a form of short note.
 </p>
 <p>
-  First of all, you’ll need a Disqus account. After successful registration, you
-  need to add your website, providing it’s name and URL address. When it’s done,
-  you’ll see plenty of predefined content management systems to integrate with.
-  You don’t need that. You’re keen on the code, you can do it yourself, so you
-  scroll down to the manual integration part and copy configuration code, that
-  you’ll paste somewhere on your website. Just remember to provide appropriate
-  page URL (root of your website) and identifier (based on variable, related to
-  the specific page, which will be the subject of reader’s comments; in my case
-  it’s part of given blog post’s nice URL).
+  First of all, you’ll need a
+  <a href="https://disqus.com/profile/signup/intent/" target="_blank"
+    >Disqus account</a
+  >. After successful registration, you need to add your website, providing it’s
+  name and URL address. When it’s done, you’ll see plenty of predefined content
+  management systems to integrate with. You don’t need that. You’re keen on the
+  code, you can do it yourself, so you scroll down to the manual integration
+  part and copy configuration code, that you’ll paste somewhere on your website.
+  Just remember to provide appropriate page <code>url</code> (root of your
+  website) and <code>identifier</code> (based on variable, related to the
+  specific page, which will be the subject of reader’s comments; in my case it’s
+  part of given blog post’s nice URL).
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -39,7 +42,10 @@ var disqus_config = function () {
   are adding things like this to their application code, but I, for one, prefer
   keeping this and other scripts from external providers in static assets
   directory. All assets from there are copied by Webpack to my resulting package
-  during build process. For details of my setup check this blog on github.
+  during build process. For details of my setup check
+  <a href="https://github.com/soofka/blog" target="_blank"
+    >this blog on github</a
+  >.
 </p>
 <p>
   You’re halfway done. Really! The only remaining part is to place your Disqus
@@ -52,14 +58,14 @@ var disqus_config = function () {
 <p>
   However, having Disqus script loaded asynchronously during my build process,
   I've encountered a case, in which my comments component is mounted, while
-  there is no DISQUS object in the browser yet. This led to unusual behavior: I
-  kept receiving e-mails about comments on this Disqus setup, but when I went to
-  this very page, comments section was empty. Turns out, Disqus comments section
-  on entry pages loaded properly after a while, but with it's basic setup, which
-  is for the home page of my blog. All comments displayed and added were added,
-  effectively, under soofka.pl URL in Disqus system. If someone managed to add a
-  comment under URL of specific entry, it was not visible below this entry at
-  all.
+  there is no <code>DISQUS</code> object in the browser yet. This led to unusual
+  behavior: I kept receiving e-mails about comments on this Disqus setup, but
+  when I went to this very page, comments section was empty. Turns out, Disqus
+  comments section on entry pages loaded properly after a while, but with it's
+  basic setup, which is for the home page of my blog. All comments displayed and
+  added were added, effectively, under soofka.pl URL in Disqus system. If
+  someone managed to add a comment under URL of specific entry, it was not
+  visible below this entry at all.
 </p>
 <p>
   The best way to resolve this would be to wait for some information from Disqus
@@ -124,12 +130,17 @@ export default EntryComments;
 </pre>
 </partial>
 <p>
-  The only thing to keep in mind, is that the identifier parameter here should
-  correspond to the identifier parameter set in global Disqus config.
+  The only thing to keep in mind, is that the <code>identifier</code> parameter
+  here should correspond to the <code>identifier</code> parameter set in global
+  Disqus config.
 </p>
 <p>
   Of course, it’s just the basic setup, and there are much more things that you
   can do with this powerful tool. For more advanced usage, I recommend checking
-  Disqus developer documentation. But if you want to keep it simple, this short
-  tutorial describes all you need.
+  <a
+    href="https://help.disqus.com/customer/portal/articles/1243156-developer-documentation"
+    target="_blank"
+    >Disqus developer documentation</a
+  >. But if you want to keep it simple, this short tutorial describes all you
+  need.
 </p>

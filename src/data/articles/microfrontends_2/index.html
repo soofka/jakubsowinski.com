@@ -24,16 +24,16 @@
   for the easiest solution we could imagine: we treated our monolith as
   Container Application and used NPM to do the job of downloading and
   integrating packages for us. We created a module named Node Package Provider,
-  put package.json file in it, and listed all our microfrontends as
+  put <code>package.json</code> file in it, and listed all our microfrontends as
   dependencies.
 </p>
 <p>
   Then, we created a step in build plan of the monolith, in which program
-  literally entered Node Package Provider directory and run npm install script
-  in it. We published all separate applications to our local package repository
-  and configured Node Package Provider so that it can access them. All packages
-  were installed within this directory and were later injected on specific views
-  with reference to it.
+  literally entered Node Package Provider directory and run
+  <code>npm install</code> script in it. We published all separate applications
+  to our local package repository and configured Node Package Provider so that
+  it can access them. All packages were installed within this directory and were
+  later injected on specific views with reference to it.
 </p>
 <p>
   This solution was cool, because it let us quickly move on to creating actual
@@ -47,8 +47,8 @@
 <p>
   Other issues were related to versioning of these packages or the fact that
   they had to be prepared in specific way — in order to avoid installing their
-  dependencies we were forced to keep them all as devDependencies, which was
-  obscuring and inconvenient.
+  <code>dependencies</code> we were forced to keep them all as
+  <code>devDependencies</code>, which was obscuring and inconvenient.
 </p>
 <p>
   Because of this, even though I keep referring to our applications created back
@@ -131,11 +131,13 @@ server {
 </p>
 <p>
   For that purpose, we went for heavily modified version of open source library
-  Tailor created by Zalando. It lets us define all routes, templates, and
-  fragments in simple and convenient configuration files, which we can split and
-  maintain separately. We called it Templating Engine and established it as main
-  entry point to our application for parts that are already migrated to this
-  approach. Here’s how it works.
+  <a href="https://github.com/zalando/tailor" target="_blank"
+    >Tailor created by Zalando</a
+  >. It lets us define all routes, templates, and fragments in simple and
+  convenient configuration files, which we can split and maintain separately. We
+  called it Templating Engine and established it as main entry point to our
+  application for parts that are already migrated to this approach. Here’s how
+  it works.
 </p>
 <partial
   name="img"
@@ -287,9 +289,16 @@ PubSub.publish('CANDIDATE_PROFILE_SHOW_LOGIN_MODAL');
   messages.
 </p>
 <p>
-  Having access to powerful API named CustomEvent, which is now supported in all
-  major browsers, one can recreate the same communication method without need
-  for PubSubJS or any other library, like in this example.
+  Having access to powerful API named
+  <a
+    href="https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent"
+    target="_blank"
+    >CustomEvent</a
+  >,
+  <a href="https://caniuse.com/customevent" target="_blank"
+    >which is now supported in all major browsers</a
+  >, one can recreate the same communication method without need for PubSubJS or
+  any other library, like in this example.
 </p>
 <partial name="code" language="javascript">
   <pre>
@@ -344,9 +353,11 @@ element.dispatchEvent(
   application, but given the fact that our views are composed from several
   separate applications of such kind, we have not found a way to make them use
   one state given those tools (although it seems to be possible to accomplish
-  with an addition of ReactN library). Redux, on the other hand, is not coupled
-  with React by definition, can be instantiated separately, and easily provided
-  to all React apps within same page.
+  with an addition of
+  <a href="https://github.com/charlesStover/reactn" target="_blank">ReactN</a>
+  library). Redux, on the other hand, is not coupled with React by definition,
+  can be instantiated separately, and easily provided to all React apps within
+  same page.
 </p>
 <hr />
 <p>
