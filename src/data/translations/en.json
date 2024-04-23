@@ -37,7 +37,7 @@
       "developer": {
         "head": "Software developer",
         "lead": "I started coding as a teenager and I never stopped since. In that time, I have dabbled in many programming languages, but ultimately I've fallen in love with web technologies, and especially JavaScript.",
-        "text": "I have participated in plenty of programming conferences and open source projects, even authored a couple of them, as well as written a couple of blog posts on web and JavaScript development, you can find them on this website. Or <a href=\"#contact\">reach out to me</a> if you have an interesting project and you need some help!",
+        "text": "I have participated in plenty of programming conferences, contributed to handful of open source projects, even authored a couple of them, as well as wrote a couple of blog posts on web and JavaScript development, you can find them on this website. Or <a href=\"#contact\">reach out to me</a> if you have an interesting project and you need some help!",
         "buttons": {
           "projects": "My projects",
           "blog": "My blog"

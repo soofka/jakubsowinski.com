@@ -115,7 +115,7 @@ const mainCv = (data, dists, { lang, content }) =>
             .map(
               (item) =>
                 `<article>
-                <h4>${item.title} <small>${item.from} — ${item.to} | ${item.company}</small></h4>
+                <h4>${item.title} <small>${item.from} — ${item.to}${item.company ? ` | ${item.company}` : ""}</small></h4>
                 <small class="tags">
                   ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
                 </small>
