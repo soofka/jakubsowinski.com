@@ -30,16 +30,21 @@ const mainListItemCourses = (
         }</h4>
         ${descriptionElement}
         ${langsNoteElement}
+        <div class="buttons desktop-only">
+          <partial name="link-email" subject="${title}" class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg">
+            ${data.labels[lang].pages.courses.buy}
+          </partial>
+        </div>
       </div>
       <div class="col col-1 highlight-bg">
         <h4>${data.labels[lang].pages.courses.courseContent}</h4>
         <ul>${content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
-      <div class="buttons" style="flex-grow:0">
+      <div class="buttons mobile-only">
         <partial name="link-email" subject="${title}" class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg">
           ${data.labels[lang].pages.courses.buy}
         </partial>
-      </p>
+      </div>
     </div>
   </article>`;
 };

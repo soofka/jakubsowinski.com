@@ -172,6 +172,12 @@ footer section article p {
 .no-js {
   display: none;
 }
+.mobile-only {
+  display: flex !important;
+}
+.desktop-only {
+  display: none !important;
+}
 .horizontal-list {
   display: flex;
   flex-flow: row nowrap;
@@ -336,5 +342,11 @@ li.teacher-fg::marker {
   .buttons button:only-child,
   .buttons .button:only-child {
     flex-grow: 0;
+  }
+  .mobile-only {
+    display: none !important;
+  }
+  .desktop-only {
+    display: flex !important;
   }
 }
