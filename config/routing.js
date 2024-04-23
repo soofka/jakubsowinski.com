@@ -52,10 +52,10 @@ export const getRouting = (langs, labels, data) => {
       id: articlesPageId,
       url: articlesPageUrl,
       name: articlesPageName,
-      title: labels[lang].pages.articles.title,
       lang,
       template: pageTemplate,
       type: "list",
+      title: labels[lang].pages.articles.title,
       content: data.articles,
     });
 
@@ -70,11 +70,12 @@ export const getRouting = (langs, labels, data) => {
         id: articlePageId,
         url: articlePageUrl,
         name: articlePageName,
-        title: article.title,
-        image: article.image,
         lang,
         template: pageTemplate,
         type: "item",
+        title: article.title,
+        description: article.description,
+        image: article.image,
         content: article,
       });
     }
@@ -89,10 +90,10 @@ export const getRouting = (langs, labels, data) => {
       id: blogPageId,
       url: blogPageUrl,
       name: blogPageName,
-      title: labels[lang].pages.blog.title,
       lang,
       template: pageTemplate,
       type: "list",
+      title: labels[lang].pages.blog.title,
       content: data.blog,
     });
 
@@ -107,11 +108,12 @@ export const getRouting = (langs, labels, data) => {
         id: blogPostPageId,
         url: blogPostPageUrl,
         name: blogPostPageName,
-        title: post.title,
-        image: post.image,
         lang,
         template: pageTemplate,
         type: "item",
+        title: post.title,
+        description: post.description,
+        image: post.image,
         content: post,
       });
     }
@@ -126,10 +128,10 @@ export const getRouting = (langs, labels, data) => {
       id: coursesPageId,
       url: coursesPageUrl,
       name: coursesPageName,
-      title: labels[lang].pages.courses.title,
       lang,
       template: pageTemplate,
       type: "list",
+      title: labels[lang].pages.courses.title,
       content: data.courses,
     });
 
@@ -143,10 +145,10 @@ export const getRouting = (langs, labels, data) => {
       id: projectsPageId,
       url: projectsPageUrl,
       name: projectsPageName,
-      title: labels[lang].pages.projects.title,
       lang,
       template: pageTemplate,
       type: "list",
+      title: labels[lang].pages.projects.title,
       content: data.projects,
     });
 
@@ -160,10 +162,10 @@ export const getRouting = (langs, labels, data) => {
       id: talksPageId,
       url: talksPageUrl,
       name: talksPageName,
-      title: labels[lang].pages.talks.title,
       lang,
       template: pageTemplate,
       type: "list",
+      title: labels[lang].pages.talks.title,
       content: data.talks,
     });
 
@@ -177,10 +179,10 @@ export const getRouting = (langs, labels, data) => {
       id: cvPageId,
       url: cvPageUrl,
       name: cvPageName,
-      title: labels[lang].pages.cv.title,
       lang,
       template: pageTemplate,
       type: "cv",
+      title: labels[lang].pages.cv.title,
       content: data.cv,
     });
 
@@ -194,9 +196,10 @@ export const getRouting = (langs, labels, data) => {
       pages.push({
         id: errorPageId,
         name: error,
-        title: labels[lang].pages.error[error].name,
         lang,
         template: pageTemplate,
+        title: labels[lang].pages.error[error].name,
+        description: labels[lang].pages.error[error].description,
         type: "error",
       });
     }

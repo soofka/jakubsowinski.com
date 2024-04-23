@@ -1,8 +1,11 @@
 /* base elements */
-img {
+img,
+picture {
   display: block;
   margin: 0 auto;
   padding: 0;
+}
+img {
   box-shadow: var(--img-box-shadow);
 }
 
@@ -152,7 +155,7 @@ footer {
   border-top: 1px solid var(--alt-bg);
 }
 footer section article {
-  padding: var(--gap);
+  padding: var(--gap) !important;
 }
 footer section article p {
   margin: 0;

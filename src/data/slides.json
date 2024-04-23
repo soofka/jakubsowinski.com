@@ -2,37 +2,30 @@
   {
     "id": "microfrontends",
     "title": "Microfrontends: extending service-oriented architecture to front-end development",
-    "description": "description",
     "html": true
   },
   {
     "id": "optimizing_js",
     "title": "Practical tips for optimizing JavaScript",
-    "description": "description",
     "pdf": true
   },
   {
     "id": "profile_editor_case_study",
     "title": "3 lata życia aplikacji napisanej w React i TypeScript: lekcje i wnioski",
-    "description": "description",
     "html": true
   },
   {
     "id": "property_based_tests",
     "title": "How to improve code quality with property-based testing",
-    "description": "description",
     "html": true
   },
   {
     "id": "pwa_case_study",
-    "title": "React PWA with Push Notifications (case study)",
-    "description": "description",
     "pdf": true
   },
   {
     "id": "pwa_testing",
     "title": "Autostopem przez PWA",
-    "description": "description",
     "html": true
   }
 ]

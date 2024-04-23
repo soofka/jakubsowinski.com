@@ -23,7 +23,6 @@ const mainHome = (data, dists, { lang }) => `
           <div class="col col-2">
             <h2>${data.labels[lang].pages.home.intro.head}</h2>
             <h3>${data.labels[lang].pages.home.intro.lead}</h3>
-            <p>${data.labels[lang].pages.home.intro.text}</p>
           </div>
           <div class="col">
             <partial name="img" data="${encodeURI(
@@ -43,6 +42,7 @@ const mainHome = (data, dists, { lang }) => `
               <span class="blinker"></span>
             </p>
           </div>
+          <p>${data.labels[lang].pages.home.intro.text}</p>
           <div class="buttons">
             <partial name="link" data="${encodeURI(
               JSON.stringify({

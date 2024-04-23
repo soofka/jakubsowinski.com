@@ -3,41 +3,35 @@ import {
   getDistsByPath,
   getDistsByPaths,
   getLargestImage,
+  sanitizeHtml,
 } from "../helpers/index.js";
 
 const head = (
   data,
   dists,
-  { url, name, lang, template, type, title, image },
+  { url, name, lang, template, type, title, description, image },
 ) => {
-  const metaSeparator = " | ";
-  let titleText = data.labels[lang].meta.title;
-  let descriptionText = `${data.labels[lang].meta.description}${metaSeparator}${data.labels[lang].meta.title}`;
-  let imagePath = "images/me1-960x960.jpg";
-
-  if (title) {
-    titleText = `${title}${metaSeparator}${titleText}`;
-  }
-  if (image) {
-    const dotIndex = image.lastIndexOf(".");
-    imagePath =
-      dotIndex === -1
-        ? `${image}-*`
-        : `${image.substring(0, dotIndex)}-*${image.substring(dotIndex)}`;
-  }
+  const separator = " | ";
+  const titleText = `${title ? `${title}${separator}` : ""}${data.labels[lang].meta.title}`;
+  const descriptionText = `${description ? `${sanitizeHtml(description)}${separator}` : ""}${data.labels[lang].meta.description}`;
+  const imagePath = image
+    ? image.lastIndexOf(".") === -1
+      ? `${image}-*`
+      : `${image.substring(0, image.lastIndexOf("."))}-*${image.substring(image.lastIndexOf("."))}`
+    : "images/me1-960x960.jpg";
 
   return `
     <head>
       <meta charset="utf-8">
-      <title>${title}</title>
+      <title>${titleText}</title>
       <meta name="author" content="${data.author} <${data.email}> (${data.url})">
       <meta name="description" content="${descriptionText}">
-      <meta property="og:title" content="${title}">
+      <meta property="og:title" content="${titleText}">
       <meta property="og:type" content="${data.type}">
       <meta property="og:url" content="${data.url}${url || ""}">
       <meta property="og:description" content="${descriptionText}">
       <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, imagePath)).rel}">
-      ${image ? `<meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">` : ""}
+      <meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">
 
       <meta name="robots" content="index, follow"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0 ${template === "slides" ? ", maximum-scale=1.0, user-scalable=no" : ""}">
