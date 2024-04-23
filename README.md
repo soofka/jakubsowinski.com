@@ -4,11 +4,6 @@
 
 ### 1.0
 
-- content:
-
-  - home translation
-  - courses description + translation
-
 ### backlog
 
 - integration strategies article

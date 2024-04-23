@@ -5,8 +5,8 @@
       "pl": "Podstawy architektury oprogramowania"
     },
     "description": {
-      "en": "software architecture description",
-      "pl": "Opis architektury oprogramowania"
+      "en": "This course was created for master students of Polish-Japanese Academy of Information Technology in Warsaw. The goal for its participants is to get familiar with all basic terms and concepts related to software architecture, as well as understand typical software development cycle from architectural point of view, including requirements engineering, designing solution structure, defining software development processes, and building documentation.",
+      "pl": "To szkolenie zostało stworzone dla studentów studiów drugiego stopnia na Polsko-Japońskiej Akademii Technik Komputerowych w Warszawie. Zadaniem uczestników jest zapoznanie się z wszelkimi podstawowymi pojęciami i koncepcjami związanymi z architekturą oprogramowania, a także zrozumienie typowego cyklu wytwarzania oprogramowania z architektonicznego punktu widzenia, z uwzględnieniem inżynierii wymagań, projektowania struktury rozwiązania, definiowania procesów wytwarzania oprogramowania, oraz budowania dokumentacji."
     },
     "date": "2024",
     "langs": ["en", "pl"],
@@ -43,8 +43,8 @@
       "pl": "Środowisko i narzędzia do tworzenia projektu JavaScript"
     },
     "description": {
-      "en": "Description",
-      "pl": "Opis"
+      "en": "This course is based on my personal experience with building low-level solutions that are meant to be used by other developers, both as an open source developer, and as a developer and architect responsible for internal tooling for major corporations. Participants learn everything they need to build a project that is clean, safe, and trustworthy, and to automate various development processes that are related to it.",
+      "pl": "To szkolenie jest oparte na moim prywatnym doświadczeniu z tworzeniem niskopoziomowych rozwiązań, które mają służyć innym programistom, które zdobyłem zarówno jako programista open source, jak i programista i architekt odpowiedzialny za wewnętrzne narzędzia w dużych korporacjach. Uczestnicy uczą się wszystkiego czego potrzebują do zbudowania projektu który jest czysty, bezpieczny i godny zaufania, a także automatyzacji związanych z nim, rozmaitych procesów wytwarzania oprogramowania"
     },
     "date": "2022",
     "langs": ["en", "pl"],
@@ -82,8 +82,8 @@
       "pl": "Podstawy React.js"
     },
     "description": {
-      "en": "react.js fundamentals description",
-      "pl": "react.js podstawy opis"
+      "en": "This course was created for backend developers from Stepstone Services, who wanted to be able to maintain and introduce basic modifications to existing React.js codebase. Therefore, this course is tailored for those, who posses certain programming expertise already, just lack knowledge specific to React.js. Participants of this course learn about fundamental concepts of React.js by comparison to other well-known concepts present in other programming languages.",
+      "pl": "To szkolenie zostało stworzone dla programistów backend z Stepstone Services, którzy chcieli móc utrzymywać i wprowadzać proste modyfikacje do istniejącego kodu napisanego w React.js. Z tego powodu, to szkolenie jest dostosowane do tych, którzy posiadają już pewien poziom umiejętności programowania, a brakuje im wiedzy specyficznej dla React.js. Uczestnicy tego szkolenia uczą się o podstawowych koncepcjach obecnych w React.js poprzez porównanie ich do innych koncepcji, obecnych w innych językach programowania."
     },
     "date": "2022",
     "langs": ["en", "pl"],
@@ -119,8 +119,8 @@
       "pl": "Wstęp do programowania obiektowego"
     },
     "description": {
-      "en": "oop description",
-      "pl": "obiektówka opis"
+      "en": "This course was created for high school students. It introduces all the basic concepts of Object-Oriented Programming in Java programming language. Ultimate goal for participants is to create simple CLI-based game utilizing Java and Object-Oriented Programming.",
+      "pl": "To szkolenie zostało stworzone dla uczniów liceum. Wprowadza ono wszystkie podstawowe koncepcje programowania obiektowego na przykładzie języku programowania Java. Ostatecznym zadaniem uczestników jest stworzenie prostej gry w wierszu poleceń z wykorzystaniem Javy i programowania obiektowego."
     },
     "date": "2021",
     "langs": ["en", "pl"],
@@ -161,8 +161,8 @@
       "pl": "Wstęp do programowania komputerowego"
     },
     "description": {
-      "en": "programming description",
-      "pl": "opis programowania"
+      "en": "This course was created for high school students. It introduces all the basic concepts of programming in Java programming language. Ultimate goal for participants is to create simple CLI-based game utilizing Java.",
+      "pl": "To szkolenie zostało stworzone dla uczniów liceum. Wprowadza ono wszystkie podstawowe koncepcje programowania na przykładzie języku programowania Java. Ostatecznym zadaniem uczestników jest stworzenie prostej gry w wierszu poleceń z wykorzystaniem Javy."
     },
     "date": "2021",
     "langs": ["en", "pl"],

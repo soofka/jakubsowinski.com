@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "swn.ski",
-    "description": "Jakub Sowiński - architekt oprogramowania, programista, nauczyciel programowania, techniczny lider"
+    "description": "Jakub Sowiński - architekt rozwiązań, programista, nauczyciel programowania, techniczny lider"
   },
   "nav": {
     "home": "home",
@@ -15,19 +15,19 @@
     "home": {
       "intro": {
         "head": "Cześć!",
-        "lead": "My name is Jakub, I'm a software enthusiast, and I work as a solution architect, software developer, programming teacher, and tech lead. Welcome to my corner of the Internet!",
-        "text": "If you want to hire me, waste no time, <a href=\"#contact\">drop me a message</a>. If you yet don't know that you want to hire me, please refer to my resume or read more about my work. Otherwise, enjoy fruits of my labor, such as my projects, talks, articles, courses, or blog posts, or just chill out here with me. Peace!",
+        "lead": "Jestem Jakub i interesuję się oprogramowaniem. Pracuję jako architekt rozwiązań, programista, nauczyciel programowania i techniczny lider. Witaj w moim zakątku Internetu!",
+        "text": "Jeśli chcesz mnie zatrudnić, <a href=\"#contact\">wyślij mi wiadomość</a>. Jeśli jeszcze nie wiesz, że chcesz mnie zatrudnić, zapoznaj się z moim CV lub przeczytaj więcej na temat mojej pracy. W innym wypadku, zapraszam do korzystania z owoców mojej pracy, takich, jak moje projekty, wystąpienia, artykułu, szkolenia i wpisy na blogu. Peace!",
         "buttons": {
           "cv": "Moje CV",
           "info": "Więcej na temat mojej pracy",
           "contact": "Skontaktuj się ze mną"
         },
-        "imgAlt": "Jakub Sowiński - architekt oprogramowania, programista, nauczyciel programowania, techniczny lider"
+        "imgAlt": "Jakub Sowiński - architekt rozwiązań, programista, nauczyciel programowania, techniczny lider"
       },
       "architect": {
-        "head": "Architekt oprogramowania",
-        "lead": "I have 5+ years of experience in solultion and software architecture positions, as well as 3+ years of experience as an university lecturer in software architecture.",
-        "text": "I can help you design, document, and govern architecture for your software project, be it small or large scale.",
+        "head": "Architekt rozwiązań",
+        "lead": "Moim obowiązkiem jako architekta jest zapewnienie nie tylko tego, że oprogramowanie jest zbudowane poprawnie, ale przede wszystkim tego, że jest budowane poprawnie.",
+        "text": "Mam ponad 5 lat doświadczenia na stanowiskach architekta rozwiązań i oprogramowania, a także ponad 3 lata doświadczenia jako wykładowca architektury oprogramowania na uczelni wyższej. Czerpiąc z tego doświadczenia, mogę pomóc w twoim projekcie przez organizację, zarządzanie i opiekę techinczną nad jego architekturą, ale także nad jego procesami wytwarzania i wdrażania oprogramowania. <a href=\"#contact\">Sprawdź jak!</a>",
         "buttons": {
           "talks": "Moje wystąpienia",
           "articles": "Moje artykuły"
@@ -36,8 +36,8 @@
       },
       "developer": {
         "head": "Programista",
-        "lead": "lorem duporem",
-        "text": "lorem duporem",
+        "lead": "Programowaniem zacząłem się interesować jako nastolake, i jak do tej pory nie przestałem. Przez ten czas eksperymentowałem z wieloma językami programowania, ale ostatecznie zakochałem się w technologiach webowych, a zwłaszcza JavaScript.",
+        "text": "Uczestniczyłem w wielu konferencjach programistycznych i projektach open source, a nawet sam stworzyłem kilka, napisałem również kilka poradników dotyczących programowania aplikacji webowych i JavaScriptu, możesz je znaleźć na tej stronie. Albo <a href=\"#contact\">napisz do mnie</a>, jeśli masz jakiś interesujący projekt, w którym mógłbym pomóc!",
         "buttons": {
           "projects": "Moje projekty",
           "blog": "Mój blog"
@@ -46,8 +46,8 @@
       },
       "leader": {
         "head": "Nauczyciel i lider",
-        "lead": "lorem duporem",
-        "text": "lorem duporem",
+        "lead": "Na przestrzeni mojej kariery, dzieliłem się wiedzą i doświadczeniem z moimi współpracownikami jako coach, mentor, nauczyciel, trener, mówca i lider społeczności oraz projektów.",
+        "text": "Obecnie pracuję jako wykładowca architektury oprogramowania w Polsko-Japońskiej Akademii Technik Komputerowych w Warszawie, ale jestem otwarty na inne propozycje z zakresu dydaktyki i leadershipu. <a href=\"#contact\">Skontaktuj się ze mną</a> jeśli interesuje cię jedno z moich gotowych szkoleń, albo jeśli potrzebujesz czegoś bardziej dostosowanego do swoich potrzeb!",
         "buttons": {
           "courses": "Moje szkolenia"
         },
@@ -56,10 +56,10 @@
       "contact": {
         "head": "Napisz do mnie",
         "lead": {
-          "architect": "Need an architect or consultant for your project?",
-          "developer": "Have a great, preferably open source project for me to work on?",
-          "teacher": "Need a software developer or architecture training?",
-          "leader": "Looking for leader or mentor in IT?"
+          "architect": "Chcesz architekta lub konsultanta do jednego ze swoich projektów?",
+          "developer": "Masz pomysł na interesujący i ekscytujący projekt i szukasz współpracowników?",
+          "teacher": "Potrzebujesz szkolenia z zakresu programowania lub architektury?",
+          "leader": "Szukasz lidera i mentora w IT?"
         }
       }
     },
