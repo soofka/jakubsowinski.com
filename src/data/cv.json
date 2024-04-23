@@ -48,6 +48,37 @@
       ]
     },
     {
+      "title": "Lecturer in Software Architecture",
+      "company": "Polish-Japanese Academy of Information Technology",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2021-10",
+      "to": "present",
+      "tags": [
+        ["teacher", "teacher-bg"],
+        ["architect", "architect-bg"],
+        "design patterns",
+        "architectural patterns",
+        "soa",
+        "eda",
+        "microfrontends",
+        "ddd",
+        "dbc",
+        "uml",
+        "c4 model",
+        "zachmann",
+        "togaf"
+      ],
+      "description": "<p>As a lecturer in software engineering at a university, I am responsible for creating entire course for my students, facilitating classes on a weekly basis (lectures and laboratories), and assessing progress of my students through homework and exams.</p>",
+      "responsibilities": [
+        "Creating software architecture course for Master's students",
+        "Facilitating classes (lectures and laboratories)",
+        "Evaluating students"
+      ]
+    },
+    {
       "title": "Solution Architect",
       "company": "StepStone Services (Axel Springer SE)",
       "location": {
@@ -128,37 +159,6 @@
         "Creating and evaluating employee development plans",
         "Writing tutorials for internal documentation",
         "Writing articles for company's tech blog"
-      ]
-    },
-    {
-      "title": "Lecturer in Software Architecture",
-      "company": "Polish-Japanese Academy of Information Technology",
-      "location": {
-        "en": "Warsaw, Poland",
-        "pl": "Warszawa, Polska"
-      },
-      "from": "2021-10",
-      "to": "present",
-      "tags": [
-        ["teacher", "teacher-bg"],
-        ["architect", "architect-bg"],
-        "design patterns",
-        "architectural patterns",
-        "soa",
-        "eda",
-        "microfrontends",
-        "ddd",
-        "dbc",
-        "uml",
-        "c4 model",
-        "zachmann",
-        "togaf"
-      ],
-      "description": "<p>As a lecturer in software engineering at a university, I am responsible for creating entire course for my students, facilitating classes on a weekly basis (lectures and laboratories), and assessing progress of my students through homework and exams.</p>",
-      "responsibilities": [
-        "Creating software architecture course for Master's students",
-        "Facilitating classes (lectures and laboratories)",
-        "Evaluating students"
       ]
     },
     {
@@ -450,7 +450,7 @@
   ],
   "misc": [
     "Driving license cat. B",
-    "Charity JavaScript teacher at <a href=\"https://girlsjs.pl/\" target=\"_blank\">girlsjs.pl</a>",
+    "Volunteer JavaScript teacher at <a href=\"https://girlsjs.pl/\" target=\"_blank\">girlsjs.pl</a>",
     "I like music and space"
   ]
 }

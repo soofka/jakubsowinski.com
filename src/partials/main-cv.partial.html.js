@@ -57,9 +57,36 @@ const mainCv = (data, dists, { lang, content }) =>
     <section>
       <div class="wrapper">
         <article>
+          <h3>Current work</h3>
+          ${content.workExperience
+            .filter(
+              (item) =>
+                Object.hasOwn(item, "description") && item.to === "present",
+            )
+            .map(
+              (item) =>
+                `<article>
+                <h2>${item.title}</h2>
+                <h4><small>${item.from} — ${item.to} | ${item.company}</small></h4>
+                <small class="tags">
+                  ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
+                </small>
+                ${item.description}
+              </article>`,
+            )
+            .join("")}
+        </article>
+      </div>
+    </section>
+    <section>
+      <div class="wrapper">
+        <article>
           <h3>Recent work experience</h3>
           ${content.workExperience
-            .filter((item) => Object.hasOwn(item, "description"))
+            .filter(
+              (item) =>
+                Object.hasOwn(item, "description") && item.to !== "present",
+            )
             .map(
               (item) =>
                 `<article>

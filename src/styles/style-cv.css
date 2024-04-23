@@ -17,25 +17,18 @@ section:first-of-type h4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  column-gap: var(--gap-rel);
 }
 section:first-of-type h3 {
-  gap: var(--gap-rel);
+  column-gap: var(--gap-rel);
+}
+section:first-of-type h4 {
+  column-gap: var(--gap);
 }
 section:first-of-type h3 span,
 section:first-of-type h4 span {
   white-space: nowrap;
 }
-section:first-of-type h4 span {
-  margin: 0 var(--gap-rel) 0 0;
-  font-weight: normal;
-}
 section:first-of-type h3 span::before {
   content: "» ";
-}
-section:first-of-type h4 span::before {
-  content: "|";
-  margin: 0 var(--gap-rel) 0 0;
-}
-section:first-of-type h4 span:first-of-type::before {
-  content: none;
 }
