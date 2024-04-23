@@ -20,24 +20,26 @@ const mainListItemCourses = (
       : clients;
 
   return `<article>
-    <div class="col col-2">
-      <h3>${title}</h3>
-      <h4>${date}${
-        clientsArray.length > 0
-          ? ` | ${data.labels[lang].pages.courses.taughtFor} ${clientsArray.join(", ")}`
-          : ""
-      }</h4>
-      ${descriptionElement}
-      ${langsNoteElement}
+    <div class="row">
+      <div class="col col-2">
+        <h3>${title}</h3>
+        <h4>${date}${
+          clientsArray.length > 0
+            ? ` | ${data.labels[lang].pages.courses.taughtFor} ${clientsArray.join(", ")}`
+            : ""
+        }</h4>
+        ${descriptionElement}
+        ${langsNoteElement}
+      </div>
+      <div class="col highlight-bg">
+        <h4>${data.labels[lang].pages.courses.courseContent}</h4>
+        <ul>${content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>
+      </div>
       <p class="button-container">
         <a class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg" href="mailto:j@swn.ski?subject=${title}">
           ${data.labels[lang].pages.courses.buy}
         </a>
       </p>
-    </div>
-    <div class="col highlight-bg">
-      <h4>${data.labels[lang].pages.courses.courseContent}</h4>
-      <ul>${content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>
     </div>
   </article>`;
 };

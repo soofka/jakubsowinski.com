@@ -134,7 +134,7 @@ figcaption {
 ul,
 ol {
   margin: 0 0 0.5rem 0;
-  padding: 0 0 0 var(--gap-rel);
+  padding: 0 var(--gap) 0 calc(2 * var(--gap));
 }
 ul {
   list-style: square;

@@ -65,14 +65,16 @@ const mainListItemTalks = (
     }
   }
   return `<article>
-    <div class="col col-2">
-      <h3>${title}</h3>
-      <h4>${date} | ${event}, ${place[lang]}</h4>
-      ${metaSecondRowItems.length === 0 ? "" : `<h4>${metaSecondRowItems.join(" | ")}</h4>`}
-      ${langsNoteElement}
-    </div>
-    <div class="col">
-      ${sideElement}
+    <div class="row">
+      <div class="col col-2">
+        <h3>${title}</h3>
+        <h4>${date} | ${event}, ${place[lang]}</h4>
+        ${metaSecondRowItems.length === 0 ? "" : `<h4>${metaSecondRowItems.join(" | ")}</h4>`}
+        ${langsNoteElement}
+      </div>
+      <div class="col col-1">
+        ${sideElement}
+      </div>
     </div>
     ${descriptionElement}
   </article>`;

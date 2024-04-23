@@ -17,16 +17,24 @@ img {
   margin: 0 auto;
   padding: 0;
 }
-.col {
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: calc(2 * var(--gap));
+}
+.row .col {
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
   min-width: var(--page-min-size);
 }
-.col-2 {
+.row .col.col-1 {
+  order: -1;
+}
+.row .col.col-2 {
   width: calc(var(--page-max-size) * 2 / 3);
 }
-.col-3 {
+.row .col.col-3 {
   width: calc(var(--page-max-size) * 3 / 4);
 }
 
@@ -141,8 +149,7 @@ section article {
   padding: var(--gap-rel) 0;
   border-top: 1px solid var(--off-bg-2);
   display: flex;
-  flex-flow: row wrap;
-  column-gap: calc(2 * var(--gap));
+  flex-flow: column nowrap;
 }
 section article:first-child {
   border-top: none;
@@ -313,10 +320,13 @@ h2 .teacher-fg {
   header nav #menu ul li:nth-last-child(2) {
     margin-left: auto;
   }
-  .col-2 {
+  .row .col.col-1 {
+    order: 0;
+  }
+  .row .col.col-2 {
     flex: 2;
   }
-  .col-3 {
+  .row .col.col-3 {
     flex: 3;
   }
   .button-container .button {

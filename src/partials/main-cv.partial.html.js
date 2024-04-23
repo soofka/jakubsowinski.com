@@ -22,32 +22,34 @@ const mainCv = (data, dists, { lang, content }) =>
       <div class="wrapper">
         <article>
           <h3>About me</h3>
-          <div class="col col-2">
-            <p>
-              I am a highly skilled and driven software enthusiast who excels
-              in working with both computer and another human being. I have
-              over 15 years of experience in software development with
-              particular focus on full-stack web development, over 5 years of
-              experience in software architecture, and over 5 years of
-              experience in leadership and teaching with heavy focus on
-              programming and architecture.
-            </p>
-            <p>
-              I am looking for an interesting, meaningful project, which would
-              allow me to directly impact world for the better, be it through
-              the product itself, or through company culture and values, close
-              cooperation with my coworkers, sharing my knowledge and learning
-              from others, so that we all can grow.
-            </p>
-          </div>
-          <div class="col">
-            <partial name="img" data="${encodeURI(
-              JSON.stringify({
-                src: "images/me1.jpg",
-                alt: data.labels[lang].pages.home.intro.imgAlt,
-                lazy: false,
-              }),
-            )}"></partial>
+          <div class="row">
+            <div class="col col-2">
+              <p>
+                I am a highly skilled and driven software enthusiast who excels
+                in working with both computer and another human being. I have
+                over 15 years of experience in software development with
+                particular focus on full-stack web development, over 5 years of
+                experience in software architecture, and over 5 years of
+                experience in leadership and teaching with heavy focus on
+                programming and architecture.
+              </p>
+              <p>
+                I am looking for an interesting, meaningful project, which would
+                allow me to directly impact world for the better, be it through
+                the product itself, or through company culture and values, close
+                cooperation with my coworkers, sharing my knowledge and learning
+                from others, so that we all can grow.
+              </p>
+            </div>
+            <div class="col col-1">
+              <partial name="img" data="${encodeURI(
+                JSON.stringify({
+                  src: "images/me1.jpg",
+                  alt: data.labels[lang].pages.home.intro.imgAlt,
+                  lazy: false,
+                }),
+              )}"></partial>
+            </div>
           </div>
         </article>
       </div>
@@ -97,27 +99,29 @@ const mainCv = (data, dists, { lang, content }) =>
         <article>
           <h3>Education</h3>
           <article>
-            <div class="col">
-              ${content.education
-                .slice(0, content.education.length / 2)
-                .map(
-                  (item) =>
-                    `<small>${item.from} — ${item.to} | ${item.university}</small>
-                  <h4>${item.subject}</h4>
-                  ${item.description}`,
-                )
-                .join("")}
-            </div>
-            <div class="col">
-              ${content.education
-                .slice(content.education.length / 2)
-                .map(
-                  (item) =>
-                    `<small>${item.from} — ${item.to} | ${item.university}</small>
-                  <h4>${item.subject}</h4>
-                  ${item.description}`,
-                )
-                .join("")}
+            <div class="row">
+              <div class="col col-1">
+                ${content.education
+                  .slice(0, content.education.length / 2)
+                  .map(
+                    (item) =>
+                      `<small>${item.from} — ${item.to} | ${item.university}</small>
+                    <h4>${item.subject}</h4>
+                    ${item.description}`,
+                  )
+                  .join("")}
+              </div>
+              <div class="col col-1">
+                ${content.education
+                  .slice(content.education.length / 2)
+                  .map(
+                    (item) =>
+                      `<small>${item.from} — ${item.to} | ${item.university}</small>
+                    <h4>${item.subject}</h4>
+                    ${item.description}`,
+                  )
+                  .join("")}
+              </div>
             </div>
           </article>
         </article>
@@ -128,25 +132,27 @@ const mainCv = (data, dists, { lang, content }) =>
         <article>
           <h3>Notable trainings</h3>
           <article>
-            <div class="col">
-              ${Object.keys(content.trainings)
-                .slice(0, 2)
-                .map(
-                  (year) =>
-                    `<h4>${year}</h4>
-                  <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
-                )
-                .join("")}
-            </div>
-            <div class="col">
-              ${Object.keys(content.trainings)
-                .slice(2)
-                .map(
-                  (year) =>
-                    `<h4>${year}</h4>
-                  <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
-                )
-                .join("")}
+            <div class="row">
+              <div class="col col-1">
+                ${Object.keys(content.trainings)
+                  .slice(0, 2)
+                  .map(
+                    (year) =>
+                      `<h4>${year}</h4>
+                    <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
+                  )
+                  .join("")}
+              </div>
+              <div class="col col-1">
+                ${Object.keys(content.trainings)
+                  .slice(2)
+                  .map(
+                    (year) =>
+                      `<h4>${year}</h4>
+                    <ul>${content.trainings[year].map((item) => `<li>${item}</li>`).join("")}</ul>`,
+                  )
+                  .join("")}
+              </div>
             </div>
           </article>
         </article>
@@ -157,15 +163,17 @@ const mainCv = (data, dists, { lang, content }) =>
         <article>
           <h3>Notable contributions</h3>
           <article>
-            <div class="col">
-              <h4>Talks</h4>
-              <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
-            </div>
-            <div class="col">
-              <h4>Articles</h4>
-              <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
-              <h4>Projects</h4>
-              <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+            <div class="row">
+              <div class="col col-1">
+                <h4>Talks</h4>
+                <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+              </div>
+              <div class="col col-1">
+                <h4>Articles</h4>
+                <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+                <h4>Projects</h4>
+                <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+              </div>
             </div>
           </article>
         </article>
@@ -174,13 +182,15 @@ const mainCv = (data, dists, { lang, content }) =>
     <section>
       <div class="wrapper">
         <article>
-          <div class="col">
-            <h3>Languages</h3>
-            <ul>${content.languages.map((item) => `<li>${item}</li>`).join("")}</ul>
-          </div>
-          <div class="col">
-            <h3>Miscellaneous</h3>
-            <ul>${content.misc.map((item) => `<li>${item}</li>`).join("")}</ul>
+          <div class="row">
+            <div class="col col-1">
+              <h3>Languages</h3>
+              <ul>${content.languages.map((item) => `<li>${item}</li>`).join("")}</ul>
+            </div>
+            <div class="col col-1">
+              <h3>Miscellaneous</h3>
+              <ul>${content.misc.map((item) => `<li>${item}</li>`).join("")}</ul>
+            </div>
           </div>
         </article>
       </div>

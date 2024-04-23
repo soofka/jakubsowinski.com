@@ -12,13 +12,6 @@
 - styling:
   - center blog/article image
   - style="... in html elements
-  - columns on mobile lol
-  - something wrong with headings/margins/lists
-  - footer margin
-  - ul margin/padding (courses)
-  - ol
-  - title undefinde?
-  - projects in 2 cols
 
 ### backlog
 
