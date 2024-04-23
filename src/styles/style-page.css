@@ -110,7 +110,7 @@ header nav #menu ul li a {
   padding: var(--gap);
 }
 header nav #menu ul li.active {
-  background: var(--off-bg-2);
+  background: var(--alt-bg);
   border-bottom: 1px solid var(--bg);
 }
 header nav #menu ul li:nth-last-child(1),

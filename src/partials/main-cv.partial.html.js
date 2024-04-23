@@ -72,6 +72,8 @@ const mainCv = (data, dists, { lang, content }) =>
                   ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
                 </small>
                 ${item.description}
+                <h4>Responsibilities</h4>
+                <ul>${item.responsibilities.map((responsibility) => `<li>${responsibility}</li>`).join("")}</ul>
               </article>`,
             )
             .join("")}
@@ -96,6 +98,8 @@ const mainCv = (data, dists, { lang, content }) =>
                   ${item.tags.map((tag) => (Array.isArray(tag) ? `<span class="${tag[1]}">${tag[0]}</span>` : `<span>${tag}</span>`)).join("")}
                 </small>
                 ${item.description}
+                <h4>Responsibilities</h4>
+                <ul>${item.responsibilities.map((responsibility) => `<li>${responsibility}</li>`).join("")}</ul>
               </article>`,
             )
             .join("")}

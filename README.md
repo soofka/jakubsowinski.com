@@ -2,7 +2,7 @@
 
 ## todo:
 
-### 1.0
+### bugs
 
 ### backlog
 

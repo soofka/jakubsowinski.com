@@ -26,7 +26,7 @@
       },
       "architect": {
         "head": "Architekt rozwiązań",
-        "lead": "Moim obowiązkiem jako architekta jest zapewnienie nie tylko tego, że oprogramowanie jest zbudowane poprawnie, ale przede wszystkim tego, że jest budowane poprawnie.",
+        "lead": "Moim obowiązkiem jako architekta jest zapewnienie nie tylko tego, że oprogramowanie jest zbudowane poprawnie, ale przede wszystkim tego, że jest poprawnie budowane.",
         "text": "Mam ponad 5 lat doświadczenia na stanowiskach architekta rozwiązań i oprogramowania, a także ponad 3 lata doświadczenia jako wykładowca architektury oprogramowania na uczelni wyższej. Czerpiąc z tego doświadczenia, mogę pomóc w twoim projekcie przez organizację, zarządzanie i opiekę techinczną nad jego architekturą, ale także nad jego procesami wytwarzania i wdrażania oprogramowania. <a href=\"#contact\">Sprawdź jak!</a>",
         "buttons": {
           "talks": "Moje wystąpienia",
@@ -36,7 +36,7 @@
       },
       "developer": {
         "head": "Programista",
-        "lead": "Programowaniem zacząłem się interesować jako nastolake, i jak do tej pory nie przestałem. Przez ten czas eksperymentowałem z wieloma językami programowania, ale ostatecznie zakochałem się w technologiach webowych, a zwłaszcza JavaScript.",
+        "lead": "Programowaniem zacząłem się interesować jako nastolatek, i jak do tej pory nie przestałem. Przez ten czas eksperymentowałem z wieloma językami programowania, ale ostatecznie zakochałem się w technologiach webowych, a zwłaszcza JavaScript.",
         "text": "Uczestniczyłem w wielu konferencjach programistycznych i projektach open source, a nawet sam stworzyłem kilka, napisałem również kilka poradników dotyczących programowania aplikacji webowych i JavaScriptu, możesz je znaleźć na tej stronie. Albo <a href=\"#contact\">napisz do mnie</a>, jeśli masz jakiś interesujący projekt, w którym mógłbym pomóc!",
         "buttons": {
           "projects": "Moje projekty",
