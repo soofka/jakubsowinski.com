@@ -9,10 +9,6 @@
   - home content + translation
   - courses description + translation
 
-- styling:
-  - center blog/article image
-  - style="... in html elements
-
 ### backlog
 
 - slides for courses
