@@ -38,7 +38,13 @@ const header = (data, dists, { url, name, lang }) =>
   </header>`;
 
 const getMenuLink = (pageName, currentPageName, lang, labels) =>
-  `<li class="${currentPageName === pageName ? "active" : ""}">
+  `<li class="${
+    currentPageName === pageName ||
+    (pageName === "articles" && currentPageName === "article") ||
+    (pageName === "blog" && currentPageName === "post")
+      ? "active"
+      : ""
+  }">
     <partial name="link" data="${encodeURI(
       JSON.stringify({ pageId: `${pageName}-${lang}` }),
     )}">${labels[lang].nav[pageName]}</partial>

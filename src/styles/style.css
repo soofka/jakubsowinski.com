@@ -155,7 +155,7 @@ code pre {
 }
 hr {
   width: 100%;
-  margin: var(--gap-rel);
+  margin: var(--gap-rel) 0;
   padding: 0;
   border-color: var(--alt-bg);
 }

@@ -21,15 +21,13 @@ img {
   display: flex;
   flex-flow: row wrap;
   column-gap: calc(2 * var(--gap));
+  margin: 0 0 var(--gap-rel) 0;
 }
 .row .col {
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
   min-width: var(--page-min-size);
-}
-.row .col.col-1 {
-  order: -1;
 }
 .row .col.col-2 {
   width: calc(var(--page-max-size) * 2 / 3);
@@ -319,9 +317,6 @@ h2 .teacher-fg {
   }
   header nav #menu ul li:nth-last-child(2) {
     margin-left: auto;
-  }
-  .row .col.col-1 {
-    order: 0;
   }
   .row .col.col-2 {
     flex: 2;

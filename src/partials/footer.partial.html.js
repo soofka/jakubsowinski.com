@@ -8,10 +8,10 @@ const footer = (data, dists, { lang, type }) =>
               ? `<h2>${data.labels[lang].pages.home.contact.head}</h2>
                 <div>
                   <ul>
-                    <li><h3 class="architect-fg" style="width:auto;margin:0;padding:0;">Architecture offer?</h3></li>
-                    <li><h3 class="developer-fg" style="width:auto;margin:0;padding:0;">Development offer?</h3></li>
-                    <li><h3 class="leader-fg" style="width:auto;margin:0;padding:0;">Leadership offer?</h3></li>
-                    <li><h3 class="teacher-fg" style="width:auto;margin:0;padding:0;">Teachingship offer?</h3></li>
+                    <li><h3 class="architect-fg">Architecture offer?</h3></li>
+                    <li><h3 class="developer-fg">Development offer?</h3></li>
+                    <li><h3 class="leader-fg">Leadership offer?</h3></li>
+                    <li><h3 class="teacher-fg">Teachingship offer?</h3></li>
                   </ul>
                   <a href="mailto:j@swn.ski"><h3 id="contact-mail">j[at]swn.ski</h3></a>
                 </div>`

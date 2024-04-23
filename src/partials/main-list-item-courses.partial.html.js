@@ -31,7 +31,7 @@ const mainListItemCourses = (
         ${descriptionElement}
         ${langsNoteElement}
       </div>
-      <div class="col highlight-bg">
+      <div class="col col-1 highlight-bg">
         <h4>${data.labels[lang].pages.courses.courseContent}</h4>
         <ul>${content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>

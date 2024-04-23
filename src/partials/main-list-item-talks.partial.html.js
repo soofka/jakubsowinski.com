@@ -32,8 +32,8 @@ const mainListItemTalks = (
         JSON.stringify({
           id: recording.youtube,
           title,
-          width: 320,
-          height: 190,
+          width: 480,
+          height: 360,
         }),
       )}"></partial>`;
       recordingsArray.push(

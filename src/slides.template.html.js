@@ -14,7 +14,7 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
       }),
     )}"></partial>
     <body class="${type}">
-      <main class="reveal" style="height: 100%">
+      <main class="reveal">
         <div class="slides">
           <partial name="slide"></partial>
           <partial name="slide">

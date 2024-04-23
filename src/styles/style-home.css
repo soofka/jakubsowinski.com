@@ -1,3 +1,6 @@
+body.home .row .col.col-1 {
+  order: -1;
+}
 body.home section {
   min-height: 100vh;
 }
@@ -82,4 +85,11 @@ body.home footer section .wrapper article {
   grid-template-rows: auto 1fr auto;
   height: 100%;
   padding-top: var(--gap-rel);
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  body.home .row .col.col-1 {
+    order: 0;
+  }
 }

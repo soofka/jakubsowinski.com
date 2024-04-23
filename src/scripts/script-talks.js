@@ -20,6 +20,6 @@
     });
   }
   function playYouTube(elementId, videoId) {
-    new YT.Player(elementId, { videoId, width: "100%", height: "auto" });
+    new YT.Player(elementId, { videoId, width: "100%", height: "100%" });
   }
 })();

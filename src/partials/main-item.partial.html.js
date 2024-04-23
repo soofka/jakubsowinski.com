@@ -7,13 +7,15 @@ const mainItem = (data, dists, { content }) => `
         <h2>${content.title}</h2>
         <p class="right">${content.date}</p>
         <article>
-          <partial name="img" data="${encodeURI(
-            JSON.stringify({
-              src: content.image,
-              alt: content.title,
-              lazy: false,
-            }),
-          )}"></partial>
+          <figure>
+            <partial name="img" data="${encodeURI(
+              JSON.stringify({
+                src: content.image,
+                alt: content.title,
+                lazy: false,
+              }),
+            )}"></partial>
+          </figure>
           <h4>${content.description}</h4>
           ${getDistByPath(dists, `${content.id}/index.html`).content}
         </article>
