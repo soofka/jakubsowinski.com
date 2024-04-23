@@ -183,6 +183,6 @@ img {
 }
 .highlight-bg {
   background: var(--off-bg-2);
-  border: 1px solid var(--off-bg);
+  border: 1px solid var(--alt-bg);
   padding: var(--gap);
 }
