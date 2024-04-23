@@ -21,7 +21,7 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
             <partial name="img" src="me1.jpg"></partial>
             <h2>Jakub Sowiński</h2>
             <p class="center">
-              <a href="https://swn.ski" target="_blank">swn.ski</a> | <a href="mailto:j@swn.ski" target="_blank">j[at]swn.ski</a>
+              <a href="https://swn.ski" target="_blank">swn.ski</a> | <partial name="link-email"></partial>
             </p>
           </partial>
           <partial name="slide">
@@ -31,7 +31,7 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
           <partial name="slide">
             <h2>Thank you</h2>
             <p class="center">
-              <a href="https://swn.ski" target="_blank">swn.ski</a> | <a href="mailto:j@swn.ski" target="_blank">j[at]swn.ski</a>
+              <a href="https://swn.ski" target="_blank">swn.ski</a> | <partial name="link-email"></partial>
             </p>
           </partial>
           <partial name="slide"></partial>

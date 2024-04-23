@@ -35,10 +35,10 @@ const mainListItemCourses = (
         <h4>${data.labels[lang].pages.courses.courseContent}</h4>
         <ul>${content[lang].map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
-      <p class="button-container">
-        <a class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg" href="mailto:j@swn.ski?subject=${title}">
+      <div class="buttons" style="flex-grow:0">
+        <partial name="link-email" subject="${title}" class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg">
           ${data.labels[lang].pages.courses.buy}
-        </a>
+        </partial>
       </p>
     </div>
   </article>`;

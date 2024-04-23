@@ -13,7 +13,7 @@ const mainCv = (data, dists, { lang, content }) =>
           <h4>
             <span><a href="https://www.google.com/maps/place/Warsaw"target="_blank">Warsaw, Poland</a></span>
             <span><a href="https://swn.ski/" target="_blank">www.swn.ski</a></span>
-            <span><a href="mailto:j@swn.ski" target="_blank">j[at]swn.ski</a></span>
+            <span><partial name="link-email"></partial></span>
           </h4>
         </article>
       </div>

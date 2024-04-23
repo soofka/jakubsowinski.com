@@ -16,7 +16,7 @@
       "intro": {
         "head": "Cześć!",
         "lead": "My name is Jakub, I'm a software enthusiast, and I work as a solution architect, software developer, programming teacher, and tech lead. Welcome to my corner of the Internet!",
-        "text": "If you want to hire me, waste no time, <a href=\"mailto:j@swn.ski\" target=\"_blank\">drop me a message</a>. If you yet don't know that you want to hire me, please refer to my resume or read more about my work. Otherwise, enjoy fruits of my labor, such as my projects, talks, articles, courses, or blog posts, or just chill out here with me. Peace!",
+        "text": "If you want to hire me, waste no time, <a href=\"#contact\">drop me a message</a>. If you yet don't know that you want to hire me, please refer to my resume or read more about my work. Otherwise, enjoy fruits of my labor, such as my projects, talks, articles, courses, or blog posts, or just chill out here with me. Peace!",
         "buttons": {
           "cv": "Moje CV",
           "info": "Więcej na temat mojej pracy",
@@ -39,10 +39,10 @@
         "lead": "lorem duporem",
         "text": "lorem duporem",
         "buttons": {
-          "projects": "My projects",
-          "blog": "My blog"
+          "projects": "Moje projekty",
+          "blog": "Mój blog"
         },
-        "imgAlt": "Jakub Sowiński programujący"
+        "imgAlt": "Jakub Sowiński myślący o programowaniu"
       },
       "leader": {
         "head": "Nauczyciel i lider",
@@ -54,9 +54,13 @@
         "imgAlt": "Jakub Sowiński uczący i przewodzący"
       },
       "contact": {
-        "head": "Skontaktuj się ze mną",
-        "lead": "If you wish to contact me, please drop me a message at <a href=\"mailto:j@swn.ski\" target=\"_blank\">j[at]swn.ski</a>.",
-        "text": "You can also find me on:"
+        "head": "Napisz do mnie",
+        "lead": {
+          "architect": "Need an architect or consultant for your project?",
+          "developer": "Have a great, preferably open source project for me to work on?",
+          "teacher": "Need a software developer or architecture training?",
+          "leader": "Looking for leader or mentor in IT?"
+        }
       }
     },
     "articles": {

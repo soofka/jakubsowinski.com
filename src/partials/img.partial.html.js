@@ -3,7 +3,14 @@ import { getDistsByPath } from "../helpers/index.js";
 const img = (
   data,
   dists,
-  { src, alt = "", lazy = true, withCaption = false, ...attributes },
+  {
+    src,
+    alt = "",
+    caption = "",
+    lazy = true,
+    withCaption = false,
+    ...attributes
+  },
 ) => {
   const dotIndex = src.lastIndexOf(".");
   const srcParsed =
@@ -68,9 +75,7 @@ const img = (
       >
     </picture>`;
 
-  return withCaption
-    ? `<figure>${picture}<figcaption>${alt}</figcaption></figure>`
-    : picture;
+  return `<figure>${picture}${caption || withCaption ? `<figcaption>${caption || alt}</figcaption>` : ""}</figure>`;
 };
 
 export default img;

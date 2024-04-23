@@ -16,7 +16,7 @@
       "intro": {
         "head": "Hello!",
         "lead": "My name is Jakub and I'm a software enthusiast. I work as a solution architect, software developer, programming teacher, and technical leader. Welcome to my corner of the Internet!",
-        "text": "If you want to hire me, cut the chase and <a href=\"mailto:j@swn.ski\" target=\"_blank\">drop me a message</a>. If you don't know yet that you want to hire me, please refer to my resume or read more about my work. Otherwise, enjoy fruits of my labor, such as my projects, talks, articles, courses, and blog posts, or just chill out here with me. Peace!",
+        "text": "If you want to hire me, cut the chase and <a href=\"#contact\">drop me a message</a>. If you don't know yet that you want to hire me, please refer to my resume or read more about my work. Otherwise, enjoy fruits of my labor, such as my projects, talks, articles, courses, and blog posts, or just chill out here with me. Peace!",
         "buttons": {
           "cv": "My resume",
           "info": "More about my work",
@@ -42,7 +42,7 @@
           "projects": "My projects",
           "blog": "My blog"
         },
-        "imgAlt": "Jakub Sowiński programming"
+        "imgAlt": "Jakub Sowiński thinking about programming"
       },
       "leader": {
         "head": "Teacher and leader",
@@ -55,8 +55,12 @@
       },
       "contact": {
         "head": "Contact me",
-        "lead": "Need an architect or consultant for your project? Have a great, preferably open source project for me to work on? Need programming training? Looking for leader or mentor in IT?<br><br>Please drop me a message at:",
-        "text": "You can also find me on:"
+        "lead": {
+          "architect": "Need an architect or consultant for your business?",
+          "developer": "Have an interesting, exciting project for me to work on?",
+          "teacher": "Need a software development or architecture training?",
+          "leader": "Looking for a leader or mentor in IT?"
+        }
       }
     },
     "articles": {

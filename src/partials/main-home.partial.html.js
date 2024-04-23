@@ -30,18 +30,18 @@ const mainHome = (data, dists, { lang }) => `
                 JSON.stringify({
                   src: "images/me1.jpg",
                   alt: data.labels[lang].pages.home.intro.imgAlt,
+                  caption: `<p class="text-blinker">
+                    <span class="text">
+                      <span class="architect-fg">solution architect</span> / 
+                      <span class="developer-fg">software developer</span> / 
+                      <span class="teacher-fg">programming teacher</span> / 
+                      <span class="leader-fg">technical leader</span>
+                    </span>
+                    <span class="blinker"></span>
+                  </p>`,
                   lazy: false,
                 }),
               )}"></partial>
-              <p class="text-blinker">
-                <span class="text">
-                  <span class="architect-fg">solution architect</span> / 
-                  <span class="developer-fg">software developer</span> / 
-                  <span class="teacher-fg">programming teacher</span> / 
-                  <span class="leader-fg">technical leader</span>
-                </span>
-                <span class="blinker"></span>
-              </p>
             </div>
           </div>
           <p>${data.labels[lang].pages.home.intro.text}</p>
@@ -68,9 +68,9 @@ const mainHome = (data, dists, { lang }) => `
                 JSON.stringify({
                   src: "images/me2.jpg",
                   alt: data.labels[lang].pages.home.architect.imgAlt,
+                  caption: `<span class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</span>`,
                 }),
               )}"></partial>
-              <p class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</p>
             </div>
             <div class="col col-2">
               <h3>${data.labels[lang].pages.home.architect.lead}</h3>
@@ -109,9 +109,9 @@ const mainHome = (data, dists, { lang }) => `
                 JSON.stringify({
                   src: "images/me3.jpg",
                   alt: data.labels[lang].pages.home.developer.imgAlt,
+                  caption: `<span class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</span>`,
                 }),
               )}"></partial>
-              <p class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</p>
             </div>
           </div>
           <div class="buttons">
@@ -142,9 +142,9 @@ const mainHome = (data, dists, { lang }) => `
                 JSON.stringify({
                   src: "images/me4.jpg",
                   alt: data.labels[lang].pages.home.leader.imgAlt,
+                  caption: `<span class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</span>`,
                 }),
               )}"></partial>
-              <p class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</p>
             </div>
             <div class="col col-2">
               <h3>${data.labels[lang].pages.home.leader.lead}</h3>

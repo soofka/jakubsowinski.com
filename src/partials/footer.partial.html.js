@@ -8,17 +8,19 @@ const footer = (data, dists, { lang, type }) =>
               ? `<h2>${data.labels[lang].pages.home.contact.head}</h2>
                 <div>
                   <ul>
-                    <li><h3 class="architect-fg">Architecture offer?</h3></li>
-                    <li><h3 class="developer-fg">Development offer?</h3></li>
-                    <li><h3 class="leader-fg">Leadership offer?</h3></li>
-                    <li><h3 class="teacher-fg">Teachingship offer?</h3></li>
+                    <li class="architect-fg"><h3>${data.labels[lang].pages.home.contact.lead.architect}</h3></li>
+                    <li class="developer-fg"><h3>${data.labels[lang].pages.home.contact.lead.developer}</h3></li>
+                    <li class="teacher-fg"><h3>${data.labels[lang].pages.home.contact.lead.teacher}</h3></li>
+                    <li class="leader-fg"><h3>${data.labels[lang].pages.home.contact.lead.leader}</h3></li>
                   </ul>
-                  <a href="mailto:j@swn.ski"><h3 id="contact-mail">j[at]swn.ski</h3></a>
+                  <partial name="link-email"><h3 id="contact-mail">
+                    ${data.labels[lang].pages.home.contact.head}: __EMAIL__
+                  </h3></partial>
                 </div>`
               : ""
           }
           <p>
-            <a href="mailto:j@swn.ski">j[at]swn.ski</a>
+            <partial name="link-email"></partial>
             | <a href="https://linkedin.com/in/jakub-sowi%C5%84ski/" target="_blank">linkedin</a>
             | <a href="https://github.com/soofka/" target="_blank">github</a>
             | <a href="https://last.fm/user/soofka/" target="_blank">last.fm</a>
