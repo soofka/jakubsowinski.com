@@ -102,7 +102,7 @@ header nav #menu ul {
   flex-flow: column nowrap;
 }
 header nav #menu ul li {
-  border-top: 1px solid var(--off-bg-2);
+  border-top: 1px solid var(--alt-bg);
 }
 header nav #menu ul li a {
   display: block;
@@ -260,59 +260,55 @@ li.teacher-fg::marker {
   color: var(--teacher-fg);
 }
 .architect-bg {
-  color: white !important;
-  text-shadow: 1px 2px var(--architect-fg);
+  color: var(--white) !important;
   background: var(--architect-bg) !important;
-  border-color: var(--architect-fg) !important;
+  border-color: var(--architect-bg) !important;
+  text-shadow: 1px 1px var(--architect-fg);
 }
 .button.architect-bg:hover,
 .button.architect-bg:focus,
 .button.architect-bg:active {
-  color: white;
-  text-shadow: 1px 2px var(--architect-bg);
   background: var(--architect-fg) !important;
+  text-shadow: 1px 1px var(--architect-bg);
   box-shadow: 0 0 1px 2px var(--architect-bg);
 }
 .developer-bg {
-  color: white !important;
-  text-shadow: 1px 2px var(--developer-fg);
+  color: var(--white) !important;
   background: var(--developer-bg) !important;
-  border-color: var(--developer-fg) !important;
+  border-color: var(--developer-bg) !important;
+  text-shadow: 1px 1px var(--developer-fg);
 }
 .button.developer-bg:hover,
 .button.developer-bg:focus,
 .button.developer-bg:active {
-  color: white;
-  text-shadow: 1px 2px var(--developer-bg);
   background: var(--developer-fg) !important;
-  box-shadow: 0 0 1px 2px var(--developer-fg);
+  text-shadow: 1px 1px var(--developer-bg);
+  box-shadow: 0 0 1px 2px var(--developer-bg);
 }
 .leader-bg {
-  color: white !important;
-  text-shadow: 1px 2px var(--leader-fg);
+  color: var(--white) !important;
   background: var(--leader-bg) !important;
-  border-color: var(--leader-fg) !important;
+  border-color: var(--leader-bg) !important;
+  text-shadow: 1px 1px var(--leader-fg);
 }
 .button.leader-bg:hover,
 .button.leader-bg:focus,
 .button.leader-bg:active {
-  color: white;
-  text-shadow: 1px 2px var(--leader-bg);
   background: var(--leader-fg) !important;
+  text-shadow: 1px 1px var(--leader-bg);
   box-shadow: 0 0 1px 2px var(--leader-bg);
 }
 .teacher-bg {
-  color: white !important;
-  text-shadow: 1px 2px var(--teacher-fg);
+  color: var(--white) !important;
   background: var(--teacher-bg) !important;
-  border-color: var(--teacher-fg) !important;
+  border-color: var(--teacher-bg) !important;
+  text-shadow: 1px 1px var(--teacher-fg);
 }
 .button.teacher-bg:hover,
 .button.teacher-bg:focus,
 .button.teacher-bg:active {
-  color: white;
-  text-shadow: 1px 2px var(--teacher-bg);
   background: var(--teacher-fg) !important;
+  text-shadow: 1px 1px var(--teacher-bg);
   box-shadow: 0 0 1px 2px var(--teacher-bg);
 }
 
@@ -330,6 +326,9 @@ li.teacher-fg::marker {
   }
   header nav #menu ul {
     flex-flow: row wrap;
+  }
+  header nav #menu ul li {
+    border-top: none;
   }
   header nav #menu ul li:nth-last-child(2) {
     margin-left: auto;

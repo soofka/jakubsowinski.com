@@ -1,31 +1,31 @@
 export const getTheming = () => {
   const colors = {
     grayscale: [
-      "#000000",
-      "#111111",
-      "#222222",
-      "#333333",
-      "#CCCCCC",
-      "#EEEEEE",
-      "#F9F9F9",
-      "#FFFFFF",
+      "#080808",
+      "#101010",
+      "#181818",
+      "#202020",
+      "#DFDFDF",
+      "#E7E7E7",
+      "#EFEFEF",
+      "#F7F7F7",
     ],
     accents: {
       architect: {
-        light: "#c60f2d",
-        dark: "#a50d26",
+        light: "#F66E8E",
+        dark: "#870725",
       },
       developer: {
-        light: "#0083d6",
-        dark: "#006db2",
+        light: "#6DACF7",
+        dark: "#074187",
       },
       leader: {
-        light: "#00c9d6",
-        dark: "#00a8b2",
+        light: "#79DAEB",
+        dark: "#126D7C",
       },
       teacher: {
-        light: "#a68553",
-        dark: "#8e7247",
+        light: "#F6BE6E",
+        dark: "#875207",
       },
     },
   };

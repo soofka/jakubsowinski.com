@@ -11,6 +11,8 @@
 
   --transition-duration: 0.5s;
   --transition-easing: ease-in-out;
+
+  --img-box-shadow: 0 0 0 1px var(--alt-bg), 0 0 0 2px var(--alt-fg);
 }
 * {
   box-sizing: border-box;

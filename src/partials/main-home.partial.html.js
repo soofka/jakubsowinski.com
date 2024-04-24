@@ -28,7 +28,7 @@ const mainHome = (data, dists, { lang }) => `
             <div class="col col-1">
               <partial name="img" data="${encodeURI(
                 JSON.stringify({
-                  src: "images/me1.jpg",
+                  src: "images/me1",
                   alt: data.labels[lang].pages.home.intro.imgAlt,
                   caption: `<p class="text-blinker">
                     <span class="text">
@@ -53,7 +53,7 @@ const mainHome = (data, dists, { lang }) => `
               }),
             )}">${data.labels[lang].pages.home.intro.buttons.cv}</partial>
             <a class="button developer-bg" href="#architect">${data.labels[lang].pages.home.intro.buttons.info}</a>
-            <a class="button leader-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
+            <a class="button teacher-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>
       </div>
@@ -66,7 +66,7 @@ const mainHome = (data, dists, { lang }) => `
             <div class="col col-1">
               <partial name="img" data="${encodeURI(
                 JSON.stringify({
-                  src: "images/me2.jpg",
+                  src: "images/me2",
                   alt: data.labels[lang].pages.home.architect.imgAlt,
                   caption: `<span class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</span>`,
                 }),
@@ -90,7 +90,7 @@ const mainHome = (data, dists, { lang }) => `
                 pageId: `articles-${lang}`,
               }),
             )}">${data.labels[lang].pages.home.architect.buttons.articles}</partial>
-            <a class="button" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
+            <a class="button teacher-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>
       </div>
@@ -107,7 +107,7 @@ const mainHome = (data, dists, { lang }) => `
             <div class="col col-1">
               <partial name="img" data="${encodeURI(
                 JSON.stringify({
-                  src: "images/me3.jpg",
+                  src: "images/me3",
                   alt: data.labels[lang].pages.home.developer.imgAlt,
                   caption: `<span class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</span>`,
                 }),
@@ -127,7 +127,7 @@ const mainHome = (data, dists, { lang }) => `
                 pageId: `blog-${lang}`,
               }),
             )}">${data.labels[lang].pages.home.developer.buttons.blog}</partial>
-            <a class="button" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
+            <a class="button teacher-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>
       </div>
@@ -140,7 +140,7 @@ const mainHome = (data, dists, { lang }) => `
             <div class="col col-1">
               <partial name="img" data="${encodeURI(
                 JSON.stringify({
-                  src: "images/me4.jpg",
+                  src: "images/me4",
                   alt: data.labels[lang].pages.home.leader.imgAlt,
                   caption: `<span class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</span>`,
                 }),
@@ -158,7 +158,7 @@ const mainHome = (data, dists, { lang }) => `
                 pageId: `courses-${lang}`,
               }),
             )}">${data.labels[lang].pages.home.leader.buttons.courses}</partial>
-            <a class="button" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
+            <a class="button teacher-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
           </div>
         </article>
       </div>
