@@ -26,7 +26,7 @@ const footer = (data, dists, { lang, type }) =>
             | <a href="https://last.fm/user/soofka/" target="_blank">last.fm</a>
           </p>
           <p><small>
-            swn.ski 2007-2024
+            <partial name="logo"></partial> 2007-${new Date().getFullYear()}
             | <a href="https://europa.eu/youreurope/business/running-business/intellectual-property/copyright/index_en.htm" target="_blank">${data.labels[lang].misc.allRightsReserved}</a>
             | <a href="https://github.com/soofka/swn.ski">repo</a>
           </small></p>

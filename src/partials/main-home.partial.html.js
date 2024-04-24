@@ -3,23 +3,27 @@ const mainHome = (data, dists, { lang }) => `
     <section id="intro">
       <div class="wrapper">
         <article>
-          <h1>
-            <span class="architect-fg">J</span>
-            <span class="architect-fg name">A</span>
-            <span class="leader-fg mail">@</span>
-            <span class="architect-fg name">K</span>
-            <span class="architect-fg name">U</span>
-            <span class="architect-fg name">B</span>
-            <span class="developer-fg">S</span>
-            <span class="developer-fg name">O</span>
-            <span class="developer-fg">W</span>
-            <span class="developer-fg name">I</span>
-            <span class="developer-fg">N</span>
-            <span class="teacher-fg mail">.</span>
-            <span class="developer-fg">S</span>
-            <span class="developer-fg">K</span>
-            <span class="developer-fg">I</span>
-          </h1>
+          <a class="plain" href="#contact">
+            <h1>
+              <span class="architect-fg">J</span>
+              <span class="leader-fg mail">@</span>
+              <span class="architect-fg name">A</span>
+              <span class="architect-fg name">K</span>
+              <span class="architect-fg name">U</span>
+              <span class="architect-fg name">B</span>
+              <span class="developer-fg">S</span>
+              <span class="developer-fg">O</span>
+              <span class="developer-fg">W</span>
+              <span class="developer-fg">I</span>
+              <span class="developer-fg">N</span>
+              <span class="developer-fg">S</span>
+              <span class="developer-fg">K</span>
+              <span class="developer-fg">I</span>
+              <span class="teacher-fg mail">.</span>
+              <span class="architect-fg mail">I</span>
+              <span class="architect-fg mail">T</span>
+            </h1>
+          </a>
           <div class="row">
             <div class="col col-2">
               <h2>${data.labels[lang].pages.home.intro.head}</h2>

@@ -6,10 +6,11 @@ const header = (data, dists, { url, name, lang }) =>
           <partial name="link" data="${encodeURI(
             JSON.stringify({
               id: "logo",
+              class: "plain",
               pageId: `index-${lang}`,
             }),
           )}">
-            <h4><span class="architect-fg">s</span><span class="developer-fg">w</span><span class="leader-fg">n</span><span class="teacher-fg">.</span>ski</h4>
+            <h4><partial name="logo"></partial></h4>
           </partial>
           <button id="menu-toggle" aria-label="Menu"></button>
         </div>

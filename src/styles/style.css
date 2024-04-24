@@ -86,13 +86,21 @@ a:visited {
   text-decoration: underline 1px;
 }
 a:visited {
-  color: var(--alt-fg);
+  color: var(--off-fg);
 }
 a:hover,
 a:focus,
 a:active {
-  color: var(--off-fg);
+  color: var(--off-fg-2);
   text-decoration: underline 2px;
+}
+a.plain,
+a.plain:hover,
+a.plain:focus,
+a.plain:active,
+a.plain:visited {
+  color: var(--fg);
+  text-decoration: none;
 }
 button,
 .button {

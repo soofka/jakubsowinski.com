@@ -15,12 +15,6 @@
     "inCV": "true"
   },
   {
-    "title": "JS Console Tetris",
-    "description": "Tetris game written in JS that runs in your browser's JS console.",
-    "date": "2021",
-    "github": "js-console-tetris"
-  },
-  {
     "title": "Netlify Plugin Chromium",
     "description": "<p>This is Netlify Build Plugin. It is meant to be used in projects connected to Netlify CI/CD pipeline. Netlify Build Plugins are currently opt-in BETA feature. Learn how to enable them for your project here.</p><p>This plugin hooks into installation stage of the build process and extends it with additional step which checks if Chromium is installed and installs Chromium binaries if needed. The latest suitable build of Chromium for your platform will be installed with the help of chromium npm package. Installation typically takes around 20-30 seconds.</p>",
     "date": "2020",
