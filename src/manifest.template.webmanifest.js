@@ -16,10 +16,10 @@ const manifest = (data, dists, lang, theme) =>
         type: "image/png",
         sizes: dist.name.split("-")[1],
       })),
-    name: data.labels[lang].meta.title,
+    name: data.name,
     scope: "/",
     screenshots: [],
-    short_name: data.labels[lang].meta.title,
+    short_name: data.name,
     start_url: data.url,
     theme_color: theme.color,
   });

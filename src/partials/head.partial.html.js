@@ -12,7 +12,7 @@ const head = (
   { url, name, lang, template, type, title, description, image },
 ) => {
   const separator = " | ";
-  const titleText = `${title ? `${title}${separator}` : ""}${data.labels[lang].meta.title}`;
+  const titleText = `${title ? `${title}${separator}` : ""}${data.name}`;
   const descriptionText = `${description ? `${sanitizeHtml(description)}${separator}` : ""}${data.labels[lang].meta.description}`;
   const imagePath = image
     ? image.lastIndexOf(".") === -1
