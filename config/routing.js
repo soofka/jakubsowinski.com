@@ -250,5 +250,15 @@ const parseTitleToUrl = (title) =>
     ? title
         .trim()
         .toLowerCase()
+        .replaceAll("ą", "a")
+        .replaceAll("ć", "c")
+        .replaceAll("ę", "e")
+        .replaceAll("ł", "l")
+        .replaceAll("ń", "n")
+        .replaceAll("ó", "o")
+        .replaceAll("ś", "s")
+        .replaceAll("ź", "z")
+        .replaceAll("ż", "z")
+        .replaceAll(" - ", "-")
         .replaceAll(new RegExp("[^a-zA-Z0-9]", "g"), "-")
     : title;

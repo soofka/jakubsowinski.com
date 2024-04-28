@@ -20,6 +20,38 @@ const head = (
       : `${image.substring(0, image.lastIndexOf("."))}-*${image.substring(image.lastIndexOf("."))}`
     : "images/me1-960x960.jpg";
 
+  let canonicalUrl = data.url;
+  const alternateUrls = [];
+  if (url) {
+    if (template === "slides") {
+      canonicalUrl += url || "";
+    } else {
+      if (url.endsWith("/index")) {
+        if (url === `/${data.langs[0]}/index`) {
+          alternateUrls = data.langs
+            .filter((l) => l !== lang)
+            .map((l) => ({ lang: l, url: `/${l}` }));
+        } else {
+          canonicalUrl += `/${lang}`;
+          alternateUrls = data.langs
+            .filter((l) => l !== lang)
+            .map((l) => ({ lang: l, url: l === data.langs[0] ? "" : `/${l}` }));
+        }
+      } else {
+        canonicalUrl += url || "";
+        alternateUrls = data.langs
+          .filter((l) => l !== lang)
+          .map((l) => ({
+            lang: l,
+            url: url.replace(
+              new RegExp(`/(${data.langs.join("|")})/`),
+              `/${l}/`,
+            ),
+          }));
+      }
+    }
+  }
+
   return `
     <head>
       <meta charset="utf-8">
@@ -28,7 +60,7 @@ const head = (
       <meta name="description" content="${descriptionText}">
       <meta property="og:title" content="${titleText}">
       <meta property="og:type" content="${data.type}">
-      <meta property="og:url" content="${data.url}${url || ""}">
+      <meta property="og:url" content="${canonicalUrl}">
       <meta property="og:description" content="${descriptionText}">
       <meta property="og:image" content="${getLargestImage(getDistsByPath(dists, imagePath)).rel}">
       <meta property="og:image:alt" content="${getDistByPath(dists, "images/icon-512x512.png").rel}">
@@ -40,17 +72,13 @@ const head = (
 
       ${
         url
-          ? `<link rel="canonical" href="${data.url}${url}" />
-            ${
-              template === "slides"
-                ? ""
-                : data.langs
-                    .map(
-                      (lang) =>
-                        `<link rel="alternate" href="${`${data.url}${url.replace(new RegExp(data.langs.join("|")), lang)}`}" hreflang="${lang}" />`,
-                    )
-                    .join("")
-            }`
+          ? `<link rel="canonical" href="${canonicalUrl}" />
+            ${alternateUrls
+              .map(
+                (alt) =>
+                  `<link rel="alternate" href="${alt.url}" hreflang="${alt.lang}" />`,
+              )
+              .join("")}`
           : ""
       }
 
