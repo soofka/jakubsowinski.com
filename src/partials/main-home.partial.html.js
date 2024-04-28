@@ -43,7 +43,6 @@ const mainHome = (data, dists, { lang }) => `
                     </span>
                     <span class="blinker"></span>
                   </p>`,
-                  lazy: false,
                 }),
               )}"></partial>
             </div>
@@ -73,6 +72,7 @@ const mainHome = (data, dists, { lang }) => `
                   src: "images/me2",
                   alt: data.labels[lang].pages.home.architect.imgAlt,
                   caption: `<span class="architect-fg">${data.labels[lang].pages.home.architect.imgAlt}</span>`,
+                  lazy: true,
                 }),
               )}"></partial>
             </div>
@@ -114,6 +114,7 @@ const mainHome = (data, dists, { lang }) => `
                   src: "images/me3",
                   alt: data.labels[lang].pages.home.developer.imgAlt,
                   caption: `<span class="developer-fg">${data.labels[lang].pages.home.developer.imgAlt}</span>`,
+                  lazy: true,
                 }),
               )}"></partial>
             </div>
@@ -147,6 +148,7 @@ const mainHome = (data, dists, { lang }) => `
                   src: "images/me4",
                   alt: data.labels[lang].pages.home.leader.imgAlt,
                   caption: `<span class="leader-fg">${data.labels[lang].pages.home.leader.imgAlt}</span>`,
+                  lazy: true,
                 }),
               )}"></partial>
             </div>

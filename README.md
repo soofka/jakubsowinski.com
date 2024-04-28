@@ -5,7 +5,6 @@
 ### bugs
 
 - mobile menu does not open on safari
-- homepage anchors are off
 
 ### backlog
 

@@ -5,6 +5,7 @@ const mainListItemTalks = (
   dists,
   {
     lang,
+    index,
     item: {
       title,
       date,
@@ -21,6 +22,7 @@ const mainListItemTalks = (
     JSON.stringify({
       src: "images/no_recording.jpg",
       alt: data.labels[lang].pages.talks.noRecording,
+      lazy: index > 2,
     }),
   )}"></partial>`;
 

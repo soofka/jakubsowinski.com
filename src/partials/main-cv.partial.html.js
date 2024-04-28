@@ -46,7 +46,6 @@ const mainCv = (data, dists, { lang, content }) =>
                 JSON.stringify({
                   src: "images/me1.jpg",
                   alt: data.labels[lang].pages.home.intro.imgAlt,
-                  lazy: false,
                 }),
               )}"></partial>
             </div>

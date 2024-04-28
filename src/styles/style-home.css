@@ -36,6 +36,9 @@ body.home section#intro article h1:hover .mail {
   width: 0;
   opacity: 0;
 }
+body.home footer section article {
+  padding-top: var(--gap-rel) !important;
+}
 @keyframes appear {
   0% {
     width: 0;

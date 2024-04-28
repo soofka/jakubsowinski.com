@@ -7,7 +7,7 @@ const img = (
     src,
     alt = "",
     caption = "",
-    lazy = true,
+    lazy = false,
     withCaption = false,
     ...attributes
   },

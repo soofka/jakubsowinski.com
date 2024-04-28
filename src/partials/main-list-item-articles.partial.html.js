@@ -42,7 +42,7 @@ const mainListItemArticles = (
             JSON.stringify({
               src: image,
               alt: title,
-              lazy: index > 1,
+              lazy: index > 2,
             }),
           )}"></partial>`,
         )}

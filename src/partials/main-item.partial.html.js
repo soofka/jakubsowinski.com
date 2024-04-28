@@ -11,7 +11,6 @@ const mainItem = (data, dists, { content }) => `
             JSON.stringify({
               src: content.image,
               alt: content.title,
-              lazy: false,
             }),
           )}"></partial>
           <h4>${content.description}</h4>
