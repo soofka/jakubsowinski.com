@@ -48,7 +48,7 @@ header {
   padding: 0;
   background: var(--off-bg-2);
   border-bottom: 1px solid var(--off-bg);
-  box-shadow: 0 0 8px 4px var(--off-bg);
+  box-shadow: 0 0 4px 2px var(--black);
 }
 header nav {
   display: flex;
@@ -209,7 +209,7 @@ h1.architect-fg,
 h1 .architect-fg,
 h2.architect-fg,
 h2 .architect-fg {
-  text-shadow: 1px 2px var(--architect-bg);
+  text-shadow: 2px 2px var(--architect-bg);
 }
 li.architect-fg::marker {
   color: var(--architect-fg);
@@ -221,7 +221,7 @@ h1.developer-fg,
 h1 .developer-fg,
 h2.developer-fg,
 h2 .developer-fg {
-  text-shadow: 1px 2px var(--developer-bg);
+  text-shadow: 2px 2px var(--developer-bg);
 }
 li.developer-fg::marker {
   color: var(--developer-fg);
@@ -233,7 +233,7 @@ h1.leader-fg,
 h1 .leader-fg,
 h2.leader-fg,
 h2 .leader-fg {
-  text-shadow: 1px 2px var(--leader-bg);
+  text-shadow: 2px 2px var(--leader-bg);
 }
 li.leader-fg::marker {
   color: var(--leader-fg);
@@ -245,7 +245,7 @@ h1.teacher-fg,
 h1 .teacher-fg,
 h2.teacher-fg,
 h2 .teacher-fg {
-  text-shadow: 1px 2px var(--teacher-bg);
+  text-shadow: 2px 2px var(--teacher-bg);
 }
 li.teacher-fg::marker {
   color: var(--teacher-fg);
@@ -254,53 +254,45 @@ li.teacher-fg::marker {
   color: var(--white) !important;
   background: var(--architect-bg) !important;
   border-color: var(--architect-bg) !important;
-  text-shadow: 1px 1px var(--architect-fg);
+  text-shadow: 1px 1px var(--black);
 }
 .button.architect-bg:hover,
 .button.architect-bg:focus,
 .button.architect-bg:active {
   background: var(--architect-fg) !important;
-  text-shadow: 1px 1px var(--architect-bg);
-  box-shadow: 0 0 1px 2px var(--architect-bg);
 }
 .developer-bg {
   color: var(--white) !important;
   background: var(--developer-bg) !important;
   border-color: var(--developer-bg) !important;
-  text-shadow: 1px 1px var(--developer-fg);
+  text-shadow: 1px 1px var(--black);
 }
 .button.developer-bg:hover,
 .button.developer-bg:focus,
 .button.developer-bg:active {
   background: var(--developer-fg) !important;
-  text-shadow: 1px 1px var(--developer-bg);
-  box-shadow: 0 0 1px 2px var(--developer-bg);
 }
 .leader-bg {
   color: var(--white) !important;
   background: var(--leader-bg) !important;
   border-color: var(--leader-bg) !important;
-  text-shadow: 1px 1px var(--leader-fg);
+  text-shadow: 1px 1px var(--black);
 }
 .button.leader-bg:hover,
 .button.leader-bg:focus,
 .button.leader-bg:active {
   background: var(--leader-fg) !important;
-  text-shadow: 1px 1px var(--leader-bg);
-  box-shadow: 0 0 1px 2px var(--leader-bg);
 }
 .teacher-bg {
   color: var(--white) !important;
   background: var(--teacher-bg) !important;
   border-color: var(--teacher-bg) !important;
-  text-shadow: 1px 1px var(--teacher-fg);
+  text-shadow: 1px 1px var(--black);
 }
 .button.teacher-bg:hover,
 .button.teacher-bg:focus,
 .button.teacher-bg:active {
   background: var(--teacher-fg) !important;
-  text-shadow: 1px 1px var(--teacher-bg);
-  box-shadow: 0 0 1px 2px var(--teacher-bg);
 }
 
 /* desktop */

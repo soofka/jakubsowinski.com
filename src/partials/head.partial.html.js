@@ -20,11 +20,11 @@ const head = (
       : `${image.substring(0, image.lastIndexOf("."))}-*${image.substring(image.lastIndexOf("."))}`
     : "images/me1-960x960.jpg";
 
-  let canonicalUrl = data.url;
-  const alternateUrls = [];
+  let canonicalUrl = "";
+  let alternateUrls = [];
   if (url) {
     if (template === "slides") {
-      canonicalUrl += url || "";
+      canonicalUrl = url || "";
     } else {
       if (url.endsWith("/index")) {
         if (url === `/${data.langs[0]}/index`) {
@@ -32,13 +32,13 @@ const head = (
             .filter((l) => l !== lang)
             .map((l) => ({ lang: l, url: `/${l}` }));
         } else {
-          canonicalUrl += `/${lang}`;
+          canonicalUrl = `/${lang}`;
           alternateUrls = data.langs
             .filter((l) => l !== lang)
             .map((l) => ({ lang: l, url: l === data.langs[0] ? "" : `/${l}` }));
         }
       } else {
-        canonicalUrl += url || "";
+        canonicalUrl = url || "";
         alternateUrls = data.langs
           .filter((l) => l !== lang)
           .map((l) => ({
@@ -70,17 +70,13 @@ const head = (
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="color-scheme" content="${data.themes.map((theme) => theme.name).join(" ")}">
 
-      ${
-        url
-          ? `<link rel="canonical" href="${canonicalUrl}" />
-            ${alternateUrls
-              .map(
-                (alt) =>
-                  `<link rel="alternate" href="${alt.url}" hreflang="${alt.lang}" />`,
-              )
-              .join("")}`
-          : ""
-      }
+      ${canonicalUrl ? `<link rel="canonical" href="${data.url}${canonicalUrl}" />` : ""}
+      ${alternateUrls
+        .map(
+          (alt) =>
+            `<link rel="alternate" href="${data.url}${alt.url}" hreflang="${alt.lang}" />`,
+        )
+        .join("")}
 
       ${getDistsByPaths(
         dists,

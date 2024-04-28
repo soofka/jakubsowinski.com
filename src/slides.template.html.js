@@ -16,7 +16,9 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
     <body class="${type}">
       <main class="reveal">
         <div class="slides">
-          <partial name="slide"></partial>
+          <partial name="slide">
+            <small>Pres &rarr; to see first slide</small>
+          </partial>
           <partial name="slide">
             <partial name="img" src="me1.jpg"></partial>
             <h2>Jakub Sowiński</h2>
@@ -34,7 +36,9 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
               <a href="https://swn.ski" target="_blank">swn.ski</a> | <partial name="link-email"></partial>
             </p>
           </partial>
-          <partial name="slide"></partial>
+          <partial name="slide">
+            <small>Pres &larr; to see last slide</small>
+          </partial>
         </div>
       </main>
       <partial name="scripts" data="${encodeURI(
