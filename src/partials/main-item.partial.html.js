@@ -5,10 +5,10 @@ const mainItem = (data, dists, { name, lang, content: { item, allItems } }) => {
   let itemClassName;
   if (name === "article") {
     parentPageName = "articles";
-    itemClassName = "architect";
+    itemClassName = "architect-fg";
   } else if (name === "post") {
     parentPageName = "blog";
-    itemClassName = "developer";
+    itemClassName = "developer-fg";
   }
   return `
     <section>

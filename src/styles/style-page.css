@@ -304,6 +304,9 @@ li.teacher-fg::marker {
 .button.teacher-bg:active {
   background: var(--teacher-fg) !important;
 }
+body.item h4 {
+  text-align: justify;
+}
 
 /* desktop */
 @media (min-width: 768px) {

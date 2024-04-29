@@ -265,6 +265,14 @@ const parseTitleToUrl = (title) =>
         .replaceAll("ś", "s")
         .replaceAll("ź", "z")
         .replaceAll("ż", "z")
-        .replaceAll(" - ", "-")
+        .replaceAll(" ‐ ", "-")
+        .replaceAll(" ‒ ", "-")
+        .replaceAll(" – ", "-")
+        .replaceAll(" — ", "-")
+        .replaceAll(" ― ", "-")
+        .replaceAll(" − ", "-")
+        .replaceAll(new RegExp("[^a-zA-Z0-9]", "g"), " ")
+        .replaceAll(new RegExp("\\s+", "g"), " ")
+        .replaceAll(new RegExp("\\s+", "g"), "-")
         .replaceAll(new RegExp("[^a-zA-Z0-9]", "g"), "-")
-    : title;
+    : "";
