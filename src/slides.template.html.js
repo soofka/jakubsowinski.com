@@ -17,7 +17,10 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
       <main class="reveal">
         <div class="slides">
           <partial name="slide">
-            <p class="center"><small>Press right arrow key to see first slide</small></p>
+            <p class="center">
+              <small>Press → to see first slide</small>
+              <small>Press ESC to see all slides</small>
+            </p>
           </partial>
           <partial name="slide">
             <partial name="img" src="me1.jpg"></partial>
@@ -37,7 +40,10 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
             </p>
           </partial>
           <partial name="slide">
-            <p class="center"><small>Press left arrow key to see last slide</small></p>
+            <p class="center">
+              <small>Press ← to see last slide</small>
+              <small>Press ESC to see all slides</small>
+            </p>
           </partial>
         </div>
       </main>

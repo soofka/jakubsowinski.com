@@ -16,7 +16,8 @@ const footer = (data, dists, { lang, type }) =>
                   <partial name="link-email"><h3 id="contact-mail">
                     ${data.labels[lang].pages.home.contact.head}: __EMAIL__
                   </h3></partial>
-                </div>`
+                </div>
+                <partial name="scroll-top"></partial>`
               : ""
           }
           <p>

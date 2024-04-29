@@ -76,7 +76,10 @@ export const getRouting = (langs, labels, data) => {
         title: article.title,
         description: article.description,
         image: article.image,
-        content: article,
+        content: {
+          item: article,
+          allItems: data.articles,
+        },
       });
     }
 
@@ -114,7 +117,10 @@ export const getRouting = (langs, labels, data) => {
         title: post.title,
         description: post.description,
         image: post.image,
-        content: post,
+        content: {
+          item: post,
+          allItems: data.blog,
+        },
       });
     }
 

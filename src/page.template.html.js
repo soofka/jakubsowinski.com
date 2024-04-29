@@ -25,10 +25,11 @@ const page = (
           lang,
         }),
       )}"></partial>
-      <partial name="main-${type}" data="${encodeURI(
+      <partial name="main" data="${encodeURI(
         JSON.stringify({
           name,
           lang,
+          type,
           content,
         }),
       )}"></partial>

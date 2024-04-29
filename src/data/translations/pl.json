@@ -66,8 +66,14 @@
       "title": "Artykuły",
       "publishedBy": "opublikowano na łamach"
     },
+    "article": {
+      "others": "Inne artykuły"
+    },
     "blog": {
       "title": "Blog"
+    },
+    "post": {
+      "others": "Inne wpisy"
     },
     "courses": {
       "title": "Szkolenia",

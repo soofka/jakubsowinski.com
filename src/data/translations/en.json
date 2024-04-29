@@ -66,8 +66,14 @@
       "title": "Articles",
       "publishedBy": "published by"
     },
+    "article": {
+      "others": "Other articles"
+    },
     "blog": {
       "title": "Blog"
+    },
+    "post": {
+      "others": "Other blog posts"
     },
     "courses": {
       "title": "Courses",

@@ -1,7 +1,7 @@
 body.home .row .col.col-1 {
   order: -1;
 }
-body.home section {
+body.home section:not(#scroll-top) {
   min-height: 100vh;
 }
 body.home section#intro article h1 {
