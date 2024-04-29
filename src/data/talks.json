@@ -4,7 +4,7 @@
     "description": "At Stepstone we face an interesting, technical challenge: how to build a single, global platform for a collection of distinct, separate job board brands to run on. In this talk, we will explore our learnings from a couple of years of experience with micro frontend architecture as a potential solution to this challenge.",
     "date": "2023-06",
     "langs": ["en"],
-    "event": "Axel Springer Media & Tech 2023",
+    "event": "Axel Springer Media & Tech Con 2023",
     "place": {
       "en": "Berlin, Germany",
       "pl": "Berlin, Niemcy"

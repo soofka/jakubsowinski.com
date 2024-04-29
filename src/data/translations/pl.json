@@ -15,7 +15,7 @@
       "intro": {
         "head": "Cześć!",
         "lead": "Jestem Jakub i interesuję się oprogramowaniem. Pracuję jako architekt rozwiązań, programista, nauczyciel programowania i techniczny lider. Witaj w moim zakątku Internetu!",
-        "text": "Jeśli chcesz mnie zatrudnić, <a href=\"#contact\">wyślij mi wiadomość</a>. Jeśli jeszcze nie wiesz, że chcesz mnie zatrudnić, zapoznaj się z moim CV lub przeczytaj więcej na temat mojej pracy. W innym wypadku, zapraszam do korzystania z owoców mojej pracy, takich, jak moje projekty, wystąpienia, artykułu, szkolenia i wpisy na blogu. Peace!",
+        "text": "Jeśli chcesz mnie zatrudnić, <a href=\"#contact\">wyślij mi wiadomość</a>. Jeśli jeszcze nie wiesz, że chcesz mnie zatrudnić, zapoznaj się z moim CV lub przeczytaj więcej na temat mojej pracy. W innym wypadku, zapraszam do korzystania z owoców mojej pracy, takich, jak moje projekty, wystąpienia, artykuły, szkolenia i wpisy na blogu. Peace!",
         "buttons": {
           "cv": "Moje CV",
           "info": "Więcej na temat mojej pracy",
@@ -110,7 +110,6 @@
     "multipleAvailableLangs": "Ta treść jest dostępna w językach",
     "availableLangs_en": "angielskim",
     "availableLangs_pl": "polskim",
-    "and": "i",
-    "allRightsReserved": "wszelkie prawa zastrzeżone"
+    "and": "i"
   }
 }

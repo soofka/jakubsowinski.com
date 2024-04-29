@@ -27,7 +27,7 @@ const footer = (data, dists, { lang, type }) =>
           </p>
           <p><small>
             <partial name="logo"></partial> 2007-${new Date().getFullYear()}
-            | <a href="https://europa.eu/youreurope/business/running-business/intellectual-property/copyright/index_en.htm" target="_blank">${data.labels[lang].misc.allRightsReserved}</a>
+            | built with <a href="https://github.com/soofka/swappi" target="_blank">swappi</a>
             | <a href="https://github.com/soofka/swn.ski" target="_blank">repo</a>
           </small></p>
         </article>
