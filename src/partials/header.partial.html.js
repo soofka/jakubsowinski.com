@@ -46,9 +46,9 @@ const getMenuLink = (pageName, currentPageName, lang, labels) =>
       ? "active"
       : ""
   }">
-    <partial name="link" data="${encodeURI(
-      JSON.stringify({ pageId: `${pageName}-${lang}` }),
-    )}">${labels[lang].nav[pageName]}</partial>
+    <partial name="link" pageId="${`${pageName}-${lang}`}">
+      ${labels[lang].pages[pageName].title}
+    </partial>
   </li>`;
 
 export default header;

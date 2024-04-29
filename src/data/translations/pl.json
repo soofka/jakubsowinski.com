@@ -2,16 +2,9 @@
   "meta": {
     "description": "Jakub Sowiński - architekt rozwiązań, programista, nauczyciel programowania, techniczny lider"
   },
-  "nav": {
-    "home": "home",
-    "articles": "artykuły",
-    "blog": "blog",
-    "courses": "szkolenia",
-    "projects": "projekty",
-    "talks": "wystąpienia"
-  },
   "pages": {
     "home": {
+      "title": "Home",
       "intro": {
         "head": "Cześć!",
         "lead": "Jestem Jakub i interesuję się oprogramowaniem. Pracuję jako architekt rozwiązań, programista, nauczyciel programowania i techniczny lider. Witaj w moim zakątku Internetu!",

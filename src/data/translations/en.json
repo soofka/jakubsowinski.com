@@ -2,16 +2,9 @@
   "meta": {
     "description": "Jakub Sowiński - solution architect, software developer, programming teacher, and technical leader"
   },
-  "nav": {
-    "home": "home",
-    "articles": "articles",
-    "blog": "blog",
-    "courses": "courses",
-    "projects": "projects",
-    "talks": "talks"
-  },
   "pages": {
     "home": {
+      "title": "Home",
       "intro": {
         "head": "Hello!",
         "lead": "My name is Jakub and I'm a software enthusiast. I work as a solution architect, software developer, programming teacher, and technical leader. Welcome to my corner of the Internet!",
