@@ -21,7 +21,25 @@ const mainItem = (data, dists, { name, lang, content: { item, allItems } }) => {
           </partial>
         </small></p>
         <h2>${item.title}</h2>
-        <p class="right">${item.date}</p>
+        <partial name="item-meta" data="${encodeURI(
+          JSON.stringify({
+            lang,
+            date: item.date,
+            items: [
+              name === "article"
+                ? [
+                    `${data.labels[lang].pages.articles.publishedBy} ${item.publications
+                      .map(
+                        (publication) =>
+                          `<a href="${publication.url}" target="_blank">${publication.name}</a>`,
+                      )
+                      .join(", ")}`,
+                  ]
+                : [],
+            ],
+            langs: item.langs,
+          }),
+        )}"></partial>
         <article>
           <partial name="img" data="${encodeURI(
             JSON.stringify({

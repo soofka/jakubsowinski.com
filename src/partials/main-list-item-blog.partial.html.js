@@ -1,11 +1,7 @@
 const mainListItemBlog = (
   data,
   dists,
-  {
-    lang,
-    index,
-    item: { id, title, image, date, descriptionElement, langsNoteElement },
-  },
+  { lang, index, item: { id, title, description, image, date, langs } },
 ) => {
   const getPostLink = (link) =>
     `<partial name="link" data="${encodeURI(
@@ -16,8 +12,13 @@ const mainListItemBlog = (
     <div class="row">
       <div class="col col-2">
         ${getPostLink(`<h3>${title}</h3>`)}
-        <h4>${date}</h4>
-        ${langsNoteElement}
+        <partial name="item-meta" data="${encodeURI(
+          JSON.stringify({
+            lang,
+            date,
+            langs,
+          }),
+        )}"></partial>
       </div>
       <div class="col col-1">
         ${getPostLink(
@@ -32,7 +33,7 @@ const mainListItemBlog = (
         </partial>
       </div>
     </div>
-    ${descriptionElement}
+    <p>${description}</p>
     ${getPostLink(`<p>${data.labels[lang].misc.continueReading}</p>`)}
   </article>`;
 };

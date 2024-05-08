@@ -6,16 +6,7 @@ const mainListItemTalks = (
   {
     lang,
     index,
-    item: {
-      title,
-      date,
-      event,
-      place,
-      recording,
-      slides,
-      descriptionElement,
-      langsNoteElement,
-    },
+    item: { title, description, date, langs, event, place, recording, slides },
   },
 ) => {
   let sideElement = `<partial name="img" data="${encodeURI(
@@ -26,7 +17,7 @@ const mainListItemTalks = (
     }),
   )}"></partial>`;
 
-  const metaSecondRowItems = [];
+  const metaItems = [[event, place[lang]], []];
   if (recording) {
     const recordingsArray = [];
     if (recording.youtube) {
@@ -43,7 +34,7 @@ const mainListItemTalks = (
       );
     }
     if (recordingsArray.length > 0) {
-      metaSecondRowItems.push(
+      metaItems[1].push(
         `${data.labels[lang].pages.talks.recording}: ${recordingsArray.join(", ")}`,
       );
     }
@@ -61,7 +52,7 @@ const mainListItemTalks = (
       );
     }
     if (slidesArray.length > 0) {
-      metaSecondRowItems.push(
+      metaItems[1].push(
         `${data.labels[lang].pages.talks.slides}: ${slidesArray.join(", ")}`,
       );
     }
@@ -70,15 +61,20 @@ const mainListItemTalks = (
     <div class="row">
       <div class="col col-2">
         <h3>${title}</h3>
-        <h4>${date} | ${event}, ${place[lang]}</h4>
-        ${metaSecondRowItems.length === 0 ? "" : `<h4>${metaSecondRowItems.join(" | ")}</h4>`}
-        ${langsNoteElement}
+        <partial name="item-meta" data="${encodeURI(
+          JSON.stringify({
+            lang,
+            date,
+            items: metaItems,
+            langs,
+          }),
+        )}"></partial>
       </div>
       <div class="col col-1">
         ${sideElement}
       </div>
     </div>
-    ${descriptionElement}
+    <p>${description}</p>
   </article>`;
 };
 

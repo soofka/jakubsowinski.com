@@ -4,14 +4,7 @@ const mainListItemCourses = (
   {
     lang,
     index,
-    item: {
-      title,
-      date,
-      clients = [],
-      content = [],
-      descriptionElement,
-      langsNoteElement,
-    },
+    item: { title, description, date, langs, clients = [], content = [] },
   },
 ) => {
   const clientsArray =
@@ -23,13 +16,26 @@ const mainListItemCourses = (
     <div class="row">
       <div class="col col-2">
         <h3>${title}</h3>
-        <h4>${date}${
-          clientsArray.length > 0
-            ? ` | ${data.labels[lang].pages.courses.taughtFor} ${clientsArray.join(", ")}`
-            : ""
-        }</h4>
-        ${descriptionElement}
-        ${langsNoteElement}
+        <partial name="item-meta" data="${encodeURI(
+          JSON.stringify({
+            lang,
+            date,
+            items: [
+              ((arr) =>
+                arr.length > 0
+                  ? [
+                      `${data.labels[lang].pages.courses.taughtFor} ${arr.join(", ")}`,
+                    ]
+                  : [])(
+                typeof clients === "object" && Object.hasOwn(clients, lang)
+                  ? clients[lang]
+                  : clients,
+              ),
+            ],
+            langs,
+          }),
+        )}"></partial>
+        <p>${description}</p>
         <div class="buttons desktop-only">
           <partial name="link-email" subject="${title}" class="button ${index % 2 === 0 ? "leader" : "teacher"}-bg">
             ${data.labels[lang].pages.courses.buy}

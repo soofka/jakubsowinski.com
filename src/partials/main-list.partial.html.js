@@ -17,34 +17,11 @@ const mainList = (data, dists, { name, lang, content = [], title }) => `
                     Object.hasOwn(item.title, lang)
                       ? item.title[lang]
                       : item.title,
-                  descriptionElement: ((description) =>
-                    description.charAt(0) === "<"
-                      ? description
-                      : `<p>${description}</p>`)(
+                  description:
                     typeof item.description === "object" &&
-                      Object.hasOwn(item.description, lang)
+                    Object.hasOwn(item.description, lang)
                       ? item.description[lang]
                       : item.description,
-                  ),
-                  langsNoteElement:
-                    item.langs && Array.isArray(item.langs)
-                      ? `<p><small>${
-                          item.langs.length === 1
-                            ? data.labels[lang].misc.oneAvailableLang
-                            : data.labels[lang].misc.multipleAvailableLangs
-                        } ${item.langs
-                          .map(
-                            (itemLang) =>
-                              data.labels[lang].misc[
-                                `availableLangs_${itemLang}`
-                              ],
-                          )
-                          .join(
-                            item.langs.length === 2
-                              ? ` ${data.labels[lang].misc.and} `
-                              : ", ",
-                          )}</small></p>`
-                      : "",
                 },
               }),
             )}"></partial>`,

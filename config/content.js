@@ -1,3 +1,5 @@
+import { parse as parseMarkdown } from "marked";
+
 export const getContent = async (langs) => {
   const labels = {};
   for (let lang of langs) {
@@ -56,6 +58,21 @@ export const getContent = async (langs) => {
   data.cv.projects = [];
   for (let project of data.projects) {
     if (project.github) {
+      const readme = await (
+        await fetch(
+          `https://raw.githubusercontent.com/soofka/${project.github}/master/README.md`,
+        )
+      ).text();
+      const descriptionStartIndex = readme.indexOf("<!---description_start-->");
+      const descriptionEndIndex = readme.indexOf("<!---description_end-->");
+      if (descriptionStartIndex >= 0 && descriptionEndIndex >= 0) {
+        project.description = parseMarkdown(
+          readme
+            .substring(descriptionStartIndex + 25, descriptionEndIndex)
+            .trim(),
+        );
+      }
+
       const { forks_count = 0, stargazers_count = 0 } = await (
         await fetch(`https://api.github.com/repos/soofka/${project.github}`)
       ).json();

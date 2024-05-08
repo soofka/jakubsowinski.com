@@ -4,15 +4,7 @@ const mainListItemArticles = (
   {
     lang,
     index,
-    item: {
-      id,
-      title,
-      image,
-      date,
-      publications,
-      descriptionElement,
-      langsNoteElement,
-    },
+    item: { id, title, description, image, date, langs, publications },
   },
 ) => {
   const getArticleLink = (link) =>
@@ -24,17 +16,25 @@ const mainListItemArticles = (
     <div class="row">
       <div class="col col-2">
         ${getArticleLink(`<h3>${title}</h3>`)}
-        <h4>${date}${
-          publications && publications.length > 0
-            ? ` | ${data.labels[lang].pages.articles.publishedBy} ${publications
-                .map(
-                  (publication) =>
-                    `<a href="${publication.url}" target="_blank">${publication.name}</a>`,
-                )
-                .join(", ")}`
-            : ""
-        }</h4>
-        ${langsNoteElement}
+        <partial name="item-meta" data="${encodeURI(
+          JSON.stringify({
+            lang,
+            date,
+            items: [
+              publications && publications.length > 0
+                ? [
+                    `${data.labels[lang].pages.articles.publishedBy} ${publications
+                      .map(
+                        (publication) =>
+                          `<a href="${publication.url}" target="_blank">${publication.name}</a>`,
+                      )
+                      .join(", ")}`,
+                  ]
+                : [],
+            ],
+            langs,
+          }),
+        )}"></partial>
       </div>
       <div class="col col-1">
         ${getArticleLink(
@@ -49,7 +49,7 @@ const mainListItemArticles = (
         </partial>
       </div>
     </div>
-    ${descriptionElement}
+    <p>${description}</p>
     ${getArticleLink(`<p>${data.labels[lang].misc.continueReading}</p>`)}
   </article>`;
 };
