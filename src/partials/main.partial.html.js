@@ -8,7 +8,7 @@ const main = (data, dists, { name, lang, type, content }) => `
       }),
     )}"></partial>
     ${
-      type === "home"
+      type === "home" || type === "error"
         ? ""
         : `<section id="scroll-top">
             <div class="wrapper">
