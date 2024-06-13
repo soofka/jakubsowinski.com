@@ -12,7 +12,7 @@ const header = (data, dists, { url, name, lang }) =>
           )}">
             <h4><partial name="logo"></partial></h4>
           </partial>
-          <button id="menu-toggle" aria-label="Menu"></button>
+          <button id="menu-toggle" aria-label="Menu" ontouchstart></button>
         </div>
         <div id="menu">
           <ul class="horizontal-list">
