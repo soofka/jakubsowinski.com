@@ -25,14 +25,14 @@ body.home section#intro article h1 .name {
   opacity: 0;
   animation: 3s ease-in-out disappear;
 }
-body.home section#intro article h1 .mail {
+body.home section#intro article h1 .website {
   animation: 3s ease-in-out appear;
 }
 body.home section#intro article h1:hover .name {
   width: 2ch;
   opacity: 1;
 }
-body.home section#intro article h1:hover .mail {
+body.home section#intro article h1:hover .website {
   width: 0;
   opacity: 0;
 }

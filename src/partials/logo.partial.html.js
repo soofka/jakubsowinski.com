@@ -1,4 +1,4 @@
 const logo = (data, dists, {}) =>
-  '<span class="logo"><span class="developer-fg">so<u style="text-decoration:var(--leader-fg) solid underline">win</u>ski</span><span class="teacher-fg">.</span><span class="architect-fg">ai</span></span>';
+  '<span class="logo"><span class="architect-fg">jakub<span class="developer-fg">sowinski</span><span class="teacher-fg">.</span><span class="leader-fg">com</span></span>';
 
 export default logo;

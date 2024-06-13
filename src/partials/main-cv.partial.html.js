@@ -2,11 +2,11 @@ import { getDistByPath } from "../helpers/index.js";
 
 const mainCv = (data, dists, { lang, content }) => `
   <div id="cv-controls">
-    <button onclick="javascript:window.print()">
-      <small>${data.labels[lang].pages.cv.print}</small>
+    <button class="teacher-bg" onclick="javascript:window.print()">
+      ${data.labels[lang].pages.cv.print}
     </button>
-    <a class="button" href="${getDistByPath(dists, `Jakub_Sowinski_Resume.pdf`).rel}" target="_blank">
-      <small>${data.labels[lang].pages.cv.download}</small>
+    <a class="button leader-bg" href="${getDistByPath(dists, `Jakub_Sowinski_Resume.pdf`).rel}" target="_blank">
+      ${data.labels[lang].pages.cv.download}
     </a>
   </div>
   <section id="intro">

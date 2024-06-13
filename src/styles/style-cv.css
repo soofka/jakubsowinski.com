@@ -1,13 +1,16 @@
 #cv-controls {
   position: fixed;
-  left: 0;
+  left: var(--gap);
   bottom: 0;
   display: flex;
   flex-flow: row wrap;
+  gap: var(--gap);
+  z-index: 1;
 }
 #cv-controls button,
 #cv-controls .button {
   padding: 0 var(--gap);
+  margin: 0;
 }
 .tags {
   width: 100%;
@@ -28,11 +31,6 @@ section#intro h4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-}
-section#intro h3 {
-  column-gap: calc(4 * var(--gap));
-}
-section#intro h4 {
   column-gap: calc(2 * var(--gap));
 }
 section#intro h3 span,
@@ -41,6 +39,8 @@ section#intro h4 span {
 }
 @media (min-width: 768px) {
   #cv-controls {
+    left: 0;
+    bottom: var(--gap);
     flex-direction: column;
   }
 }

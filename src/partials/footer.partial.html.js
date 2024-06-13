@@ -21,14 +21,13 @@ const footer = (data, dists, { lang, type }) =>
               : ""
           }
           <p>
-            <partial name="link-email"></partial>
+            <partial name="link-email">mail</partial>
             | <a href="https://linkedin.com/in/jakub-sowi%C5%84ski/" target="_blank">linkedin</a>
             | <a href="https://github.com/soofka/" target="_blank">github</a>
             | <a href="https://last.fm/user/soofka/" target="_blank">last.fm</a>
           </p>
           <p><small>
             <partial name="logo"></partial> 2007-${new Date().getFullYear()}
-            | built with <a href="https://github.com/soofka/swappi" target="_blank">swappi</a>
             | <a href="https://github.com/soofka/swn.ski" target="_blank">repo</a>
           </small></p>
         </article>

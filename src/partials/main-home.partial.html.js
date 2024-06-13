@@ -2,27 +2,26 @@ const mainHome = (data, dists, { lang }) => `
   <section id="intro">
     <div class="wrapper">
       <article>
-        <a class="plain" href="#contact">
-          <h1>
-            <span class="architect-fg">J</span>
-            <span class="leader-fg mail">@</span>
-            <span class="architect-fg name">A</span>
-            <span class="architect-fg name">K</span>
-            <span class="architect-fg name">U</span>
-            <span class="architect-fg name">B</span>
-            <span class="developer-fg">S</span>
-            <span class="developer-fg">O</span>
-            <span class="developer-fg">W</span>
-            <span class="developer-fg">I</span>
-            <span class="developer-fg">N</span>
-            <span class="developer-fg">S</span>
-            <span class="developer-fg">K</span>
-            <span class="developer-fg">I</span>
-            <span class="teacher-fg mail">.</span>
-            <span class="architect-fg mail">A</span>
-            <span class="architect-fg mail">I</span>
-          </h1>
-        </a>
+        <h1>
+          <span class="architect-fg">J</span>
+          <span class="architect-fg">A</span>
+          <span class="architect-fg">K</span>
+          <span class="architect-fg">U</span>
+          <span class="architect-fg">B</span>
+          <span class="teacher-fg name">_</span>
+          <span class="developer-fg">S</span>
+          <span class="developer-fg">O</span>
+          <span class="developer-fg">W</span>
+          <span class="developer-fg">I</span>
+          <span class="developer-fg">N</span>
+          <span class="developer-fg">S</span>
+          <span class="developer-fg">K</span>
+          <span class="developer-fg">I</span>
+          <span class="teacher-fg website">.</span>
+          <span class="leader-fg website">C</span>
+          <span class="leader-fg website">O</span>
+          <span class="leader-fg website">M</span>
+        </h1>
         <div class="row">
           <div class="col col-2">
             <h2>${data.labels[lang].pages.home.intro.head}</h2>

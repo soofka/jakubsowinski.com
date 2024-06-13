@@ -1,8 +1,10 @@
-# swn.ski
+# jakubsowinski.com
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f65ced6a-ddf4-4f1f-8327-a28895f91d97/deploy-status)](https://app.netlify.com/sites/jakubsowinski/deploys)
+
+Jakub Sowiński's personal website.
 
 ## todo:
-
-### backlog
 
 - tags for posts/articles + related posts/articles
 - integration strategies article
