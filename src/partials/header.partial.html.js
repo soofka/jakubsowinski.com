@@ -1,6 +1,7 @@
 const header = (data, dists, { url, name, lang }) =>
   `<header>
     <div class="wrapper">
+      <label for="menu-toggle-state" id="menu-backdrop"> </label>
       <nav>
         <div id="controls">
           <partial name="link" data="${encodeURI(
@@ -13,7 +14,7 @@ const header = (data, dists, { url, name, lang }) =>
             <h4><partial name="logo"></partial></h4>
           </partial>
           <input type="checkbox" id="menu-toggle-state" />
-          <label for="menu-toggle-state" id="menu-toggle" class="button" aria-label="Menu"></label>
+          <label for="menu-toggle-state" id="menu-toggle" class="button" aria-label="Menu"> </label>
         </div>
         <div id="menu">
           <ul class="horizontal-list">
