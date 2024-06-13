@@ -2,7 +2,7 @@
   "workExperience": [
     {
       "title": "Solution Architect",
-      "company": "Procter & Gamble (Connectis)",
+      "company": "Connectis",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
@@ -37,7 +37,7 @@
         "github",
         "scrum"
       ],
-      "description": "<p>As a solution architect in Procter & Gamble, I am responsible for providing architectural support and expertise to multiple product development teams, building a number of internal tools, mainly for marketing purposes. It is my responsibility to understand client's requirements, design and document software structure, development processes, standards, good practices, and all technical decisions, and then help product development teams implement solution according to the plan by guiding, teaching, negotiating, and drawing from my experience to combat day to day software development complexity, all while cooperating with central enterprise architecture body in order to ensure compliance with wider company standards when it comes to software development.</p><p>Due to the nature of the product and company organizational structure, I work with multiple tech stacks across multiple projects. Majority of them utilize some kind of modern, distributed architecture, such as service-oriented or event-driven one, deployed to Azure or Google Cloud (less frequently). Due to the fact that majority applications built by my teams have a requirement to support multiple brandings from single, highly configurable codebase, microfrontends architecture and internal design system often employed.</p>",
+      "description": "<p>As a solution architect in Connectis, I am responsible for providing architectural support and expertise to external, large, corporate clients. It is my job to understand client's requirements, design and document software structure, development processes, standards, good practices, and all technical decisions, and then help product development teams implement solution according to the plan by guiding, teaching, negotiating, and drawing from my experience to combat day to day software development complexity, all while cooperating with central enterprise architecture body in order to ensure compliance with wider company standards when it comes to software development.</p><!--<p>Due to the nature of the product and company organizational structure, I work with multiple tech stacks across multiple projects. Majority of them utilize some kind of modern, distributed architecture, such as service-oriented or event-driven one, deployed to Azure or Google Cloud (less frequently). Due to the fact that majority applications built by my teams have a requirement to support multiple brandings from single, highly configurable codebase, microfrontends architecture and internal design system often employed.</p>-->",
       "responsibilities": [
         "Designing and documenting full solution architecture for multiple projects",
         "Architectural governance for multiple scrum teams",
@@ -71,7 +71,7 @@
         "zachmann",
         "togaf"
       ],
-      "description": "<p>As a lecturer in software engineering at a university, I am responsible for creating entire course for my students, facilitating classes on a weekly basis (lectures and laboratories), and assessing progress of my students through homework and exams.</p>",
+      "description": "<p>As a lecturer in Software Architecture at PJAIT university, I am responsible for creating entire course for my students, facilitating classes on a weekly basis (lectures and laboratories), and assessing progress of my students through homework and exams.</p>",
       "responsibilities": [
         "Creating software architecture course for Master's students",
         "Facilitating classes (lectures and laboratories)",

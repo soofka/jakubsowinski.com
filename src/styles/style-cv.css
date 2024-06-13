@@ -17,13 +17,12 @@ section:first-of-type h4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  column-gap: var(--gap-rel);
 }
 section:first-of-type h3 {
-  column-gap: var(--gap-rel);
+  column-gap: calc(4 * var(--gap));
 }
 section:first-of-type h4 {
-  column-gap: var(--gap);
+  column-gap: calc(8 * var(--gap));
 }
 section:first-of-type h3 span,
 section:first-of-type h4 span {

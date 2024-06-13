@@ -101,6 +101,8 @@ const head = (
         .map((style) => `<link rel="stylesheet" href="${style.rel}">`)
         .join("")}
 
+      ${type === "cv" ? `<link rel="stylesheet" media="print" href="${getDistByPath(dists, "styles/print.css").rel}">` : ""}
+      
       ${data.themes
         .map(
           (theme, index) => `

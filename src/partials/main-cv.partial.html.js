@@ -17,7 +17,7 @@ const mainCv = (data, dists, { lang, content }) => `
       </article>
     </div>
   </section>
-  <section>
+  <section id="about">
     <div class="wrapper">
       <article>
         <h3>About me</h3>
@@ -195,13 +195,13 @@ const mainCv = (data, dists, { lang, content }) => `
           <div class="row">
             <div class="col col-1">
               <h4>Talks</h4>
-              <ul>${content.talks.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+              <ul>${content.talks.map((item) => `<li><a href="https://youtube.com/watch?v=${item.recording.youtube}" target="_blank">${item.title}</a></li>`).join("")}</ul>
             </div>
             <div class="col col-1">
               <h4>Articles</h4>
-              <ul>${content.articles.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+              <ul>${content.articles.map((item) => `<li><a href="${item.publications[0].url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
               <h4>Projects</h4>
-              <ul>${content.projects.map((item) => `<li><a href="${item.url}" target="_blank">${item.title}</a></li>`).join("")}</ul>
+              <ul>${content.projects.map((item) => `<li><a href="https://github.com/soofka/${item.github}" target="_blank">${item.title}</a></li>`).join("")}</ul>
             </div>
           </div>
         </article>

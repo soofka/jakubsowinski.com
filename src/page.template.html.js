@@ -17,7 +17,7 @@ const page = (
         image,
       }),
     )}"></partial>
-    <body class="${type}">
+    <body class="${type}" ontouchstart="">
       <partial name="header" data="${encodeURI(
         JSON.stringify({
           url,
