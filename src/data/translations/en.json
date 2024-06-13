@@ -87,7 +87,9 @@
       "noRecording": "No recording"
     },
     "cv": {
-      "title": "Resume"
+      "title": "Resume",
+      "print": "Print",
+      "download": "Download"
     },
     "error": {
       "404": {

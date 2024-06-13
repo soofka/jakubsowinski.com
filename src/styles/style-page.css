@@ -66,15 +66,22 @@ header nav #controls a#logo h4 {
 }
 header nav #controls #menu-toggle {
   width: 5ch;
-  padding: 0 var(--gap);
+  padding: var(--gap);
   border: 1px solid var(--alt-bg);
+  text-align: center;
 }
 header nav #controls #menu-toggle::before {
   content: "☰";
 }
-/* header nav #controls #menu-toggle:active::before {
-  content: "☓";
-} */
+header
+  nav:has(#controls #menu-toggle-state:checked)
+  #controls
+  #menu-toggle::before {
+  content: "✖";
+}
+header nav #controls #menu-toggle-state {
+  display: none;
+}
 header nav #menu {
   display: block;
   width: 100%;
@@ -83,9 +90,7 @@ header nav #menu {
   overflow: hidden;
   transition: max-height var(--transition-duration) var(--transition-easing);
 }
-header nav:has(#menu ul li a:focus) #menu,
-header nav:has(#menu-toggle:focus) #menu,
-header nav:has(#menu-toggle:active) #menu {
+header nav:has(#controls #menu-toggle-state:checked) #menu {
   max-height: 14rlh;
 }
 header nav #menu ul {

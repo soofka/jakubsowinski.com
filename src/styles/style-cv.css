@@ -1,3 +1,14 @@
+#cv-controls {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+#cv-controls button,
+#cv-controls .button {
+  padding: 0 var(--gap);
+}
 .tags {
   width: 100%;
   margin: 0 0 var(--gap) 0;
@@ -12,22 +23,24 @@
   background: var(--off-bg-2);
   border: 1px solid var(--alt-bg);
 }
-section:first-of-type h3,
-section:first-of-type h4 {
+section#intro h3,
+section#intro h4 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
-section:first-of-type h3 {
+section#intro h3 {
   column-gap: calc(4 * var(--gap));
 }
-section:first-of-type h4 {
-  column-gap: calc(8 * var(--gap));
+section#intro h4 {
+  column-gap: calc(2 * var(--gap));
 }
-section:first-of-type h3 span,
-section:first-of-type h4 span {
+section#intro h3 span,
+section#intro h4 span {
   white-space: nowrap;
 }
-section:first-of-type h3 span::before {
-  content: "» ";
+@media (min-width: 768px) {
+  #cv-controls {
+    flex-direction: column;
+  }
 }

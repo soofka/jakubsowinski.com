@@ -107,6 +107,7 @@ button,
   cursor: pointer;
   font-family: var(--sans-serif);
   font-size: 1rem;
+  line-height: 1.77;
   text-decoration: none;
   margin: 0;
   padding: calc(2 * var(--gap)) calc(4 * var(--gap));
@@ -125,6 +126,7 @@ button:active,
   box-shadow: 0 0 1px 2px var(--off-bg-2);
 }
 small,
+label,
 figcaption {
   font-size: 0.85rem;
   margin: 0;

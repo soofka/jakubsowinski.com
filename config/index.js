@@ -16,11 +16,11 @@ export const config = {
   verbosity: 8,
 
   data: {
-    name: "sowinski.it",
+    name: "sowinski.ai",
     type: "website",
-    url: "https://sowinski.it",
+    url: "https://sowinski.ai",
     author: "Jakub Sowiński",
-    email: "j@sowinski.it",
+    email: "j@sowinski.ai",
     langs,
     themes,
     colors,

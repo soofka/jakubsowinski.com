@@ -1,18 +1,28 @@
+import { getDistByPath } from "../helpers/index.js";
+
 const mainCv = (data, dists, { lang, content }) => `
-  <section>
+  <div id="cv-controls">
+    <button onclick="javascript:window.print()">
+      <small>${data.labels[lang].pages.cv.print}</small>
+    </button>
+    <a class="button" href="${getDistByPath(dists, `Jakub_Sowinski_Resume.pdf`).rel}" target="_blank">
+      <small>${data.labels[lang].pages.cv.download}</small>
+    </a>
+  </div>
+  <section id="intro">
     <div class="wrapper">
       <article>
         <h1>Jakub Sowiński</h1>
         <h3>
-          <span class="architect-fg">architect</span
-          ><span class="developer-fg">developer</span
-          ><span class="leader-fg">leader</span
-          ><span class="teacher-fg">teacher</span>
+          <span class="architect-fg">» architect</span>
+          <span class="developer-fg">» developer</span>
+          <span class="leader-fg">» leader</span>
+          <span class="teacher-fg">» teacher</span>
         </h3>
         <h4>
-          <span><a href="https://www.google.com/maps/place/Warsaw"target="_blank">Warsaw, Poland</a></span>
-          <span><a href="https://swn.ski/" target="_blank">www.swn.ski</a></span>
-          <span><partial name="link-email"></partial></span>
+          <span>⛿ <a href="https://www.google.com/maps/place/Warsaw"target="_blank">Warsaw, Poland</a></span>
+          <span>⌨ <a href="${data.url}" target="_blank">${data.url.replace("https://", "")}</a></span>
+          <span>✉ <partial name="link-email"></partial></span>
         </h4>
       </article>
     </div>

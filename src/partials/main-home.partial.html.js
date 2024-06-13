@@ -19,8 +19,8 @@ const mainHome = (data, dists, { lang }) => `
             <span class="developer-fg">K</span>
             <span class="developer-fg">I</span>
             <span class="teacher-fg mail">.</span>
+            <span class="architect-fg mail">A</span>
             <span class="architect-fg mail">I</span>
-            <span class="architect-fg mail">T</span>
           </h1>
         </a>
         <div class="row">

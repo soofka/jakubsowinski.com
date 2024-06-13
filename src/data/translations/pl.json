@@ -87,7 +87,9 @@
       "noRecording": "Brak nagrania"
     },
     "cv": {
-      "title": "CV"
+      "title": "CV",
+      "print": "Drukuj",
+      "download": "Pobierz"
     },
     "error": {
       "404": {

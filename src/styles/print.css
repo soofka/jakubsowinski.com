@@ -5,6 +5,7 @@ body {
 }
 header,
 footer,
+#cv-controls,
 section#scroll-top,
 section#about .col-1 {
   display: none;
