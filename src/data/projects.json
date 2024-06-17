@@ -10,7 +10,8 @@
     "title": "Web Fotoszop",
     "description": "Web application created by 3rd grade students of Academic High School of Polish-Japanese Academy of Information Technology in cooperation with me, their computer programming teacher. This app allows user to display their camera feed in web browser, apply multiple image processing filters, such as grayscale or sepia, to the image, and observe their results in real time.",
     "date": "2023",
-    "github": "web-fotoszop"
+    "github": "web-fotoszop",
+    "demo": "https://sparkling-profiterole-8ab76b.netlify.app/"
   },
   {
     "title": "Netlify Plugin Chromium",

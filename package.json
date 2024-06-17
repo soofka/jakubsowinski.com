@@ -1,7 +1,7 @@
 {
   "name": "jakubsowinski.com",
-  "version": "0.1.0",
-  "author": "soofka",
+  "version": "1.0.0",
+  "author": "Jakub Sowiński <mail@jakubsowinski.com> (https://jakubsowinski.com)",
   "description": "Jakub Sowiński's personal website",
   "license": "MIT",
   "repository": {
@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/soofka/jakubsowinski.com/issues"
   },
-  "homepage": "https://github.com/soofka/jakubsowinski.com#readme",
+  "homepage": "https://jakubsowinski.com",
   "scripts": {
     "build": "node node_modules/swappi/dist/index.js -c config/index.js -b",
     "start": "node node_modules/swappi/dist/index.js -c config/index.js -w -r",
