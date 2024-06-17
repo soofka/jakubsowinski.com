@@ -2,7 +2,7 @@ const mainHome = (data, dists, { lang }) => `
   <section id="intro">
     <div class="wrapper">
       <article>
-        <h1>
+        <!--<h1>
           <span class="architect-fg">J</span>
           <span class="architect-fg">A</span>
           <span class="architect-fg">K</span>
@@ -21,7 +21,7 @@ const mainHome = (data, dists, { lang }) => `
           <span class="leader-fg website">C</span>
           <span class="leader-fg website">O</span>
           <span class="leader-fg website">M</span>
-        </h1>
+        </h1>-->
         <div class="row">
           <div class="col col-2">
             <h2>${data.labels[lang].pages.home.intro.head}</h2>

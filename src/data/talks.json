@@ -1,19 +1,5 @@
 [
   {
-    "title": "Micro frontends revisited",
-    "description": "At Stepstone we face an interesting, technical challenge: how to build a single, global platform for a collection of distinct, separate job board brands to run on. In this talk, we will explore our learnings from a couple of years of experience with micro frontend architecture as a potential solution to this challenge.",
-    "date": "2023-06",
-    "langs": ["en"],
-    "event": "Axel Springer Media & Tech Con 2023",
-    "place": {
-      "en": "Berlin, Germany",
-      "pl": "Berlin, Niemcy"
-    },
-    "recording": {
-      "youtube": "Yac9wgicbUM"
-    }
-  },
-  {
     "title": "Micro frontends: extending service-oriented architecture to front-end development",
     "description": "With the ongoing transformation of StepStone's core application from monolithic to a service-oriented architecture, our frontend developers faced new challenge – how to implement a user interface in this new landscape of distributed systems. We decided to adapt the concept of micro frontends, which is service-oriented approach to frontend development. In this talk, I'll explain our reasoning behind this choice, show how we enhanced our software engineering processes in order to implement micro frontend approach, and share most valuable lessons we've learned during this journey.",
     "date": "2019-08",

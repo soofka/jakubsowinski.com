@@ -4,15 +4,13 @@
     "description": "<p>Simple Web App Processing Interface is, in it's core, an interface for monitoring and parsing your web application's static files: it can build your application on your demand, watch files in your root directory and rebuild them whenever they're changed, and run local HTTP server to serve them. However, with the addition of it's powerful plugins, Swappi can encapsulate your entire application's codebase and it's build process, so that you can focus on really matters: coding awesome web.</p><ul><li>Processes your application's files as per your configuration</li><li>Runs watcher and rebuilds application on every file change</li><li>Runs local HTTP server and serves your application in browser</li><li>Supports templates and reusable partials</li><li>Optimizes images</li><li>Minifies HTML, CSS, and JS</li><li>Handles application routing</li></ul>",
     "date": "2024",
     "github": "swappi",
-    "npm": "swappi",
-    "inCV": "true"
+    "npm": "swappi"
   },
   {
     "title": "Web Fotoszop",
     "description": "Web application created by 3rd grade students of Academic High School of Polish-Japanese Academy of Information Technology in cooperation with me, their computer programming teacher. This app allows user to display their camera feed in web browser, apply multiple image processing filters, such as grayscale or sepia, to the image, and observe their results in real time.",
     "date": "2023",
-    "github": "web-fotoszop",
-    "inCV": "true"
+    "github": "web-fotoszop"
   },
   {
     "title": "Netlify Plugin Chromium",
