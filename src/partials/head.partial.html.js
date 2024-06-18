@@ -120,6 +120,7 @@ const head = (
         )
         .join("")}
       
+      <link rel="icon" href="favicon.ico" type="image/x-icon">
       ${getDistsByPath(dists, "icon-*")
         .map((dist) =>
           dist.name === "icon-16x16" || dist.name === "icon-32x32"

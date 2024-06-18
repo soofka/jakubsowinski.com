@@ -1,5 +1,11 @@
 export const getRouting = (langs, labels, data) => {
   const routes = {
+    assets: {
+      "/favicon.ico": {
+        srcName: "icon",
+        distName: "favicon",
+      },
+    },
     static: {},
     errors: {},
   };

@@ -13,7 +13,11 @@ export const config = {
   dist: path.resolve("dist"),
   reportFile: path.resolve("report.json"),
   routes,
-  verbosity: 8,
+  verbosity: 1,
+
+  hashOptions: {
+    exclude: ["favicon.ico", "robots.txt"],
+  },
 
   data: {
     name: "jakubsowinski.com",
