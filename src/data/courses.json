@@ -1,6 +1,39 @@
 [
   {
     "title": {
+      "en": "Basics of public speaking for developers",
+      "pl": "Podstawy wystąpień publicznych dla programistów"
+    },
+    "description": {
+      "en": "This course was created for developers who want to improve their public speaking skills. Participants learn how to prepare and deliver a presentation, how to engage the audience, how to explain technical things in a digestive way, and how to handle questions and feedback. The course is based on my personal experience with public speaking at work, as a developer and architect, as well as various conferences and meetups.",
+      "pl": "To szkolenie zostało stworzone dla programistów którzy chcą poprawić swoje umiejętności wystąpień publicznych. Uczestnicy uczą się jak przygotować i wygłosić prezentację, jak zaangażować publiczność, jak wyjaśnić techniczne aspekty w przyswajalny sposób, oraz jak radzić sobie z pytaniami i publicznością. Szkolenie jest oparte na moim osobistym doświadczeniu z wystąpień publicznych w pracy, jako programista i architekt, a także na różnych konferencjach i meetupach."
+    },
+    "date": "2024",
+    "langs": ["en", "pl"],
+    "clients": ["P&G", "Stepstone Services"],
+    "content": {
+      "en": [
+        "Storytelling basics and good practices",
+        "Structure of the story",
+        "How to reach your audience",
+        "Creating meaningful slides",
+        "Public speaking",
+        "Stage presence",
+        "Excercises and feedback"
+      ],
+      "pl": [
+        "Podstawy i dobre praktyki storytellingu",
+        "Struktura historii",
+        "Jak dotrzeć do twoich odbiorców",
+        "Tworzenie sensownych slajdów",
+        "Występowanie publiczne",
+        "Scena jest twoja",
+        "Ćwiczenia i feedback"
+      ]
+    }
+  },
+  {
+    "title": {
       "en": "Fundamentals of Software Architecture",
       "pl": "Podstawy architektury oprogramowania"
     },

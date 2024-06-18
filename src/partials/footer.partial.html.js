@@ -28,7 +28,7 @@ const footer = (data, dists, { lang, type }) =>
           </p>
           <p><small>
             <partial name="logo"></partial> 2007-${new Date().getFullYear()}
-            | <a href="https://github.com/soofka/swn.ski" target="_blank">repo</a>
+            | <a href="https://github.com/soofka/jakubsowinski.com" target="_blank">repo</a>
           </small></p>
         </article>
       </div>
