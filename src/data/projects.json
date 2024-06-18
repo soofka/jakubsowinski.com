@@ -1,21 +1,18 @@
 [
   {
     "title": "Simple Web App Processing Interface",
-    "description": "<p>Simple Web App Processing Interface is, in it's core, an interface for monitoring and parsing your web application's static files: it can build your application on your demand, watch files in your root directory and rebuild them whenever they're changed, and run local HTTP server to serve them. However, with the addition of it's powerful plugins, Swappi can encapsulate your entire application's codebase and it's build process, so that you can focus on really matters: coding awesome web.</p><ul><li>Processes your application's files as per your configuration</li><li>Runs watcher and rebuilds application on every file change</li><li>Runs local HTTP server and serves your application in browser</li><li>Supports templates and reusable partials</li><li>Optimizes images</li><li>Minifies HTML, CSS, and JS</li><li>Handles application routing</li></ul>",
     "date": "2024",
     "github": "swappi",
     "npm": "swappi"
   },
   {
     "title": "Web Fotoszop",
-    "description": "Web application created by 3rd grade students of Academic High School of Polish-Japanese Academy of Information Technology in cooperation with me, their computer programming teacher. This app allows user to display their camera feed in web browser, apply multiple image processing filters, such as grayscale or sepia, to the image, and observe their results in real time.",
     "date": "2023",
     "github": "web-fotoszop",
     "demo": "https://sparkling-profiterole-8ab76b.netlify.app/"
   },
   {
     "title": "Netlify Plugin Chromium",
-    "description": "<p>This is Netlify Build Plugin. It is meant to be used in projects connected to Netlify CI/CD pipeline. Netlify Build Plugins are currently opt-in BETA feature. Learn how to enable them for your project here.</p><p>This plugin hooks into installation stage of the build process and extends it with additional step which checks if Chromium is installed and installs Chromium binaries if needed. The latest suitable build of Chromium for your platform will be installed with the help of chromium npm package. Installation typically takes around 20-30 seconds.</p>",
     "date": "2020",
     "github": "netlify-plugin-chromium",
     "npm": "netlify-plugin-chromium",
@@ -23,13 +20,17 @@
   },
   {
     "title": "Coronavirus Tracker",
-    "description": "Simple website displaying latest information about coronavirus encounters around the world, that I built at the beginning of the pandemic, when such trackers were not yet available. Built with Preact and as an installable PWA.",
     "date": "2020",
     "github": "coronavirus-tracker"
   },
   {
+    "title": "JS Console Tetris",
+    "date": "2019",
+    "github": "js-console-tetris",
+    "demo": "https://heuristic-blackwell-1f16f5.netlify.app/"
+  },
+  {
     "title": "Webpack Bundle Content Validator",
-    "description": "<p>Webpack plugin and CLI tool for Webpack bundle content validation.</p><ul><li>check if your Webpack bundle contains mandatory dependencies and doesn't contain disallowed ones</li><li>print warning in console or fail whole build process when validation is not successful</li><li>use as Webpack plugin or CLI tool</li><p>This plugin/tool is compatible with Webpack 4. Compatibility with older versions of Webpack was not tested yet, but there might be some issues with that due to the fact that structure of Webpack Stats object was changed in Webpack 4.</p>",
     "date": "2017",
     "github": "webpack-bundle-content-validator",
     "npm": "webpack-bundle-content-validator",
@@ -37,7 +38,6 @@
   },
   {
     "title": "React Redux TypeScript Boilerplate",
-    "description": "<p>This is skeleton of React application, coded in TypeScript, using Redux to handle application state. It runs on React in version 16 and TypeScript in version 2.7. It consists of two parts and thus may serve two purposes:</p><ol><li><p>Application skeleton: Includes transpilation from TypeScript to ES6 and to ES5, module bundling, live server, hot module replacement enabled, unit tests runners, code linters, bundle analyzer etc. It can be used to quickly setup and start coding new project, simply by cloning and removing <code>/src</code> directory and some redundant packages from <code>package.json</code>.</p></li><li><p>React + Redux + TypeScript code samples: This is generally content of <code>/src</code> directory. There are examples of certain features that I stumbled upon commonly in my experience of web development in TypeScript with React and Redux. They can be used as examples to learn from, or standard pieces of code to duplicate, quickly solving some common problem.</p></li></ol>",
     "date": "2016",
     "github": "react-redux-typescript-boilerplate"
   }
