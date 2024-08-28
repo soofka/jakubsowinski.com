@@ -21,7 +21,7 @@
     "highlight.js": "^11.9.0",
     "marked": "^12.0.2",
     "prettier": "^3.2.5",
-    "swappi": "^0.1.10"
+    "swappi": "^0.1.11"
   },
   "type": "module"
 }
