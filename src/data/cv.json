@@ -187,7 +187,7 @@
       ]
     },
     {
-      "title": "Software Architect",
+      "title": "Software/Solution Architect",
       "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
@@ -221,7 +221,7 @@
         "scrum",
         "mentoring"
       ],
-      "description": "<p>As a software architect in Stepstone, I mainly cooperated with centralized architecture department, while supporting a number of multi-national scrum teams, which worked on various parts of Stepstone's core products. The job was multi-dimensional: I was working with architecture team on defining and documenting global architectural standards and guidelines; I was working with product development teams on designing architecture for their product, governing its implementation, making technical decisions, and mentoring developers; I was working with business on defining their goals and negotiating solutions, while offering technical subject matter expertise.</p><p>Additionally, as a software architect, I was involved in recruitment, job interviews, peer-to-peer evaluations, mentoring for developers, among other things. I also remained an informal leader of Stepstone's community of JavaScript developers, in which I was responsible for defining and guarding software development standards and guidelines.</p>",
+      "description": "<p>As a software/solution architect in Stepstone, I mainly cooperated with centralized architecture department, while supporting a number of multi-national scrum teams, which worked on various parts of Stepstone's core products. The job was multi-dimensional: I was working with architecture team on defining and documenting global architectural standards and guidelines; I was working with product development teams on designing architecture for their product, governing its implementation, making technical decisions, and mentoring developers; I was working with business on defining their goals and negotiating solutions, while offering technical subject matter expertise.</p><p>Additionally, as a software/solution architect, I was involved in recruitment, job interviews, peer-to-peer evaluations, mentoring for developers, among other things. I also remained an informal leader of Stepstone's community of JavaScript developers, in which I was responsible for defining and guarding software development standards and guidelines.</p>",
       "responsibilities": [
         "Cooperation with development teams",
         "Cooperation with internal clients",
