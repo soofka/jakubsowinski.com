@@ -36,8 +36,8 @@ const mainHome = (data, dists, { lang }) => `
                   <span class="text">
                     <span class="architect-fg">solution architect</span> / 
                     <span class="developer-fg">software developer</span> / 
-                    <span class="teacher-fg">programming teacher</span> / 
-                    <span class="leader-fg">technical leader</span>
+                    <span class="leader-fg">teacher and leader</span> / 
+                    <span class="teacher-fg">volunteer</span>
                   </span>
                   <span class="blinker"></span>
                 </p>`,
@@ -162,6 +162,32 @@ const mainHome = (data, dists, { lang }) => `
               pageId: `courses-${lang}`,
             }),
           )}">${data.labels[lang].pages.home.leader.buttons.courses}</partial>
+          <a class="button teacher-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="volunteer">
+    <div class="wrapper">
+      <article>
+        <h2 class="teacher-fg">${data.labels[lang].pages.home.volunteer.head}</h2>
+        <div class="row">
+          <div class="col col-1">
+            <partial name="img" data="${encodeURI(
+              JSON.stringify({
+                src: "images/me5",
+                alt: data.labels[lang].pages.home.volunteer.imgAlt,
+                caption: `<span class="teacher-fg">${data.labels[lang].pages.home.volunteer.imgAlt}</span>`,
+                lazy: true,
+              }),
+            )}"></partial>
+          </div>
+          <div class="col col-2">
+            <h3>${data.labels[lang].pages.home.volunteer.lead}</h3>
+            <p>${data.labels[lang].pages.home.volunteer.text}</p>
+          </div>
+        </div>
+        <div class="buttons">
           <a class="button teacher-bg" href="#contact">${data.labels[lang].pages.home.intro.buttons.contact}</a>
         </div>
       </article>

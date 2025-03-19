@@ -225,11 +225,6 @@ footer section article p {
 .buttons .button {
   flex-grow: 1;
 }
-.buttons button::before,
-.buttons .button::before {
-  content: "»";
-  margin-right: var(--gap);
-}
 
 /* accents and colors */
 .logo {
@@ -372,8 +367,8 @@ body.item h4 {
   .row .col.col-3 {
     flex: 3;
   }
-  .buttons button:only-child,
-  .buttons .button:only-child {
+  .buttons button,
+  .buttons .button {
     flex-grow: 0;
   }
   .mobile-only {

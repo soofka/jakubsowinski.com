@@ -34,7 +34,7 @@
           "projects": "Moje projekty",
           "blog": "Mój blog"
         },
-        "imgAlt": "Jakub Sowiński myślący o programowaniu"
+        "imgAlt": "Jakub Sowiński i jego asystent programowania"
       },
       "leader": {
         "head": "Nauczyciel i lider",
@@ -44,6 +44,12 @@
           "courses": "Moje szkolenia"
         },
         "imgAlt": "Jakub Sowiński uczący i przewodzący"
+      },
+      "volunteer": {
+        "head": "Wolontariusz",
+        "lead": "Czerpię wielką przyjemność z wspierania rozmaitych organizacji charytatywnych, na poczet których świadczę darmowe usługi z zakresu nauczania i programowania.",
+        "text": "Tworzę i utrzymuję darmowe, cyfrowe rozwiązania dla organizacji takich, jak <a href=\"https://safespotfundacja.pl/\" target=\"_blank\">Fundacja SafeSpot</a>, a także prowadzę darmowe zajęcia i warsztaty związane z programowaniem we współpracy z takimi organizacjami, jak <a href=\"https://girlsjs.pl/\" target=\"_blank\">girls.js</a>. Znasz inną organizację której mógłbym pomóc? <a href=\"#contact\">Daj mi znać</a>!",
+        "imgAlt": "Jakub Sowiński zgłasza się na ochotnika"
       },
       "contact": {
         "head": "Napisz do mnie",

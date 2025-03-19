@@ -34,7 +34,7 @@
           "projects": "My projects",
           "blog": "My blog"
         },
-        "imgAlt": "Jakub Sowiński thinking about programming"
+        "imgAlt": "Jakub Sowiński and his programming assistant"
       },
       "leader": {
         "head": "Teacher and leader",
@@ -44,6 +44,12 @@
           "courses": "My courses"
         },
         "imgAlt": "Jakub Sowiński teaching and leading"
+      },
+      "volunteer": {
+        "head": "Volunteer",
+        "lead": "It is a great pleasure for me to support various charity organisations, for which I provide free teaching and programming services.",
+        "text": "I create and maintain free digital solutions for organisations such as <a href=\"https://safespotfundacja.pl/\" target=\"_blank\">SafeSpot Foundation</a>, and I facilitate free classes and workshops related to programming in collaboration with organisations such as <a href=\"https://girlsjs.pl/\" target=\"_blank\">girls.js</a>. Do you know another organisation that I could help? <a href=\"#contact\">Let me know</a>!",
+        "imgAlt": "Jakub Sowiński volunteers"
       },
       "contact": {
         "head": "Contact me",
