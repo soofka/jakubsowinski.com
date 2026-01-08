@@ -12,6 +12,10 @@
   padding: 0 var(--gap);
   margin: 0;
 }
+.redacted {
+  background: var(--fg);
+  color: var(--fg);
+}
 .tags {
   width: 100%;
   margin: 0 0 var(--gap) 0;

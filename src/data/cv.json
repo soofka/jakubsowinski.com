@@ -2,22 +2,64 @@
   "workExperience": [
     {
       "title": "Solution Architect",
-      "company": "Connectis",
+      "company": "Orange (via Connectis)",
       "location": {
         "en": "Warsaw, Poland",
         "pl": "Warszawa, Polska"
       },
-      "from": "2024-04",
-      "to": "present",
+      "from": "2024-08",
+      "to": "2025-12",
       "tags": [
         ["architect", "architect-bg"],
         "soa",
         "eda",
-        "microfrontends",
+        "ai",
+        "mcp",
         "design system",
         "monorepo",
         "javascript",
         "react",
+        "tailwind",
+        "nextjs",
+        "ci/cd",
+        "rfc",
+        "adr",
+        "tech radar",
+        "security",
+        "performance",
+        "a11y",
+        "architectural patterns",
+        "ddd",
+        "gitlab",
+        "scrum"
+      ],
+      "description": "<p>As a solution architect in Orange, I was responsible for providing architectural support and expertise to a number of preexisting software development teams, initially in order to facilitate building and shipping a new versions of some of company's most crucial products, and later in order to help improve existing software development processes. I was involved in all sides of these processes, from requirements elictation, to software architecture design and compliance assessment, to software implementation, to testing, monitoring, and bugfixing.</p>",
+      "responsibilities": [
+        "Full-stack development",
+        "Monitoring and maintenance of the product",
+        "Quality assurance",
+        "Cooperation with central enterprise architecture body",
+        "Negotiating requirements and solutions with business",
+        "Explaining architecture to developers and governing implementation"
+      ]
+    },
+    {
+      "title": "Solution Architect",
+      "company": "<span class=\"redacted\">Procter & Gamble</span> (Fortune 500 top 50 company, via Connectis)",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2024-03",
+      "to": "2024-07",
+      "tags": [
+        ["architect", "architect-bg"],
+        "microfrontends",
+        "design system",
+        "javascript",
+        "react",
+        "tailwind",
+        "nextjs",
         "azure",
         "google cloud",
         "ci/cd",
@@ -35,6 +77,45 @@
         "archimate",
         "mermaid",
         "github",
+        "scrum"
+      ],
+      "description": "<p>As a solution architect in <span class=\"redacted\">Procter & Gamble</span> (Fortune 500 top 50 company), I was responsible for designing and establishing appropriate software architecture for a couple of new teams working on an internal, greenfield project. The goal of the project was to improve internal product teams capabilities in regards to marketing and customer surveys. It was my job to define, communicate, and govern our technology stack and software development practices, as well as to cooperate with central enterprise architecture body business in order to coordinate deployment of first version of the solution.",
+      "responsibilities": [
+        "Designing and documenting solution architecture for multiple projects",
+        "Architectural governance for multiple scrum teams",
+        "Planning and cost-optimizing cloud-based infrastructure",
+        "Cooperation with central enterprise architecture body",
+        "Negotiating requirements and solutions with business",
+        "Explaining architecture to developers and governing implementation"
+      ]
+    },
+    {
+      "title": "Solution Architect",
+      "company": "Connectis",
+      "location": {
+        "en": "Warsaw, Poland",
+        "pl": "Warszawa, Polska"
+      },
+      "from": "2024-03",
+      "to": "present",
+      "tags": [
+        ["architect", "architect-bg"],
+        "soa",
+        "eda",
+        "microfrontends",
+        "monorepo",
+        "design system",
+        "ci/cd",
+        "rfc",
+        "adr",
+        "tech radar",
+        "security",
+        "performance",
+        "a11y",
+        "i18n",
+        "l10n",
+        "architectural patterns",
+        "ddd",
         "scrum"
       ],
       "description": "<p>As a solution architect in Connectis, I am responsible for providing architectural support and expertise to external, large, corporate clients. It is my job to understand client's requirements, design and document software structure, development processes, standards, good practices, and all technical decisions, and then help product development teams implement solution according to the plan by guiding, teaching, negotiating, and drawing from my experience to combat day to day software development complexity, all while cooperating with central enterprise architecture body in order to ensure compliance with wider company standards when it comes to software development.</p><!--<p>Due to the nature of the product and company organizational structure, I work with multiple tech stacks across multiple projects. Majority of them utilize some kind of modern, distributed architecture, such as service-oriented or event-driven one, deployed to Azure or Google Cloud (less frequently). Due to the fact that majority applications built by my teams have a requirement to support multiple brandings from single, highly configurable codebase, microfrontends architecture and internal design system often employed.</p>-->",
@@ -187,7 +268,7 @@
       ]
     },
     {
-      "title": "Software/Solution Architect",
+      "title": "Software Architect",
       "company": "StepStone Services (Axel Springer SE)",
       "location": {
         "en": "Warsaw, Poland",
