@@ -36,7 +36,7 @@ const slides = (data, dists, { url, name, template, type, title, content }) => `
           <partial name="slide">
             <h2>Thank you</h2>
             <p class="center">
-              <a href="jakubsowinski.com" target="_blank">jakubsowinski.com</a> | <partial name="link-email"></partial>
+              <a href="https://jakubsowinski.com" target="_blank">jakubsowinski.com</a> | <partial name="link-email"></partial>
             </p>
           </partial>
           <partial name="slide">
